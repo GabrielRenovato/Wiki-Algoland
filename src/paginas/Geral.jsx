@@ -15,6 +15,7 @@ export function Inicio() {
             Flores, cuida de uma fazenda, faz amizade com os vizinhos e atravessa o portal para segurar as ondas de
             criaturas da Arena do Limiar. Cada queda vira Brasas, e as Brasas deixam você mais forte para sempre.
           </p>
+          <a className="botao-baixar" href="#/download">⬇ Baixar para Windows, Linux ou Android</a>
         </div>
         <div className="banner-palco">
           <Sprite s={HEROI} escala={4} titulo="Herói" />

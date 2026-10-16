@@ -381,6 +381,31 @@ blockquote { margin: 0 0 10px; padding: 8px 14px; border-left: 4px solid var(--b
 }
 .rodape-pagina a { text-decoration: none; }
 
+/* --- Download --- */
+.botao-baixar {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--destaque);
+  color: #fff;
+  font: 700 17px "Pixelify Sans", monospace;
+  text-decoration: none;
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--destaque) 60%, #000);
+}
+.botao-baixar:hover { filter: brightness(1.08); }
+.downloads { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 14px; }
+.download { background: var(--papel); border: 2px solid var(--borda); border-radius: 10px; padding: 16px; box-shadow: var(--sombra); }
+.download h2 { margin: 0 0 10px; }
+.download .etiqueta { margin: 6px 0 12px; }
+.lateral .lateral-baixar {
+  justify-content: center;
+  margin-bottom: 10px;
+  background: #b5512a;
+  color: #fff;
+  font-family: "Pixelify Sans", monospace;
+}
+.lateral .lateral-baixar:hover { background: #c9623a; }
+
 /* --- Celular --- */
 @media (max-width: 860px) {
   .app { display: block; }
