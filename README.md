@@ -21,8 +21,8 @@ npm run build    # gera dist/ (abre em qualquer pasta, base relativa)
 
 ## Licença da arte
 
-Os sprites pertencem aos pacotes usados pelo jogo (Mana Seed, Farm RPG, PixelLab e outros) e **não entram no Git**
-(`public/sprites` está no `.gitignore`). A licença do Mana Seed proíbe usar a arte junto com código gerado por IA,
+Os sprites pertencem aos pacotes usados pelo jogo (Mana Seed, Farm RPG, PixelLab e outros). Só as 64 folhas que a wiki
+usa ficam versionadas em `public/sprites`, para o build do Netlify funcionar sem o jogo. A licença do Mana Seed proíbe usar a arte junto com código gerado por IA,
 e esta wiki foi escrita com IA: não publique a wiki com essas folhas antes de resolver isso.
 
 ## Publicar no Netlify
@@ -32,5 +32,5 @@ redirecionamento a configurar. Sem a pasta do jogo ao lado (caso do Netlify), o 
 `public/sprites`.
 
 - **Arrastar e soltar:** rode `npm run build` aqui e solte a pasta `dist/` em app.netlify.com/drop.
-- **Pelo Git:** os sprites estão no `.gitignore`; para o Netlify recebê-los é preciso tirar a linha `public/sprites`
-  de lá e versionar as folhas (veja a licença acima antes).
+- **Pelo Git:** em app.netlify.com, "Add new site" > "Import an existing project" > GitHub > `Wiki-Algoland`.
+  O `netlify.toml` já preenche o build; não mude o diretório base (deixe vazio) nem a pasta de publicação (`dist`).
