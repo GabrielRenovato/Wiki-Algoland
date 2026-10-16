@@ -54,7 +54,7 @@ export function Vila() {
           <li>Cada um tem um <b>dia de folga</b> por semana e um <b>horário comercial</b>. Loja fechada avisa numa caixa de diálogo.</li>
           <li>No <b>inverno</b>, os encontros passam para dentro da pousada.</li>
           <li>Na <b>chuva</b>, todos saem de capa ou guarda-chuva.</li>
-          <li><b>Sábado à noite</b> tem festa: os seis se reúnem em duplas na praça.</li>
+          <li><b>Sábado à noite</b> tem festa na taverna da pousada: os seis se sentam em duplas nas mesas (e você pode sentar com eles).</li>
           <li>No último dia de cada estação, a praça ganha bandeirinhas; ao anoitecer, lampiões.</li>
         </ul>
       </Secao>

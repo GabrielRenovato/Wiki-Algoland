@@ -19,6 +19,7 @@ export function Progresso() {
               ["Cada chefe derrotado", <Brasas n={15} />],
               ["Cada estágio bônus (mímicos)", <Brasas n={5} />],
               ["Pedidos do mural", <Brasas n="10 a 25" />],
+              ["Colheita vendida à Lia", <Brasas n="3 a 9 cada" />],
               ["Bardo contratado", "+25% no fim da partida"],
             ]} />
           </div>
@@ -66,6 +67,7 @@ export function Progresso() {
       <Secao titulo="O que se perde e o que fica">
         <Tabela cabecalho={["Fica para sempre", "Se perde ao cair"]} linhas={[
           ["Brasas, melhorias e apoios", "Ouro da partida"],
+          ["Colheita e poções guardadas", "O prato do Caio (acaba com a partida)"],
           ["Armas liberadas pelos desafios", "Totens comprados"],
           ["Fazenda, plantas e sementes", "Saque ainda não vendido"],
           ["Amizades, pedidos e baú", "Moedas de Forja"],

@@ -12,11 +12,11 @@ export const BAIXAR = {
 };
 
 const PLATAFORMAS = [
-  { id: "windows", nome: "Windows", arquivo: "Algoland-windows.zip", tamanho: "104 MB",
+  { id: "windows", nome: "Windows", arquivo: "Algoland-windows.zip", tamanho: "138 MB",
     passos: ["Baixe e extraia o .zip.", "Abra o Algoland.exe.", "Se o Windows avisar \"aplicativo não reconhecido\", clique em Mais informações → Executar assim mesmo."] },
-  { id: "linux", nome: "Linux", arquivo: "Algoland-linux.zip", tamanho: "95 MB",
+  { id: "linux", nome: "Linux", arquivo: "Algoland-linux.zip", tamanho: "128 MB",
     passos: ["Baixe e extraia o .zip.", "Dê permissão de execução: chmod +x Algoland.x86_64", "Rode ./Algoland.x86_64"] },
-  { id: "android", nome: "Android", arquivo: "Algoland-android.apk", tamanho: "103 MB",
+  { id: "android", nome: "Android", arquivo: "Algoland-android.apk", tamanho: "138 MB",
     passos: ["Baixe o .apk no celular.", "Permita instalar de fontes desconhecidas quando o Android pedir.", "Abra o AlgoLand: os controles de toque aparecem sozinhos."] },
 ];
 

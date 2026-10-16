@@ -48,7 +48,7 @@ export function Inicio() {
         </div>
         <Passos itens={[
           <>Na <Link para="fazenda">fazenda</Link> você planta sementes da estação e colhe em poucos dias.</>,
-          <>A <Link para="moradores">Dona Rosa</Link> transforma a colheita em <Link para="pocoes">poções</Link> que você bebe na arena.</>,
+          <>A <Link para="moradores">Dona Rosa</Link> transforma a colheita em <Link para="pocoes">poções</Link> e o <Link para="refeicoes">Caio</Link> a cozinha em pratos que valem a partida inteira na arena.</>,
           <>No portal da vila você entra na <Link para="arena">arena</Link>: cada onda vencida dá ouro, saque e abre a janela de compras.</>,
           <>A cada 10 ondas vem um <Link para="chefes">chefe</Link>. Ele solta sementes, equipamento e às vezes a Moeda de Forja.</>,
           <>Se você cair, a partida vira <Brasas n="Brasas" />. Com a Lia, elas viram <Link para="progresso">melhorias permanentes</Link>.</>,
@@ -165,8 +165,8 @@ export function Tempo() {
       <Titulo sub="Relógio, estações, clima e sono.">Tempo e calendário</Titulo>
       <Secao titulo="Estações">
         <p>
-          O ano tem <b>4 estações de 7 dias</b> cada: {ESTACOES.join(", ")}. A semana vai de {DIAS_SEMANA[0]} a {DIAS_SEMANA[6]},
-          e cada dia da estação cai num dia da semana (os moradores têm folga num dia fixo).
+          O ano tem <b>4 estações de 30 dias</b> cada (120 dias): {ESTACOES.join(", ")}. A semana tem 7 dias, de {DIAS_SEMANA[0]} a {DIAS_SEMANA[6]},
+          e corre sozinha, sem depender da estação: os moradores têm folga num dia fixo da semana.
         </p>
         <Tabela cabecalho={["Estação", "O que muda"]} linhas={[
           ["Primavera", "Cenoura, batata, couve-flor e morango. Jardins floridos."],
@@ -177,7 +177,8 @@ export function Tempo() {
         <Caixa tipo="aviso">
           Uma planta precisa amadurecer dentro da própria estação. Se os dias que faltam não bastam, o jogo avisa
           “não dá tempo até o fim da estação” e nem deixa plantar. Na virada da estação, o que sobrou da estação
-          anterior <b>murcha</b> e precisa ser arrancado com a enxada. Uma melancia (6 dias) precisa ser plantada logo no começo do verão.
+          anterior <b>murcha</b> e precisa ser arrancado com a enxada. Com 30 dias há tempo de sobra: as plantas mais
+          demoradas (6 dias) só ficam de fora se você plantar nos últimos dias da estação.
         </Caixa>
       </Secao>
       <Secao titulo="Clima">
@@ -231,6 +232,10 @@ export function Cooperativo() {
           <li>O preço dos totens sobe por jogador: cada um paga pelas próprias cópias.</li>
           <li>Os inimigos miram o jogador mais próximo.</li>
           <li>O jogador 2 tem uma barra de vida sobre a cabeça e pode cair e levantar.</li>
+          <li><b>Dormir:</b> quem deita espera o outro, e a noite só passa com os dois deitados. Quem se arrependeu levanta com B ou com o botão de interagir. No desmaio das 2h os dois vão juntos.</li>
+          <li><b>Pausa:</b> START de qualquer controle abre e fecha a pausa.</li>
+          <li><b>Banco:</b> o banco vazio tem prioridade sobre o morador ao lado na hora de apertar o botão de interagir.</li>
+          <li>Os dois podem ir cada um para um lugar (a vila para um, a fazenda para o outro), e cada um tem a própria tela, relógio e barra de ferramentas.</li>
         </ul>
       </Secao>
     </>
@@ -245,7 +250,8 @@ export function Dicas() {
         <div className="faq">
           {[
             ["O que eu perco quando morro?", "O ouro da partida, o saque ainda não vendido, as Moedas de Forja e o equipamento que caiu nessa partida. Você acorda na enfermaria da Dona Rosa. Ficam: fazenda, sementes, ferramentas (voltam com o kit), Brasas, melhorias e amizades."],
-            ["Como fico mais forte de forma permanente?", "Com Brasas na Lia (melhorias e apoios), liberando armas novas pelos desafios e evoluindo peças de conjunto na bigorna."],
+            ["Como fico mais forte de forma permanente?", "Com Brasas na Lia (melhorias e apoios), liberando armas novas pelos desafios e evoluindo peças de conjunto na bigorna. A colheita que sobrar também vira Brasas: a Lia compra por 3 a 9 Brasas cada."],
+            ["Como a fazenda ajuda na arena?", "De três jeitos: poções com a Dona Rosa, pratos do Caio (um bônus forte que dura a partida inteira) e Brasas pela colheita vendida à Lia. Quem entra na arena sem prato volta bem mais cedo."],
             ["Onde faço poções?", "Com a Dona Rosa, no botão POÇÕES da conversa. Ela usa as receitas fixas do caldeirão."],
             ["Para que serve a amizade?", "Conversar uma vez por dia dá amizade. Mais amizade libera histórias novas de cada morador e entregar pedidos dá amizade extra."],
             ["Minha mochila encheu na arena. E agora?", "O equipamento vai para a aba SAQUE da janela entre ondas (12 casas). Lá você escolhe o que levar ou vender. Voltar à cidade vende o resto; morrer perde."],

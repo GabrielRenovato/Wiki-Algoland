@@ -37,7 +37,7 @@ export const POCOES = [
 // codigo/cidade/dados_cidade.gd + falas_moradores.gd
 export const MORADORES = [
   { id: "lia", nome: "Lia", oficio: "Cuida da comunidade", casa: "sede", casaNome: "Casa da comunidade",
-    servico: "Troca Brasas por melhorias permanentes e contrata os apoios (Curandeira, Bardo, Mística). Dona da maioria dos pedidos do mural.",
+    servico: "Troca Brasas por melhorias permanentes, contrata os apoios (Curandeira, Bardo, Mística) e compra a sua colheita por Brasas (VENDER COLHEITA). Dona da maioria dos pedidos do mural.",
     especialidade: "Brasas, melhorias e contratos", horario: [6, 19], folga: 5,
     rotina: [[6, "Organizando os pedidos (sede)"], [9, "Recebendo visitantes na praça"], [15, "Cuidando da comunidade (sede)"], [19, "Jantando na pousada"]],
     fala: "Bem-vindo à Vila das Flores! A fazenda fica a oeste e a trilha da arena a leste. Os pedidos estão no mural." },
@@ -52,7 +52,7 @@ export const MORADORES = [
     rotina: [[6, "Cuidando do jardim"], [8, "Atendendo na enfermaria"], [18, "Passeando na praça"], [19, "Preparando os remédios"]],
     fala: "Descanse antes de voltar a lutar. Uma vila também se cuida com pequenos gestos." },
   { id: "bardo", nome: "Caio", oficio: "Músico", casa: "pousada", casaNome: "Pousada",
-    servico: "Toca no coreto de dia e atende no balcão da taverna à noite (18h às 2h). A pousada deixa passar a noite.",
+    servico: "Toca no coreto de dia e atende no balcão da taverna à noite (18h às 2h). Cozinha com a sua colheita a qualquer hora (COZINHAR): o prato vale a próxima partida inteira. A pousada deixa passar a noite.",
     especialidade: "Lendas da arena, chefes e eventos", horario: null, folga: 0,
     rotina: [[6, "Tomando café na pousada"], [10, "Tocando no coreto"], [18, "Atendendo no balcão da taverna"]],
     fala: "Cada aventura merece uma canção. Volte para me contar a sua!" },
@@ -180,3 +180,15 @@ export const TOTENS = [
   { nome: "Coração Robusto", preco: 120, efeito: "+4 de vitalidade (+24 de vida máxima)" },
   { nome: "Olho do Falcão", preco: 200, efeito: "+5 de sorte (+5% de crítico, +0,1× dano crítico)" },
 ];
+
+// codigo/dados/refeicoes.gd (o prato do Caio vale a próxima partida inteira e acaba junto com ela)
+export const REFEICOES = [
+  { id: "sopa_raizes", nome: "Sopa de Raízes", receita: { cenoura: 2, batata: 2 }, bonus: "+30% de vida", item: "batata", texto: "Cenoura e batata no caldo grosso: aguenta muito mais pancada." },
+  { id: "torta_morango", nome: "Torta de Morango", receita: { morango: 2, couve_flor: 1 }, bonus: "+20% de dano e +30% de fôlego", item: "morango", texto: "Doce e leve: golpes mais fortes e fôlego de sobra." },
+  { id: "milho_assado", nome: "Milho Assado na Brasa", receita: { milho: 2, girassol: 2 }, bonus: "+40% de ouro por abate e +20% de fôlego", item: "milho", texto: "O cheiro de milho assado atrai sorte: muito mais ouro por abate." },
+  { id: "salada_verao", nome: "Salada de Verão", receita: { tomate: 2, melancia: 1 }, bonus: "+35% de dano", item: "tomate", texto: "Tomate maduro e melancia gelada: cada golpe pesa o dobro." },
+  { id: "ensopado_outono", nome: "Ensopado de Outono", receita: { abobora: 2, beterraba: 2 }, bonus: "+15% de defesa e +15% de vida", item: "abobora", texto: "Abóbora e beterraba no fogo lento: a pele fica dura como casca." },
+  { id: "banquete", nome: "Banquete da Colheita", receita: { uva: 1, berinjela: 1, milho: 1, morango: 1 }, bonus: "+25% de vida, dano e ouro", item: "uva", texto: "Um pouco de cada estação na mesma mesa: tudo melhora." },
+];
+// codigo/globais/fazenda_dados.gd: Brasas pagas pela Lia por colheita, conforme a raridade da planta
+export const BRASAS_COLHEITA = { comum: 3, incomum: 5, raro: 6, epico: 9 };

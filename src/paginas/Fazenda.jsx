@@ -1,7 +1,7 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Passos, Brasas } from "../componentes/ui.jsx";
 import { FERRAMENTAS, CASAS, DROPS, MORADORES as SPR, colhido, crescimento, celula, pocao } from "../sprites.js";
-import { PLANTAS, POCOES, ESTACOES, PRECO_SEMENTE, CHANCE_SEMENTE } from "../dados.js";
+import { PLANTAS, POCOES, ESTACOES, PRECO_SEMENTE, CHANCE_SEMENTE, REFEICOES, BRASAS_COLHEITA } from "../dados.js";
 
 const COR_RARIDADE = { comum: "#ebebe0", incomum: "#73ff66", raro: "#66adff", epico: "#d173ff" };
 const NOME_RARIDADE = { comum: "Comum", incomum: "Incomum", raro: "Rara", epico: "Épica" };
@@ -173,6 +173,72 @@ export function Pocoes() {
       <Tabela cabecalho={["Estação", "Poções"]} linhas={[
         ["Primavera", "Cura e Fôlego"], ["Verão", "Força e Velocidade"], ["Outono", "Pedra e Vampírica"],
       ]} compacta />
+    </>
+  );
+}
+
+export function Refeicoes() {
+  return (
+    <>
+      <Titulo sub="A colheita vira prato com o Caio, e o prato vale a próxima partida inteira na arena.">Refeições</Titulo>
+      <Secao>
+        <div className="lado-a-lado">
+          <Sprite s={SPR.bardo} escala={3} titulo="Caio" />
+          <div>
+            <Passos itens={[
+              <>Colha na <Link para="fazenda">fazenda</Link> e leve a colheita para a vila.</>,
+              <>Converse com o <b>Caio</b> (a qualquer hora) e escolha <b>COZINHAR</b>. O botão ganha um * quando você já tem os ingredientes de algum prato.</>,
+              <>Escolha o prato: ele gasta os ingredientes e o bônus passa a valer. Ao entrar na arena o jogo lembra qual prato está ativo.</>,
+              <>O prato acaba junto com a partida (quando você cai ou volta pelo botão CIDADE). Aí o Caio cozinha outro.</>,
+            ]} />
+          </div>
+        </div>
+        <Caixa tipo="nota" titulo="Regras">
+          Um prato por vez, e ele só vale uma partida. O bônus soma por cima das melhorias permanentes da Lia. No
+          cooperativo, os dois jogadores ficam com o mesmo prato. O prato fica salvo se você fechar o jogo antes de entrar.
+        </Caixa>
+      </Secao>
+      <Secao titulo="Os pratos">
+        <Grade min={290}>
+          {REFEICOES.map((r) => (
+            <article key={r.id} className="ficha pocao">
+              <div className="ficha-palco"><Sprite s={colhido(planta(r.item).item)} escala={4} parado titulo={r.nome} /></div>
+              <div className="ficha-texto">
+                <h3>{r.nome}</h3>
+                <p className="etiqueta"><b>{r.bonus}</b></p>
+                <div className="receita">
+                  {Object.entries(r.receita).map(([id, n]) => (
+                    <span key={id} title={planta(id).nome}>
+                      <Sprite s={colhido(planta(id).item)} escala={2} parado titulo={planta(id).nome} />
+                      ×{n}
+                    </span>
+                  ))}
+                </div>
+                <p className="citacao">{r.texto}</p>
+              </div>
+            </article>
+          ))}
+        </Grade>
+        <p>
+          Os valores são fortes de propósito: a Sopa de Raízes, por exemplo, vale quase 4 níveis de Vigor. Quem planta
+          entra na arena bem mais forte do que quem ignora a horta.
+        </p>
+      </Secao>
+      <Secao titulo="Vender colheita para a Lia">
+        <p>
+          A colheita que sobrar vira Brasas para as melhorias permanentes: na conversa com a <Link para="moradores">Lia</Link>,
+          escolha <b>VENDER COLHEITA</b>. Cada unidade paga mais do que a semente custou, e quanto mais rara a planta, mais ela vale.
+        </p>
+        <Tabela compacta cabecalho={["Raridade da planta", "Brasas por unidade"]} linhas={[
+          [<RaridadeSemente r="comum" />, <Brasas n={BRASAS_COLHEITA.comum} />],
+          [<RaridadeSemente r="incomum" />, <Brasas n={BRASAS_COLHEITA.incomum} />],
+          [<RaridadeSemente r="raro" />, <Brasas n={BRASAS_COLHEITA.raro} />],
+          [<RaridadeSemente r="epico" />, <Brasas n={BRASAS_COLHEITA.epico} />],
+        ]} />
+        <Caixa tipo="dica">
+          Plante a estação inteira: o que não cabe em prato nem em poção ainda paga as melhorias da vila.
+        </Caixa>
+      </Secao>
     </>
   );
 }

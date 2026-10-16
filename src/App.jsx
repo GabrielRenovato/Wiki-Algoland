@@ -3,7 +3,7 @@ import Sprite from "./componentes/Sprite.jsx";
 import { HEROI, MORADORES, CASAS, FERRAMENTAS, PORTAL, INIMIGOS, CHEFES, ARMAS, CONJUNTOS, BRASA, colhido, pocao } from "./sprites.js";
 import { Inicio, Controles, Comecando, Tempo, Cooperativo, Dicas } from "./paginas/Geral.jsx";
 import { Vila, Moradores } from "./paginas/Vila.jsx";
-import { Fazenda, Plantas, Pocoes } from "./paginas/Fazenda.jsx";
+import { Fazenda, Plantas, Pocoes, Refeicoes } from "./paginas/Fazenda.jsx";
 import { Arena, Inimigos, Chefes } from "./paginas/Arena.jsx";
 import { Armas, RaridadePagina, Armaduras } from "./paginas/Equipamento.jsx";
 import { Progresso } from "./paginas/Progresso.jsx";
@@ -21,6 +21,7 @@ const PAGINAS = [
   { id: "fazenda", titulo: "Fazenda", grupo: "Fazenda", icone: FERRAMENTAS.regador, Pagina: Fazenda, busca: "ferramentas enxada regador machadinha picareta entulho baú lago plantar" },
   { id: "plantas", titulo: "Plantas", grupo: "Fazenda", icone: colhido([2, 6]), Pagina: Plantas, busca: "sementes cenoura batata morango tomate milho melancia abóbora uva berinjela beterraba girassol couve" },
   { id: "pocoes", titulo: "Poções", grupo: "Fazenda", icone: pocao([2, 2]), Pagina: Pocoes, busca: "caldeirão receitas cura força velocidade pedra vampírica fôlego" },
+  { id: "refeicoes", titulo: "Refeições", grupo: "Fazenda", icone: colhido([20, 2]), Pagina: Refeicoes, busca: "caio cozinhar prato bônus vender colheita lia brasas sopa torta banquete" },
   { id: "arena", titulo: "Arena", grupo: "Arena", icone: PORTAL, Pagina: Arena, busca: "ondas portal janela totens saque eventos mímico ouro morte" },
   { id: "inimigos", titulo: "Inimigos", grupo: "Arena", icone: INIMIGOS.slime, Pagina: Inimigos, busca: "slime morcego vespa cogumelo flor caranguejo gremlin falcão esqueleto mutante" },
   { id: "chefes", titulo: "Chefes", grupo: "Arena", icone: CHEFES.dragao_vermelho, Pagina: Chefes, busca: "minotauro medusa goblin maromba cogumelo ancião dragão vermelho" },
