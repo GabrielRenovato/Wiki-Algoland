@@ -1,0 +1,23 @@
+{
+  "name": "algoland-wiki",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "sprites": "node scripts/copiar-sprites.mjs",
+    "predev": "node scripts/copiar-sprites.mjs",
+    "dev": "vite",
+    "prebuild": "node scripts/copiar-sprites.mjs",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.10"
+  }
+}
