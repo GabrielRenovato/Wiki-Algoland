@@ -4,6 +4,33 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "0.4",
+    data: "17 de outubro de 2026",
+    resumo: "A fazenda ganha energia, a pesca pede a vara na mão e o controle passa a fazer tudo que o mouse fazia na mochila.",
+    novo: [
+      <><b>Energia da fazenda.</b> Uma barra verde vertical no canto da tela mostra a energia de cada jogador. Enxada gasta 3, machadinha e picareta 4, regador 2; colher, plantar e encher o regador não gastam. Sem energia a ferramenta não funciona. Dormir (ou desmaiar) recupera tudo. No prólogo nada gasta.</>,
+      <><b>Barra de itens na praia.</b> A barra de baixo também aparece na praia e na palafita, para escolher a vara de pesca.</>,
+      <><b>Vara na mão.</b> Para pescar é preciso equipar a vara na barra de baixo (tecla da casa, RB/LB, clique ou toque). Escolher a arma de novo guarda a vara. Sem ela, o jogo avisa.</>,
+      <><b>Pescar de qualquer ponto do cais.</b> A cerca continua lá, mas toda borda do cais voltada para o mar vale como ponto de pesca.</>,
+      <><b>Salvar no menu de pausa.</b> O botão SALVAR grava o jogo sem sair, inclusive os dois jogadores no cooperativo.</>,
+      <><b>Fileiras da barra.</b> Como no Stardew, a barra mostra uma fileira da mochila por vez. Troque com <b>X</b> no teclado, <b>L3</b> no controle ou o botão numerado ao lado da barra no celular.</>,
+      <><b>Mover itens no controle.</b> <b>Y</b> pega o item da casa em foco e <b>Y</b> em outra casa solta ali (troca de lugar, como no arrastar). A casa do item fica com moldura azul.</>,
+      <><b>Setinhas de "tem mais".</b> As listas sem barra de rolagem mostram uma seta para cima e para baixo quando há mais conteúdo.</>,
+      <><b>Ícone novo</b> do jogo no Windows, no Linux e no Android.</>,
+    ],
+    melhorou: [
+      <><b>Diálogos no mesmo visual.</b> O prólogo, a Dona Rosa na enfermaria, a aula da arena e as lojas fechadas agora usam a caixa de pergaminho das conversas da vila, com o busto de quem fala e o texto aparecendo letra a letra.</>,
+      <><b>Telas de dormir e de fim de partida</b> com a moldura de pixel art do resto do jogo.</>,
+      <><b>Bigorna no controle.</b> Depois da última aba, <b>RB</b> passa para a mochila e <b>LB</b> volta, para escolher a arma que vai evoluir.</>,
+    ],
+    corrigido: [
+      <>Os <b>itens sumiam</b> ao fechar e reabrir o jogo: a vara de pesca fazia o jogo achar que o inventário já estava carregado e o salvamento seguinte apagava o resto. Se isso aconteceu com você, o save do prólogo pode ser recuperado.</>,
+      <>Save antigo ou gravado no meio do prólogo que ficava sem <b>espada ou escudo</b> agora ganha os básicos na mão.</>,
+      <>No <b>cooperativo</b>, quando os dois abriam a mochila ao mesmo tempo o jogador 1 travava e só o 2 mexia. Cada um tem agora o próprio foco.</>,
+      <>No prólogo, a <b>cenoura de exemplo</b> podia ficar escondida atrás de um arbusto.</>,
+    ],
+  },
+  {
     versao: "0.3",
     data: "17 de outubro de 2026",
     resumo: "A pesca chega ao jogo, a vara vira item da mochila e a vila fica mais fácil de percorrer.",
