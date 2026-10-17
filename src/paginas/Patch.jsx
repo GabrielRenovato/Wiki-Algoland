@@ -4,6 +4,31 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "0.6",
+    data: "17 de outubro de 2026",
+    resumo: "A barra de itens aparece em qualquer mapa e cada jogador escolhe o tamanho da interface.",
+    novo: [
+      <><b>Tamanho da interface.</b> Em Opções, a seção INTERFACE troca o tamanho do HUD e dos menus entre 75%, 100%, 125% e 150%. A mudança vale na hora, não mexe no zoom da câmera, e os cliques e toques acompanham o tamanho novo. No cooperativo cada jogador tem o próprio ajuste.</>,
+    ],
+    melhorou: [
+      <><b>Barra de itens em todos os mapas.</b> Ela aparecia só na fazenda, na pesca e na arena. Agora também está na cidade, nas casas, na praia e na palafita, inclusive quando os jogadores trocam de ambiente no cooperativo. No celular a barra ganha páginas quando não cabe tudo.</>,
+      <><b>Menus e barra de itens ampliados.</b> Com a interface maior, os menus e a barra se reorganizam para continuar cabendo na tela. No celular a barra usa mais linhas para deixar livres os comandos dos polegares.</>,
+    ],
+  },
+  {
+    versao: "0.5",
+    data: "17 de outubro de 2026",
+    resumo: "O HUD ganha uma barra de energia no padrão das outras, um ícone novo para a estamina e setas fáceis de tocar nas conversas.",
+    novo: [
+      <><b>Ícone de corrida na estamina.</b> O raio saiu e entrou um personagem correndo, em 12x12 pixels. Continua amarelo e fica vermelho quando falta fôlego. Vale no PC e no celular.</>,
+    ],
+    melhorou: [
+      <><b>Barra de energia no visual da vida e da estamina.</b> A energia da fazenda usa agora as mesmas bordas, pontas e brilho das outras barras, em verde, e fica vermelha quando está baixa. No PC fica no canto inferior direito.</>,
+      <><b>Energia visível no celular.</b> Antes a barra ficava escondida na área do joystick. Agora aparece logo abaixo da vida e da estamina, longe do joystick e da barra de itens.</>,
+      <><b>Setas de rolagem nas conversas.</b> Nas opções de resposta do diálogo com os moradores, as setas ficaram maiores e com área de toque de 44x32, fáceis de acertar no celular.</>,
+    ],
+  },
+  {
     versao: "0.4",
     data: "17 de outubro de 2026",
     resumo: "A fazenda ganha energia, a pesca pede a vara na mão e o controle passa a fazer tudo que o mouse fazia na mochila.",
