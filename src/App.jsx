@@ -8,11 +8,13 @@ import { Arena, Inimigos, Chefes } from "./paginas/Arena.jsx";
 import { Armas, RaridadePagina, Armaduras } from "./paginas/Equipamento.jsx";
 import { Progresso } from "./paginas/Progresso.jsx";
 import { Download } from "./paginas/Download.jsx";
+import { Patch } from "./paginas/Patch.jsx";
 
 // Páginas da wiki: id (vai na URL), título, grupo do menu, ícone e palavras para a busca
 const PAGINAS = [
   { id: "inicio", titulo: "Início", grupo: "Comece aqui", icone: HEROI, Pagina: Inicio, busca: "visão geral ciclo jogo" },
   { id: "download", titulo: "Baixar o jogo", grupo: "Comece aqui", icone: PORTAL, Pagina: Download, busca: "download baixar instalar windows linux android apk exe" },
+  { id: "patch", titulo: "Patch de atualizações", grupo: "Comece aqui", icone: BRASA, Pagina: Patch, busca: "patch novidades atualização versão changelog notas o que mudou correções pesca vara" },
   { id: "comecando", titulo: "Primeiros passos", grupo: "Comece aqui", icone: MORADORES.bento, Pagina: Comecando, busca: "prólogo tutorial novo jogo personagem criação" },
   { id: "controles", titulo: "Controles", grupo: "Comece aqui", icone: FERRAMENTAS.enxada, Pagina: Controles, busca: "teclas teclado controle xbox toque celular android botões" },
   { id: "vila", titulo: "Vila das Flores", grupo: "Mundo", icone: CASAS.venda, Pagina: Vila, busca: "cidade casas lojas mural pedidos missões festa" },

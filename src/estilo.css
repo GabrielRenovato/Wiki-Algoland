@@ -445,3 +445,6 @@ blockquote { margin: 0 0 10px; padding: 8px 14px; border-left: 4px solid var(--b
   .lado-a-lado { flex-direction: column; align-items: flex-start; }
   .planta-palco .sprite { transform: scale(0.85); }
 }
+
+/* Patch de atualizações: subtítulos Novo / Melhorias / Correções de cada versão */
+.patch-titulo { margin: 18px 0 4px; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--destaque); }
