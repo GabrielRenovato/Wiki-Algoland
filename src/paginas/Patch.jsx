@@ -4,6 +4,23 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "0.7",
+    data: "19 de outubro de 2026",
+    resumo: "A Medusa ganha arte nova, o Orion aparece depois do andar e a bigorna evolui as ferramentas da fazenda.",
+    novo: [
+      <><b>Orion.</b> Depois de vencer o andar ele aparece na vila. A conversa abre as melhorias e o avanço, e ele ganhou a base visual dos moradores, cabelo grisalho e cajado.</>,
+      <><b>Ferramentas na bigorna.</b> A tela agora tem as categorias FABRICAR e FERRAMENTAS. Enxada, regador, machadinha e picareta evoluem por materiais físicos nos níveis madeira, reforçada e ferro. Não há receitas para ferramentas, e a vara de pesca continua com o Nilo.</>,
+    ],
+    melhorou: [
+      <><b>Medusa redesenhada.</b> Quadros nativos de 128 px, sem serrilhado e com a silhueta limpa. O golpe especial tem runas e impacto desenhados por shader.</>,
+      <><b>Menus no controle.</b> A seleção do menu navega direito com o controle.</>,
+    ],
+    corrigido: [
+      <>O <b>F do mercante</b> aparecia sem cor, escuro sobre o círculo escuro. Agora é amarelo, como as outras dicas de tecla.</>,
+      <>Itens físicos do comércio eram consumidos e devolvidos de forma errada ao comprar e vender.</>,
+    ],
+  },
+  {
     versao: "0.6",
     data: "17 de outubro de 2026",
     resumo: "A barra de itens aparece em qualquer mapa e cada jogador escolhe o tamanho da interface.",
