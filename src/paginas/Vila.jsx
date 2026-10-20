@@ -18,7 +18,7 @@ export function Vila() {
       <Titulo sub="O centro do jogo: lojas, moradores, pedidos e o portal da arena.">Vila das Flores</Titulo>
       <Secao>
         <p>
-          A vila é compacta, com seis construções em volta da praça, um riacho com ponte, um laguinho e uma horta. A
+          A vila tem construções em volta da praça, um riacho com ponte, um laguinho e uma horta. Depois da ponte, a leste, fica a casa e carpintaria da família do Osvaldo. A
           trilha <b>oeste</b> leva à <Link para="fazenda">fazenda</Link>. O <b>portal</b> leva à <Link para="arena">arena</Link>.
           Use <b>F</b> (ou A no controle) para abrir portas e conversar.
         </p>
@@ -38,6 +38,13 @@ export function Vila() {
           Os interiores são divididos em cômodos, como no Stardew Valley. Dá para sentar nas cadeiras e bancos, e os
           moradores também sentam virados para a mesa mais próxima.
         </Caixa>
+      </Secao>
+      <Secao titulo="Carpintaria e família do Osvaldo">
+        <p><b>Osvaldo</b> recebe encomendas das 8h às 17h no balcão da oficina, depois da ponte a leste da praça.
+          Ali você constrói e amplia o <Link para="fazenda">galinheiro</Link> e abre a loja de animais,
+          com galinhas e galos por 25 Brasas.</p>
+        <p>A casa também é o lar de <b>Helena</b>, que gosta de bordar e contar histórias, e de <b>Clara</b>,
+          artesã que acompanha a mãe nos passeios. As conversas e as histórias mudam conforme a amizade.</p>
       </Secao>
       <Secao titulo="Mural de pedidos">
         <p>

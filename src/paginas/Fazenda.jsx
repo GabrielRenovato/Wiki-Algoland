@@ -39,13 +39,35 @@ export function Fazenda() {
           <Ficha sprite={FERRAMENTAS.picareta} escala={4} nome="Picareta">
             <p>Quebra as pedras da pedreira e as que nascem no meio da horta.</p>
           </Ficha>
-          <Ficha sprite={colhido([2, 6])} escala={4} nome="Mão (colher)">
+          <Ficha sprite={colhido([2, 6])} escala={4} nome="Colher">
             <p>Colhe a planta madura. Atalho: <b>R</b> ou <b>Y</b> no controle.</p>
           </Ficha>
         </Grade>
         <Caixa tipo="nota" titulo="Kit inicial">
-          Espada e escudo na mão; enxada, regador e mão na primeira linha da mochila; a lança na segunda. Se você cair
-          na arena, as ferramentas voltam com o kit e as sementes ficam.
+          O kit inicial inclui espada, escudo, enxada, regador, machadinha e picareta. Colher é um comando próprio,
+          sem ocupar uma casa da mochila. A espada também pode ser selecionada na fazenda para roçar o mato e obter feno.
+        </Caixa>
+      </Secao>
+
+      <Secao titulo="Galinheiro e animais" id="galinheiro">
+        <p>Na <Link para="vila">carpintaria do Osvaldo</Link>, depois da ponte a leste da vila,
+          encomende o abrigo ou uma ampliação. O atendimento funciona das <b>8h às 17h</b>.</p>
+        <Tabela cabecalho={["Nível", "Capacidade", "Materiais", "Prazo"]} linhas={[
+          ["1", "4 aves", "12 madeiras + 8 pedras", "2 dias"],
+          ["2", "8 aves", "24 madeiras + 16 pedras + 4 ferros", "3 dias"],
+          ["3", "12 aves", "40 madeiras + 24 pedras + 8 ferros", "4 dias"],
+        ]} />
+        <Passos itens={[
+          <>A primeira construção chega com <b>duas galinhas e um galo</b>. O comedouro começa vazio.</>,
+          <>Corte mato com a <b>espada</b> para ganhar feno, ou prepare <b>14 porções com 2 fibras</b> no depósito do galinheiro.</>,
+          <>Selecione o feno na barra, aproxime-se do comedouro e use o botão de ataque/usar. Cada uso coloca uma porção.</>,
+          <>Cada ave alimentada consome uma porção por dia. Galinhas adultas alimentadas botam ovos; galos não botam.</>,
+          <>Com um galo adulto, coloque um ovo no ninho de incubação. O pintinho nasce em <b>3 dias</b>, precisa de uma vaga e amadurece após <b>5 dias</b>.</>,
+        ]} />
+        <Caixa tipo="nota" titulo="Loja e cuidados">
+          O catálogo do Osvaldo mostra a imagem e o preço: <b>25 Brasas por galinha ou galo</b>.
+          Vagas de incubação entram na lotação. Os cuidados, ovos, carinho e portinha são feitos diretamente no cenário.
+          Ficar sem feno pausa a produção, sem matar as aves nem retirar o vínculo.
         </Caixa>
       </Secao>
 

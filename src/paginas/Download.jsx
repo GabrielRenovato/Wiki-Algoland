@@ -12,18 +12,18 @@ export const BAIXAR = {
 };
 
 const PLATAFORMAS = [
-  { id: "windows", nome: "Windows", arquivo: "Algoland-windows.zip", tamanho: "166 MB",
+  { id: "windows", nome: "Windows", arquivo: "Algoland-windows.zip", tamanho: "173 MB",
     passos: ["Baixe e extraia o .zip.", "Abra o Algoland.exe.", "Se o Windows avisar \"aplicativo não reconhecido\", clique em Mais informações → Executar assim mesmo."] },
-  { id: "linux", nome: "Linux", arquivo: "Algoland-linux.zip", tamanho: "156 MB",
+  { id: "linux", nome: "Linux", arquivo: "Algoland-linux.zip", tamanho: "163 MB",
     passos: ["Baixe e extraia o .zip.", "Dê permissão de execução: chmod +x Algoland.x86_64", "Rode ./Algoland.x86_64"] },
-  { id: "android", nome: "Android", arquivo: "Algoland-android.apk", tamanho: "173 MB",
+  { id: "android", nome: "Android", arquivo: "Algoland-android.apk", tamanho: "180 MB",
     passos: ["Baixe o .apk no celular.", "Permita instalar de fontes desconhecidas quando o Android pedir.", "Abra o AlgoLand: os controles de toque aparecem sozinhos."] },
 ];
 
 export function Download() {
   return (
     <>
-      <Titulo sub="Versão de teste para Windows, Linux e Android.">Baixar o jogo</Titulo>
+      <Titulo sub="v0.8 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
       <Secao>
         <div className="downloads">
           {PLATAFORMAS.map((p) => (

@@ -1,5 +1,5 @@
 import Sprite from "../componentes/Sprite.jsx";
-import { Titulo, Secao, Caixa, Grade, Tabela, Link, Ouro, Raridade } from "../componentes/ui.jsx";
+import { Titulo, Secao, Caixa, Grade, Tabela, Link, Ouro, Raridade, Passos } from "../componentes/ui.jsx";
 import { ARMAS as SPR_ARMAS, CONJUNTOS as SPR_CONJ, MORADORES as SPR } from "../sprites.js";
 import { ARMAS, ESCUDO, BIGORNA, ENCANTAMENTOS, RARIDADES, AFIXOS, CONJUNTOS, ASCENSAO } from "../dados.js";
 
@@ -9,9 +9,9 @@ export function Armas() {
       <Titulo sub="Espadas, maça, machado, lança, arcos e o escudo; bigorna e encantamentos.">Armas e escudo</Titulo>
       <Secao>
         <p>
-          Você começa com <b>espada e escudo</b> na mão e a <b>lança</b> na mochila. As outras armas são liberadas por
-          desafios permanentes: depois de liberada, cada partida ela vem comum e no nível 1. Troque de arma com
-          <b> Z</b> (RB no controle).
+          Você começa com <b>espada e escudo</b>. Encontre receitas na fenda, use-as na mochila e
+          encomende os outros equipamentos com <b>Ivo</b>. Os materiais são itens físicos da mochila.
+          Troque de arma com <b>Z</b> (RB no controle).
         </p>
       </Secao>
       <Secao titulo="Arsenal">
@@ -41,6 +41,16 @@ export function Armas() {
           O arco curto atira rápido, o curvo bate mais forte e o longo dispara <b>3 flechas</b> em leque, mas é o mais
           lento. Com a força inicial, o dano por segundo no nível 1 fica perto de 30, 40 e 63 (se as 3 acertarem).
         </Caixa>
+      </Secao>
+
+      <Secao titulo="Fabricação com Ivo">
+        <Passos itens={[
+          <>Encontre a receita na fenda e use-a na mochila para aprender o modelo.</>,
+          <>Leve os materiais pedidos ao balcão de Ivo e escolha <b>ENCOMENDAR</b>.</>,
+          <>Espere o prazo no calendário do jogo: as receitas levam de <b>1 a 3 dias</b>. Avançar andares não reduz a espera.</>,
+          <>Volte para <b>RETIRAR ENCOMENDA</b> quando o pedido estiver pronto.</>,
+        ]} />
+        <p>Há 24 receitas de equipamentos. Os conjuntos têm quatro peças independentes; cada peça precisa ser fabricada.</p>
       </Secao>
 
       <Secao titulo="Bigorna">

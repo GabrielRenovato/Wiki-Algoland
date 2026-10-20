@@ -4,6 +4,33 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "0.8",
+    data: "20 de outubro de 2026",
+    resumo: "Nova interface, trilhas e ambientes sonoros, fenda por andares, fabricação de equipamentos e criação de galinhas.",
+    novo: [
+      <><b>Arena transformada em fenda por andares.</b> Agora você explora mapas com patrulhas, grupos, elites e um guardião por andar. A caçada pede parte dos pontos disponíveis, sem exigir limpar todos os becos. Depois do mapa 11, o circuito repete os mapas 2–11 com dificuldade crescente. Orion oferece melhorias e avanço depois da vitória.</>,
+      <><b>Fabricação de equipamentos.</b> Ivo trabalha com receitas, materiais físicos da mochila e prazo no calendário. São 24 receitas de equipamentos, além dos conjuntos com quatro peças independentes, refino e ascensão de raridade.</>,
+      <><b>Músicas e sons ambientes.</b> Vila, fazenda, praia, fenda e guardião têm trilhas próprias, com transições entre temas e ambientes de bosque, mar e caverna. Música, efeitos e ambiente têm controles de volume separados.</>,
+      <><b>Interface renovada.</b> Menus de título e pausa, diário da jornada, barra de itens em todos os mapas e serviços nos balcões. A escala pode ser ajustada entre 75%, 100%, 125% e 150%, com preferência individual no cooperativo.</>,
+      <><b>Osvaldo e sua família.</b> A casa e oficina ficam depois da ponte, a leste da vila. Conheça Osvaldo, Helena e Clara, com rotinas e histórias próprias.</>,
+      <><b>Galinheiro ampliável.</b> Encomende a construção no balcão do Osvaldo. São três níveis, com espaço para 4, 8 e 12 aves, materiais físicos e prazo de obra.</>,
+      <><b>Criação de aves.</b> Cuide das galinhas e dos galos diretamente no galinheiro: alimentação, carinho, coleta de ovos, incubação e portinha para os passeios.</>,
+      <><b>Loja de animais.</b> O catálogo mostra a imagem da galinha e do galo, preço, saldo e lotação. Cada ave custa 25 Brasas.</>,
+      <><b>Espada para roçar.</b> Selecione a espada na barra da fazenda e corte o mato para obter feno. A enxada continua retirando mato para obter fibra.</>,
+    ],
+    melhorou: [
+      <><b>Continuar a partida.</b> Dia e horário são restaurados com a precisão do relógio interno, junto da posição, direção, vida e fôlego, inclusive no cooperativo com jogadores em locais diferentes.</>,
+      <><b>Conjuntos mais leves.</b> O reaproveitamento de texturas reduz as travadas ao equipar conjuntos e ao ocultar cabelos sob elmos fechados.</>,
+      <><b>Interface no celular.</b> Vida e calendário se acomodam em telas estreitas, preservando as margens e os comandos de toque.</>,
+    ],
+    corrigido: [
+      <>O feno agora fica dentro do comedouro e aparece diretamente, sem um objeto voando.</>,
+      <>As colisões frontais do galinheiro impedem andar sobre a parede e as pedras, mantendo o vão da porta livre.</>,
+      <>Conversar com Helena, Clara e Osvaldo com amizade avançada não falha ao liberar histórias.</>,
+      <>Bancos de equipamentos e áudio são liberados corretamente no encerramento; avisos dos scripts foram revisados.</>,
+    ],
+  },
+  {
     versao: "0.7",
     data: "19 de outubro de 2026",
     resumo: "A Medusa ganha arte nova, o Orion aparece depois do andar e a bigorna evolui as ferramentas da fazenda.",
