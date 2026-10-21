@@ -16,6 +16,9 @@ subprocess.run([sys.executable, str(jogo / 'ferramentas/personagem/preparar_web_
 # O compilador compartilhado recorta as peças existentes, sem redesenhar os conjuntos.
 for manifesto in ['modelos/carrasco.json', 'em_preparacao/cavaleiro_rubro/manifesto.json', 'em_preparacao/cavalheiro/manifesto.json']:
     subprocess.run(['flatpak', 'run', 'org.godotengine.Godot', '--headless', '--path', str(jogo), '--script', 'res://ferramentas/armaduras/gerar_conjunto.gd', '--', 'res://ferramentas/armaduras/' + manifesto, '--somente-web'], check=True)
+fachadas = jogo / 'ferramentas/cidade/preparar_exteriores_nitidos.gd'
+if fachadas.is_file():
+    subprocess.run(['flatpak', 'run', 'org.godotengine.Godot', '--headless', '--path', str(jogo), '--script', 'res://ferramentas/cidade/preparar_exteriores_nitidos.gd'], check=True)
 with tempfile.TemporaryDirectory(prefix='algoland-export-web-') as temporario:
     projeto = pathlib.Path(temporario)
     for item in jogo.iterdir():
