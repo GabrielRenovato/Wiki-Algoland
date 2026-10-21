@@ -70,31 +70,33 @@ export const CASAS = {
 };
 export const PORTAL = grade("vila/portal_arena.png", [432, 64], [48, 64], 0, intervalo(0, 8), 8);
 
-// --- Herói e armaduras (Mana Seed: folha 8x8 de 64 px) -----------------------------------------------------------
-// Linha 4 da página 1 = andando para baixo (quadros 0 a 5)
+// --- Herói Raven: camadas de 320 x 9600 (30 ações de 320 px); "andar" é a primeira, linha 0 = para baixo ---------
+const RAVEN = [320, 9600];
+export const HEROI = grade(["heroi/corpo.png", "heroi/calca.png", "heroi/botas.png", "heroi/camisa.png", "heroi/cabelo.png"],
+  RAVEN, [80, 80], 0, intervalo(0, 3), 6, [16, 8, 48, 56]);
+
+// --- Armaduras (páginas Mana Seed: folha 8x8 de 64 px). Linha 4 da página 1 = andando para baixo (quadros 0 a 5)
 const PAGINA = [512, 512];
 const MIOLO_PERSONAGEM = [16, 12, 32, 44];
 const andando = (src) => grade(src, PAGINA, [64, 64], 4, intervalo(0, 5), 8, MIOLO_PERSONAGEM);
-export const HEROI = andando(["heroi/corpo.png", "heroi/roupa.png", "heroi/cabelo.png"]);
-// As folhas de conjunto não trazem a cabeça: no jogo elas ficam sobre o corpo do personagem
 export const CONJUNTOS = {
-  carrasco: andando(["heroi/corpo.png", "conjuntos/carrasco.png"]),
-  cavaleiro_rubro: andando(["heroi/corpo.png", "conjuntos/cavaleiro_rubro.png"]),
-  cavalheiro: andando(["heroi/corpo.png", "conjuntos/cavalheiro.png"]),
+  carrasco: andando(["conjuntos/corpo_mana.png", "conjuntos/carrasco.png"]),
+  cavaleiro_rubro: andando(["conjuntos/corpo_mana.png", "conjuntos/cavaleiro_rubro.png"]),
+  cavalheiro: andando(["conjuntos/corpo_mana.png", "conjuntos/cavalheiro.png"]),
 };
 
-// --- Armas: o ícone do jogo é o quadro 42 da folha (coluna 2, linha 5), recortado no que tem pixel ---------------
-const quadroArma = (id, q = 42) => recorte(`armas/${id}.png`, PAGINA, (q % 8) * 64 + 16, Math.floor(q / 8) * 64 + 16, 32, 32);
+// --- Armas: ícones do jogo (um quadro por arquivo) ------------------------------------------------------------------
+const icone = (id, [l, a]) => recorte(`armas/${id}.png`, [l, a], 0, 0, l, a);
 export const ARMAS = {
-  espada_basica: quadroArma("espada_basica"),
-  espada_gemea: quadroArma("espada_gemea"),
-  machado: quadroArma("machado"),
-  maca: quadroArma("maca"),
-  lanca_basica: quadroArma("lanca_basica", 13),
-  escudo_basico: quadroArma("escudo_basico", 32),
-  arco_curto: recorte("armas/arco_curto.png", [13, 13], 0, 0, 13, 13),
-  arco_curvo: recorte("armas/arco_curvo.png", [13, 13], 0, 0, 13, 13),
-  arco_longo: recorte("armas/arco_longo.png", [14, 14], 0, 0, 14, 14),
+  espada_basica: icone("espada_basica", [10, 19]),
+  espada_gemea: icone("espada_gemea", [9, 17]),
+  machado: icone("machado", [12, 16]),
+  maca: icone("maca", [9, 18]),
+  lanca_basica: icone("lanca_basica", [51, 10]),
+  escudo_basico: icone("escudo_basico", [17, 18]),
+  arco_curto: icone("arco_curto", [18, 10]),
+  arco_curvo: icone("arco_curvo", [18, 10]),
+  arco_longo: icone("arco_longo", [18, 10]),
 };
 
 // --- Fazenda -----------------------------------------------------------------------------------------------------

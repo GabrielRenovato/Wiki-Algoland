@@ -18,7 +18,7 @@ export function Armas() {
         <Grade min={250}>
           {ARMAS.map((a) => (
             <article key={a.id} className="ficha arma">
-              <div className="ficha-palco"><Sprite s={SPR_ARMAS[a.id]} escala={a.id.startsWith("arco") ? 5 : 3.5} parado titulo={a.nome} /></div>
+              <div className="ficha-palco"><Sprite s={SPR_ARMAS[a.id]} escala={a.id.startsWith("lanca") ? 3.5 : 6} parado titulo={a.nome} /></div>
               <div className="ficha-texto">
                 <h3>{a.nome}</h3>
                 <p className="etiqueta">{a.tipo}</p>
@@ -28,7 +28,7 @@ export function Armas() {
             </article>
           ))}
           <article className="ficha arma">
-            <div className="ficha-palco"><Sprite s={SPR_ARMAS.escudo_basico} escala={3.5} parado titulo="Escudo" /></div>
+            <div className="ficha-palco"><Sprite s={SPR_ARMAS.escudo_basico} escala={6} parado titulo="Escudo" /></div>
             <div className="ficha-texto">
               <h3>Escudo Básico</h3>
               <p className="etiqueta">Defesa (Ctrl / LT)</p>
