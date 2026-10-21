@@ -34,3 +34,26 @@ redirecionamento a configurar. Sem a pasta do jogo ao lado (caso do Netlify), o 
 - **Arrastar e soltar:** rode `npm run build` aqui e solte a pasta `dist/` em app.netlify.com/drop.
 - **Pelo Git:** em app.netlify.com, "Add new site" > "Import an existing project" > GitHub > `Wiki-Algoland`.
   O `netlify.toml` já preenche o build; não mude o diretório base (deixe vazio) nem a pasta de publicação (`dist`).
+
+## Versão jogável no navegador
+
+A rota `#/jogar` incorpora a exportação Godot de `public/jogar/`. O botão inicia o download (cerca de 170 MB); também é possível abrir o jogo em outra aba. A partida fica no armazenamento do navegador, separada da instalação nativa. Use HTTPS na publicação, como o endereço padrão do Netlify, ou localhost durante o desenvolvimento.
+
+Os arquivos exportados ficam versionados: `npm run build` e a publicação no Netlify não precisam instalar Godot nem acessar o repositório do jogo. Não há etapa de deploy nestes scripts.
+
+Para atualizar a versão a partir do jogo em uma pasta vizinha, com Python/Pillow, Godot 4.7.2 e seus templates Web instalados via Flatpak:
+
+```bash
+python3 scripts/exportar-jogo-web.py ../AlgoLand /tmp/algoland-web-export
+npm run build
+```
+
+O exportador usa um projeto temporário e o preset em `scripts/web/export_presets.cfg`; não modifica os presets nem a partida do jogo original. O compilador compartilhado do jogo prepara também os recortes das armaduras para WebGL. A exportação usa renderização Compatibility e uma única thread. O pacote é dividido em partes de 32 MiB para respeitar o limite de arquivos do GitHub; o carregador o monta antes de iniciar o Godot.
+
+Se a exportação Web já estiver pronta em outro ambiente, com o executável chamado `index`:
+
+```bash
+node scripts/preparar-jogo-web.mjs /caminho/da/exportacao
+```
+
+O carregador e o HTML de origem ficam em `scripts/web/`. Após alterá-los, execute novamente o empacotador. Para conferir o site final localmente, use `npm run preview` depois do build. Valide o carregamento, uma nova partida, o retorno ao save e a apresentação em computador e celular antes de enviar uma atualização.
