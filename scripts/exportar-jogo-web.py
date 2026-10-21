@@ -19,6 +19,9 @@ for manifesto in ['modelos/carrasco.json', 'em_preparacao/cavaleiro_rubro/manife
 fachadas = jogo / 'ferramentas/cidade/preparar_exteriores_nitidos.gd'
 if fachadas.is_file():
     subprocess.run(['flatpak', 'run', 'org.godotengine.Godot', '--headless', '--path', str(jogo), '--script', 'res://ferramentas/cidade/preparar_exteriores_nitidos.gd'], check=True)
+enfeites = jogo / 'ferramentas/cidade/preparar_enfeites_detalhados.gd'
+if enfeites.is_file():
+    subprocess.run(['flatpak', 'run', 'org.godotengine.Godot', '--headless', '--path', str(jogo), '--script', 'res://ferramentas/cidade/preparar_enfeites_detalhados.gd'], check=True)
 with tempfile.TemporaryDirectory(prefix='algoland-export-web-') as temporario:
     projeto = pathlib.Path(temporario)
     for item in jogo.iterdir():
