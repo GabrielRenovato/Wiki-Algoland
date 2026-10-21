@@ -22,7 +22,7 @@ for (let inicio = 0; inicio < pacote.length; inicio += 32 * 1024 * 1024) {
 for (const arquivo of ['index.js', 'index.wasm', 'index.audio.worklet.js', 'index.audio.position.worklet.js']) {
   await copyFile(resolve(origem, arquivo), resolve(destino, arquivo));
 }
-for (const arquivo of ['index.html', 'carregar.js']) {
+for (const arquivo of ['index.html', 'carregar.js', 'fontes-LICENSE.txt']) {
   await copyFile(resolve(raiz, 'scripts/web', arquivo), resolve(destino, arquivo));
 }
 const wasm = await readFile(resolve(destino, 'index.wasm'));
