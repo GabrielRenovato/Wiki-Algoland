@@ -82,7 +82,7 @@ export function Controles() {
     ["Atacar (ou usar a ferramenta na fazenda)", <><Tecla>Espaço</Tecla> ou clique</>, "X ou RT"],
     ["Interagir: portas, conversas, portal, baú", <Tecla>F</Tecla>, "A"],
     ["Esquivar (rolamento)", <Tecla>Shift</Tecla>, "B"],
-    ["Defender (aparar com o escudo)", <Tecla>Ctrl</Tecla>, "LT"],
+    ["Defender (aparar com o escudo)", <><Tecla>C</Tecla> no navegador; <Tecla>Ctrl</Tecla> no jogo instalado; ou botão direito do mouse</>, "LT"],
     ["Beber poção (arena) / colher (fazenda)", <Tecla>R</Tecla>, "Y"],
     ["Trocar a poção do cinto / a ferramenta", <><Tecla>Q</Tecla><Tecla>E</Tecla></>, "LB / RB"],
     ["Trocar de arma", <Tecla>Z</Tecla>, "RB"],
