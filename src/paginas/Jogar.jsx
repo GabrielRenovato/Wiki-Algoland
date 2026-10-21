@@ -25,6 +25,7 @@ export function Jogar() {
     </div>
     <Caixa titulo="Sua partida neste navegador">
       <p>O progresso fica salvo neste navegador e neste dispositivo. Limpar os dados do site apaga a partida; a navegação privada pode não guardá-la.</p>
+      <p>Defesa: <b>C</b> ou botão direito do mouse. Esquiva: <b>Shift</b>.</p>
       <p>Clique dentro do jogo para usar o teclado. Veja os <a href="#/controles">controles</a>. No celular, prefira a tela deitada e abra em outra aba para ter mais espaço.</p>
     </Caixa>
     <p>Prefere instalar? <a href="#/download">Baixe a versão para Windows, Linux ou Android.</a></p>
