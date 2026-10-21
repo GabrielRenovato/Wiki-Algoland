@@ -8,7 +8,7 @@
     "sprites": "node scripts/copiar-sprites.mjs",
     "predev": "node scripts/copiar-sprites.mjs",
     "dev": "vite",
-    "prebuild": "node scripts/copiar-sprites.mjs",
+    "prebuild": "node scripts/copiar-sprites.mjs && node scripts/verificar-sprites.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },

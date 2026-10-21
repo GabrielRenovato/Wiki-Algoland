@@ -1,7 +1,7 @@
 // Copia do jogo só as folhas de sprite que a wiki usa, com nomes curtos, para public/sprites.
 // O caminho do jogo pode ser trocado com a variável ALGOLAND (padrão: ../AlgoLand ao lado deste projeto).
-// As folhas não entram no Git da wiki (ver .gitignore): a arte tem licença própria.
-import { copyFileSync, mkdirSync, existsSync } from "node:fs";
+// As folhas usadas pela Wiki são versionadas para o build sem o jogo ao lado.
+import { copyFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -38,14 +38,14 @@ const ARQUIVOS = {
   "npcs/lia.png": "npcs/cidade/lia.png",
   "npcs/bento.png": "npcs/cidade/bento.png",
   // Construções da vila
-  "vila/venda.png": "cenario/cidade/casas/exterior/venda.png",
-  "vila/enfermaria.png": "cenario/cidade/casas/exterior/enfermaria.png",
-  "vila/sede.png": "cenario/cidade/casas/exterior/sede.png",
-  "vila/pousada.png": "cenario/cidade/casas/exterior/pousada.png",
-  "vila/mistica.png": "cenario/cidade/casas/exterior/mistica.png",
-  "vila/casa_bento.png": "cenario/cidade/casas/exterior/casa_bento.png",
-  "vila/casa_jogador.png": "cenario/cidade/casas/exterior/casa_jogador.png",
-  "vila/portal_arena.png": "cenario/cidade/objetos/portal_arena.png",
+  "vila/venda.png": "cenario/cidade/fachadas_detalhadas/venda/primavera.png",
+  "vila/enfermaria.png": "cenario/cidade/fachadas_detalhadas/enfermaria/primavera.png",
+  "vila/sede.png": "cenario/cidade/fachadas_detalhadas/sede/primavera.png",
+  "vila/pousada.png": "cenario/cidade/fachadas_detalhadas/pousada/primavera.png",
+  "vila/mistica.png": "cenario/cidade/fachadas_detalhadas/mistica/primavera.png",
+  "vila/casa_bento.png": "cenario/cidade/fachadas_detalhadas/casa_bento/primavera.png",
+  "vila/casa_jogador.png": "cenario/cidade/fachadas_detalhadas/casa_jogador/primavera.png",
+  "vila/portal_arena.png": "cenario/cidade/complementos/portal/primavera.png",
   // Herói (camadas da página 1: corpo, roupa, cabelo) e conjuntos de armadura
   // Herói Raven (camadas de 320×9600: 30 ações empilhadas; a ação "andar" ocupa os primeiros 320 px)
   "heroi/corpo.png": "personagens/raven_fantasy/camadas/corpo_0.png",
@@ -53,11 +53,19 @@ const ARQUIVOS = {
   "heroi/botas.png": "personagens/raven_fantasy/camadas/botas.png",
   "heroi/camisa.png": "personagens/raven_fantasy/camadas/camisa_azul.png",
   "heroi/cabelo.png": "personagens/raven_fantasy/camadas/cabelo_1.png",
-  // Conjuntos de armadura (páginas Mana Seed 8x8 de 64 px, sobre o corpo antigo)
-  "conjuntos/corpo_mana.png": "personagens/Body/body_1.png",
-  "conjuntos/carrasco.png": "personagens/conjuntos/carrasco/andar.png",
-  "conjuntos/cavaleiro_rubro.png": "personagens/conjuntos/cavaleiro_rubro/andar.png",
-  "conjuntos/cavalheiro.png": "personagens/conjuntos/cavalheiro/andar.png",
+  // Quatro peças reais sobre o mesmo corpo Raven usado pelo jogador.
+  "conjuntos/carrasco_elmo.png": "personagens/conjuntos/carrasco/raven_elmo.png",
+  "conjuntos/carrasco_peitoral.png": "personagens/conjuntos/carrasco/raven_peitoral.png",
+  "conjuntos/carrasco_luvas.png": "personagens/conjuntos/carrasco/raven_luvas.png",
+  "conjuntos/carrasco_botas.png": "personagens/conjuntos/carrasco/raven_botas.png",
+  "conjuntos/cavaleiro_rubro_elmo.png": "personagens/conjuntos/cavaleiro_rubro/raven_elmo.png",
+  "conjuntos/cavaleiro_rubro_peitoral.png": "personagens/conjuntos/cavaleiro_rubro/raven_peitoral.png",
+  "conjuntos/cavaleiro_rubro_luvas.png": "personagens/conjuntos/cavaleiro_rubro/raven_luvas.png",
+  "conjuntos/cavaleiro_rubro_botas.png": "personagens/conjuntos/cavaleiro_rubro/raven_botas.png",
+  "conjuntos/cavalheiro_elmo.png": "personagens/conjuntos/cavalheiro/raven_elmo.png",
+  "conjuntos/cavalheiro_peitoral.png": "personagens/conjuntos/cavalheiro/raven_peitoral.png",
+  "conjuntos/cavalheiro_luvas.png": "personagens/conjuntos/cavalheiro/raven_luvas.png",
+  "conjuntos/cavalheiro_botas.png": "personagens/conjuntos/cavalheiro/raven_botas.png",
   // Armas: ícones atuais do jogo
   "armas/espada_basica.png": "personagens/raven_fantasy/icones/espada_basica.png",
   "armas/espada_gemea.png": "personagens/raven_fantasy/icones/espada_gemea.png",
@@ -77,6 +85,10 @@ const ARQUIVOS = {
   "ui/brasa.png": "ui/icone_brasa.png",
   "ui/moedas.png": "ui/icons-coin/16x16.png",
 };
+for (const id of ['ivo', 'nilo', 'osvaldo', 'helena', 'clara']) ARQUIVOS[`npcs/${id}.png`] = `npcs/cidade/${id}.png`;
+for (const id of ['forja', 'carpintaria']) ARQUIVOS[`vila/${id}.png`] = `cenario/cidade/fachadas_detalhadas/${id}/primavera.png`;
+ARQUIVOS['vila/palafita.png'] = 'cenario/praia/palafita/exterior.png';
+ARQUIVOS['ui/mapa_mundi.png'] = 'ui/mapa_mundi/algoland.png';
 // Tiras de crescimento das plantas
 const TIRAS = {
   cenoura: "Spring/Carrot.png", batata: "Spring/Potato.png", couve_flor: "Spring/Cauliflower.png",
@@ -97,6 +109,14 @@ if (!existsSync(assets)) {
   console.error(`Pasta do jogo não encontrada: ${assets}\nDefina ALGOLAND=/caminho/do/AlgoLand`);
   process.exit(1);
 }
+const praia = JSON.parse(readFileSync(join(assets, 'pesca/catalogo.json'), 'utf8'));
+for (const [id, peixe] of Object.entries(praia.peixes)) ARQUIVOS[`peixes/${id}.png`] = peixe.icone.replace('res://assets/', '');
+ARQUIVOS['fazenda/ovo.png'] = 'cenario/fazenda/galinheiro/ovo.png';
+ARQUIVOS['fazenda/omelete.png'] = 'cenario/fazenda/galinheiro/omelete.png';
+for (const estacao of ['primavera', 'verao', 'outono', 'inverno']) {
+  ARQUIVOS[`cenarios/vila_${estacao}.png`] = `../arte/previas/nitidez_exteriores/geral-cidade-${estacao}.png`;
+  ARQUIVOS[`cenarios/fazenda_${estacao}.png`] = `../arte/previas/nitidez_exteriores/geral-fazenda-${estacao}.png`;
+}
 let faltando = 0;
 for (const [nome, origem] of Object.entries(ARQUIVOS)) {
   const de = join(assets, origem);
@@ -110,3 +130,5 @@ for (const [nome, origem] of Object.entries(ARQUIVOS)) {
   copyFileSync(de, para);
 }
 console.log(`${Object.keys(ARQUIVOS).length - faltando} sprites copiados para public/sprites (${faltando} faltando)`);
+
+if (faltando) process.exitCode = 1;

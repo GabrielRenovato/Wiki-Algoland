@@ -1,7 +1,7 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Brasas } from "../componentes/ui.jsx";
 import { MORADORES as SPR, BRASA } from "../sprites.js";
-import { MELHORIAS, CUSTOS_MELHORIA, APOIOS } from "../dados.js";
+import { MELHORIAS, CUSTOS_MELHORIA, APOIOS, ARMAS } from "../dados.js";
 
 export function Progresso() {
   return (
@@ -15,9 +15,9 @@ export function Progresso() {
               <b>Brasas</b> são a moeda permanente. O ouro só vale dentro da partida; as Brasas ficam para sempre.
             </p>
             <Tabela cabecalho={["Como ganhar", "Brasas"]} compacta linhas={[
-              ["Cada onda vencida", <Brasas n={2} />],
-              ["Cada chefe derrotado", <Brasas n={15} />],
-              ["Cada estágio bônus (mímicos)", <Brasas n={5} />],
+              ["Cada andar vencido", <Brasas n={2} />],
+              ["Cada guardião derrotado", <Brasas n={15} />],
+              ["Sala bônus concluída (mímicos)", <Brasas n={5} />],
               ["Pedidos do mural", <Brasas n="10 a 25" />],
               ["Colheita vendida à Lia", <Brasas n="3 a 9 cada" />],
               ["Bardo contratado", "+25% no fim da partida"],
@@ -51,17 +51,10 @@ export function Progresso() {
         </Grade>
       </Secao>
 
-      <Secao titulo="Desafios de armas">
-        <p>Marcos permanentes que liberam armas novas para todas as partidas:</p>
-        <Tabela cabecalho={["Desafio", "Meta", "Libera"]} compacta linhas={[
-          ["Primeiros disparos", "Vencer a onda 3", "Arco Curto"],
-          ["Dois gumes", "Vencer a onda 5", "Espada Gêmea"],
-          ["Abrindo caminho", "Vencer a onda 8", "Maça"],
-          ["Quebra-guarda", "Derrotar o chefe da onda 10", "Machado"],
-          ["Mira paciente", "Vencer a onda 15", "Arco Curvo"],
-          ["Três flechas", "Derrotar o chefe da onda 20", "Arco Longo"],
-        ]} />
-        <p>Veja os números de cada uma em <Link para="armas">Armas</Link>.</p>
+      <Secao titulo="Receitas e armas permanentes">
+        <p>Os marcos tornam as receitas elegíveis para cair na fenda. Recolha o pergaminho, use-o na mochila e fabrique com Ivo. Após fabricar, a arma fica liberada para o kit das próximas expedições, em cópia comum de nível 1.</p>
+        <Tabela cabecalho={["Modelo", "Como obter"]} linhas={ARMAS.map(a => [a.nome,a.libera])} />
+        <p>Maça, Arco Curvo e Arco Longo não fazem parte das receitas ativas. <Link para="armas">Confira o catálogo atual.</Link></p>
       </Secao>
 
       <Secao titulo="O que se perde e o que fica">
@@ -69,9 +62,9 @@ export function Progresso() {
           ["Brasas, melhorias e apoios", "Ouro da partida"],
           ["Colheita e poções guardadas", "O prato do Caio (acaba com a partida)"],
           ["Armas liberadas pelos desafios", "Totens comprados"],
-          ["Fazenda, plantas e sementes", "Saque ainda não vendido"],
-          ["Amizades, pedidos e baú", "Moedas de Forja"],
-          ["Recorde e checkpoint", "Equipamento da partida"],
+          ["Fazenda, plantas, sementes, materiais, peixes e produtos", "Drops ainda não recolhidos"],
+          ["Amizades, pedidos, baú e Moedas de Forja", "Melhorias temporárias da expedição"],
+          ["Recorde, checkpoints, receitas e peças de conjunto", "Equipamento temporário, fora dos conjuntos"],
         ]} />
         <Caixa tipo="dica">
           Novo Jogo apaga tudo, inclusive Brasas e amizades. Para recomeçar só a partida, basta cair ou usar o botão CIDADE.

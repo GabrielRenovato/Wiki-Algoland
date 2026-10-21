@@ -19,6 +19,7 @@ export default function Sprite({ s, escala = 2, parado = false, titulo, classNam
   const camadas = (Array.isArray(s.src) ? s.src : [s.src]).map((c) => `url("${import.meta.env.BASE_URL}sprites/${c}")`);
   const [L, A] = s.folha;
   const [l, a] = s.tam;
+  const amostra = escala / (s.resolucao ?? 1);
 
   return (
     <span
@@ -27,12 +28,13 @@ export default function Sprite({ s, escala = 2, parado = false, titulo, classNam
       aria-label={titulo}
       title={titulo}
       style={{
+        imageRendering: s.suave ? "auto" : "pixelated",
         width: l * escala,
         height: a * escala,
         // A primeira camada do CSS fica por cima: inverte para que o array siga de baixo para cima
         backgroundImage: camadas.reverse().join(","),
-        backgroundSize: `${L * escala}px ${A * escala}px`,
-        backgroundPosition: `${-x * escala}px ${-y * escala}px`,
+        backgroundSize: `${L * amostra}px ${A * amostra}px`,
+        backgroundPosition: `${-x * amostra}px ${-y * amostra}px`,
       }}
     />
   );

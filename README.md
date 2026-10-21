@@ -13,6 +13,7 @@ npm run build    # gera dist/ (abre em qualquer pasta, base relativa)
 
 ## Onde mexer
 
+- `src/dados-jogo.json`: catálogo extraído diretamente do código com `scripts/sincronizar-dados.py` (armas, receitas, mapas/guardiões, 48 peixes e dez pratos), com o commit de origem. O extrator usa saves isolados; com `--check`, compara as tabelas sem regravá-las.
 - `src/dados.js`: números do jogo (plantas, poções, armas, chefes...), com o arquivo de origem do código ao lado de cada bloco.
   Se o balanceamento mudar no jogo, atualize aqui.
 - `src/sprites.js`: qual folha, tamanho do quadro e quadros animados de cada sprite.
@@ -21,7 +22,7 @@ npm run build    # gera dist/ (abre em qualquer pasta, base relativa)
 
 ## Licença da arte
 
-Os sprites pertencem aos pacotes usados pelo jogo (Mana Seed, Farm RPG, PixelLab e outros). Só as 64 folhas que a wiki
+Os sprites pertencem aos pacotes usados pelo jogo (Mana Seed, Farm RPG, PixelLab e outros). As folhas e capturas que a wiki
 usa ficam versionadas em `public/sprites`, para o build do Netlify funcionar sem o jogo. A licença do Mana Seed proíbe usar a arte junto com código gerado por IA,
 e esta wiki foi escrita com IA: não publique a wiki com essas folhas antes de resolver isso.
 
@@ -37,18 +38,19 @@ redirecionamento a configurar. Sem a pasta do jogo ao lado (caso do Netlify), o 
 
 ## Versão jogável no navegador
 
-A rota `#/jogar` incorpora a exportação Godot de `public/jogar/`. O botão inicia o download (cerca de 170 MB); também é possível abrir o jogo em outra aba. A partida fica no armazenamento do navegador, separada da instalação nativa. Use HTTPS na publicação, como o endereço padrão do Netlify, ou localhost durante o desenvolvimento.
+A rota `#/jogar` incorpora a exportação Godot de `public/jogar/`. O botão inicia o download (o tamanho é lido do manifesto da exportação); também é possível abrir o jogo em outra aba. A partida fica no armazenamento do navegador, separada da instalação nativa. Use HTTPS na publicação, como o endereço padrão do Netlify, ou localhost durante o desenvolvimento.
 
 Os arquivos exportados ficam versionados: `npm run build` e a publicação no Netlify não precisam instalar Godot nem acessar o repositório do jogo. Não há etapa de deploy nestes scripts.
 
-Para atualizar a versão a partir do jogo em uma pasta vizinha, com Python/Pillow, Godot 4.7.2 e seus templates Web instalados via Flatpak:
+Para atualizar a versão a partir do jogo em uma pasta vizinha, com Python, Godot 4.7.2 e seus templates Web instalados via Flatpak:
 
 ```bash
+python3 scripts/sincronizar-dados.py ../AlgoLand
 python3 scripts/exportar-jogo-web.py ../AlgoLand /tmp/algoland-web-export
 npm run build
 ```
 
-O exportador usa um projeto temporário e o preset em `scripts/web/export_presets.cfg`; não modifica os presets nem a partida do jogo original. O compilador compartilhado do jogo prepara também os recortes das armaduras para WebGL. A exportação usa renderização Compatibility e uma única thread. O pacote é dividido em partes de 32 MiB para respeitar o limite de arquivos do GitHub; o carregador o monta antes de iniciar o Godot.
+O exportador usa um projeto temporário e o preset em `scripts/web/export_presets.cfg`; não modifica os presets nem a partida do jogo original. A exportação usa os recursos já integrados, incluindo os recortes WebGL de personagens e armaduras, sem executar geradores que possam sobrescrever a arte do jogo. A exportação usa renderização Compatibility e uma única thread. O pacote é dividido em partes de 32 MiB para respeitar o limite de arquivos do GitHub; o carregador o monta antes de iniciar o Godot.
 
 Se a exportação Web já estiver pronta em outro ambiente, com o executável chamado `index`:
 
@@ -57,3 +59,11 @@ node scripts/preparar-jogo-web.mjs /caminho/da/exportacao
 ```
 
 O carregador e o HTML de origem ficam em `scripts/web/`. Após alterá-los, execute novamente o empacotador. Para conferir o site final localmente, use `npm run preview` depois do build. Valide o carregamento, uma nova partida, o retorno ao save e a apresentação em computador e celular antes de enviar uma atualização.
+
+O build confere as dimensões reais dos PNGs e o encaixe de cada quadro com `scripts/verificar-sprites.mjs`, incluindo os 48 peixes. Isso detecta folhas diferentes, como a pose estática do Nilo.
+
+## Referência desta atualização
+
+Guias e versão Web sincronizados com o jogo no commit `1b8501943` (21/10/2026): personagens Raven, terrenos e fachadas detalhados e acabamento sazonal da fazenda. O catálogo novo tem cinco armas e 23 receitas de equipamento. Os instaladores disponíveis no GitHub continuam no Release `v0.8`, publicado em 20/10/2026; atualizar o Web não gera novos instaladores.
+
+As páginas de histórico registram o comportamento de cada versão antiga. Os guias atuais usam a fenda por andares, com guardião por mapa, receitas físicas e fabricação por encomenda. A compra de sementes e a venda de peixes ficam com Tomás; refino da vara com Nilo; equipamentos e ferramentas com Ivo.

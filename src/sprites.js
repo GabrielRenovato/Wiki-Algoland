@@ -40,7 +40,7 @@ export const INIMIGOS = {
 // --- Chefes (6 quadros x 4 direções; a linha 0 olha para baixo) -------------------------------------------------
 export const CHEFES = {
   minotauro: grade("chefes/minotauro.png", [1152, 768], [192, 192], 0, intervalo(0, 5), 7),
-  medusa: grade("chefes/medusa.png", [1536, 1024], [256, 256], 0, intervalo(0, 5), 7),
+  medusa: grade("chefes/medusa.png", [768, 512], [128, 128], 0, intervalo(0, 5), 7),
   // O Goblin Maromba tem 12 quadros por linha (o jogo ajusta hframes em goblin_maromba.gd)
   goblin_maromba: grade("chefes/goblin_maromba.png", [3072, 1024], [256, 256], 0, intervalo(0, 11), 10),
   // O Cogumelo Ancião é o cogumelo comum em escala 2,4
@@ -57,33 +57,32 @@ export const MORADORES = {
   mistica: morador("estela"),
   lia: morador("lia"),
   bento: morador("bento"),
+  ferreiro: morador("ivo"),
+  nilo: grade("npcs/nilo.png", [256,64], [64,64], 0, [0], 0, [12,4,40,48]),
+  osvaldo: morador("osvaldo"),
+  helena: morador("helena"),
+  clara: morador("clara"),
 };
 
+const casa = (id, l, a, resolucao = 4) => ({ src: `vila/${id}.png`, folha: [l * resolucao, a * resolucao], tam: [l, a], quadros: [[0, 0]], resolucao, suave: resolucao > 1 });
 export const CASAS = {
-  venda: { src: "vila/venda.png", folha: [128, 112], tam: [128, 112], quadros: [[0, 0]] },
-  enfermaria: { src: "vila/enfermaria.png", folha: [128, 112], tam: [128, 112], quadros: [[0, 0]] },
-  sede: { src: "vila/sede.png", folha: [192, 128], tam: [192, 128], quadros: [[0, 0]] },
-  pousada: { src: "vila/pousada.png", folha: [160, 144], tam: [160, 144], quadros: [[0, 0]] },
-  mistica: { src: "vila/mistica.png", folha: [144, 128], tam: [144, 128], quadros: [[0, 0]] },
-  casa_bento: { src: "vila/casa_bento.png", folha: [160, 112], tam: [160, 112], quadros: [[0, 0]] },
-  casa_jogador: { src: "vila/casa_jogador.png", folha: [112, 90], tam: [112, 90], quadros: [[0, 0]] },
+  venda: casa('venda',128,112), enfermaria: casa('enfermaria',128,112), sede: casa('sede',192,128),
+  pousada: casa('pousada',160,144), mistica: casa('mistica',144,128), casa_bento: casa('casa_bento',160,112),
+  palafita: casa('palafita',160,160,1),
+  casa_jogador: casa('casa_jogador',112,90), forja: casa('forja',128,112), carpintaria: casa('carpintaria',192,128),
 };
-export const PORTAL = grade("vila/portal_arena.png", [432, 64], [48, 64], 0, intervalo(0, 8), 8);
+export const PORTAL = { ...grade("vila/portal_arena.png", [1728,256], [192,256], 0, intervalo(0,8), 8), tam: [48,64], resolucao: 4, suave: true };
 
 // --- Herói Raven: camadas de 320 x 9600 (30 ações de 320 px); "andar" é a primeira, linha 0 = para baixo ---------
 const RAVEN = [320, 9600];
 export const HEROI = grade(["heroi/corpo.png", "heroi/calca.png", "heroi/botas.png", "heroi/camisa.png", "heroi/cabelo.png"],
   RAVEN, [80, 80], 0, intervalo(0, 3), 6, [16, 8, 48, 56]);
 
-// --- Armaduras (páginas Mana Seed: folha 8x8 de 64 px). Linha 4 da página 1 = andando para baixo (quadros 0 a 5)
-const PAGINA = [512, 512];
-const MIOLO_PERSONAGEM = [16, 12, 32, 44];
-const andando = (src) => grade(src, PAGINA, [64, 64], 4, intervalo(0, 5), 8, MIOLO_PERSONAGEM);
-export const CONJUNTOS = {
-  carrasco: andando(["conjuntos/corpo_mana.png", "conjuntos/carrasco.png"]),
-  cavaleiro_rubro: andando(["conjuntos/corpo_mana.png", "conjuntos/cavaleiro_rubro.png"]),
-  cavalheiro: andando(["conjuntos/corpo_mana.png", "conjuntos/cavalheiro.png"]),
-};
+// Quatro peças reais atuais sobre o corpo Raven; mesmas poses do jogador.
+const conjunto = (id) => grade(['heroi/corpo.png', 'heroi/calca.png',
+  `conjuntos/${id}_botas.png`, `conjuntos/${id}_peitoral.png`, `conjuntos/${id}_luvas.png`, `conjuntos/${id}_elmo.png`],
+  RAVEN, [80,80], 0, intervalo(0,3), 6, [16,8,48,56]);
+export const CONJUNTOS = { carrasco: conjunto('carrasco'), cavaleiro_rubro: conjunto('cavaleiro_rubro'), cavalheiro: conjunto('cavalheiro') };
 
 // --- Armas: ícones do jogo (um quadro por arquivo) ------------------------------------------------------------------
 const icone = (id, [l, a]) => recorte(`armas/${id}.png`, [l, a], 0, 0, l, a);
@@ -121,3 +120,7 @@ export const DROPS = {
 // --- Interface ---------------------------------------------------------------------------------------------------
 export const BRASA = recorte("ui/brasa.png", [9, 10], 0, 0, 9, 10);
 export const MOEDA = grade("ui/moedas.png", [256, 112], [16, 16], 0, intervalo(0, 7), 10);
+
+export const peixe = (id) => celula(`peixes/${id}.png`, [16,16], 16, 0, 0);
+export const OVO = celula('fazenda/ovo.png', [32,16], 16, 0, 0);
+export const OMELETE = celula('fazenda/omelete.png', [32,16], 16, 0, 0);

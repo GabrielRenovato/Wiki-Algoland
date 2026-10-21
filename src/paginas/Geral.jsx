@@ -11,9 +11,8 @@ export function Inicio() {
           <p className="sobretitulo">Wiki oficial</p>
           <h1>AlgoLand</h1>
           <p>
-            Um jogo 2D em pixel art que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das
-            Flores, cuida de uma fazenda, faz amizade com os vizinhos e atravessa o portal para segurar as ondas de
-            criaturas da Arena do Limiar. Cada queda vira Brasas, e as Brasas deixam você mais forte para sempre.
+            Um RPG 2D que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das
+            Flores, cuida de uma fazenda, cria aves, pesca e faz amizade com os vizinhos. Pelo portal, explora os andares da Fenda do Limiar. Cada queda vira Brasas, e as Brasas deixam você mais forte para sempre.
           </p>
           <a className="botao-baixar" href="#/jogar">▶ Jogar no navegador</a>
           <a className="botao-baixar" href="#/download">⬇ Baixar para Windows, Linux ou Android</a>
@@ -44,14 +43,14 @@ export function Inicio() {
             <Sprite s={PORTAL} escala={1.4} />
             <b>Arena</b>
             <span>pelo portal</span>
-            <small>Ondas de inimigos, chefes, ouro e saque.</small>
+            <small>Caçadas, guardiões, receitas e materiais.</small>
           </a>
         </div>
         <Passos itens={[
           <>Na <Link para="fazenda">fazenda</Link> você planta sementes da estação e colhe em poucos dias.</>,
           <>A <Link para="moradores">Dona Rosa</Link> transforma a colheita em <Link para="pocoes">poções</Link> e o <Link para="refeicoes">Caio</Link> a cozinha em pratos que valem a partida inteira na arena.</>,
-          <>No portal da vila você entra na <Link para="arena">arena</Link>: cada onda vencida dá ouro, saque e abre a janela de compras.</>,
-          <>A cada 10 ondas vem um <Link para="chefes">chefe</Link>. Ele solta sementes, equipamento e às vezes a Moeda de Forja.</>,
+          <>No portal da vila você entra na <Link para="arena">arena</Link>: explore o mapa, complete a caçada e derrote o guardião. Orion aparece depois da vitória.</>,
+          <>Cada andar tem um <Link para="chefes">guardião</Link>. Receitas e materiais permitem fabricar equipamentos com Ivo.</>,
           <>Se você cair, a partida vira <Brasas n="Brasas" />. Com a Lia, elas viram <Link para="progresso">melhorias permanentes</Link>.</>,
         ]} />
       </Secao>
@@ -67,7 +66,7 @@ export function Inicio() {
           <Ficha sprite={CONJUNTOS.carrasco} nome="Equipamento" etiqueta="Armas, raridade e armaduras">
             <p>Bigorna, encantamentos e conjuntos. <Link para="armas">Ver armas</Link></p>
           </Ficha>
-          <Ficha sprite={SPR_CHEFES.dragao_vermelho} escala={0.9} nome="Chefes" etiqueta="Ondas 10, 20, 30, 40 e 50">
+          <Ficha sprite={SPR_CHEFES.dragao_vermelho} escala={0.9} nome="Chefes" etiqueta="Um guardião por andar">
             <p>Golpes, avisos no chão e recompensas. <Link para="chefes">Ver chefes</Link></p>
           </Ficha>
         </Grade>
@@ -86,9 +85,11 @@ export function Controles() {
     ["Beber poção (arena) / colher (fazenda)", <Tecla>R</Tecla>, "Y"],
     ["Trocar a poção do cinto / a ferramenta", <><Tecla>Q</Tecla><Tecla>E</Tecla></>, "LB / RB"],
     ["Trocar de arma", <Tecla>Z</Tecla>, "RB"],
-    ["Escolher uma casa da barra", <><Tecla>1</Tecla>…<Tecla>5</Tecla></>, "—"],
+    ["Escolher uma casa da barra", <><Tecla>1</Tecla>…<Tecla>8</Tecla></>, "—"],
     ["Abrir a mochila", <Tecla>I</Tecla>, "View (botão de janelas)"],
-    ["Ver o status do personagem", <Tecla>Tab</Tecla>, "R3 (L3 fecha o lembrete)"],
+    ["Abrir o mapa-múndi", <Tecla>M</Tecla>, "Segurar R3 por 0,4 s"],
+    ["Trocar a fileira da barra", <Tecla>X</Tecla>, "L3"],
+    ["Ver o status do personagem", <Tecla>Tab</Tecla>, "Veja a tela de status na mochila"],
     ["Pausar / fechar janela", <Tecla>Esc</Tecla>, "Start / B"],
   ];
   return (
@@ -97,14 +98,14 @@ export function Controles() {
       <Secao>
         <Tabela cabecalho={["Ação", "Teclado", "Controle"]} linhas={linhas} />
       </Secao>
+      <Caixa tipo="nota">As teclas podem ser remapeadas nas Opções. Cada jogador tem sua configuração de controle. No celular, o botão MAPA e o menu de pausa também abrem o mapa-múndi; não há viagem rápida.</Caixa>
       <Secao titulo="Barra rápida e mochila">
         <p>
-          A barra de baixo da tela é a <b>primeira linha da mochila</b>. As teclas 1 a 5 escolhem a casa. Na fazenda,
-          escolher uma ferramenta ou uma semente a deixa ativa (o nome aparece acima da barra). Na arena, só armas,
-          escudo e poções fazem efeito; na fazenda, só ferramentas e sementes.
+          A barra de baixo mostra uma <b>fileira da mochila por vez</b>. As teclas 1 a 8 escolhem a casa. Na fazenda,
+          escolher uma ferramenta ou uma semente a deixa ativa (o nome aparece acima da barra). A espada também corta mato na fazenda para obter feno; a picareta minera veios na fenda. Para pescar, selecione a vara perto da água.
         </p>
         <Caixa tipo="dica">
-          Itens se arrastam livremente na mochila. Coloque na primeira linha o que você usa mais.
+          Troque a fileira com X, L3 ou o botão ao lado da barra no toque. Na mochila, o botão direito equipa; no celular, use dois toques. No controle, Y pega e solta o item. A lixeira pede confirmação antes de excluir uma pilha.
         </Caixa>
       </Secao>
       <Secao titulo="Celular (toque)">
@@ -126,18 +127,18 @@ export function Comecando() {
         <div className="lado-a-lado">
           <Sprite s={HEROI} escala={4} titulo="Herói" />
           <p>
-            No <b>Novo Jogo</b> você escolhe nome, cabelo, cor do cabelo e roupa. A aparência acompanha todas as
+            No <b>Novo Jogo</b> você escolhe nome, um dos três tons de pele, cabelo (28 modelos ou sem cabelo), tintura e roupa da base Raven. A aparência acompanha todas as
             animações, inclusive com armadura vestida: cada peça de armadura aparece no corpo.
           </p>
         </div>
       </Secao>
       <Secao titulo="O prólogo">
         <Passos itens={[
-          <>Você acorda na <b>Arena do Limiar</b>. O <b>Bento</b> chega, explica as ondas e entrega a espada e o escudo de quem guardava o lugar.</>,
+          <>Você acorda na <b>Arena do Limiar</b>. O <b>Bento</b> chega, apresenta o Limiar e entrega a espada e o escudo de quem guardava o lugar.</>,
           <>Ele vai na frente e você atravessa o <b>portal</b> até a <b>Vila das Flores</b>, onde ele apresenta os moradores.</>,
           <>Juntos vocês vão até a <b>fazenda vazia</b> a oeste. Lá ele ensina, com tarefas de verdade: cortar uma árvore com a machadinha, quebrar uma pedra com a picareta, arar com a enxada, plantar e regar.</>,
           <>Durante o prólogo o relógio fica parado. Depois do primeiro sono, os dias voltam a passar normalmente.</>,
-          <>Na <b>primeira onda vencida</b> depois do prólogo, o Bento aparece de novo na arena e explica a janela entre ondas: ouro, saque, melhorias, bigorna e encantamentos.</>,
+          <>Na fenda atual, complete a caçada de cada andar e vença o guardião. Fale com Orion depois da vitória para acessar as melhorias e escolher o próximo passo.</>,
         ]} />
         <Caixa tipo="nota">
           O progresso do prólogo fica salvo. Se você fechar o jogo no meio, ele continua do último ponto.
@@ -152,7 +153,7 @@ export function Comecando() {
             <p>Plante pela manhã e regue todo dia. Plantas curtas (3 dias) rendem logo a primeira poção.</p>
           </Ficha>
           <Ficha sprite={PORTAL} nome="Teste a arena" etiqueta="Portal da vila">
-            <p>As primeiras ondas são leves. Use o ouro na bigorna: a espada nível 2 já sai na onda 4.</p>
+            <p>Os primeiros andares apresentam a caçada e os guardiões. Use o ouro na bigorna: a espada nível 2 exige o andar 4.</p>
           </Ficha>
         </Grade>
       </Secao>
@@ -173,7 +174,7 @@ export function Tempo() {
           ["Primavera", "Cenoura, batata, couve-flor e morango. Jardins floridos."],
           ["Verão", "Girassol, tomate, milho e melancia. Tardes longas."],
           ["Outono", "Beterraba, berinjela, abóbora e uva. Folhas nos caminhos."],
-          ["Inverno", "Sem plantio. Neve, encontros dentro da pousada, e a Tempestade não sorteia na arena."],
+          ["Inverno", "Sem plantio e sem sementes nos drops da fenda. Neve, encontros na pousada e ausência do evento Tempestade."],
         ]} />
         <Caixa tipo="aviso">
           Uma planta precisa amadurecer dentro da própria estação. Se os dias que faltam não bastam, o jogo avisa
@@ -194,12 +195,12 @@ export function Tempo() {
           ["8h – 18h", "Horário comercial (cada loja tem o seu)."],
           ["Anoitecer", "Lampiões acendem na praça e as janelas das casas brilham."],
           ["18h – 2h", "Taverna da pousada aberta, com o Caio no balcão."],
-          ["22h", "Os moradores vão dormir na própria cama."],
+          ["22h", "A maioria dos moradores vai dormir; Caio continua no balcão enquanto a taverna estiver aberta."],
           ["2h", "Se você ainda estiver acordado, desmaia de cansaço e acorda em casa."],
         ]} />
         <p>
           Dormir na cama de casa (ou na pousada) passa para o dia seguinte: as plantas regadas crescem e o clima do novo dia é sorteado. No último dia de cada estação a
-          praça ganha bandeirinhas, e no sábado à noite tem festa com todos os moradores.
+          praça ganha bandeirinhas, e no sábado à noite tem festa na taverna.
         </p>
       </Secao>
     </>
@@ -229,7 +230,7 @@ export function Cooperativo() {
         <ul className="lista">
           <li>Vale para o <b>jogo inteiro</b>: vila, fazenda, interiores e arena.</li>
           <li>Cada jogador entra sozinho pelas portas; a <b>entrada e a saída da arena</b> são sempre juntas.</li>
-          <li>Cada um tem a <b>própria carteira de ouro</b>. Recompensas da onda caem nas duas; compras e vendas mexem só na de quem fez.</li>
+          <li>Cada um tem a <b>própria carteira de ouro</b>. Recompensas do andar caem nas duas; compras e vendas mexem só na de quem fez.</li>
           <li>O preço dos totens sobe por jogador: cada um paga pelas próprias cópias.</li>
           <li>Os inimigos miram o jogador mais próximo.</li>
           <li>O jogador 2 tem uma barra de vida sobre a cabeça e pode cair e levantar.</li>
@@ -250,14 +251,14 @@ export function Dicas() {
       <Secao>
         <div className="faq">
           {[
-            ["O que eu perco quando morro?", "O ouro da partida, o saque ainda não vendido, as Moedas de Forja e o equipamento que caiu nessa partida. Você acorda na enfermaria da Dona Rosa. Ficam: fazenda, sementes, ferramentas (voltam com o kit), Brasas, melhorias e amizades."],
-            ["Como fico mais forte de forma permanente?", "Com Brasas na Lia (melhorias e apoios), liberando armas novas pelos desafios e evoluindo peças de conjunto na bigorna. A colheita que sobrar também vira Brasas: a Lia compra por 3 a 9 Brasas cada."],
+            ["O que eu perco quando morro?", "Você acorda na enfermaria. Perde ouro, totens e equipamento temporário. Permanecem Brasas, receitas aprendidas, peças de conjunto, Moedas de Forja, materiais, sementes, colheitas, peixes, produtos, poções, ferramentas, vara, fazenda e amizades."],
+            ["Como fico mais forte de forma permanente?", "Invista Brasas com a Lia, aprenda receitas na mochila e fabrique com Ivo. Os marcos dos desafios tornam as receitas elegíveis; vencer o andar sozinho não entrega a arma. Peças de conjunto e suas melhorias são preservadas."],
             ["Como a fazenda ajuda na arena?", "De três jeitos: poções com a Dona Rosa, pratos do Caio (um bônus forte que dura a partida inteira) e Brasas pela colheita vendida à Lia. Quem entra na arena sem prato volta bem mais cedo."],
             ["Onde faço poções?", "Com a Dona Rosa, no botão POÇÕES da conversa. Ela usa as receitas fixas do caldeirão."],
             ["Para que serve a amizade?", "Conversar uma vez por dia dá amizade. Mais amizade libera histórias novas de cada morador e entregar pedidos dá amizade extra."],
-            ["Minha mochila encheu na arena. E agora?", "O equipamento vai para a aba SAQUE da janela entre ondas (12 casas). Lá você escolhe o que levar ou vender. Voltar à cidade vende o resto; morrer perde."],
-            ["Vender equipamento deixa rico?", "Não de propósito: na arena o preço é (6 + 1,5 × onda) × a raridade. Na loja do Tomás a venda paga 1,5× isso."],
-            ["Posso sair da arena no meio?", "Sim. O botão CIDADE da janela pede confirmação e encerra a partida: você ganha as Brasas, volta à onda 1 e o equipamento fica."],
+            ["Minha mochila encheu na fenda. E agora?", "Abra espaço: receitas e materiais são itens físicos. Um drop recusado por falta de espaço continua no chão. Use o baú da casa para se preparar antes da expedição."],
+            ["Os inimigos entregam equipamentos prontos?", "Os drops comuns são receitas e materiais. Use o pergaminho na mochila e fabrique com Ivo. O baú gigante do tesouro é uma exceção: pode conceder uma peça lendária de conjunto."],
+            ["Posso sair da arena no meio?", "Depois da vitória, converse com Orion e escolha CIDADE para encerrar a expedição e receber as Brasas. Conjuntos e itens permanentes ficam; equipamento temporário volta ao kit inicial."],
           ].map(([p, r]) => (
             <details key={p}>
               <summary>{p}</summary>
@@ -272,7 +273,7 @@ export function Dicas() {
             <p>2 cenouras + 1 morango = Poção de Cura. É a receita mais barata e a que mais salva.</p>
           </Ficha>
           <Ficha sprite={SPR_MORADORES.mistica} nome="Contrate a Mística">
-            <p>Depois do primeiro chefe ela deixa você começar direto do checkpoint.</p>
+            <p>Com o apoio contratado, escolha os checkpoints liberados a cada dez andares.</p>
           </Ficha>
           <Ficha sprite={CASAS.casa_jogador} escala={0.7} nome="Durma antes das 2h">
             <p>Às 2h você desmaia de cansaço e acorda em casa. Melhor ir para a cama por conta própria.</p>
