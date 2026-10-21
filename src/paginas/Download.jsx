@@ -24,6 +24,7 @@ export function Download() {
   return (
     <>
       <Titulo sub="v0.8 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <p>Quer testar sem instalar? <a href="#/jogar">Jogue no navegador.</a></p>
       <Secao>
         <div className="downloads">
           {PLATAFORMAS.map((p) => (

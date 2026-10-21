@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="data:,">
+<title>Jogar AlgoLand</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#171510;color:#f8ecd3;font:16px system-ui}canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}#estado{position:fixed;inset:0;display:grid;place-content:center;gap:16px;padding:24px;text-align:center;background:#211b15}#estado[hidden]{display:none}h1{font-size:24px;margin:0}p{margin:0;max-width:480px;line-height:1.5;overflow-wrap:anywhere}progress{width:min(100%,360px);height:20px;margin:auto;accent-color:#dfab5b}button,a{color:#ffcf86}button{padding:12px 20px;border:1px solid #dfab5b;border-radius:6px;background:#382719;cursor:pointer}#erro[hidden]{display:none}
+</style>
+</head>
+<body>
+<canvas id="canvas" tabindex="0" aria-label="AlgoLand"></canvas>
+<div id="estado" role="status" aria-live="polite"><h1>Preparando sua aventura</h1><p id="mensagem">Carregando o jogo…</p><progress id="progresso" max="100" value="0"></progress><p id="erro" hidden></p><button id="tentar" hidden>Tentar novamente</button></div>
+<script src="index.js"></script><script src="carregar.js"></script>
+</body></html>
