@@ -1,0 +1,1463 @@
+{
+  "andares": [
+    {
+      "andar": 1,
+      "bioma": "bosque",
+      "guardiao": "minotauro",
+      "nome": "Entrada do Bosque"
+    },
+    {
+      "andar": 2,
+      "bioma": "bosque",
+      "guardiao": "cogumelo",
+      "nome": "Selva dos Riachos"
+    },
+    {
+      "andar": 3,
+      "bioma": "caverna_mina",
+      "guardiao": "minotauro",
+      "nome": "Mina Abandonada"
+    },
+    {
+      "andar": 4,
+      "bioma": "caverna",
+      "guardiao": "medusa",
+      "nome": "Gruta das Raizes"
+    },
+    {
+      "andar": 5,
+      "bioma": "brejo",
+      "guardiao": "cogumelo",
+      "nome": "Brejo da Ilusao"
+    },
+    {
+      "andar": 6,
+      "bioma": "ruinas",
+      "guardiao": "goblin_maromba",
+      "nome": "Ruinas do Vale"
+    },
+    {
+      "andar": 7,
+      "bioma": "caverna_agua",
+      "guardiao": "medusa",
+      "nome": "Galerias Inundadas"
+    },
+    {
+      "andar": 8,
+      "bioma": "bosque",
+      "guardiao": "cogumelo",
+      "nome": "Floresta ao Luar"
+    },
+    {
+      "andar": 9,
+      "bioma": "pedreira",
+      "guardiao": "minotauro",
+      "nome": "Desfiladeiro Partido"
+    },
+    {
+      "andar": 10,
+      "bioma": "ruinas",
+      "guardiao": "goblin_maromba",
+      "nome": "Santuario Esquecido"
+    },
+    {
+      "andar": 11,
+      "bioma": "caverna",
+      "guardiao": "dragao_vermelho",
+      "nome": "Abismo das Profundezas"
+    }
+  ],
+  "armas": [
+    {
+      "dano": [
+        8,
+        12,
+        18,
+        28,
+        40
+      ],
+      "dias": 2,
+      "id": "espada_basica",
+      "materiais": {
+        "ferro": 2,
+        "madeira": 2
+      },
+      "meta": 1,
+      "nome": "Espada Básica"
+    },
+    {
+      "dano": [
+        11,
+        16,
+        24,
+        37,
+        52
+      ],
+      "dias": 2,
+      "id": "lanca_basica",
+      "materiais": {
+        "fragmento": 2,
+        "madeira": 4,
+        "pedra": 2
+      },
+      "meta": 1,
+      "nome": "Lança Básica"
+    },
+    {
+      "dano": [
+        9,
+        13,
+        20,
+        30,
+        43
+      ],
+      "dias": 2,
+      "id": "espada_gemea",
+      "materiais": {
+        "ferro": 3,
+        "fragmento": 4,
+        "madeira": 4
+      },
+      "meta": 5,
+      "nome": "Espada de Duas Mãos"
+    },
+    {
+      "dano": [
+        10,
+        15,
+        22,
+        33,
+        47
+      ],
+      "dias": 3,
+      "id": "machado",
+      "materiais": {
+        "ferro": 6,
+        "madeira": 6,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "Machado"
+    },
+    {
+      "dano": [
+        10,
+        15,
+        22,
+        33,
+        47
+      ],
+      "dias": 1,
+      "id": "arco_curto",
+      "materiais": {
+        "fibra": 4,
+        "fragmento": 2,
+        "madeira": 4
+      },
+      "meta": 3,
+      "nome": "Arco"
+    }
+  ],
+  "energia": 270,
+  "moradores": {
+    "bardo": {
+      "casa": "pousada",
+      "fala": "Cada aventura merece uma cancao. Volte para me contar a sua!",
+      "folga": 0,
+      "horario": [],
+      "nome": "CAIO",
+      "oficio": "Musico"
+    },
+    "bento": {
+      "casa": "casa_bento",
+      "fala": "Plante o que combina com a estacao e regue todo dia. No inverno, prepare a terra para a primavera.",
+      "folga": 3,
+      "horario": [
+        6,
+        19
+      ],
+      "nome": "BENTO",
+      "oficio": "Agricultor"
+    },
+    "clara": {
+      "casa": "carpintaria",
+      "fala": "Divido meu tempo entre minhas encomendas e os cuidados da minha mae, Helena.",
+      "folga": -1,
+      "horario": [],
+      "nome": "CLARA",
+      "oficio": "Artesa, 30 anos; ajuda nos cuidados da mae"
+    },
+    "curandeira": {
+      "casa": "enfermaria",
+      "fala": "Descanse antes de voltar a lutar. Uma vila tambem se cuida com pequenos gestos.",
+      "folga": 2,
+      "horario": [
+        8,
+        18
+      ],
+      "nome": "DONA ROSA",
+      "oficio": "Curandeira"
+    },
+    "ferreiro": {
+      "casa": "forja",
+      "fala": "Na arena voce aprende o desenho. A terra fornece o material. Eu junto as duas coisas.",
+      "folga": 2,
+      "horario": [
+        8,
+        18
+      ],
+      "nome": "IVO",
+      "oficio": "Ferreiro"
+    },
+    "helena": {
+      "casa": "carpintaria",
+      "fala": "Clara me ajuda no dia a dia. Agora me conte de voce: como anda sua fazenda?",
+      "folga": -1,
+      "horario": [],
+      "nome": "HELENA",
+      "oficio": "Bordadeira e contadora de historias, 55 anos"
+    },
+    "lia": {
+      "casa": "sede",
+      "fala": "Bem-vindo a Vila das Flores! A fazenda fica a oeste e a trilha da arena a leste. Os pedidos estao no mural.",
+      "folga": 5,
+      "horario": [
+        6,
+        19
+      ],
+      "nome": "LIA",
+      "oficio": "Cuida da comunidade"
+    },
+    "mercador": {
+      "casa": "venda",
+      "fala": "A venda abastece quem cuida da terra e quem enfrenta a floresta.",
+      "folga": 6,
+      "horario": [
+        8,
+        17
+      ],
+      "nome": "TOMAS",
+      "oficio": "Comerciante"
+    },
+    "mistica": {
+      "casa": "mistica",
+      "fala": "As estacoes mudam, mas o que voce aprendeu na floresta continua com voce.",
+      "folga": 4,
+      "horario": [
+        8,
+        18
+      ],
+      "nome": "ESTELA",
+      "oficio": "Mistica"
+    },
+    "nilo": {
+      "casa": "palafita",
+      "fala": "Eu cuido da sua vara. Traga as pedras de refinamento que encontrar pescando.",
+      "folga": -1,
+      "horario": [
+        8,
+        17
+      ],
+      "nome": "NILO",
+      "oficio": "Pescador e artesao de varas"
+    },
+    "osvaldo": {
+      "casa": "carpintaria",
+      "fala": "Traga madeira e pedra. Construo e amplio o abrigo das suas aves.",
+      "folga": -1,
+      "horario": [],
+      "nome": "OSVALDO",
+      "oficio": "Carpinteiro, 65 anos"
+    }
+  },
+  "peixes": [
+    {
+      "ambiente": "mar",
+      "brasas": 3,
+      "dificuldade": 20,
+      "estacoes": [],
+      "icone": "res://assets/pesca/peixes/sardinha.png",
+      "id": "sardinha",
+      "nivel_vara": 1,
+      "nome": "SARDINHA",
+      "original": "Icons/Fish/Sea/Sardine.png",
+      "raridade": "comum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 3,
+      "dificuldade": 28,
+      "estacoes": [],
+      "icone": "res://assets/pesca/peixes/anchova.png",
+      "id": "anchova",
+      "nivel_vara": 1,
+      "nome": "ANCHOVA",
+      "original": "Icons/Fish/Sea/Anchovy.png",
+      "raridade": "comum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 5,
+      "dificuldade": 45,
+      "estacoes": [
+        0,
+        3
+      ],
+      "icone": "res://assets/pesca/peixes/linguado.png",
+      "id": "linguado",
+      "nivel_vara": 2,
+      "nome": "LINGUADO",
+      "original": "Icons/Fish/Sea/Flounder.png",
+      "raridade": "incomum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 6,
+      "dificuldade": 60,
+      "estacoes": [
+        1,
+        2
+      ],
+      "icone": "res://assets/pesca/peixes/atum.png",
+      "id": "atum",
+      "nivel_vara": 2,
+      "nome": "ATUM",
+      "original": "Icons/Fish/Sea/Tuna.png",
+      "raridade": "incomum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 9,
+      "dificuldade": 75,
+      "estacoes": [
+        1
+      ],
+      "icone": "res://assets/pesca/peixes/baiacu.png",
+      "id": "baiacu",
+      "nivel_vara": 3,
+      "nome": "BAIACU",
+      "original": "Icons/Fish/Sea/pufferfish.png",
+      "raridade": "raro",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 14,
+      "dificuldade": 90,
+      "estacoes": [
+        2,
+        3
+      ],
+      "icone": "res://assets/pesca/peixes/salmao.png",
+      "id": "salmao",
+      "nivel_vara": 4,
+      "nome": "SALMAO",
+      "original": "Icons/Fish/Sea/Salmon.png",
+      "raridade": "epico",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 3,
+      "dificuldade": 22,
+      "estacoes": [],
+      "icone": "res://assets/pesca/peixes/carpa.png",
+      "id": "carpa",
+      "nivel_vara": 1,
+      "nome": "CARPA",
+      "original": "Icons/Fish/River/Carp.png",
+      "raridade": "comum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 3,
+      "dificuldade": 32,
+      "estacoes": [],
+      "icone": "res://assets/pesca/peixes/bagre.png",
+      "id": "bagre",
+      "nivel_vara": 1,
+      "nome": "BAGRE",
+      "original": "Icons/Fish/River/Bullhead Catfish.png",
+      "raridade": "comum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 5,
+      "dificuldade": 48,
+      "estacoes": [
+        0,
+        1
+      ],
+      "icone": "res://assets/pesca/peixes/perca.png",
+      "id": "perca",
+      "nivel_vara": 2,
+      "nome": "PERCA",
+      "original": "Icons/Fish/River/Perch.png",
+      "raridade": "incomum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 6,
+      "dificuldade": 62,
+      "estacoes": [
+        2,
+        3
+      ],
+      "icone": "res://assets/pesca/peixes/truta.png",
+      "id": "truta",
+      "nivel_vara": 2,
+      "nome": "TRUTA TIGRE",
+      "original": "Icons/Fish/River/Tiger Trout.png",
+      "raridade": "incomum",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 9,
+      "dificuldade": 78,
+      "estacoes": [
+        1,
+        2
+      ],
+      "icone": "res://assets/pesca/peixes/dourado.png",
+      "id": "dourado",
+      "nivel_vara": 3,
+      "nome": "DOURADO",
+      "original": "Icons/Fish/River/Dorado.png",
+      "raridade": "raro",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 14,
+      "dificuldade": 92,
+      "estacoes": [
+        3
+      ],
+      "icone": "res://assets/pesca/peixes/esturjao.png",
+      "id": "esturjao",
+      "nivel_vara": 4,
+      "nome": "ESTURJAO",
+      "original": "Icons/Fish/River/Sturgeon.png",
+      "raridade": "epico",
+      "recorte": [
+        0.0,
+        0.0,
+        16.0,
+        16.0
+      ]
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [],
+      "familia_visual": "anchova",
+      "icone": "res://assets/pesca/peixes/anchova.png",
+      "id": "cavala",
+      "nivel_vara": 1,
+      "nome": "CAVALA",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "sardinha",
+      "icone": "res://assets/pesca/peixes/sardinha.png",
+      "id": "arenque",
+      "nivel_vara": 1,
+      "nome": "ARENQUE",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [
+        2,
+        3
+      ],
+      "familia_visual": "atum",
+      "icone": "res://assets/pesca/peixes/atum.png",
+      "id": "tainha",
+      "nivel_vara": 1,
+      "nome": "TAINHA",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [],
+      "familia_visual": "salmao",
+      "icone": "res://assets/pesca/peixes/salmao.png",
+      "id": "pescada",
+      "nivel_vara": 1,
+      "nome": "PESCADA",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [
+        0,
+        1
+      ],
+      "familia_visual": "linguado",
+      "icone": "res://assets/pesca/peixes/linguado.png",
+      "id": "corvina",
+      "nivel_vara": 2,
+      "nome": "CORVINA",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "atum",
+      "icone": "res://assets/pesca/peixes/atum.png",
+      "id": "robalo",
+      "nivel_vara": 2,
+      "nome": "ROBALO",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [],
+      "familia_visual": "salmao",
+      "icone": "res://assets/pesca/peixes/salmao.png",
+      "id": "pargo",
+      "nivel_vara": 2,
+      "nome": "PARGO",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [
+        3,
+        0
+      ],
+      "familia_visual": "linguado",
+      "icone": "res://assets/pesca/peixes/linguado.png",
+      "id": "sargo",
+      "nivel_vara": 2,
+      "nome": "SARGO",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [
+        0,
+        1
+      ],
+      "familia_visual": "baiacu",
+      "icone": "res://assets/pesca/peixes/baiacu.png",
+      "id": "garoupa",
+      "nivel_vara": 3,
+      "nome": "GAROUPA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [],
+      "familia_visual": "anchova",
+      "icone": "res://assets/pesca/peixes/anchova.png",
+      "id": "moreia",
+      "nivel_vara": 3,
+      "nome": "MOREIA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [
+        2,
+        3
+      ],
+      "familia_visual": "atum",
+      "icone": "res://assets/pesca/peixes/atum.png",
+      "id": "barracuda",
+      "nivel_vara": 3,
+      "nome": "BARRACUDA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [
+        3,
+        0
+      ],
+      "familia_visual": "salmao",
+      "icone": "res://assets/pesca/peixes/salmao.png",
+      "id": "peixe_espada",
+      "nivel_vara": 3,
+      "nome": "PEIXE ESPADA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [],
+      "familia_visual": "linguado",
+      "icone": "res://assets/pesca/peixes/linguado.png",
+      "id": "arraia",
+      "nivel_vara": 4,
+      "nome": "ARRAIA",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "atum",
+      "icone": "res://assets/pesca/peixes/atum.png",
+      "id": "cacao",
+      "nivel_vara": 4,
+      "nome": "CACAO",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [
+        2,
+        3
+      ],
+      "familia_visual": "atum",
+      "icone": "res://assets/pesca/peixes/atum.png",
+      "id": "tubarao_azul",
+      "nivel_vara": 4,
+      "nome": "TUBARAO AZUL",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [],
+      "familia_visual": "baiacu",
+      "icone": "res://assets/pesca/peixes/baiacu.png",
+      "id": "peixe_lua",
+      "nivel_vara": 4,
+      "nome": "PEIXE LUA",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 52,
+      "dificuldade": 90,
+      "estacoes": [
+        0,
+        1
+      ],
+      "familia_visual": "esturjao",
+      "icone": "res://assets/pesca/peixes/esturjao.png",
+      "id": "celacanto",
+      "nivel_vara": 5,
+      "nome": "CELACANTO",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 52,
+      "dificuldade": 90,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "salmao",
+      "icone": "res://assets/pesca/peixes/salmao.png",
+      "id": "rei_das_profundezas",
+      "nivel_vara": 5,
+      "nome": "REI DAS PROFUNDEZAS",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [],
+      "familia_visual": "sardinha",
+      "icone": "res://assets/pesca/peixes/sardinha.png",
+      "id": "lambari",
+      "nivel_vara": 1,
+      "nome": "LAMBARI",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "perca",
+      "icone": "res://assets/pesca/peixes/perca.png",
+      "id": "tilapia",
+      "nivel_vara": 1,
+      "nome": "TILAPIA",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [
+        2,
+        3
+      ],
+      "familia_visual": "dourado",
+      "icone": "res://assets/pesca/peixes/dourado.png",
+      "id": "tucunare",
+      "nivel_vara": 1,
+      "nome": "TUCUNARE",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 4,
+      "dificuldade": 38,
+      "estacoes": [],
+      "familia_visual": "carpa",
+      "icone": "res://assets/pesca/peixes/carpa.png",
+      "id": "pacu",
+      "nivel_vara": 1,
+      "nome": "PACU",
+      "raridade": "comum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [
+        0,
+        1
+      ],
+      "familia_visual": "truta",
+      "icone": "res://assets/pesca/peixes/truta.png",
+      "id": "piraputanga",
+      "nivel_vara": 2,
+      "nome": "PIRAPUTANGA",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "bagre",
+      "icone": "res://assets/pesca/peixes/bagre.png",
+      "id": "mandi",
+      "nivel_vara": 2,
+      "nome": "MANDI",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [],
+      "familia_visual": "carpa",
+      "icone": "res://assets/pesca/peixes/carpa.png",
+      "id": "curimbata",
+      "nivel_vara": 2,
+      "nome": "CURIMBATA",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 10,
+      "dificuldade": 51,
+      "estacoes": [
+        3,
+        0
+      ],
+      "familia_visual": "bagre",
+      "icone": "res://assets/pesca/peixes/bagre.png",
+      "id": "jundia",
+      "nivel_vara": 2,
+      "nome": "JUNDIA",
+      "raridade": "incomum"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [
+        0,
+        1
+      ],
+      "familia_visual": "truta",
+      "icone": "res://assets/pesca/peixes/truta.png",
+      "id": "matrinxa",
+      "nivel_vara": 3,
+      "nome": "MATRINXA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [],
+      "familia_visual": "bagre",
+      "icone": "res://assets/pesca/peixes/bagre.png",
+      "id": "pirarara",
+      "nivel_vara": 3,
+      "nome": "PIRARARA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [
+        2,
+        3
+      ],
+      "familia_visual": "bagre",
+      "icone": "res://assets/pesca/peixes/bagre.png",
+      "id": "surubim",
+      "nivel_vara": 3,
+      "nome": "SURUBIM",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 20,
+      "dificuldade": 64,
+      "estacoes": [
+        3,
+        0
+      ],
+      "familia_visual": "esturjao",
+      "icone": "res://assets/pesca/peixes/esturjao.png",
+      "id": "cachara",
+      "nivel_vara": 3,
+      "nome": "CACHARA",
+      "raridade": "raro"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [],
+      "familia_visual": "dourado",
+      "icone": "res://assets/pesca/peixes/dourado.png",
+      "id": "arapaima",
+      "nivel_vara": 4,
+      "nome": "ARAPAIMA",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "salmao",
+      "icone": "res://assets/pesca/peixes/salmao.png",
+      "id": "pirarucu",
+      "nivel_vara": 4,
+      "nome": "PIRARUCU",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [
+        2,
+        3
+      ],
+      "familia_visual": "esturjao",
+      "icone": "res://assets/pesca/peixes/esturjao.png",
+      "id": "piraiba",
+      "nivel_vara": 4,
+      "nome": "PIRAIBA",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 34,
+      "dificuldade": 77,
+      "estacoes": [],
+      "familia_visual": "linguado",
+      "icone": "res://assets/pesca/peixes/linguado.png",
+      "id": "arraia_do_rio",
+      "nivel_vara": 4,
+      "nome": "ARRAIA DO RIO",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 52,
+      "dificuldade": 90,
+      "estacoes": [
+        0,
+        1
+      ],
+      "familia_visual": "dourado",
+      "icone": "res://assets/pesca/peixes/dourado.png",
+      "id": "dourado_ancestral",
+      "nivel_vara": 5,
+      "nome": "DOURADO ANCESTRAL",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 52,
+      "dificuldade": 90,
+      "estacoes": [
+        1,
+        2
+      ],
+      "familia_visual": "esturjao",
+      "icone": "res://assets/pesca/peixes/esturjao.png",
+      "id": "guardiao_do_lago",
+      "nivel_vara": 5,
+      "nome": "GUARDIAO DO LAGO",
+      "raridade": "epico"
+    }
+  ],
+  "receitas": [
+    {
+      "dias": 2,
+      "id": "espada_basica",
+      "livre": true,
+      "materiais": {
+        "ferro": 2,
+        "madeira": 2
+      },
+      "meta": 1,
+      "nome": "ESPADA"
+    },
+    {
+      "dias": 2,
+      "id": "escudo_basico",
+      "livre": true,
+      "materiais": {
+        "ferro": 2,
+        "madeira": 4
+      },
+      "meta": 1,
+      "nome": "ESCUDO"
+    },
+    {
+      "dias": 2,
+      "id": "lanca_basica",
+      "livre": false,
+      "materiais": {
+        "fragmento": 2,
+        "madeira": 4,
+        "pedra": 2
+      },
+      "meta": 1,
+      "nome": "LANCA"
+    },
+    {
+      "dias": 2,
+      "id": "aljava_basica",
+      "livre": false,
+      "materiais": {
+        "fibra": 3,
+        "fragmento": 1
+      },
+      "meta": 1,
+      "nome": "ALJAVA"
+    },
+    {
+      "dias": 2,
+      "id": "cabeca_basica",
+      "livre": false,
+      "materiais": {
+        "fibra": 2,
+        "fragmento": 2
+      },
+      "meta": 1,
+      "nome": "ELMO"
+    },
+    {
+      "dias": 2,
+      "id": "armadura_basica",
+      "livre": false,
+      "materiais": {
+        "fibra": 4,
+        "fragmento": 3
+      },
+      "meta": 1,
+      "nome": "ARMADURA"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_basicas",
+      "livre": false,
+      "materiais": {
+        "fibra": 2,
+        "fragmento": 1
+      },
+      "meta": 1,
+      "nome": "LUVAS"
+    },
+    {
+      "dias": 2,
+      "id": "botas_basicas",
+      "livre": false,
+      "materiais": {
+        "fibra": 2,
+        "fragmento": 2
+      },
+      "meta": 1,
+      "nome": "BOTAS"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_carrasco",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "ELMO DO CARRASCO"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_carrasco",
+      "livre": false,
+      "materiais": {
+        "ferro": 5,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "PEITORAL DO CARRASCO"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_carrasco",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "LUVAS DO CARRASCO"
+    },
+    {
+      "dias": 2,
+      "id": "botas_carrasco",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "BOTAS DO CARRASCO"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_cavaleiro_rubro",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "ELMO DO CAVALEIRO RUBRO"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_cavaleiro_rubro",
+      "livre": false,
+      "materiais": {
+        "ferro": 5,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "PEITORAL DO CAVALEIRO RUBRO"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_cavaleiro_rubro",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "LUVAS DO CAVALEIRO RUBRO"
+    },
+    {
+      "dias": 2,
+      "id": "botas_cavaleiro_rubro",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "BOTAS DO CAVALEIRO RUBRO"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_cavalheiro",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "ELMO DO MORDOMO"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_cavalheiro",
+      "livre": false,
+      "materiais": {
+        "ferro": 5,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "PEITORAL DO MORDOMO"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_cavalheiro",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "LUVAS DO MORDOMO"
+    },
+    {
+      "dias": 2,
+      "id": "botas_cavalheiro",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fibra": 3,
+        "fragmento": 5,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "BOTAS DO MORDOMO"
+    },
+    {
+      "dias": 1,
+      "id": "arco_curto",
+      "livre": false,
+      "materiais": {
+        "fibra": 4,
+        "fragmento": 2,
+        "madeira": 4
+      },
+      "meta": 3,
+      "nome": "ARCO"
+    },
+    {
+      "dias": 2,
+      "id": "espada_gemea",
+      "livre": false,
+      "materiais": {
+        "ferro": 3,
+        "fragmento": 4,
+        "madeira": 4
+      },
+      "meta": 5,
+      "nome": "ESPADA DE DUAS MAOS"
+    },
+    {
+      "dias": 3,
+      "id": "machado",
+      "livre": false,
+      "materiais": {
+        "ferro": 6,
+        "madeira": 6,
+        "nucleo": 1
+      },
+      "meta": 10,
+      "nome": "MACHADO"
+    }
+  ],
+  "refeicoes": [
+    {
+      "bonus": {
+        "vigor": 0.3
+      },
+      "icone": "batata",
+      "id": "sopa_raizes",
+      "nome": "SOPA DE RAIZES",
+      "receita": {
+        "batata": 2,
+        "cenoura": 2
+      },
+      "texto": "CENOURA E BATATA NO CALDO GROSSO: AGUENTA MUITO MAIS PANCADA.",
+      "texto_bonus": "+30% VIDA"
+    },
+    {
+      "bonus": {
+        "folego": 0.3,
+        "forca": 0.2
+      },
+      "icone": "morango",
+      "id": "torta_morango",
+      "nome": "TORTA DE MORANGO",
+      "receita": {
+        "couve_flor": 1,
+        "morango": 2
+      },
+      "texto": "DOCE E LEVE: GOLPES MAIS FORTES E FOLEGO DE SOBRA.",
+      "texto_bonus": "+20% DANO, +30% FOLEGO"
+    },
+    {
+      "bonus": {
+        "folego": 0.2,
+        "saque": 0.4
+      },
+      "icone": "milho",
+      "id": "milho_assado",
+      "nome": "MILHO ASSADO NA BRASA",
+      "receita": {
+        "girassol": 2,
+        "milho": 2
+      },
+      "texto": "O CHEIRO DE MILHO ASSADO ATRAI SORTE: MUITO MAIS OURO POR ABATE.",
+      "texto_bonus": "+40% OURO, +20% FOLEGO"
+    },
+    {
+      "bonus": {
+        "forca": 0.35
+      },
+      "icone": "tomate",
+      "id": "salada_verao",
+      "nome": "SALADA DE VERAO",
+      "receita": {
+        "melancia": 1,
+        "tomate": 2
+      },
+      "texto": "TOMATE MADURO E MELANCIA GELADA: CADA GOLPE PESA O DOBRO.",
+      "texto_bonus": "+35% DANO"
+    },
+    {
+      "bonus": {
+        "couraca": 0.15,
+        "vigor": 0.15
+      },
+      "icone": "abobora",
+      "id": "ensopado_outono",
+      "nome": "ENSOPADO DE OUTONO",
+      "receita": {
+        "abobora": 2,
+        "beterraba": 2
+      },
+      "texto": "ABOBORA E BETERRABA NO FOGO LENTO: A PELE FICA DURA COMO CASCA.",
+      "texto_bonus": "+15% DEFESA, +15% VIDA"
+    },
+    {
+      "bonus": {
+        "forca": 0.25,
+        "saque": 0.25,
+        "vigor": 0.25
+      },
+      "icone": "uva",
+      "id": "banquete",
+      "nome": "BANQUETE DA COLHEITA",
+      "receita": {
+        "berinjela": 1,
+        "milho": 1,
+        "morango": 1,
+        "uva": 1
+      },
+      "texto": "UM POUCO DE CADA ESTACAO NA MESMA MESA: TUDO MELHORA.",
+      "texto_bonus": "+25% VIDA, +25% DANO, +25% OURO"
+    },
+    {
+      "bonus": {
+        "folego": 0.3,
+        "vigor": 0.2
+      },
+      "id": "peixe_assado",
+      "nome": "PEIXE ASSADO COM RAIZES",
+      "peixe_icone": "sardinha",
+      "peixes": {
+        "sardinha": 2
+      },
+      "receita": {
+        "batata": 1
+      },
+      "texto": "SARDINHAS NA BRASA COM BATATA: VIDA E FOLEGO PARA A ARENA.",
+      "texto_bonus": "+20% VIDA, +30% FOLEGO"
+    },
+    {
+      "bonus": {
+        "couraca": 0.12,
+        "folego": 0.35
+      },
+      "id": "caldo_rio",
+      "nome": "CALDO DO RIO",
+      "peixe_icone": "carpa",
+      "peixes": {
+        "bagre": 1,
+        "carpa": 1
+      },
+      "receita": {
+        "cenoura": 1
+      },
+      "texto": "CARPA E BAGRE NO CALDO: DEFESA E FOLEGO PARA A ARENA.",
+      "texto_bonus": "+12% DEFESA, +35% FOLEGO"
+    },
+    {
+      "bonus": {
+        "forca": 0.3,
+        "vigor": 0.25
+      },
+      "id": "salmao_grelhado",
+      "nome": "SALMAO GRELHADO",
+      "peixe_icone": "salmao",
+      "peixes": {
+        "salmao": 1
+      },
+      "receita": {
+        "abobora": 1
+      },
+      "texto": "UMA CAPTURA ESPECIAL COM ABOBORA: DANO E VIDA PARA A ARENA.",
+      "texto_bonus": "+30% DANO, +25% VIDA"
+    },
+    {
+      "bonus": {
+        "folego": 0.25,
+        "vigor": 0.2
+      },
+      "id": "omelete_horta",
+      "nome": "OMELETE DA HORTA",
+      "produto_icone": "omelete",
+      "produtos": {
+        "ovo": 2
+      },
+      "receita": {
+        "cenoura": 1
+      },
+      "texto": "OVOS DO SEU GALINHEIRO COM CENOURA: VIDA E FOLEGO PARA EXPLORAR.",
+      "texto_bonus": "+20% VIDA, +25% FOLEGO"
+    }
+  ],
+  "commit": "1b8501943338900b89aef7b7fc37aed65e0b00b5"
+}

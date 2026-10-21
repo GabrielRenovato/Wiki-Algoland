@@ -1,7 +1,7 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Passos, Brasas } from "../componentes/ui.jsx";
-import { FERRAMENTAS, CASAS, DROPS, MORADORES as SPR, colhido, crescimento, celula, pocao } from "../sprites.js";
-import { PLANTAS, POCOES, ESTACOES, PRECO_SEMENTE, CHANCE_SEMENTE, REFEICOES, BRASAS_COLHEITA } from "../dados.js";
+import { FERRAMENTAS, CASAS, DROPS, MORADORES as SPR, colhido, crescimento, celula, pocao, peixe, OVO, OMELETE } from "../sprites.js";
+import { PLANTAS, POCOES, ESTACOES, PRECO_SEMENTE, CHANCE_SEMENTE, REFEICOES, BRASAS_COLHEITA, PEIXES, ENERGIA_MAXIMA } from "../dados.js";
 
 const COR_RARIDADE = { comum: "#ebebe0", incomum: "#73ff66", raro: "#66adff", epico: "#d173ff" };
 const NOME_RARIDADE = { comum: "Comum", incomum: "Incomum", raro: "Rara", epico: "Épica" };
@@ -34,7 +34,7 @@ export function Fazenda() {
             <p>Molha o solo arado. Tem <b>20 regas</b>; enche de novo no laguinho da fazenda.</p>
           </Ficha>
           <Ficha sprite={FERRAMENTAS.machadinha} escala={4} nome="Machadinha">
-            <p>Corta árvores, arbustos e arvoretas. Árvore cortada vira toco, que sai com mais 2 golpes.</p>
+            <p>Corta árvores e arvoretas. Árvore cortada vira toco, que sai com mais 2 golpes.</p>
           </Ficha>
           <Ficha sprite={FERRAMENTAS.picareta} escala={4} nome="Picareta">
             <p>Quebra as pedras da pedreira e as que nascem no meio da horta.</p>
@@ -49,6 +49,17 @@ export function Fazenda() {
         </Caixa>
       </Secao>
 
+      <Secao titulo="Energia e evolução das ferramentas">
+        <p>Cada jogador tem <b>{ENERGIA_MAXIMA} de energia por dia</b>. Enxada, regador, machadinha e picareta gastam 2 no nível de madeira e 1 nos níveis reforçado e ferro. Dormir ou desmaiar recupera tudo. Plantar, colher e encher o regador são gratuitos.</p>
+        <p>Na bigorna do Ivo, a aba FERRAMENTAS evolui os quatro itens usando materiais da mochila, sem receita nem espera no calendário.</p>
+        <Tabela cabecalho={["Evolução","Materiais","Resultado"]} linhas={[
+          ["Madeira → Reforçada","8 madeiras + 6 pedras + 2 ferros","Enxada/regador: 3 solos; machadinha/picareta: força 2."],
+          ["Reforçada → Ferro","6 madeiras + 8 ferros + 2 fibras","Enxada/regador: 9 solos; machadinha/picareta: força 3."],
+        ]} />
+      </Secao>
+      <Secao titulo="A fazenda nas quatro estações">
+        <div className="grade-capturas">{["primavera","verao","outono","inverno"].map((e,i) => <figure key={e}><img className="captura-jogo" src={`${import.meta.env.BASE_URL}sprites/cenarios/fazenda_${e}.png`} alt={`Fazenda no jogo: ${["primavera","verão","outono","inverno"][i]}`} loading="lazy" /><figcaption>{["Primavera","Verão","Outono","Inverno"][i]}</figcaption></figure>)}</div>
+      </Secao>
       <Secao titulo="Galinheiro e animais" id="galinheiro">
         <p>Na <Link para="vila">carpintaria do Osvaldo</Link>, depois da ponte a leste da vila,
           encomende o abrigo ou uma ampliação. O atendimento funciona das <b>8h às 17h</b>.</p>
@@ -73,7 +84,7 @@ export function Fazenda() {
 
       <Secao titulo="Como plantar">
         <Passos itens={[
-          <>Limpe o canteiro: mato sai com a <b>enxada</b>, pedra com a <b>picareta</b>, arbusto e arvoreta com a <b>machadinha</b>.</>,
+          <>Limpe o canteiro: mato sai com a <b>enxada</b>, pedra com a <b>picareta</b>, arvoreta com a <b>machadinha</b>.</>,
           <>Are a terra com a <b>enxada</b> (só dentro da área de plantio; no inverno o solo congela).</>,
           <>Escolha um saco de semente <b>da estação</b> na barra e plante na terra arada.</>,
           <>Regue <b>todo dia</b>. Só cresce o dia em que a planta foi regada; a chuva rega tudo sozinha.</>,
@@ -89,8 +100,8 @@ export function Fazenda() {
           </div>
           <p>
             Como no Stardew Valley, a horta fica cheia de entulho: na primeira visita surgem <b>60</b> peças (mato,
-            pedra, arbusto e arvoreta) e nascem mais <b>4 por noite</b>, até o teto de <b>90</b>. As árvores do pomar
-            voltam em <b>5 dias</b>; arbustos e pedras, em <b>3</b>.
+            pedra e arvoreta) e nascem mais <b>4 por noite</b>, até o teto de <b>90</b>. As árvores do pomar
+            voltam em <b>5 dias</b>; pedras, em <b>3</b>.
           </p>
         </div>
       </Secao>
@@ -101,10 +112,10 @@ export function Fazenda() {
             <p>Começa com <b>8 casas</b>. Guarda qualquer item da mochila (menos a arma e o escudo em uso); sementes iguais empilham.</p>
           </Ficha>
           <Ficha nome="Laguinho">
-            <p>O regador só enche aqui: use-o virado para a água, como no Harvest Moon. No inverno a água congela, mas você quebra o gelo e enche igual.</p>
+            <p>Encha o regador aqui e use a vara para pescar peixes de água doce. Para encher: use-o virado para a água, como no Harvest Moon. No inverno a água congela, mas você quebra o gelo e enche igual.</p>
           </Ficha>
           <Ficha sprite={SPR.bento} nome="Sementes do Bento">
-            <p>Vende sementes da estação por Brasas e dá 2 sementes por dia se houver espaço na mochila.</p>
+            <p>Bento dá 2 sementes por dia se houver espaço. Para comprar sementes da estação por Brasas, visite a venda do Tomás.</p>
           </Ficha>
         </Grade>
       </Secao>
@@ -119,7 +130,7 @@ export function Plantas() {
       <Titulo sub="Doze plantas, quatro por estação. O inverno não tem plantio.">Plantas</Titulo>
       <Secao>
         <p>
-          As sementes vêm do <Link para="moradores">Bento</Link> (compradas com Brasas) ou caem dos inimigos da arena.
+          As sementes vêm do <Link para="moradores">Tomás</Link> (compradas com Brasas), dos presentes do Bento ou caem dos inimigos da arena.
           Quanto melhor a poção que a planta faz, mais rara é a semente.
         </p>
       </Secao>
@@ -147,9 +158,9 @@ export function Plantas() {
       ))}
       <Secao titulo="Sementes na arena">
         <p>
-          Cada inimigo comum tem uma chance pequena de soltar semente: 1% (comum), 0,4% (incomum), 0,12% (rara) e
-          0,04% (épica). Mutantes têm o triplo de chance, e todo <Link para="chefes">chefe</Link> solta pelo menos
-          <b> 2 sementes garantidas</b>. Sementes raras e épicas brilham no chão.
+          Cada inimigo comum tem uma chance pequena de soltar semente: 0,25% (comum), 0,1% (incomum), 0,03% (rara) e
+          0,01% (épica) nas fendas. Mutantes têm o triplo de chance, e todo <Link para="chefes">chefe</Link> solta pelo menos
+          <b> 1 semente garantida da estação</b>. No inverno não cai semente, nem do guardião. Sementes raras e épicas brilham no chão.
         </p>
       </Secao>
     </>
@@ -202,13 +213,13 @@ export function Pocoes() {
 export function Refeicoes() {
   return (
     <>
-      <Titulo sub="A colheita vira prato com o Caio, e o prato vale a próxima partida inteira na arena.">Refeições</Titulo>
+      <Titulo sub="Colheitas, peixes e ovos viram dez pratos com o Caio; o bônus dura a expedição inteira.">Refeições</Titulo>
       <Secao>
         <div className="lado-a-lado">
           <Sprite s={SPR.bardo} escala={3} titulo="Caio" />
           <div>
             <Passos itens={[
-              <>Colha na <Link para="fazenda">fazenda</Link> e leve a colheita para a vila.</>,
+              <>Colha na <Link para="fazenda">fazenda</Link> e leve os ingredientes para a vila. Alguns pratos também usam peixes ou ovos do galinheiro.</>,
               <>Converse com o <b>Caio</b> (a qualquer hora) e escolha <b>COZINHAR</b>. O botão ganha um * quando você já tem os ingredientes de algum prato.</>,
               <>Escolha o prato: ele gasta os ingredientes e o bônus passa a valer. Ao entrar na arena o jogo lembra qual prato está ativo.</>,
               <>O prato acaba junto com a partida (quando você cai ou volta pelo botão CIDADE). Aí o Caio cozinha outro.</>,
@@ -224,7 +235,7 @@ export function Refeicoes() {
         <Grade min={290}>
           {REFEICOES.map((r) => (
             <article key={r.id} className="ficha pocao">
-              <div className="ficha-palco"><Sprite s={colhido(planta(r.item).item)} escala={4} parado titulo={r.nome} /></div>
+              <div className="ficha-palco"><Sprite s={r.produto_icone ? OMELETE : r.peixe_icone ? peixe(r.peixe_icone) : colhido(planta(r.item).item)} escala={4} parado titulo={r.nome} /></div>
               <div className="ficha-texto">
                 <h3>{r.nome}</h3>
                 <p className="etiqueta"><b>{r.bonus}</b></p>
@@ -236,6 +247,8 @@ export function Refeicoes() {
                     </span>
                   ))}
                 </div>
+                {Object.entries(r.peixes ?? {}).map(([id,n]) => <p key={id}><Sprite s={peixe(id)} escala={2} parado /> {PEIXES.find(p => p.id === id)?.nome} ×{n}</p>)}
+                {Object.entries(r.produtos ?? {}).map(([id,n]) => <p key={id}><Sprite s={OVO} escala={2} parado /> Ovo ×{n}</p>)}
                 <p className="citacao">{r.texto}</p>
               </div>
             </article>

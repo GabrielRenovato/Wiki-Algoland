@@ -5,11 +5,14 @@ import { MORADORES, PEDIDOS, DIAS_SEMANA } from "../dados.js";
 
 const LUGARES = [
   { casa: "sede", nome: "Casa da comunidade", dono: "Lia", texto: "Mural de pedidos, melhorias com Brasas e contratação dos apoios." },
-  { casa: "venda", nome: "Venda", dono: "Tomás", texto: "Armas, escudos, bigorna, encantamentos e venda do saque." },
+  { casa: "venda", nome: "Venda", dono: "Tomás", texto: "Sementes da estação por Brasas e venda de peixes." },
   { casa: "enfermaria", nome: "Enfermaria", dono: "Dona Rosa", texto: "Cura, caldeirão de poções e o leito onde você acorda depois de cair." },
   { casa: "pousada", nome: "Pousada", dono: "Caio", texto: "Quartos para passar a noite, taverna das 18h às 2h e abrigo no inverno." },
   { casa: "mistica", nome: "Casa da Mística", dono: "Estela", texto: "Mesa de cristal, mapas e conselhos sobre checkpoint e mochila." },
-  { casa: "casa_bento", nome: "Casa do Bento", dono: "Bento", texto: "Sementes da estação, compradas com Brasas." },
+  { casa: "forja", nome: "Forja", dono: "Ivo", texto: "Fabricação por encomenda, refino, encantamentos e melhorias de ferramentas." },
+  { casa: "carpintaria", nome: "Carpintaria", dono: "Osvaldo e família", texto: "Construção do galinheiro, ampliações e loja de aves." },
+  { casa: "palafita", nome: "Palafita e cais", dono: "Nilo", texto: "Na praia ao sul: oficina da vara e guia de pesca." },
+  { casa: "casa_bento", nome: "Casa do Bento", dono: "Bento", texto: "Orientação da horta e duas sementes de presente por dia." },
 ];
 
 export function Vila() {
@@ -23,6 +26,10 @@ export function Vila() {
           Use <b>F</b> (ou A no controle) para abrir portas e conversar.
         </p>
       </Secao>
+      <Secao titulo="A vila nas quatro estações">
+        <p>As fachadas seguem o acabamento detalhado da taverna, com materiais, vegetação e neve próprios de cada estação.</p>
+        <div className="grade-capturas">{["primavera","verao","outono","inverno"].map((e,i) => <figure key={e}><img className="captura-jogo" src={`${import.meta.env.BASE_URL}sprites/cenarios/vila_${e}.png`} alt={`Vila no jogo: ${["primavera","verão","outono","inverno"][i]}`} loading="lazy" /><figcaption>{["Primavera","Verão","Outono","Inverno"][i]}</figcaption></figure>)}</div>
+      </Secao>
       <Secao titulo="Construções">
         <Grade min={260}>
           {LUGARES.map((l) => (
@@ -31,7 +38,7 @@ export function Vila() {
             </Ficha>
           ))}
           <Ficha sprite={PORTAL} escala={1.6} nome="Portal da arena" etiqueta="Na vila">
-            <p>Interaja para abrir o desafio da arena. A primeira onda começa sozinha assim que você chega.</p>
+            <p>Interaja para abrir o desafio da arena. Explore a fenda e complete a caçada para invocar o guardião de cada andar.</p>
           </Ficha>
         </Grade>
         <Caixa tipo="nota" titulo="Cômodos por dentro">
@@ -61,7 +68,7 @@ export function Vila() {
           <li>Cada um tem um <b>dia de folga</b> por semana e um <b>horário comercial</b>. Loja fechada avisa numa caixa de diálogo.</li>
           <li>No <b>inverno</b>, os encontros passam para dentro da pousada.</li>
           <li>Na <b>chuva</b>, todos saem de capa ou guarda-chuva.</li>
-          <li><b>Sábado à noite</b> tem festa na taverna da pousada: os seis se sentam em duplas nas mesas (e você pode sentar com eles).</li>
+          <li><b>Sábado à noite</b> tem festa na taverna da pousada: os moradores se reúnem nas mesas e Caio atende no balcão (e você pode sentar com eles).</li>
           <li>No último dia de cada estação, a praça ganha bandeirinhas; ao anoitecer, lampiões.</li>
         </ul>
       </Secao>
@@ -74,7 +81,7 @@ const hora = (h) => `${h}h`;
 export function Moradores() {
   return (
     <>
-      <Titulo sub="Seis vizinhos, cada um com rotina, personalidade e especialidade.">Moradores</Titulo>
+      <Titulo sub="A vila, a carpintaria e o cais têm moradores com rotinas e serviços próprios.">Moradores</Titulo>
       <Secao>
         <p>
           Conversar uma vez por dia aumenta a amizade. Cada conversa tem os botões <b>CONVERSAR</b>, <b>DICA</b> (conselho
@@ -100,14 +107,14 @@ export function Moradores() {
               <dl className="ficha-dados">
                 <dt>Especialista em</dt><dd>{m.especialidade}</dd>
                 <dt>Onde mora</dt><dd>{m.casaNome}</dd>
-                <dt>Horário</dt><dd>{m.horario ? `${hora(m.horario[0])} às ${hora(m.horario[1])}` : "Taverna das 18h às 2h"}</dd>
-                <dt>Folga</dt><dd>{DIAS_SEMANA[m.folga]}</dd>
+                <dt>Horário</dt><dd>{m.horario?.length === 2 ? `${hora(m.horario[0])} às ${hora(m.horario[1])}` : m.id === "bardo" ? "Taverna das 18h às 2h" : "Conversas durante a rotina"}</dd>
+                <dt>Folga</dt><dd>{DIAS_SEMANA[m.folga] ?? "Rotina própria"}</dd>
               </dl>
               <div className="rotina">
                 {m.rotina.map(([h, o]) => (
                   <span key={h}><b>{hora(h)}</b> {o}</span>
                 ))}
-                <span><b>22h</b> Dorme {m.id === "lia" ? "na pousada" : "em casa"}</span>
+                {m.rotina.length > 0 && <span><b>{m.id === "bardo" ? "Após a taverna" : "22h"}</b> Descanso {m.id === "lia" ? "na pousada" : "em casa"}</span>}
               </div>
             </div>
           </article>

@@ -4,6 +4,25 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "de desenvolvimento",
+    data: "21 de outubro de 2026",
+    resumo: "Personagens Raven, cenários detalhados nas quatro estações, fachadas no padrão da taverna e revisão completa dos guias.",
+    novo: [
+      <><b>Herói Raven.</b> Três tons de pele, 28 cabelos e opções de roupa; combate, ferramentas, pesca e peças de armadura acompanham a aparência.</>,
+      <><b>Pesca ampliada.</b> 48 espécies, níveis de vara, qualidade, coleção, desafios e encomendas. O cardápio do Caio tem dez pratos, incluindo peixes e ovos.</>,
+    ],
+    melhorou: [
+      <><b>Vila e fazenda.</b> Terrenos, água, árvores, pedras, cercas, tufos e flores detalhados, com integração nas quatro estações.</>,
+      <><b>Construções.</b> Venda, sede, enfermaria, Mística, Bento, forja e carpintaria receberam o acabamento pintado da taverna. A casa do jogador tem inverno próprio e os fundos do menu mostram as artes novas.</>,
+      <><b>Catálogo atual.</b> Cinco armas e 23 receitas ativas de equipamento; Maça, Arco Curvo e Arco Longo saíram do catálogo novo. Receita precisa ser recolhida, aprendida na mochila e fabricada com Ivo.</>,
+      <><b>Guias da Wiki.</b> Guardiões por mapa, controles, energia, serviços dos moradores e itens preservados após a expedição foram conferidos no código atual.</>,
+    ],
+    corrigido: [
+      <>As cercas da fazenda restauram corretamente o visual ao alternar a comparação Tiny.</>,
+      <>Fontes de interface incluem os acentos e símbolos utilizados na versão Web.</>,
+    ],
+  },
+  {
     versao: "0.8",
     data: "20 de outubro de 2026",
     resumo: "Nova interface, trilhas e ambientes sonoros, fenda por andares, fabricação de equipamentos e criação de galinhas.",
@@ -162,10 +181,10 @@ export function Patch() {
   const [recente, ...antigos] = PATCHES;
   return (
     <>
-      <Titulo sub="Tudo o que mudou no jogo, da versão mais nova para a mais antiga.">Patch de atualizações</Titulo>
+      <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} Baixe a versão nova em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão atual está em <Link para="jogar">Jogar no navegador</Link>; os instaladores do Release v0.8 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (

@@ -23,7 +23,8 @@ const PLATAFORMAS = [
 export function Download() {
   return (
     <>
-      <Titulo sub="v0.8 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <Titulo sub="Release v0.8 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <Caixa tipo="nota" titulo="Versões disponíveis">Os arquivos abaixo são do Release v0.8, publicado em 20/10/2026. A versão Web foi atualizada em 21/10/2026 e inclui mudanças posteriores de personagens e cenários; os instaladores não foram republicados nesta atualização da Wiki.</Caixa>
       <p>Quer testar sem instalar? <a href="#/jogar">Jogue no navegador.</a></p>
       <Secao>
         <div className="downloads">

@@ -1,12 +1,12 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Tabela, Link, Ouro, Raridade, Passos } from "../componentes/ui.jsx";
 import { ARMAS as SPR_ARMAS, CONJUNTOS as SPR_CONJ, MORADORES as SPR } from "../sprites.js";
-import { ARMAS, ESCUDO, BIGORNA, ENCANTAMENTOS, RARIDADES, AFIXOS, CONJUNTOS, ASCENSAO } from "../dados.js";
+import { ARMAS, ESCUDO, BIGORNA, ENCANTAMENTOS, RARIDADES, AFIXOS, CONJUNTOS, ASCENSAO, RECEITAS } from "../dados.js";
 
 export function Armas() {
   return (
     <>
-      <Titulo sub="Espadas, maça, machado, lança, arcos e o escudo; bigorna e encantamentos.">Armas e escudo</Titulo>
+      <Titulo sub="O arsenal atual: espada, espada de duas mãos, lança, machado, arco e escudo.">Armas e escudo</Titulo>
       <Secao>
         <p>
           Você começa com <b>espada e escudo</b>. Encontre receitas na fenda, use-as na mochila e
@@ -31,15 +31,14 @@ export function Armas() {
             <div className="ficha-palco"><Sprite s={SPR_ARMAS.escudo_basico} escala={6} parado titulo="Escudo" /></div>
             <div className="ficha-texto">
               <h3>Escudo Básico</h3>
-              <p className="etiqueta">Defesa (Ctrl / LT)</p>
+              <p className="etiqueta">Defesa (C na Web / Ctrl no instalado / LT)</p>
               <p>Vitalidade: <b>{ESCUDO.vitalidade.join(" / ")}</b></p>
               <p>Defesa: <b>{ESCUDO.defesa.join(" / ")}</b></p>
             </div>
           </article>
         </Grade>
         <Caixa tipo="nota" titulo="Arcos">
-          O arco curto atira rápido, o curvo bate mais forte e o longo dispara <b>3 flechas</b> em leque, mas é o mais
-          lento. Com a força inicial, o dano por segundo no nível 1 fica perto de 30, 40 e 63 (se as 3 acertarem).
+          O modelo atual é o <b>Arco</b>, usado com uma aljava fabricada no Ivo. Maça, Arco Curvo e Arco Longo foram retirados do catálogo novo; os identificadores antigos são preservados para saves e encomendas existentes.
         </Caixa>
       </Secao>
 
@@ -50,13 +49,14 @@ export function Armas() {
           <>Espere o prazo no calendário do jogo: as receitas levam de <b>1 a 3 dias</b>. Avançar andares não reduz a espera.</>,
           <>Volte para <b>RETIRAR ENCOMENDA</b> quando o pedido estiver pronto.</>,
         ]} />
-        <p>Há 24 receitas de equipamentos. Os conjuntos têm quatro peças independentes; cada peça precisa ser fabricada.</p>
+        <p>Há {RECEITAS.length} receitas ativas de equipamentos. Os conjuntos têm quatro peças independentes; cada peça precisa ser fabricada.</p>
       </Secao>
 
+      <Secao titulo="Catálogo de fabricação"><Tabela cabecalho={["Equipamento", "Materiais", "Prazo", "Receita"]} linhas={RECEITAS.map(r => [r.nome, Object.entries(r.materiais).map(([id,n]) => `${n} ${id}`).join(" + "), `${r.dias} dia(s)`, r.livre ? "Disponível desde o início" : `Elegível a partir do andar ${r.meta}`])} /><p>O marco torna a receita elegível para cair. Aprenda o pergaminho na mochila e encomende o item; vencer o andar não entrega a arma pronta.</p></Secao>
       <Secao titulo="Bigorna">
-        <p>Na janela entre ondas (ou com o Tomás na vila), a bigorna sobe o nível da arma. Cada nível pede uma onda mínima e ouro:</p>
-        <Tabela cabecalho={["Nível", "Onda mínima", "Arma", "Escudo"]}
-          linhas={[1, 2, 3, 4].map((i) => [`${i} → ${i + 1}`, `onda ${BIGORNA.onda[i]}`, <Ouro n={BIGORNA.custo[i]} />, <Ouro n={ESCUDO.custo[i]} />])} compacta />
+        <p>A bigorna sobe o nível da arma com ouro e exige progresso mínimo na fenda:</p>
+        <Tabela cabecalho={["Nível", "Andar mínimo", "Arma", "Escudo"]}
+          linhas={[1, 2, 3, 4].map((i) => [`${i} → ${i + 1}`, `andar ${BIGORNA.onda[i]}`, <Ouro n={BIGORNA.custo[i]} />, <Ouro n={ESCUDO.custo[i]} />])} compacta />
       </Secao>
 
       <Secao titulo="Encantamentos">
@@ -72,7 +72,7 @@ export function Armas() {
 export function RaridadePagina() {
   return (
     <>
-      <Titulo sub="Equipamentos caem com cinco raridades, cada uma com cor própria.">Raridade</Titulo>
+      <Titulo sub="Equipamentos têm cinco raridades, cada uma com cor e multiplicador próprios.">Raridade</Titulo>
       <Secao>
         <div className="raridades">
           {RARIDADES.map((r) => (
@@ -80,30 +80,22 @@ export function RaridadePagina() {
               <Raridade id={r.id} />
               <b>{r.mult}</b>
               <span>status</span>
-              <small>{r.afixos} bônus extra{r.afixos === 1 ? "" : "s"} · cai em {r.peso}</small>
+              <small>{r.afixos} bônus extra{r.afixos === 1 ? "" : "s"}</small>
             </div>
           ))}
         </div>
         <p>
           A raridade multiplica os status do item e sorteia <b>bônus extras</b> (afixos). O lendário pode trazer um
-          encantamento no lugar de um dos bônus, já no nível 1. Cada onda empurra o sorteio para cima, e mutantes e
-          chefes sobem mais um ou dois degraus.
+          encantamento no lugar de um dos bônus, já no nível 1. O catálogo da forja mostra a raridade inicial; peças de conjunto também podem subir de raridade na bigorna.
         </p>
       </Secao>
       <Secao titulo="Bônus extras (afixos)">
         <Tabela cabecalho={["Bônus", "Valor (comum)", "Onde pode sair"]} linhas={AFIXOS.map((a) => [a.nome, a.valor, a.onde])} compacta />
         <p>Os valores sobem com a raridade, mas são pequenos de propósito: o grosso do ganho está no multiplicador.</p>
       </Secao>
-      <Secao titulo="Chance de cair">
-        <ul className="lista">
-          <li>Inimigo comum: <b>1,5%</b> de soltar equipamento.</li>
-          <li>Mutante: <b>6%</b>, um degrau de raridade acima.</li>
-          <li>Chefe: <b>sempre</b>, no mínimo raro, dois degraus acima.</li>
-        </ul>
-        <Caixa tipo="nota" titulo="Venda">
-          Na arena, um item vale (6 + 1,5 × onda) × o multiplicador de preço da raridade. O Tomás paga 1,5× isso,
-          calculado pela maior onda que você já venceu.
-        </Caixa>
+      <Secao titulo="Receitas e recompensas">
+        <p>As chances de pergaminho são 0,2% por inimigo comum, 1% por elite/mutante e 20% por guardião. O sorteio considera apenas receitas elegíveis e ainda pendentes; não é um drop de equipamento pronto.</p>
+        <p>O baú gigante da sala de tesouro tem 5% de chance de entregar uma peça real de conjunto, lendária no nível 5. <Link para="arena">Veja o tesouro da fenda.</Link></p>
       </Secao>
     </>
   );
@@ -115,8 +107,7 @@ export function Armaduras() {
       <Titulo sub="Três conjuntos de quatro peças: elmo, peitoral, luvas e botas.">Armaduras</Titulo>
       <Secao>
         <p>
-          As peças só caem de <Link para="chefes">chefes</Link>: o equipamento do chefe tem 10% de chance de ser de cada
-          conjunto (30% no total). Elas vêm comuns e no nível 1. Cada peça aparece no corpo do personagem em todas as
+          Aprenda as receitas elegíveis a partir do andar 10 e fabrique cada peça com Ivo, usando ferro, fibra, fragmentos e um núcleo de guardião. Elas vêm comuns no nível 1. O baú gigante do tesouro também pode conceder uma peça lendária. Cada peça aparece no corpo do personagem em todas as
           animações, e dá para misturar conjuntos.
         </p>
       </Secao>
@@ -147,8 +138,8 @@ export function Armaduras() {
           <Sprite s={SPR.mercador} escala={3} titulo="Tomás" />
           <div>
             <p>
-              Peças de conjunto sobem na bigorna pagando o mesmo ouro e a mesma onda mínima das armas, <b>mais 1 Moeda
-              de Forja por nível</b>. A moeda cai de qualquer chefe com 5% de chance, vai direto para a bolsa e se perde
+              Peças de conjunto sobem na bigorna pagando o mesmo ouro e o mesmo andar mínimo das armas, <b>mais 1 Moeda
+              de Forja por nível</b>. A moeda cai de qualquer chefe com 5% de chance, é um material físico da mochila e permanece
               se você cair.
             </p>
             <p>

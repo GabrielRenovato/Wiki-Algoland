@@ -1,3 +1,4 @@
+import atual from "./dados-jogo.json";
 // Números do jogo, copiados das tabelas do código do AlgoLand (o arquivo de origem está ao lado de cada bloco).
 // Se o balanceamento mudar no jogo, atualize aqui.
 
@@ -19,10 +20,10 @@ export const PLANTAS = [
   { id: "abobora", nome: "Abóbora", estacao: 2, dias: 5, raridade: "incomum", item: [20, 2], saco: [18, 2], larg: 128, alta: false, quadros: [0, 2, 3, 4, 5] },
   { id: "uva", nome: "Uva", estacao: 2, dias: 6, raridade: "raro", item: [20, 3], saco: [18, 3], larg: 128, alta: true, quadros: [0, 2, 3, 4, 5] },
 ];
-// codigo/dados/loja_sementes.gd (preço em Brasas, com o Bento)
+// codigo/dados/loja_sementes.gd (preço em Brasas, com o Tomás)
 export const PRECO_SEMENTE = { comum: 2, incomum: 3, raro: 4, epico: 6 };
 // codigo/logica/semente_drop.gd
-export const CHANCE_SEMENTE = { comum: "1%", incomum: "0,4%", raro: "0,12%", epico: "0,04%" };
+export const CHANCE_SEMENTE = { comum: "0,25%", incomum: "0,1%", raro: "0,03%", epico: "0,01%" };
 
 // codigo/dados/pocoes.gd
 export const POCOES = [
@@ -42,8 +43,8 @@ export const MORADORES = [
     rotina: [[6, "Organizando os pedidos (sede)"], [9, "Recebendo visitantes na praça"], [15, "Cuidando da comunidade (sede)"], [19, "Jantando na pousada"]],
     fala: "Bem-vindo à Vila das Flores! A fazenda fica a oeste e a trilha da arena a leste. Os pedidos estão no mural." },
   { id: "mercador", nome: "Tomás", oficio: "Comerciante", casa: "venda", casaNome: "Venda",
-    servico: "Loja de armas e escudos, bigorna, encantamentos e compra do seu saque (paga 1,5× o preço da arena).",
-    especialidade: "Loja, bigorna e raridade", horario: [8, 17], folga: 6,
+    servico: "Vende sementes da estação por Brasas e compra os peixes da sua mochila. Equipamentos e ferramentas ficam na forja do Ivo.",
+    especialidade: "Sementes e venda de peixes", horario: [8, 17], folga: 6,
     rotina: [[6, "Abrindo a venda"], [8, "Atendendo na venda"], [17, "Conversando na praça"], [20, "Guardando as mercadorias"]],
     fala: "A venda abastece quem cuida da terra e quem enfrenta a floresta." },
   { id: "curandeira", nome: "Dona Rosa", oficio: "Curandeira", casa: "enfermaria", casaNome: "Enfermaria",
@@ -62,28 +63,36 @@ export const MORADORES = [
     rotina: [[6, "Consultando os mapas"]],
     fala: "As estações mudam, mas o que você aprendeu na floresta continua com você." },
   { id: "bento", nome: "Bento", oficio: "Agricultor", casa: "casa_bento", casaNome: "Casa do Bento",
-    servico: "Vende sementes da estação por Brasas e dá duas sementes por dia quando há espaço na mochila. É quem resgata você no prólogo.",
+    servico: "Ensina a cuidar da horta e dá duas sementes por dia quando há espaço na mochila. É quem resgata você no prólogo.",
     especialidade: "Horta", horario: [6, 19], folga: 3,
     rotina: [[6, "Cuidando da horta"], [12, "Descansando na praça"], [16, "Separando as sementes"], [19, "Jantando na pousada"]],
     fala: "Plante o que combina com a estação e regue todo dia. No inverno, prepare a terra para a primavera." },
 ];
+
+MORADORES.push(
+  { id:'ferreiro', nome:'Ivo', oficio:'Ferreiro', casa:'forja', casaNome:'Forja', servico:'Fabrica equipamentos por encomenda, refina armas e peças de conjunto, encanta e melhora ferramentas.', especialidade:'Receitas, materiais e encomendas', horario:[8,18], folga:2, rotina:[[6,'Afiando ferramentas'],[8,'Trabalhando na forja']], fala:'Na arena você aprende o desenho. A terra fornece o material. Eu junto as duas coisas.' },
+  { id:'nilo', nome:'Nilo', oficio:'Pescador e artesão de varas', casa:'palafita', casaNome:'Palafita da praia', servico:'Refina a vara na oficina do cais. O guia reúne as espécies, a coleção, os desafios e as encomendas de pesca.', especialidade:'Pesca e refinamento da vara', horario:[8,17], folga:-1, rotina:[], fala:'Eu cuido da sua vara. Traga as pedras de refinamento que encontrar pescando.' },
+  { id:'osvaldo', nome:'Osvaldo', oficio:'Carpinteiro, 65 anos', casa:'carpintaria', casaNome:'Carpintaria', servico:'Constrói e amplia o galinheiro e vende galinhas e galos por 25 Brasas.', especialidade:'Obras e animais', horario:[8,17], folga:-1, rotina:[], fala:'Traga madeira e pedra. Construo e amplio o abrigo das suas aves.' },
+  { id:'helena', nome:'Helena', oficio:'Bordadeira, 55 anos', casa:'carpintaria', casaNome:'Casa da família do Osvaldo', servico:'Gosta de bordar e contar histórias. Usa cadeira de rodas e recebe a ajuda da filha Clara no dia a dia.', especialidade:'Histórias e amizade', horario:[], folga:-1, rotina:[], fala:'Clara me ajuda no dia a dia. Agora me conte de você: como anda sua fazenda?' },
+  { id:'clara', nome:'Clara', oficio:'Artesã, 30 anos', casa:'carpintaria', casaNome:'Casa da família do Osvaldo', servico:'Divide o tempo entre suas encomendas e os cuidados com Helena. Suas histórias acompanham a amizade.', especialidade:'Artesanato e amizade', horario:[], folga:-1, rotina:[], fala:'Divido meu tempo entre minhas encomendas e os cuidados da minha mãe, Helena.' },
+);
 
 export const PEDIDOS = [
   { nome: "Conheça seus vizinhos", dono: "Lia", texto: "Converse com Tomás, Dona Rosa, Caio, Estela e Bento.", brasas: 10 },
   { nome: "Portas abertas", dono: "Lia", texto: "Visite a venda, a enfermaria, a pousada e a casa da mística.", brasas: 10 },
   { nome: "Da horta para a mesa", dono: "Bento", texto: "Entregue 3 colheitas da estação ao Bento. No inverno, qualquer colheita serve.", brasas: 15 },
   { nome: "Um cuidado para a vila", dono: "Dona Rosa", texto: "Entregue 2 colheitas à Dona Rosa para preparar os remédios.", brasas: 15 },
-  { nome: "Uma história para cantar", dono: "Caio", texto: "Vença 3 ondas na arena depois de aceitar o pedido e conte ao Caio.", brasas: 20 },
-  { nome: "Caminhos da floresta", dono: "Estela", texto: "Derrote o primeiro chefe da arena (onda 10) e fale com a Estela.", brasas: 25 },
+  { nome: "Uma história para cantar", dono: "Caio", texto: "Vença 3 andares na arena depois de aceitar o pedido e conte ao Caio.", brasas: 20 },
+  { nome: "Caminhos da floresta", dono: "Estela", texto: "Derrote o guardião do andar 10 e fale com a Estela.", brasas: 25 },
 ];
 
-// codigo/logica/slime_spawner.gd (2 ondas por estágio)
+// Espécies principais da fenda: slime_spawner.gd + gerador_encontros.gd.
 export const ESTAGIOS = [
   { ondas: "1–2", ids: ["slime"], nomes: ["Slime"] },
   { ondas: "3–4", ids: ["morcego"], nomes: ["Morcego"] },
   { ondas: "5–6", ids: ["vespa"], nomes: ["Vespa"] },
   { ondas: "7–8", ids: ["cogumelo"], nomes: ["Cogumelo"] },
-  { ondas: "9", ids: ["flor"], nomes: ["Flor"], nota: "a onda 10 é do chefe" },
+  { ondas: "9–10", ids: ["flor"], nomes: ["Flor"] },
   { ondas: "11–12", ids: ["caranguejo"], nomes: ["Caranguejo"] },
   { ondas: "13–14", ids: ["gremlin"], nomes: ["Gremlin"] },
   { ondas: "15–16", ids: ["falcao"], nomes: ["Falcão"] },
@@ -92,11 +101,11 @@ export const ESTAGIOS = [
 
 // codigo/logica/gerenciador_de_ondas.gd
 export const CHEFES = [
-  { id: "minotauro", nome: "Minotauro", onda: 10, golpes: ["Investida", "Pisão", "Machadada", "Pisão em fúria"], escala: 1.3 },
-  { id: "medusa", nome: "Medusa", onda: 20, golpes: ["Garras", "Cauda", "Bote", "Olhar de pedra (petrifica)", "Ruína em área"], escala: 0.9 },
-  { id: "goblin_maromba", nome: "Goblin Maromba", onda: 30, golpes: ["Porretada", "Varrida", "Salto", "Fúria", "Execução"], escala: 0.9 },
-  { id: "cogumelo", nome: "Cogumelo Ancião", onda: 40, golpes: ["Esporos em área", "Invoca cogumelos"], escala: 4, nota: "o cogumelo comum em escala 2,4" },
-  { id: "dragao_vermelho", nome: "Dragão Vermelho", onda: 50, golpes: ["Sopro", "Cauda", "Asas", "Patada", "Chuva de fogo"], escala: 2 },
+  { id: "minotauro", nome: "Minotauro", golpes: ["Investida", "Pisão", "Machadada", "Pisão em fúria"], escala: 1.3 },
+  { id: "medusa", nome: "Medusa", golpes: ["Garras", "Cauda", "Bote", "Olhar de pedra (petrifica)", "Ruína em área"], escala: 0.9 },
+  { id: "goblin_maromba", nome: "Goblin Maromba", golpes: ["Porretada", "Varrida", "Salto", "Fúria", "Execução"], escala: 0.9 },
+  { id: "cogumelo", nome: "Cogumelo Ancião", golpes: ["Esporos em área", "Invoca cogumelos"], escala: 4 },
+  { id: "dragao_vermelho", nome: "Dragão Vermelho", golpes: ["Sopro", "Cauda", "Asas", "Patada", "Chuva de fogo"], escala: 2 },
 ];
 
 export const EVENTOS = [
@@ -109,16 +118,14 @@ export const EVENTOS = [
 ];
 
 // codigo/dados/equipamentos.gd
-export const ARMAS = [
-  { id: "espada_basica", nome: "Espada Básica", tipo: "Espada (uma mão)", dano: [8, 12, 18, 28, 40], libera: "Kit inicial" },
-  { id: "lanca_basica", nome: "Lança Básica", tipo: "Lança (duas mãos)", dano: [11, 16, 24, 37, 52], libera: "Kit inicial (2ª linha da mochila)" },
-  { id: "espada_gemea", nome: "Espada Gêmea", tipo: "Espada", dano: [9, 13, 20, 30, 43], libera: "Vencer a onda 5" },
-  { id: "maca", nome: "Maça", tipo: "Espada", dano: [9, 14, 21, 31, 45], libera: "Vencer a onda 8" },
-  { id: "machado", nome: "Machado", tipo: "Espada", dano: [10, 15, 22, 33, 47], libera: "Derrotar o chefe da onda 10" },
-  { id: "arco_curto", nome: "Arco Curto", tipo: "Arco · disparo rápido", dano: [10, 15, 22, 33, 47], libera: "Vencer a onda 3" },
-  { id: "arco_curvo", nome: "Arco Curvo", tipo: "Arco", dano: [19, 27, 40, 58, 81], libera: "Vencer a onda 15" },
-  { id: "arco_longo", nome: "Arco Longo", tipo: "Arco · 3 flechas, lento", dano: [18, 26, 38, 56, 78], libera: "Derrotar o chefe da onda 20" },
-];
+const NOMES_ARMAS = { espada_basica: "Espada Básica", lanca_basica: "Lança Básica", espada_gemea: "Espada de Duas Mãos", machado: "Machado", arco_curto: "Arco" };
+const TIPOS_ARMAS = { espada_basica: "Espada de uma mão", lanca_basica: "Lança de duas mãos", espada_gemea: "Espada de duas mãos", machado: "Machado de duas mãos", arco_curto: "Arco · exige aljava" };
+export const ARMAS = atual.armas.map(a => ({ ...a, nome: NOMES_ARMAS[a.id], tipo: TIPOS_ARMAS[a.id], libera: a.id === 'espada_basica' ? 'Kit inicial' : `Receita elegível a partir do andar ${a.meta}; fabricar com Ivo` }));
+export const RECEITAS = atual.receitas;
+export const ANDARES = atual.andares;
+export const PEIXES = atual.peixes;
+export const COMMIT_JOGO = atual.commit;
+export const ENERGIA_MAXIMA = atual.energia;
 export const ESCUDO = { vitalidade: [2, 4, 6, 9, 12], defesa: [4, 8, 13, 19, 26], custo: [0, 150, 400, 800, 1600] };
 export const BIGORNA = { onda: [0, 4, 8, 14, 22], custo: [0, 200, 500, 1000, 2000] };
 export const ASCENSAO = [2500, 3500, 5000, 7000];
@@ -168,7 +175,7 @@ export const CUSTOS_MELHORIA = [10, 20, 35, 55, 80];
 export const APOIOS = [
   { nome: "Curandeira", efeito: "Revive você 1 vez por partida, com metade da vida e 2 s invulnerável", custo: 40 },
   { nome: "Bardo", efeito: "+25% de Brasas ao fim da partida", custo: 25 },
-  { nome: "Mística", efeito: "Começa a partida no checkpoint (onda depois do maior chefe vencido), com 30 de ouro por onda pulada", custo: 50 },
+  { nome: "Mística", efeito: "Começa a partida em um checkpoint liberado, com compensação de ouro conforme o andar escolhido", custo: 50 },
 ];
 
 // codigo/dados/dados_dos_items_loja.gd (preço sobe 20% a cada cópia comprada na partida)
@@ -182,13 +189,7 @@ export const TOTENS = [
 ];
 
 // codigo/dados/refeicoes.gd (o prato do Caio vale a próxima partida inteira e acaba junto com ela)
-export const REFEICOES = [
-  { id: "sopa_raizes", nome: "Sopa de Raízes", receita: { cenoura: 2, batata: 2 }, bonus: "+30% de vida", item: "batata", texto: "Cenoura e batata no caldo grosso: aguenta muito mais pancada." },
-  { id: "torta_morango", nome: "Torta de Morango", receita: { morango: 2, couve_flor: 1 }, bonus: "+20% de dano e +30% de fôlego", item: "morango", texto: "Doce e leve: golpes mais fortes e fôlego de sobra." },
-  { id: "milho_assado", nome: "Milho Assado na Brasa", receita: { milho: 2, girassol: 2 }, bonus: "+40% de ouro por abate e +20% de fôlego", item: "milho", texto: "O cheiro de milho assado atrai sorte: muito mais ouro por abate." },
-  { id: "salada_verao", nome: "Salada de Verão", receita: { tomate: 2, melancia: 1 }, bonus: "+35% de dano", item: "tomate", texto: "Tomate maduro e melancia gelada: cada golpe pesa o dobro." },
-  { id: "ensopado_outono", nome: "Ensopado de Outono", receita: { abobora: 2, beterraba: 2 }, bonus: "+15% de defesa e +15% de vida", item: "abobora", texto: "Abóbora e beterraba no fogo lento: a pele fica dura como casca." },
-  { id: "banquete", nome: "Banquete da Colheita", receita: { uva: 1, berinjela: 1, milho: 1, morango: 1 }, bonus: "+25% de vida, dano e ouro", item: "uva", texto: "Um pouco de cada estação na mesma mesa: tudo melhora." },
-];
+const NOMES_PRATOS = { sopa_raizes: "Sopa de Raízes", torta_morango: "Torta de Morango", milho_assado: "Milho Assado na Brasa", salada_verao: "Salada de Verão", ensopado_outono: "Ensopado de Outono", banquete: "Banquete da Colheita", peixe_assado: "Peixe Assado com Raízes", caldo_rio: "Caldo do Rio", salmao_grelhado: "Salmão Grelhado", omelete_horta: "Omelete da Horta" };
+export const REFEICOES = atual.refeicoes.map(r => ({ ...r, nome: NOMES_PRATOS[r.id], bonus: r.texto_bonus, item: r.icone ?? Object.keys(r.receita)[0] }));
 // codigo/globais/fazenda_dados.gd: Brasas pagas pela Lia por colheita, conforme a raridade da planta
 export const BRASAS_COLHEITA = { comum: 3, incomum: 5, raro: 6, epico: 9 };

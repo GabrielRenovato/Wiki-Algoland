@@ -1,135 +1,73 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Passos, Brasas, Ouro } from "../componentes/ui.jsx";
 import { INIMIGOS, CHEFES as SPR_CHEFES, PORTAL, MORADORES as SPR } from "../sprites.js";
-import { ESTAGIOS, CHEFES, TOTENS } from "../dados.js";
+import { ESTAGIOS, CHEFES, TOTENS, ANDARES } from "../dados.js";
 
+const nomeChefe = id => CHEFES.find(c => c.id === id)?.nome ?? id;
 export function Arena() {
-  return (
-    <>
-      <Titulo sub="Explore a fenda, complete a caçada e enfrente o guardião de cada andar.">Fenda por andares</Titulo>
-      <Secao titulo="Como avançar">
-        <div className="lado-a-lado">
-          <Sprite s={PORTAL} escala={3} titulo="Portal" />
-          <Passos itens={[
-            <>Entre pelo <b>portal da vila</b> e escolha o desafio.</>,
-            <>Explore o mapa e enfrente patrulhas, grupos e elites para preencher os <b>pontos da caçada</b>.</>,
-            <>A meta exige apenas parte dos encontros disponíveis. Você pode escolher o caminho sem limpar todos os becos.</>,
-            <>Ao completar a caçada, procure e derrote o <b>guardião do andar</b>.</>,
-            <>Depois da vitória, converse com <b>Orion</b> para acessar as melhorias, avançar ou voltar à cidade.</>,
-          ]} />
-        </div>
-      </Secao>
-      <Secao titulo="Mapas e exploração">
-        <p>A fenda tem <b>11 mapas</b>. Depois do mapa 11, o circuito repete os mapas 2 a 11 com dificuldade crescente.</p>
-        <p>Os encontros ficam distribuídos pelo cenário. Observe os caminhos e os avisos dos ataques antes de entrar em combate.</p>
-        <Caixa tipo="dica" titulo="Materiais para a forja">
-          Concluir andares rende fragmentos da arena. Leve a picareta para minerar os veios e guarde os materiais físicos na mochila para fabricar equipamentos com Ivo.
-        </Caixa>
-      </Secao>
-      <Secao titulo="Entre os andares">
-        <p>A vitória chama Orion; o menu não abre automaticamente por cima do saque. Fale com ele quando estiver pronto.</p>
-        <Tabela cabecalho={["Serviço", "Para que serve"]} linhas={[
-          [<b>MELHORIAS</b>, "Totens pagos com ouro, válidos até o fim da partida."],
-          [<b>BIGORNA</b>, <>Evolução de armas e escudo. <Link para="armas">Veja os equipamentos</Link>.</>],
-          [<b>ENCANTAR</b>, <>Encantamentos para armas de ataque. <Link para="armas">Veja os efeitos</Link>.</>],
-          [<b>SAQUE</b>, "Escolha o que levar ou vender quando o equipamento não couber na mochila."],
+  return <>
+    <Titulo sub="Explore a fenda, complete a caçada e enfrente o guardião de cada andar.">Fenda por andares</Titulo>
+    <Secao titulo="Como avançar">
+      <div className="lado-a-lado"><Sprite s={PORTAL} escala={3} titulo="Portal" />
+        <Passos itens={[
+          <>Entre pelo <b>portal da vila</b> e escolha o desafio.</>,
+          <>Explore o mapa e enfrente patrulhas, grupos e elites para preencher os <b>pontos da caçada</b>.</>,
+          <>A meta exige apenas parte dos encontros disponíveis. Escolha o caminho sem precisar limpar todos os becos.</>,
+          <>Com a caçada completa, procure e derrote o <b>guardião do andar</b>.</>,
+          <>Converse com <b>Orion</b> depois da vitória para acessar as melhorias, avançar ou voltar à cidade.</>,
         ]} />
-      </Secao>
-      <Secao titulo="Totens">
-        <p>Os bônus duram a partida. Cada cópia comprada do mesmo totem custa 20% a mais.</p>
-        <Tabela cabecalho={["Totem", "Preço base", "Efeito"]} linhas={TOTENS.map((t) => [<b>{t.nome}</b>, <Ouro n={t.preco} />, t.efeito])} />
-      </Secao>
-      <Secao titulo="Morrer e sair">
-        <Grade min={260}>
-          <Ficha sprite={SPR.curandeira} nome="Se você cair">
-            <p>Você acorda na enfermaria com Dona Rosa. As conquistas permanentes da fazenda e os equipamentos continuam fazendo parte da sua progressão.</p>
-          </Ficha>
-          <Ficha sprite={PORTAL} nome="Voltar à cidade">
-            <p>Depois da vitória, converse com Orion para encerrar a expedição ou continuar no próximo andar.</p>
-          </Ficha>
-        </Grade>
-      </Secao>
-    </>
-  );
+      </div>
+    </Secao>
+    <Secao titulo="Mapas e guardiões">
+      <p>Há 11 mapas. A partir do andar 12, o circuito repete os mapas 2–11 com dificuldade crescente. Cada mapa tem seu próprio guardião.</p>
+      <Tabela cabecalho={["Mapa", "Região", "Guardião"]} linhas={ANDARES.map(a => [a.andar,a.nome,nomeChefe(a.guardiao)])} />
+      <Caixa tipo="dica" titulo="Materiais e receitas">Cada andar concluído rende um fragmento da arena. Leve a picareta para os veios de ferro, disponíveis nos andares 6, 9, 12… Os guardiões fornecem núcleos. Receitas são pergaminhos: use-os na mochila e leve os materiais ao Ivo.</Caixa>
+    </Secao>
+    <Secao titulo="Eventos e tesouro">
+      <p>A partir do andar 4, há 25% de chance de um evento: Lua de Sangue, Chuva de Ouro, Neblina ou Tempestade. Tempestade não aparece no inverno. Horda e Elite pertencem ao modo antigo de ondas; os grupos de elite da fenda já fazem parte dos mapas.</p>
+      <p>Um portal opcional do tesouro pode aparecer com 15% de chance. Ele leva a uma sala de mímicos e devolve você ao mesmo andar. O baú gigante tem 5% de chance de conceder uma peça de conjunto lendária no nível 5.</p>
+    </Secao>
+    <Secao titulo="Entre os andares">
+      <p>A vitória chama Orion; o menu não abre automaticamente por cima dos drops. Fale com ele quando estiver pronto. Totens usam ouro e duram até o fim da expedição.</p>
+      <Tabela cabecalho={["Totem", "Preço base", "Efeito"]} linhas={TOTENS.map(t => [<b>{t.nome}</b>, <Ouro n={t.preco} />,t.efeito])} />
+      <p>Cada cópia do mesmo totem custa 20% a mais. A fabricação de equipamentos fica na <Link para="armas">forja do Ivo</Link>, na vila.</p>
+    </Secao>
+    <Secao titulo="Morrer e sair"><Grade min={260}>
+      <Ficha sprite={SPR.curandeira} nome="Se você cair"><p>Você acorda na enfermaria. Ouro, totens e equipamento temporário são reiniciados; conjuntos, receitas, materiais e demais itens permanentes ficam. <Link para="progresso">Confira o que é preservado.</Link></p></Ficha>
+      <Ficha sprite={PORTAL} nome="Voltar à cidade"><p>Depois da vitória, fale com Orion para encerrar a expedição e receber as Brasas ou seguir para o próximo andar.</p></Ficha>
+    </Grade></Secao>
+  </>;
 }
 
 export function Inimigos() {
-  return (
-    <>
-      <Titulo sub="Cada estágio dura 2 ondas e usa uma só espécie (menos os esqueletos, que vêm em trio).">Inimigos</Titulo>
-      <Secao>
-        <Grade min={230}>
-          {ESTAGIOS.map((e) => (
-            <article key={e.ondas} className="ficha inimigo">
-              <div className="ficha-palco">
-                {e.ids.map((id) => <Sprite key={id} s={INIMIGOS[id]} escala={INIMIGOS[id].tam[0] > 40 ? 1.5 : INIMIGOS[id].tam[0] > 32 ? 2 : 3} titulo={id} />)}
-              </div>
-              <div className="ficha-texto">
-                <h3>{e.nomes.join(", ")}</h3>
-                <p className="etiqueta">Ondas {e.ondas}{e.nota ? ` (${e.nota})` : ""}</p>
-              </div>
-            </article>
-          ))}
-        </Grade>
-        <Caixa tipo="nota" titulo="Depois da onda 18">
-          A sequência recomeça do morcego (sem o estágio só de slimes), e a vida e o dano continuam subindo a cada onda.
-          A velocidade também cresce, até um teto.
-        </Caixa>
-      </Secao>
-      <Secao titulo="Mutantes">
-        <p>
-          A partir da onda 6 surgem <b>mutantes</b>: maiores, mais fortes e com uma coroa cinza acima da barra de vida.
-          A chance começa em 5% e sobe 1,5% por onda, até 35% (até 90% no evento ELITE). Eles soltam equipamento com mais
-          frequência (6% contra 1,5% dos comuns) e com raridade melhor.
-        </p>
-      </Secao>
-      <Secao titulo="Esqueletos">
-        <Tabela cabecalho={["Classe", "Como luta"]} linhas={[
-          ["Guerreiro", "Corpo a corpo, avança até você."],
-          ["Arqueiro", "Mantém distância e atira flechas."],
-          ["Mago", "Lança projéteis mágicos de longe."],
-        ]} compacta />
-      </Secao>
-    </>
-  );
+  return <>
+    <Titulo sub="Grupos, patrulhas e elites distribuídos pelos mapas da fenda.">Inimigos</Titulo>
+    <Secao><p>A espécie principal muda a cada dois andares. Cavernas também podem misturar morcegos aos grupos. Os esqueletos alternam guerreiro, arqueiro e mago.</p>
+      <Grade min={230}>{ESTAGIOS.map(e => <article key={e.ondas} className="ficha inimigo">
+        <div className="ficha-palco">{e.ids.map(id => <Sprite key={id} s={INIMIGOS[id]} escala={2} titulo={id} />)}</div>
+        <div className="ficha-texto"><h3>{e.nomes.join(", ")}</h3><p className="etiqueta">Andares {e.ondas === "9" ? "9–10" : e.ondas}</p></div>
+      </article>)}</Grade>
+      <Caixa tipo="nota">Depois do andar 18, a sequência principal repete a partir do morcego. Isso é independente do circuito dos 11 mapas. A dificuldade continua subindo.</Caixa>
+    </Secao>
+    <Secao titulo="Elites"><p>Os grupos marcados como elite incluem um inimigo mutante, com coroa cinza e atributos maiores. Ele vale mais pontos de caçada. Essa distribuição é definida no mapa, sem depender da antiga chance de mutantes por onda.</p></Secao>
+    <Secao titulo="Esqueletos"><Tabela cabecalho={["Classe","Como luta"]} linhas={[["Guerreiro","Combate corpo a corpo."],["Arqueiro","Mantém distância e dispara flechas."],["Mago","Lança projéteis mágicos."]]} compacta /></Secao>
+  </>;
 }
 
 export function Chefes() {
-  return (
-    <>
-      <Titulo sub="A cada 10 ondas um chefe entra sozinho, sem escolta, em rodízio.">Chefes</Titulo>
-      <Secao>
-        <p>
-          Chefes têm <b>coroa dourada</b>, barra de vida própria no HUD e mostram <b>avisos no chão</b> antes dos
-          golpes fortes: saia da área marcada. Depois do 5º chefe o rodízio recomeça, mais forte.
-        </p>
-      </Secao>
-      {CHEFES.map((c) => (
-        <Secao key={c.id}>
-          <article className="chefe">
-            <div className="chefe-palco">
-              <Sprite s={SPR_CHEFES[c.id]} escala={c.escala} titulo={c.nome} />
-            </div>
-            <div>
-              <p className="sobretitulo">Onda {c.onda}</p>
-              <h2>{c.nome}</h2>
-              {c.nota && <p className="etiqueta">{c.nota}</p>}
-              <div className="golpes">{c.golpes.map((g) => <span key={g}>{g}</span>)}</div>
-            </div>
-          </article>
-        </Secao>
-      ))}
-      <Secao titulo="Recompensas de chefe">
-        <ul className="lista">
-          <li>Sempre solta <b>equipamento</b>, no mínimo raro. Há 10% de chance de cada conjunto de <Link para="armaduras">armadura</Link> (30% no total).</li>
-          <li>Sempre solta <b>2 sementes</b> garantidas, com chance boa de raras e épicas.</li>
-          <li>Rende <Brasas n={15} /> e tem <b>5%</b> de chance da <b>Moeda de Forja</b>.</li>
-          <li>Libera a onda seguinte (11, 21, 31…) como <b>checkpoint</b> para a Mística.</li>
-        </ul>
-        <Caixa tipo="aviso" titulo="Medusa">
-          O olhar de pedra petrifica você por um instante. Fique de olho no aviso e saia da frente dela.
-        </Caixa>
-      </Secao>
-    </>
-  );
+  return <>
+    <Titulo sub="Cada andar tem um guardião; a espécie depende do mapa.">Guardiões</Titulo>
+    <Secao><p>Complete a caçada para invocar o guardião na clareira reservada. Observe os avisos no chão antes dos golpes fortes. A lista de mapas e seus guardiões está em <Link para="arena">Fenda por andares</Link>.</p></Secao>
+    {CHEFES.map(c => <Secao key={c.id}><article className="chefe">
+      <div className="chefe-palco"><Sprite s={SPR_CHEFES[c.id]} escala={c.escala} titulo={c.nome} /></div>
+      <div><p className="sobretitulo">Mapas {ANDARES.filter(a => a.guardiao === c.id).map(a => a.andar).join(", ")}</p><h2>{c.nome}</h2><div className="golpes">{c.golpes.map(g => <span key={g}>{g}</span>)}</div></div>
+    </article></Secao>)}
+    <Secao titulo="Recompensas"><ul className="lista">
+      <li>O guardião tem 20% de chance de soltar uma receita elegível ainda não aprendida ou guardada. Equipamento pronto vem da fabricação, com a exceção do prêmio raro do tesouro.</li>
+      <li>Garante uma semente da estação, além das chances extras. No inverno não caem sementes.</li>
+      <li>Conta para a recompensa de <Brasas n={15} /> por guardião no encerramento, além das <Brasas n={2} /> do andar.</li>
+      <li>Pode deixar uma Moeda de Forja (5% de chance). Materiais e moedas de forja são preservados ao encerrar a expedição.</li>
+      <li>Os checkpoints selecionáveis continuam em blocos de dez: 1, 11, 21… após alcançar os marcos correspondentes, com o apoio da Mística.</li>
+    </ul><Caixa tipo="aviso" titulo="Medusa">O olhar de pedra petrifica por um instante. Observe o aviso e saia da frente dela.</Caixa></Secao>
+  </>;
 }

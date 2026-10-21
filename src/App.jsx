@@ -9,6 +9,8 @@ import { Armas, RaridadePagina, Armaduras } from "./paginas/Equipamento.jsx";
 import { Progresso } from "./paginas/Progresso.jsx";
 import { Download } from "./paginas/Download.jsx";
 import { Jogar } from "./paginas/Jogar.jsx";
+import { Pesca } from "./paginas/Pesca.jsx";
+import { Mapa } from "./paginas/Mapa.jsx";
 import { Patch } from "./paginas/Patch.jsx";
 
 // Páginas da wiki: id (vai na URL), título, grupo do menu, ícone e palavras para a busca
@@ -20,16 +22,18 @@ const PAGINAS = [
   { id: "comecando", titulo: "Primeiros passos", grupo: "Comece aqui", icone: MORADORES.bento, Pagina: Comecando, busca: "prólogo tutorial novo jogo personagem criação" },
   { id: "controles", titulo: "Controles", grupo: "Comece aqui", icone: FERRAMENTAS.enxada, Pagina: Controles, busca: "teclas teclado controle xbox toque celular android botões" },
   { id: "vila", titulo: "Vila das Flores", grupo: "Mundo", icone: CASAS.venda, Pagina: Vila, busca: "cidade casas lojas mural pedidos missões festa" },
-  { id: "moradores", titulo: "Moradores", grupo: "Mundo", icone: MORADORES.lia, Pagina: Moradores, busca: "npc lia tomás rosa caio estela bento amizade diálogo rotina folga" },
+  { id: "mapa", titulo: "Mapa-múndi", grupo: "Mundo", icone: PORTAL, Pagina: Mapa, busca: "mapa mundo destinos praia palafita fazenda localização M R3" },
+  { id: "pesca", titulo: "Pesca", grupo: "Mundo", icone: FERRAMENTAS.regador, Pagina: Pesca, busca: "pesca peixes vara nilo cais coleção desafios encomendas praia rio mar refinamento" },
+  { id: "moradores", titulo: "Moradores", grupo: "Mundo", icone: MORADORES.lia, Pagina: Moradores, busca: "npc lia tomás rosa caio estela bento ivo nilo osvaldo helena clara amizade diálogo rotina folga" },
   { id: "tempo", titulo: "Tempo e calendário", grupo: "Mundo", icone: colhido([11, 5]), Pagina: Tempo, busca: "estação dia noite clima chuva neve dormir sono desmaio" },
-  { id: "fazenda", titulo: "Fazenda", grupo: "Fazenda", icone: FERRAMENTAS.regador, Pagina: Fazenda, busca: "ferramentas enxada regador machadinha picareta entulho baú lago plantar" },
+  { id: "fazenda", titulo: "Fazenda", grupo: "Fazenda", icone: FERRAMENTAS.regador, Pagina: Fazenda, busca: "ferramentas enxada regador machadinha picareta entulho baú lago plantar galinheiro galinha galo ovos feno energia" },
   { id: "plantas", titulo: "Plantas", grupo: "Fazenda", icone: colhido([2, 6]), Pagina: Plantas, busca: "sementes cenoura batata morango tomate milho melancia abóbora uva berinjela beterraba girassol couve" },
   { id: "pocoes", titulo: "Poções", grupo: "Fazenda", icone: pocao([2, 2]), Pagina: Pocoes, busca: "caldeirão receitas cura força velocidade pedra vampírica fôlego" },
   { id: "refeicoes", titulo: "Refeições", grupo: "Fazenda", icone: colhido([20, 2]), Pagina: Refeicoes, busca: "caio cozinhar prato bônus vender colheita lia brasas sopa torta banquete" },
-  { id: "arena", titulo: "Arena", grupo: "Arena", icone: PORTAL, Pagina: Arena, busca: "ondas portal janela totens saque eventos mímico ouro morte" },
+  { id: "arena", titulo: "Arena", grupo: "Arena", icone: PORTAL, Pagina: Arena, busca: "andares fenda caçada guardião orion portal totens saque eventos mímico ouro morte" },
   { id: "inimigos", titulo: "Inimigos", grupo: "Arena", icone: INIMIGOS.slime, Pagina: Inimigos, busca: "slime morcego vespa cogumelo flor caranguejo gremlin falcão esqueleto mutante" },
   { id: "chefes", titulo: "Chefes", grupo: "Arena", icone: CHEFES.dragao_vermelho, Pagina: Chefes, busca: "minotauro medusa goblin maromba cogumelo ancião dragão vermelho" },
-  { id: "armas", titulo: "Armas e escudo", grupo: "Equipamento", icone: ARMAS.espada_basica, Pagina: Armas, busca: "espada lança machado maça arco escudo bigorna encantamento fogo gelo raio elétrico" },
+  { id: "armas", titulo: "Armas e escudo", grupo: "Equipamento", icone: ARMAS.espada_basica, Pagina: Armas, busca: "espada lança machado arco escudo receitas fabricação Ivo materiais bigorna encantamento fogo gelo raio elétrico" },
   { id: "raridade", titulo: "Raridade", grupo: "Equipamento", icone: ARMAS.machado, Pagina: RaridadePagina, busca: "comum incomum raro épico lendário afixos drop venda" },
   { id: "armaduras", titulo: "Armaduras", grupo: "Equipamento", icone: CONJUNTOS.carrasco, Pagina: Armaduras, busca: "conjunto carrasco cavaleiro rubro mordomo moeda de forja ascensão elmo peitoral luvas botas" },
   { id: "progresso", titulo: "Brasas e progresso", grupo: "Progresso", icone: BRASA, Pagina: Progresso, busca: "brasas melhorias apoios curandeira bardo mística desafios morte" },
