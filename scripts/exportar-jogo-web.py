@@ -28,6 +28,9 @@ if enfeites.is_file():
 chao = jogo / 'ferramentas/cidade/preparar_chao_detalhado.py'
 if chao.is_file():
     subprocess.run([sys.executable, str(chao)], check=True)
+natureza_fazenda = jogo / 'ferramentas/fazenda/preparar_natureza_detalhada.py'
+if natureza_fazenda.is_file():
+    subprocess.run([sys.executable, str(natureza_fazenda)], check=True)
 with tempfile.TemporaryDirectory(prefix='algoland-export-web-') as temporario:
     projeto = pathlib.Path(temporario)
     for item in jogo.iterdir():
