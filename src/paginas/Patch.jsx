@@ -4,6 +4,23 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.22.3",
+    data: "22 de outubro de 2026",
+    resumo: "Cidade mais leve no celular, atualização automática de conteúdo no Android, versão Web que baixa mais rápido e ajustes nos móveis das casas.",
+    novo: [
+      <><b>Atualização automática (Android).</b> Ao abrir o jogo, ele procura uma atualização de conteúdo e baixa sozinha, sem reinstalar o app. Os arquivos são conferidos por assinatura antes de usar; sem internet, o jogo abre normalmente. Mudanças no motor ainda pedem um APK novo, e o jogo avisa.</>,
+    ],
+    melhorou: [
+      <><b>Cidade mais leve no celular.</b> O personagem deixou de refazer a conta de aparência a cada quadro e a fonte da praça só simula a água quando está na tela, o que reduz bastante o trabalho por quadro na vila.</>,
+      <><b>Versão Web mais rápida.</b> Download do jogo em partes paralelas, guardado no navegador para as próximas visitas, e pacote menor, sem arquivos de produção que o jogo não usa.</>,
+      <><b>Lago da fazenda.</b> Deixou de redesenhar a cada quadro quando a água é a versão nova.</>,
+    ],
+    corrigido: [
+      <>Móveis mal posicionados: cadeiras da carpintaria alinhadas à mesa e planta da pousada afastada do banco ao lado.</>,
+      <>Poltronas pequenas que não dava para sentar foram removidas da pousada e da casa da Estela.</>,
+    ],
+  },
+  {
     versao: "2026.10.22.2",
     data: "22 de outubro de 2026",
     resumo: "Interfaces no padrão dos cenários, ferraria com processo animado e correções na enfermaria, nas camas e na pesca.",
@@ -206,7 +223,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.2 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.3 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (
