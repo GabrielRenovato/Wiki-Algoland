@@ -64,6 +64,8 @@ O build confere as dimensões reais dos PNGs e o encaixe de cada quadro com `scr
 
 ## Referência desta atualização
 
-Guias e versão Web sincronizados com o jogo no commit `1b8501943` (21/10/2026): personagens Raven, terrenos e fachadas detalhados e acabamento sazonal da fazenda. O catálogo novo tem cinco armas e 23 receitas de equipamento. Os instaladores disponíveis no GitHub estão no Release `v2026.10.22` deste repositório, gerados a partir do commit `f4accc284` do jogo: Windows x86_64 (ZIP), Linux x86_64 (TAR.GZ) e Android arm64 (APK dentro de ZIP, versão 11). Incluem interiores, praia e árvores atualizados e comerciantes atrás dos balcões durante o expediente. A versão Web continua em 21/10/2026; publicar instaladores não altera o Web.
+Wiki e jogo Web atualizados em 22/10/2026, junto dos instaladores do Release `v2026.10.22.2`: Windows x86_64 (ZIP), Linux x86_64 (TAR.GZ) e Android arm64 (APK dentro de ZIP, código 12). Esta exportação inclui o estado de trabalho local do jogo baseado em `f4accc284`, com as alterações posteriores de interface, ferraria, enfermaria, camas e pesca; esse commit sozinho não representa todo o conteúdo publicado. O catálogo sincronizado tem cinco armas, 23 receitas de equipamento, 48 peixes e dez pratos.
+
+A ferraria tem braseiro com coifa/chaminé, fole conectado, combustão que responde às sopradas e bigorna independente. Ivo aquece o ferro pelo lado direito e transporta o tarugo até o tampo. Fontes e ícones pixelados foram preservados nas interfaces pintadas. Os dados são extraídos do jogo com saves isolados; o pacote Web é identificado pelo SHA-256 em `public/jogar/manifesto.json`.
 
 As páginas de histórico registram o comportamento de cada versão antiga. Os guias atuais usam a fenda por andares, com guardião por mapa, receitas físicas e fabricação por encomenda. A compra de sementes e a venda de peixes ficam com Tomás; refino da vara com Nilo; equipamentos e ferramentas com Ivo.

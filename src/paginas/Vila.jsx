@@ -6,10 +6,10 @@ import { MORADORES, PEDIDOS, DIAS_SEMANA } from "../dados.js";
 const LUGARES = [
   { casa: "sede", nome: "Casa da comunidade", dono: "Lia", texto: "Mural de pedidos, melhorias com Brasas e contratação dos apoios." },
   { casa: "venda", nome: "Venda", dono: "Tomás", texto: "Sementes da estação por Brasas e venda de peixes." },
-  { casa: "enfermaria", nome: "Enfermaria", dono: "Dona Rosa", texto: "Cura, caldeirão de poções e o leito onde você acorda depois de cair." },
+  { casa: "enfermaria", nome: "Enfermaria", dono: "Dona Rosa", texto: "Cura, caldeirão de poções e os leitos de recuperação. Dona Rosa tem um quarto próprio." },
   { casa: "pousada", nome: "Pousada", dono: "Caio", texto: "Quartos para passar a noite, taverna das 18h às 2h e abrigo no inverno." },
   { casa: "mistica", nome: "Casa da Mística", dono: "Estela", texto: "Mesa de cristal, mapas e conselhos sobre checkpoint e mochila." },
-  { casa: "forja", nome: "Forja", dono: "Ivo", texto: "Fabricação por encomenda, refino, encantamentos e melhorias de ferramentas." },
+  { casa: "forja", nome: "Forja", dono: "Ivo", texto: "Fabricação por encomenda, refino, encantamentos e melhorias de ferramentas; braseiro, fole e bigorna com Ivo trabalhando." },
   { casa: "carpintaria", nome: "Carpintaria", dono: "Osvaldo e família", texto: "Construção do galinheiro, ampliações e loja de aves." },
   { casa: "palafita", nome: "Palafita e cais", dono: "Nilo", texto: "Na praia ao sul: oficina da vara e guia de pesca." },
   { casa: "casa_bento", nome: "Casa do Bento", dono: "Bento", texto: "Orientação da horta e duas sementes de presente por dia." },

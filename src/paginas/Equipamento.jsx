@@ -45,10 +45,12 @@ export function Armas() {
       <Secao titulo="Fabricação com Ivo">
         <Passos itens={[
           <>Encontre a receita na fenda e use-a na mochila para aprender o modelo.</>,
-          <>Leve os materiais pedidos ao balcão de Ivo e escolha <b>ENCOMENDAR</b>.</>,
+          <>Leve os materiais pedidos à bigorna da ferraria e escolha <b>ENCOMENDAR</b>.</>,
           <>Espere o prazo no calendário do jogo: as receitas levam de <b>1 a 3 dias</b>. Avançar andares não reduz a espera.</>,
           <>Volte para <b>RETIRAR ENCOMENDA</b> quando o pedido estiver pronto.</>,
         ]} />
+        <p>Durante o expediente, Ivo aviva o carvão com o fole, aquece o tarugo pela direita da fornalha, leva o ferro quente até a bigorna e martela. Essa animação não antecipa o prazo da encomenda: a retirada continua seguindo o calendário.</p>
+        <p>O catálogo usa páginas, com ícones pixelados e mais receitas por página quando há espaço.</p>
         <p>Há {RECEITAS.length} receitas ativas de equipamentos. Os conjuntos têm quatro peças independentes; cada peça precisa ser fabricada.</p>
       </Secao>
 
