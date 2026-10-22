@@ -16,7 +16,7 @@ export function Jogar() {
   return <>
     <Titulo sub="Uma versão de testes para jogar aqui mesmo, pelo navegador.">Jogar no navegador</Titulo>
     <p>O carregamento inicial baixa o jogo completo{tamanho ? ` (cerca de ${tamanho} MiB)` : ""}. Use um navegador atualizado e aguarde o jogo abrir.</p>
-    <Caixa tipo="nota" titulo="Jogo Web atualizado em 22/10/2026">Inclui as novas interfaces de madeira e pergaminho, a ferraria animada com fole e ferro incandescente, o quarto da Dona Rosa e as correções nas camas e na pesca. Os downloads instaláveis continuam identificados pela versão do Release.</Caixa>
+    <Caixa tipo="nota" titulo="Jogo Web atualizado em 22/10/2026">Inclui a floresta entre a vila e a fazenda com os animais, o minimapa e as estações próprias dos andares, o tempo passando dentro da fenda e a corrida do Raven com mais peso. As armaduras voltaram a aparecer no personagem. Os downloads instaláveis continuam identificados pela versão do Release.</Caixa>
     <div className="jogo-acoes">
       <a href={endereco} target="_blank" rel="noopener noreferrer">Abrir em outra aba ↗</a>
       {iniciado && <button type="button" onClick={telaCheia}>Tela cheia</button>}
