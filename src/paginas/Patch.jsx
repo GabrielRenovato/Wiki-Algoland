@@ -4,6 +4,19 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.22.7",
+    data: "22 de outubro de 2026",
+    resumo: "Atualizações de conteúdo por área e nova tela de download no visual do AlgoLand.",
+    novo: [
+      <><b>Atualização por área.</b> Windows, Linux e Android recebem pacotes separados por área e andar. Instale esta versão uma vez para receber o novo atualizador; nas próximas mudanças compatíveis, só os pacotes alterados serão baixados.</>,
+      <><b>Tela de atualização.</b> Molduras de madeira, pergaminho, fontes e botões do jogo acompanham a barra de download.</>,
+    ],
+    melhorou: [
+      <>Uma atualização pendente bloqueia a entrada no jogo. Se o download falhar, tente novamente ou saia; fechar o aplicativo não apaga a pendência. Ao concluir, feche e abra o jogo para ativar o conteúdo novo.</>,
+      <>Mudanças no motor e no núcleo do atualizador ainda precisam de um instalador novo. A versão Web continua sendo atualizada pela Wiki.</>,
+    ],
+  },
+  {
     versao: "2026.10.22.6",
     data: "22 de outubro de 2026",
     resumo: "Menu de obras do carpinteiro no padrão da forja, tempo dos andares sem desmaio, saída da arena à 1h da manhã e ajustes na floresta.",
@@ -273,7 +286,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.6 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.7 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (

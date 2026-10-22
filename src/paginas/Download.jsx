@@ -14,17 +14,17 @@ export const BAIXAR = {
 const PLATAFORMAS = [
   { id: "windows", nome: "Windows", arquivo: "AlgoLand-Windows-x86_64.zip", tamanho: "270 MB",
     passos: ["Baixe e extraia o .zip.", "Abra o AlgoLand.exe.", "Se o Windows avisar \"aplicativo não reconhecido\", clique em Mais informações → Executar assim mesmo."] },
-  { id: "linux", nome: "Linux", arquivo: "AlgoLand-Linux-x86_64.tar.gz", tamanho: "260 MB",
+  { id: "linux", nome: "Linux", arquivo: "AlgoLand-Linux-x86_64.tar.gz", tamanho: "261 MB",
     passos: ["Baixe e extraia o .tar.gz.", "Dê permissão de execução: chmod +x AlgoLand/AlgoLand.x86_64", "Rode ./AlgoLand/AlgoLand.x86_64"] },
-  { id: "android", nome: "Android", arquivo: "AlgoLand-Android-arm64.zip", tamanho: "262 MB",
+  { id: "android", nome: "Android", arquivo: "AlgoLand-Android-arm64.zip", tamanho: "264 MB",
     passos: ["Baixe e extraia o ZIP no celular, depois abra o APK.", "Permita instalar de fontes desconhecidas quando o Android pedir.", "Abra o AlgoLand: os controles de toque aparecem sozinhos."] },
 ];
 
 export function Download() {
   return (
     <>
-      <Titulo sub="Release v2026.10.22.6 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
-      <Caixa tipo="nota" titulo="Versões disponíveis">Os arquivos abaixo são do Release v2026.10.22.6, com a floresta entre a vila e a fazenda, animais selvagens, minimapa e estações próprias nos andares, e a corrida do Raven com mais peso. O APK vem em ZIP para facilitar o download no celular; extraia antes de instalar. A versão Web também foi atualizada em 22/10/2026. Se você já instalou o Android 2026.10.22.3 ou .4, instale este APK por cima uma vez: ele tem a permissão de internet que faltava para o aviso de atualização. O Android com atualização automática vem a partir desta versão: quem tem o app antigo precisa instalar este APK uma vez.</Caixa>
+      <Titulo sub="Release v2026.10.22.7 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <Caixa tipo="nota" titulo="Versões disponíveis">Release v2026.10.22.7 para Windows, Linux e Android, com o novo atualizador por área. Instale esta versão uma vez: as próximas atualizações de conteúdo compatíveis baixarão só os pacotes alterados. Durante uma atualização pendente, aguarde o download; se falhar, tente novamente ou saia. Ao concluir, feche e abra o jogo para ativar. O APK vem em ZIP: extraia antes de instalar por cima da versão anterior. A versão Web permanece na atualização de 22/10/2026.</Caixa>
       <p>Quer testar sem instalar? <a href="#/jogar">Jogue no navegador.</a></p>
       <Secao>
         <div className="downloads">
