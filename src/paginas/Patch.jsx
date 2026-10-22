@@ -4,6 +4,28 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.22.2",
+    data: "22 de outubro de 2026",
+    resumo: "Interfaces no padrão dos cenários, ferraria com processo animado e correções na enfermaria, nas camas e na pesca.",
+    novo: [
+      <><b>Ferraria em funcionamento.</b> Braseiro aberto com coifa e chaminé, fole conectado à entrada de ar e bigorna separada. Ivo aciona o fole, aquece o ferro pela direita da fornalha, transporta o tarugo e martela no tampo.</>,
+      <><b>Fogo que responde ao fole.</b> O carvão começa com brasas fracas; as sopradas aumentam o fogo, a luz e a fumaça. O ferro muda de cinza para vermelho-alaranjado ao aquecer.</>,
+      <><b>Quarto da Dona Rosa.</b> A enfermeira passa a dormir em seu próprio quarto, deixando os leitos para os pacientes.</>,
+    ],
+    melhorou: [
+      <><b>Interface pintada.</b> Tela inicial, criação de personagem, inventário, pausa e serviços usam madeira e pergaminho no padrão dos cenários. Fontes, personagens e ícones dos itens continuam pixelados.</>,
+      <><b>Menus mais compactos.</b> Criação de personagem e catálogo da forja usam páginas para caber na tela, com setas dentro dos botões e mais opções por página quando há espaço.</>,
+      <><b>Interações legíveis.</b> Os avisos de tecla usam um círculo pequeno com letra contrastante; as opções das lojas deixaram de ocupar cartões gigantes.</>,
+      <><b>Interior da ferraria.</b> Passagens e móveis reorganizados, postos de trabalho independentes e trajeto do Ivo sem atravessar o fole nem prender na bigorna.</>,
+    ],
+    corrigido: [
+      <>Compra de sementes com Brasas na venda do Tomás e validação dos pontos de pesca junto à água visível.</>,
+      <>Recuperação depois de morrer: posição no leito, cobertor, rosto e liberação do movimento ao sair da enfermaria.</>,
+      <>Rosto do jogador visível ao dormir na cama da fazenda; xícaras decorativas removidas da mesa.</>,
+      <>Prévias do personagem sem giro automático e animação do Ivo com o corpo inteiro, sem recortes nos braços.</>,
+    ],
+  },
+  {
     versao: "de desenvolvimento",
     data: "21 de outubro de 2026",
     resumo: "Personagens Raven, cenários detalhados nas quatro estações, fachadas no padrão da taverna e revisão completa dos guias.",
@@ -184,7 +206,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão Web de 21/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.2 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (

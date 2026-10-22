@@ -265,7 +265,10 @@
       "casa": "carpintaria",
       "fala": "Traga madeira e pedra. Construo e amplio o abrigo das suas aves.",
       "folga": -1,
-      "horario": [],
+      "horario": [
+        8,
+        17
+      ],
       "nome": "OSVALDO",
       "oficio": "Carpinteiro, 65 anos"
     }
@@ -1459,5 +1462,5 @@
       "texto_bonus": "+20% VIDA, +25% FOLEGO"
     }
   ],
-  "commit": "1b8501943338900b89aef7b7fc37aed65e0b00b5"
+  "commit": "f4accc284bef8eeff25d0e64f847e317f98dbe2d"
 }

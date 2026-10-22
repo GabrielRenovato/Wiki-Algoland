@@ -15,3 +15,14 @@
   for = "/sprites/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Partes do pacote do jogo têm hash no nome; o wasm e o loader mudam com a versão
+[[headers]]
+  for = "/jogar/dados-*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/jogar/*.wasm"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Content-Type = "application/wasm"
