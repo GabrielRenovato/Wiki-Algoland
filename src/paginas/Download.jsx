@@ -23,8 +23,8 @@ const PLATAFORMAS = [
 export function Download() {
   return (
     <>
-      <Titulo sub="Release v2026.10.22.4 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
-      <Caixa tipo="nota" titulo="Versões disponíveis">Os arquivos abaixo são do Release v2026.10.22.4, com a floresta entre a vila e a fazenda, animais selvagens, minimapa e estações próprias nos andares, e a corrida do Raven com mais peso. O APK vem em ZIP para facilitar o download no celular; extraia antes de instalar. A versão Web também foi atualizada em 22/10/2026. O Android com atualização automática vem a partir desta versão: quem tem o app antigo precisa instalar este APK uma vez.</Caixa>
+      <Titulo sub="Release v2026.10.22.5 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <Caixa tipo="nota" titulo="Versões disponíveis">Os arquivos abaixo são do Release v2026.10.22.5, com a floresta entre a vila e a fazenda, animais selvagens, minimapa e estações próprias nos andares, e a corrida do Raven com mais peso. O APK vem em ZIP para facilitar o download no celular; extraia antes de instalar. A versão Web também foi atualizada em 22/10/2026. Se você já instalou o Android 2026.10.22.3 ou .4, instale este APK por cima uma vez: ele tem a permissão de internet que faltava para o aviso de atualização. O Android com atualização automática vem a partir desta versão: quem tem o app antigo precisa instalar este APK uma vez.</Caixa>
       <p>Quer testar sem instalar? <a href="#/jogar">Jogue no navegador.</a></p>
       <Secao>
         <div className="downloads">
