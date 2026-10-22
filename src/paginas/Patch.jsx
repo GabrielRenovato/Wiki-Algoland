@@ -4,6 +4,21 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.22.6",
+    data: "22 de outubro de 2026",
+    resumo: "Menu de obras do carpinteiro no padrão da forja, tempo dos andares sem desmaio, saída da arena à 1h da manhã e ajustes na floresta.",
+    novo: [
+      <><b>Carpintaria do Osvaldo.</b> O balcão agora abre um catálogo no mesmo estilo da forja do Ivo: galinheiro em três níveis, galinha e galo, com os materiais mostrando quanto você tem e quanto precisa, o prazo e um botão grande de encomenda.</>,
+    ],
+    melhorou: [
+      <><b>Corrida longa nos andares.</b> Dentro da fenda o tempo passa, mas ninguém desmaia mais às 2h da manhã. Ao sair da arena para a vila, o relógio marca 01:00, e o jogador precisa correr para dormir antes de apagar.</>,
+      <><b>Passagens da floresta.</b> As saídas para a vila e para a fazenda cobrem a abertura inteira da mata, sem travar o personagem na parede.</>,
+    ],
+    corrigido: [
+      <>A horta e as plantas da fazenda apareciam por engano na floresta entre a vila e a fazenda.</>,
+    ],
+  },
+  {
     versao: "2026.10.22.5",
     data: "22 de outubro de 2026",
     resumo: "Correção para o aviso de atualização do Android funcionar.",
@@ -258,7 +273,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.5 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.6 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (
