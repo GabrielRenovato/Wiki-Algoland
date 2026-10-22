@@ -5,6 +5,16 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 3,
+    data: "22 de outubro de 2026",
+    resumo: "Otimização da animação das bordas da grama para reduzir engasgos na cidade.",
+    melhorou: [
+      <>O vento agora reutiliza os quadros das bordas da grama, evitando milhares de consultas ao mapa durante a caminhada. A aparência e a animação foram preservadas nas quatro estações.</>,
+      <>Disponível por patch para Android, Windows e Linux na versão 2026.10.22.7, sem outro APK ou EXE. Aguarde o download e feche e abra o jogo para ativar. Inclui a otimização da fonte e a saída dos andares à meia-noite.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 2,
     data: "22 de outubro de 2026",
     resumo: "Ao sair dos andares da fenda, o jogador chega à vila à meia-noite.",
