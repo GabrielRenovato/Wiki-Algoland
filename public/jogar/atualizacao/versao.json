@@ -2,7 +2,26 @@
   "apk": "2026.10.22.7",
   "url_apk": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.22.7/AlgoLand-Android-arm64.apk",
   "patches": {},
-  "pacotes": {},
+  "pacotes": {
+    "android": {
+      "2026.10.22.7": {
+        "dados": "{\"app_base\":\"2026.10.22.7\",\"conteudo\":1,\"formato\":2,\"pacotes\":[{\"arquivo\":\"android-2026.10.22.7-cidade-5568514f7b5ce8b79dfdf80e180f67846a2cb4bca62dd45f3473d0f56d8ed901.pck\",\"assinatura\":\"IjO7eQfIdszs1IWh+rFayScNLFi0v1duzPxnAIgN5r4xHfHyV2CIIWyF80Vv9ZaOvNyIfGHfTQRxZILdQo7t6kWZgWRzJ2jcfelKwqurax2VjwNW9UTtUPtN6YTLvc4WYvFOxBdtxq/DRIQOsc0JU1Q9rbhMHUFE9ls7vW2nWLLm2v2xy+Jl6FWvcW2AsbIP/afnirnh3KYf6+7Xj3EmbPHp7nYEwRpk5ybKWs7nN9wV5v9WsZE2dc2Irzn9sVIIk3C4JlkS02KtQm0LSM2hMbPF9/JkdRsA40k0PH5DbvPXly6GsiZebxgxKBYGjtzhBiYoZUZSPj2hElNe/PkWIw==\",\"id\":\"cidade\",\"sha256\":\"5568514f7b5ce8b79dfdf80e180f67846a2cb4bca62dd45f3473d0f56d8ed901\",\"tamanho\":9168}],\"plataforma\":\"android\"}",
+        "assinatura": "WE9j+MfNkpFxdK7ldeaxdqW17T+hXOj3A9nfQM+CNXx+ECMOwZ99zdcSNFS41GtopDJWuQrD33jEIIwqy/H1w7c5TrqhaeV+F+jrTO1w9yy4e/0S+AUCEEs2ksoMOhnbd5LvgUECDr3EpTOfcg4h/gJ6HELltF5+yiBZQDDHQbB/kGzYw7RPCi4E6rtl30jqMcxlAb4p8SnIum6bk4KfAgKz1gjytHb0Kf6REtqo6GSuc9jd6yvB6XsVOYlYBtuAMaNp6in4vjVl/8T91vq+ijuHXv3kGCVZ9QKTvyUUlpb/hE5PFpW0vZYKmyIEj5TKX2tETV/N2UCnk9vmdbZkYg=="
+      }
+    },
+    "windows": {
+      "2026.10.22.7": {
+        "dados": "{\"app_base\":\"2026.10.22.7\",\"conteudo\":1,\"formato\":2,\"pacotes\":[{\"arquivo\":\"windows-2026.10.22.7-cidade-5568514f7b5ce8b79dfdf80e180f67846a2cb4bca62dd45f3473d0f56d8ed901.pck\",\"assinatura\":\"IjO7eQfIdszs1IWh+rFayScNLFi0v1duzPxnAIgN5r4xHfHyV2CIIWyF80Vv9ZaOvNyIfGHfTQRxZILdQo7t6kWZgWRzJ2jcfelKwqurax2VjwNW9UTtUPtN6YTLvc4WYvFOxBdtxq/DRIQOsc0JU1Q9rbhMHUFE9ls7vW2nWLLm2v2xy+Jl6FWvcW2AsbIP/afnirnh3KYf6+7Xj3EmbPHp7nYEwRpk5ybKWs7nN9wV5v9WsZE2dc2Irzn9sVIIk3C4JlkS02KtQm0LSM2hMbPF9/JkdRsA40k0PH5DbvPXly6GsiZebxgxKBYGjtzhBiYoZUZSPj2hElNe/PkWIw==\",\"id\":\"cidade\",\"sha256\":\"5568514f7b5ce8b79dfdf80e180f67846a2cb4bca62dd45f3473d0f56d8ed901\",\"tamanho\":9168}],\"plataforma\":\"windows\"}",
+        "assinatura": "5UNbWDrDlNue/8HdKMlgJF8blUSqSS6t/NbVktYaofsR4y/TYr64lWf44UK9HRo0DzgPkdMii6UQXumIuz1GelAQHoDRlLj8Myw0lXjUdN2Aw+z2i0qnN47To1a0/FIpdl6eOw5iQTJO3ktJfZugFMbyJ4+p7hba+MFFlYvToC8ZHqDQIIaZbrYAK9kiqau2HnUqjLO7H578ZPNLSX5IfppvkoGn1yAfphgGb/pfe1AI+zy1CvNGfrHsx1gHfk6HXlOPenbmoHofysdjLkE5tdQYKI61wZdi8x3KWwEDucP2bM7n8pU84WlyEh9hn4zYlbsVCfglWEIwmr/Lrc0hLg=="
+      }
+    },
+    "linux": {
+      "2026.10.22.7": {
+        "dados": "{\"app_base\":\"2026.10.22.7\",\"conteudo\":1,\"formato\":2,\"pacotes\":[{\"arquivo\":\"linux-2026.10.22.7-cidade-5568514f7b5ce8b79dfdf80e180f67846a2cb4bca62dd45f3473d0f56d8ed901.pck\",\"assinatura\":\"IjO7eQfIdszs1IWh+rFayScNLFi0v1duzPxnAIgN5r4xHfHyV2CIIWyF80Vv9ZaOvNyIfGHfTQRxZILdQo7t6kWZgWRzJ2jcfelKwqurax2VjwNW9UTtUPtN6YTLvc4WYvFOxBdtxq/DRIQOsc0JU1Q9rbhMHUFE9ls7vW2nWLLm2v2xy+Jl6FWvcW2AsbIP/afnirnh3KYf6+7Xj3EmbPHp7nYEwRpk5ybKWs7nN9wV5v9WsZE2dc2Irzn9sVIIk3C4JlkS02KtQm0LSM2hMbPF9/JkdRsA40k0PH5DbvPXly6GsiZebxgxKBYGjtzhBiYoZUZSPj2hElNe/PkWIw==\",\"id\":\"cidade\",\"sha256\":\"5568514f7b5ce8b79dfdf80e180f67846a2cb4bca62dd45f3473d0f56d8ed901\",\"tamanho\":9168}],\"plataforma\":\"linux\"}",
+        "assinatura": "QDuQUqotCW6VNnpYXAbN/C7gdzZMhgM68ipREO67+UeKFfZLc/o3rcc7hBeCRt+Z/Ivq4wqID0lKSeje2NZGsLb5j4+bfKUCy5JJH1IV4Qznm8kupVNYpeDVH+QAlXuAeZWYemqs2ZZC4yH9txcJdyRpZZqsGhlJB3Kbb2bUGuyKvelDlePqsZvZVnr5XFylHOfD7mkiJ1Rmehdt2gGrajs5f0SazYQH6pbQx+q4Vk8t8JxCahaR41d87+cmDDj0ZP3pNSUtO/3RLt7nrCmNctA+FzcKse/b5kkW55K/OWb9uCoW1zT4jqT+JoO/WEHnVK5G6/fIlJYXjfKYYaPoyg=="
+      }
+    }
+  },
   "aplicativos": {
     "android": {
       "versao": "2026.10.22.7",
