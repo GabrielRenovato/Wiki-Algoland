@@ -5,6 +5,16 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 1,
+    data: "22 de outubro de 2026",
+    resumo: "Patch de desempenho da fonte de água da cidade, sem novo instalador.",
+    melhorou: [
+      <>A animação dos jatos, ondas e gotas da fonte foi otimizada para reduzir o custo de desenho da cidade, mantendo a água animada e as quatro estações.</>,
+      <>Disponível pelo atualizador do Android, Windows e Linux na versão 2026.10.22.7. Abra o jogo, aguarde o download e depois feche e abra novamente para ativar. Não precisa baixar outro APK ou EXE.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     data: "22 de outubro de 2026",
     resumo: "Atualizações de conteúdo por área e nova tela de download no visual do AlgoLand.",
     novo: [
@@ -279,18 +289,20 @@ const Lista = ({ titulo, itens }) =>
     </>
   ) : null;
 
+const rotuloVersao = (p) => `${p.versao}${p.conteudo ? ` · conteúdo ${p.conteudo}` : ""}`;
+
 export function Patch() {
   const [recente, ...antigos] = PATCHES;
   return (
     <>
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
-        <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
+        <Caixa tipo="nota" titulo={`Versão atual: ${rotuloVersao(recente)}`}>
           {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.7 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (
-        <Secao key={p.versao} titulo={`Versão ${p.versao} · ${p.data}`} id={`v${p.versao.replace(".", "-")}`}>
+        <Secao key={rotuloVersao(p)} titulo={`Versão ${rotuloVersao(p)} · ${p.data}`} id={`v${p.versao.replace(".", "-")}${p.conteudo ? `-c${p.conteudo}` : ""}`}>
           <p>{p.resumo}</p>
           <Lista titulo="Novo" itens={p.novo} />
           <Lista titulo="Melhorias" itens={p.melhorou} />
