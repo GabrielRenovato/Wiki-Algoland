@@ -5,6 +5,16 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 4,
+    data: "22 de outubro de 2026",
+    resumo: "Correção do corte dos botões na confirmação de novo jogo no celular.",
+    corrigido: [
+      <>A janela de confirmação agora reserva o espaço real do título e da moldura, mantendo a pergunta e os botões SIM e NAO inteiros em telas menores, em paisagem e retrato.</>,
+      <>Atualização por patch para Android, Windows e Linux, sem reinstalar. Aguarde o download e feche e abra o jogo para ativar. As otimizações da cidade e a saída dos andares à meia-noite continuam incluídas.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 3,
     data: "22 de outubro de 2026",
     resumo: "Otimização da animação das bordas da grama para reduzir engasgos na cidade.",
