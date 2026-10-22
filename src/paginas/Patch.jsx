@@ -5,6 +5,16 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 2,
+    data: "22 de outubro de 2026",
+    resumo: "Ao sair dos andares da fenda, o jogador chega à vila à meia-noite.",
+    melhorou: [
+      <>A saída dos andares agora marca 00:00 no relógio, em vez de 01:00, dando mais tempo para voltar para casa e dormir.</>,
+      <>Disponível por patch para Android, Windows e Linux na versão 2026.10.22.7, sem reinstalar. A otimização da fonte do conteúdo 1 continua incluída.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 1,
     data: "22 de outubro de 2026",
     resumo: "Patch de desempenho da fonte de água da cidade, sem novo instalador.",
