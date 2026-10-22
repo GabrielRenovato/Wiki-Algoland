@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { readFile, writeFile, mkdir, copyFile, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, copyFile, rm, readdir } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -10,8 +10,12 @@ if (!origem) throw new Error('Uso: node scripts/preparar-jogo-web.mjs /caminho/d
 const pacote = await readFile(resolve(origem, 'index.pck'));
 const hash = createHash('sha256').update(pacote).digest('hex');
 const destino = resolve(raiz, 'public/jogar');
-await rm(destino, { recursive: true, force: true });
+// Preserva atualizacao/ (versao.json e patches do Android): é publicada à parte e não faz parte do jogo Web
 await mkdir(destino, { recursive: true });
+for (const nome of await readdir(destino)) {
+  if (nome === 'atualizacao') continue;
+  await rm(resolve(destino, nome), { recursive: true, force: true });
+}
 const partes = [];
 for (let inicio = 0; inicio < pacote.length; inicio += 32 * 1024 * 1024) {
   const dados = pacote.subarray(inicio, inicio + 32 * 1024 * 1024);
