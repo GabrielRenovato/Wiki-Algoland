@@ -4,6 +4,29 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.22.4",
+    data: "22 de outubro de 2026",
+    resumo: "Floresta entre a vila e a fazenda com animais, estações e clima próprios em cada andar, minimapa nos andares, corrida do Raven com mais peso e várias correções.",
+    novo: [
+      <><b>Floresta do caminho.</b> Um mapa grande liga a vila à fazenda: estrada de terra, lago grande com sete pontos de pesca e cantinho de pesca, pedreira ao pé de um paredão, acampamento de lenhadores, placas nos cruzamentos e mata fechada nas bordas. Árvores e arbustos cortam com a machadinha e as pedras quebram com a picareta.</>,
+      <><b>Bichos do Tiny RPG.</b> Cervos, coelhos, capivaras e corvos vivem na floresta. Quando você chega perto eles param e encaram; se chega mais perto, correm até uma árvore e somem atrás dela. Os corvos levantam voo, os coelhos ficam brancos no inverno e todos voltam depois, longe de você.</>,
+      <><b>Minimapa nos andares.</b> Um mapa do andar no estilo Diablo mostra o que você já explorou, com o portal, o guardião e os jogadores. Aparece pequeno no canto; M, Tab, o botão MAPA do toque ou segurar R3 abrem a versão grande.</>,
+      <><b>Estação e clima por andar.</b> Cada andar da fenda tem a sua estação e o seu clima. Ao voltar para a vila, a estação e o clima corretos do calendário continuam valendo.</>,
+    ],
+    melhorou: [
+      <><b>O tempo passa dentro dos andares.</b> O relógio, a luz do dia e o cansaço da madrugada funcionam na fenda como no resto do jogo. O desmaio às 2h só acontece fora de combate.</>,
+      <><b>Corrida do Raven.</b> O corpo balança 1 px ao correr, sobe com os pés juntos e desce no passo, e uma poeirinha sobe a cada passada.</>,
+      <><b>Missão principal.</b> Dentro dos andares ela fica minimizada, a não ser que a etapa atual seja da fenda.</>,
+      <><b>Andares 6 e 10.</b> As Ruínas ganharam o mesmo acabamento detalhado dos bosques: grama, terra, árvores e pedras pintadas nas quatro estações.</>,
+      <><b>Cidade mais leve no celular.</b> Menos trabalho por quadro na vila, e a fonte da praça só simula a água quando está na tela.</>,
+    ],
+    corrigido: [
+      <>Armaduras que não apareciam no personagem na versão Web.</>,
+      <>Personagem sentado de costas, que parecia de pé atrás do banco, e sentado de lado na cadeira da casa da fazenda.</>,
+      <>Velas das mesas grandes que flutuavam acima do tampo e poltronas pequenas em que não dava para sentar.</>,
+    ],
+  },
+  {
     versao: "2026.10.22.3",
     data: "22 de outubro de 2026",
     resumo: "Cidade mais leve no celular, atualização automática de conteúdo no Android, versão Web que baixa mais rápido e ajustes nos móveis das casas.",
@@ -223,7 +246,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.3 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.4 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (
