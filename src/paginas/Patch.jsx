@@ -4,6 +4,18 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.22.5",
+    data: "22 de outubro de 2026",
+    resumo: "Correção para o aviso de atualização do Android funcionar.",
+    corrigido: [
+      <>O app Android não tinha permissão de internet e por isso nunca conseguia procurar atualizações. Agora tem: ao abrir o jogo, ele consulta o servidor e avisa quando há versão nova.</>,
+      <>A tela de abertura passou a dizer o que aconteceu: "Jogo atualizado", ou "Sem conexão com as atualizações" quando a rede falha.</>,
+    ],
+    novo: [
+      <>Quem está com a versão 2026.10.22.3 ou 2026.10.22.4 precisa instalar este APK uma vez; as próximas versões avisam sozinhas.</>,
+    ],
+  },
+  {
     versao: "2026.10.22.4",
     data: "22 de outubro de 2026",
     resumo: "Floresta entre a vila e a fazenda com animais, estações e clima próprios em cada andar, minimapa nos andares, corrida do Raven com mais peso e várias correções.",
@@ -246,7 +258,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.4 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.5 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (

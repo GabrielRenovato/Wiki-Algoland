@@ -64,7 +64,7 @@ O build confere as dimensões reais dos PNGs e o encaixe de cada quadro com `scr
 
 ## Referência desta atualização
 
-Wiki e jogo Web atualizados em 22/10/2026, junto dos instaladores do Release `v2026.10.22.4`: Windows x86_64 (ZIP), Linux x86_64 (TAR.GZ) e Android arm64 (APK dentro de ZIP, código 14). Esta exportação inclui o estado de trabalho local do jogo baseado em `f4accc284`, com as alterações posteriores de interface, ferraria, enfermaria, camas e pesca; esse commit sozinho não representa todo o conteúdo publicado. O catálogo sincronizado tem cinco armas, 23 receitas de equipamento, 48 peixes e dez pratos.
+Wiki e jogo Web atualizados em 22/10/2026, junto dos instaladores do Release `v2026.10.22.5`: Windows x86_64 (ZIP), Linux x86_64 (TAR.GZ) e Android arm64 (APK dentro de ZIP, código 15). Esta exportação inclui o estado de trabalho local do jogo baseado em `f4accc284`, com as alterações posteriores de interface, ferraria, enfermaria, camas e pesca; esse commit sozinho não representa todo o conteúdo publicado. O catálogo sincronizado tem cinco armas, 23 receitas de equipamento, 48 peixes e dez pratos.
 
 A ferraria tem braseiro com coifa/chaminé, fole conectado, combustão que responde às sopradas e bigorna independente. Ivo aquece o ferro pelo lado direito e transporta o tarugo até o tampo. Fontes e ícones pixelados foram preservados nas interfaces pintadas. Os dados são extraídos do jogo com saves isolados; o pacote Web é identificado pelo SHA-256 em `public/jogar/manifesto.json`.
 
