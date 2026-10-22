@@ -27,12 +27,12 @@
     Cache-Control = "public, max-age=3600"
     Content-Type = "application/wasm"
 
-# Atualização de conteúdo do app Android: o versao.json sempre fresco; os patches têm versão no nome
+# Atualizações de conteúdo dos aplicativos: manifesto fresco; pacotes têm hash no nome
 [[headers]]
   for = "/jogar/atualizacao/versao.json"
   [headers.values]
     Cache-Control = "no-cache"
 [[headers]]
-  for = "/jogar/atualizacao/patch-*"
+  for = "/jogar/atualizacao/*.pck"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
