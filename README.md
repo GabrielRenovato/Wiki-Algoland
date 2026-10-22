@@ -64,6 +64,6 @@ O build confere as dimensões reais dos PNGs e o encaixe de cada quadro com `scr
 
 ## Referência desta atualização
 
-Guias e versão Web sincronizados com o jogo no commit `1b8501943` (21/10/2026): personagens Raven, terrenos e fachadas detalhados e acabamento sazonal da fazenda. O catálogo novo tem cinco armas e 23 receitas de equipamento. Os instaladores disponíveis no GitHub continuam no Release `v0.8`, publicado em 20/10/2026; atualizar o Web não gera novos instaladores.
+Guias e versão Web sincronizados com o jogo no commit `1b8501943` (21/10/2026): personagens Raven, terrenos e fachadas detalhados e acabamento sazonal da fazenda. O catálogo novo tem cinco armas e 23 receitas de equipamento. Os instaladores disponíveis no GitHub estão no Release `v2026.10.22` deste repositório, gerados a partir do commit `f4accc284` do jogo: Windows x86_64 (ZIP), Linux x86_64 (TAR.GZ) e Android arm64 (APK dentro de ZIP, versão 11). Incluem interiores, praia e árvores atualizados e comerciantes atrás dos balcões durante o expediente. A versão Web continua em 21/10/2026; publicar instaladores não altera o Web.
 
 As páginas de histórico registram o comportamento de cada versão antiga. Os guias atuais usam a fenda por andares, com guardião por mapa, receitas físicas e fabricação por encomenda. A compra de sementes e a venda de peixes ficam com Tomás; refino da vara com Nilo; equipamentos e ferramentas com Ivo.

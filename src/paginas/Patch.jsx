@@ -184,7 +184,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${recente.versao}`}>
-          {recente.data}. {recente.resumo} A versão atual está em <Link para="jogar">Jogar no navegador</Link>; os instaladores do Release v0.8 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web de 21/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22 ficam em <Link para="download">Baixar o jogo</Link>.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (

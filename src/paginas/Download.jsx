@@ -6,25 +6,25 @@ import { HEROI, PORTAL } from "../sprites.js";
 // desde que os nomes dos arquivos se mantenham.
 const RELEASES = "https://github.com/GabrielRenovato/Wiki-Algoland/releases";
 export const BAIXAR = {
-  windows: `${RELEASES}/latest/download/Algoland-windows.zip`,
-  linux: `${RELEASES}/latest/download/Algoland-linux.zip`,
-  android: `${RELEASES}/latest/download/Algoland-android.apk`,
+  windows: `${RELEASES}/latest/download/AlgoLand-Windows-x86_64.zip`,
+  linux: `${RELEASES}/latest/download/AlgoLand-Linux-x86_64.tar.gz`,
+  android: `${RELEASES}/latest/download/AlgoLand-Android-arm64.zip`,
 };
 
 const PLATAFORMAS = [
-  { id: "windows", nome: "Windows", arquivo: "Algoland-windows.zip", tamanho: "173 MB",
-    passos: ["Baixe e extraia o .zip.", "Abra o Algoland.exe.", "Se o Windows avisar \"aplicativo não reconhecido\", clique em Mais informações → Executar assim mesmo."] },
-  { id: "linux", nome: "Linux", arquivo: "Algoland-linux.zip", tamanho: "163 MB",
-    passos: ["Baixe e extraia o .zip.", "Dê permissão de execução: chmod +x Algoland.x86_64", "Rode ./Algoland.x86_64"] },
-  { id: "android", nome: "Android", arquivo: "Algoland-android.apk", tamanho: "180 MB",
-    passos: ["Baixe o .apk no celular.", "Permita instalar de fontes desconhecidas quando o Android pedir.", "Abra o AlgoLand: os controles de toque aparecem sozinhos."] },
+  { id: "windows", nome: "Windows", arquivo: "AlgoLand-Windows-x86_64.zip", tamanho: "267 MB",
+    passos: ["Baixe e extraia o .zip.", "Abra o AlgoLand.exe.", "Se o Windows avisar \"aplicativo não reconhecido\", clique em Mais informações → Executar assim mesmo."] },
+  { id: "linux", nome: "Linux", arquivo: "AlgoLand-Linux-x86_64.tar.gz", tamanho: "257 MB",
+    passos: ["Baixe e extraia o .tar.gz.", "Dê permissão de execução: chmod +x AlgoLand/AlgoLand.x86_64", "Rode ./AlgoLand/AlgoLand.x86_64"] },
+  { id: "android", nome: "Android", arquivo: "AlgoLand-Android-arm64.zip", tamanho: "259 MB",
+    passos: ["Baixe e extraia o ZIP no celular, depois abra o APK.", "Permita instalar de fontes desconhecidas quando o Android pedir.", "Abra o AlgoLand: os controles de toque aparecem sozinhos."] },
 ];
 
 export function Download() {
   return (
     <>
-      <Titulo sub="Release v0.8 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
-      <Caixa tipo="nota" titulo="Versões disponíveis">Os arquivos abaixo são do Release v0.8, publicado em 20/10/2026. A versão Web foi atualizada em 21/10/2026 e inclui mudanças posteriores de personagens e cenários; os instaladores não foram republicados nesta atualização da Wiki.</Caixa>
+      <Titulo sub="Release v2026.10.22 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <Caixa tipo="nota" titulo="Versões disponíveis">Os arquivos abaixo são do Release v2026.10.22, com os interiores e a praia atualizados, árvores novas na cidade e comerciantes atrás dos balcões durante o expediente. O APK vem em ZIP para facilitar o download no celular; extraia antes de instalar. A versão Web permanece na atualização de 21/10/2026.</Caixa>
       <p>Quer testar sem instalar? <a href="#/jogar">Jogue no navegador.</a></p>
       <Secao>
         <div className="downloads">
