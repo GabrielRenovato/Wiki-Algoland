@@ -20,6 +20,14 @@ npm run build    # gera dist/ (abre em qualquer pasta, base relativa)
 - `src/componentes/Sprite.jsx`: recorta e anima o quadro direto da folha (fundo CSS), sem gerar imagens novas.
 - `src/paginas/`: o texto das páginas. A lista do menu e da busca fica em `src/App.jsx`.
 
+## No celular: app no navegador
+
+Abaixo de 960 px a wiki usa layout de app: barra de cima com voltar e título, abas fixas embaixo (Início, Páginas,
+Buscar, Jogar, Baixar), lista de páginas em gaveta que sobe e busca em tela cheia. Ela também é instalável (PWA):
+`public/manifest.webmanifest`, ícones próprios em `public/icones/` (pixel art feita para a wiki, sem arte dos pacotes)
+e `public/sw.js`, que só é registrado no build e guarda o que já foi visto para abrir sem rede (o jogo em `/jogar/`
+fica de fora). Ao mudar o service worker, troque o nome em `CACHE` para descartar o cache antigo.
+
 ## Licença da arte
 
 Os sprites pertencem aos pacotes usados pelo jogo (Mana Seed, Farm RPG, PixelLab e outros). As folhas e capturas que a wiki
