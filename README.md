@@ -81,3 +81,5 @@ Conteúdo 8 publicado em 23/10/2026 para Android, Windows, Linux e navegador: co
 Conteúdo 9 publicado em 23/10/2026 para Android, Windows, Linux e navegador: corrida nova em qualquer intensidade do joystick, sem caminhada lenta, e animação de regar reduzida de 1,24s para 1s. Os pacotes assinados preservam o conteúdo anterior.
 
 Conteúdo 10 publicado em 23/10/2026 para Android, Windows, Linux e navegador: porte modular de espada básica, espada de duas mãos e lança nas costas do Raven, mantendo só a aljava para arcos, e rega de 0,7s. Pacotes cumulativos assinados preservam as atualizações anteriores.
+
+Release2026.10.23.1 em23/10/2026: ranking global, pódio sazonal com nicknames/aparência/arma favorita, perfis separados P1/P2, galinheiro com custos500/300/150,1200/800/100/400 e2500/1600/250/800 (madeira/pedra/ferro/fibra nas ampliações), prazos4/6/8 dias e aves por250 Brasas. Reset geral autorizado na versão2 dos saves e temporada1 do ranking. Exige instaladores novos por adicionar o autoload Ranking; os pacotes da base2026.10.22.7 continuam preservados e o manifesto anuncia os novos downloads. Web exportada novamente.

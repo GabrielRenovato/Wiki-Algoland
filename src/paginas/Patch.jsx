@@ -4,6 +4,22 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 const PATCHES = [
   {
+    versao: "2026.10.23.1",
+    data: "23 de outubro de 2026",
+    resumo: "Ranking global, pódio na praça e criação de galinhas mais exigente.",
+    novo: [
+      <>Ranking global com pódio dos três primeiros na praça da cidade: cada personagem conserva roupa, cabelo, armadura e nickname. Interaja com a frente do pódio para abrir a lista dos 15 primeiros.</>,
+      <>Cada jogador local, incluindo P2, tem perfil e contagens de uso de armas separados. A arma mais usada aparece nas mãos do personagem no pódio.</>,
+    ],
+    melhorou: [
+      <>Praça ampliada, pódio proporcional ao jogador e números centralizados. Consulta adaptada para computador, celular e cooperativo.</>,
+      <>Construir o galinheiro exige 500 madeiras, 300 pedras e 150 fibras, com prazo de 4 dias. As ampliações exigem 1.200/800/100/400 e 2.500/1.600/250/800 unidades de madeira/pedra/ferro/fibra, com prazos de 6 e 8 dias.</>,
+      <>Galinha e galo passam de 25 para 250 Brasas cada. Aves iniciais e incubação continuam disponíveis.</>,
+      <><b>Reinício geral da progressão.</b> A estreia do ranking começa com saves e pontuações zerados. O reset ocorre uma única vez; as opções são preservadas.</>,
+      <><b>Instaladores novos.</b> Android, Windows e Linux precisam da versão 2026.10.23.1 para adicionar o ranking. O atualizador da versão anterior oferece o download. No navegador, recarregue a página.</>,
+    ],
+  },
+  {
     versao: "2026.10.22.7",
     conteudo: 10,
     data: "23 de outubro de 2026",
