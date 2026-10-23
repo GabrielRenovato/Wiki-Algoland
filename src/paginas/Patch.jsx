@@ -5,6 +5,19 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 6,
+    data: "22 de outubro de 2026",
+    resumo: "Interface mais compacta e melhor aproveitamento da tela no celular.",
+    melhorou: [
+      <>No celular, MAPA, mochila e pausa ficam juntos no topo; calendário e estado do andar aparecem em um resumo compacto.</>,
+      <>O mapa do andar abre pelo botão MAPA, cabe na tela e fecha com um toque. Os controles de combate ficam ocultos durante a consulta e voltam ao fechar.</>,
+      <>A barra inferior se encaixa entre os controles, e os botões de combate e o joystick se adaptam às telas menores. Missões sem objetivo no andar deixam de ocupar espaço durante a exploração da fenda.</>,
+      <>O aviso do pombo-correio e outros eventos usam um cartão menor junto à borda inferior; o cartão da missão principal também ficou mais compacto.</>,
+      <>Patch para Android, Windows e Linux na versão 2026.10.22.7, sem reinstalar. Inclui a Medusa e todas as correções anteriores. Aguarde o download e feche e abra o jogo para ativar.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 5,
     data: "22 de outubro de 2026",
     resumo: "Medusa redesenhada, com três fases e novos padrões de combate.",
