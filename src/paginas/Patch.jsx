@@ -5,6 +5,17 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 9,
+    data: "23 de outubro de 2026",
+    resumo: "Corrida em qualquer intensidade do joystick e rega mais rápida.",
+    melhorou: [
+      <>Todo movimento no joystick usa a corrida nova de seis quadros, inclusive no toque leve, com velocidade normal. A caminhada lenta foi removida.</>,
+      <>A animação de regar passou de 1,24 segundo para 1 segundo, mantendo uma única rega por ação.</>,
+      <>Patch cumulativo para Android, Windows e Linux: aguarde o download e feche e abra o jogo para ativar. No navegador, recarregue a página para carregar a atualização.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 8,
     data: "23 de outubro de 2026",
     resumo: "Corrida modular revisada, capas corrigidas e ajustes no espaço da interface.",
