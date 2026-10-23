@@ -5,6 +5,18 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 10,
+    data: "23 de outubro de 2026",
+    resumo: "Armas nas costas do Raven e rega mais ágil.",
+    melhorou: [
+      <>Espada básica, espada de duas mãos e lança aparecem nas costas do personagem Raven e acompanham as seis poses da corrida nas quatro direções. O arco mantém somente a aljava.</>,
+      <>O porte das armas funciona no corpo base com roupas, cabelos, capa e armadura. Ao atacar ou usar uma ferramenta, a animação da ação assume o lugar da arma guardada.</>,
+      <>A animação de regar agora dura 0,7 segundo, mantendo uma única aplicação de água por ação.</>,
+      <>Patch cumulativo para Android, Windows e Linux: aguarde o download e feche e abra o jogo para ativar. No navegador, recarregue a página para carregar a atualização.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 9,
     data: "23 de outubro de 2026",
     resumo: "Corrida em qualquer intensidade do joystick e rega mais rápida.",
