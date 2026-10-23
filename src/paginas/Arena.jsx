@@ -25,7 +25,12 @@ export function Arena() {
     </Secao>
     <Secao titulo="Eventos e tesouro">
       <p>A partir do andar 4, há 25% de chance de um evento: Lua de Sangue, Chuva de Ouro, Neblina ou Tempestade. Tempestade não aparece no inverno. Horda e Elite pertencem ao modo antigo de ondas; os grupos de elite da fenda já fazem parte dos mapas.</p>
-      <p>Um portal opcional do tesouro pode aparecer com 15% de chance. Ele leva a uma sala de mímicos e devolve você ao mesmo andar. O baú gigante tem 5% de chance de conceder uma peça de conjunto lendária no nível 5.</p>
+      <p>Ao entrar num andar, há 2% de chance de aparecer o <b>portal do tesouro</b> (sorteado uma vez por andar em cada partida). Ele leva ao Bosque do Tesouro, uma clareira de mímicos que rendem 5× mais ouro, e devolve você ao mesmo andar.</p>
+      <p>O baú gigante do bosque entrega um prêmio: 5% de chance de uma receita de conjunto que você ainda não tem (ou uma Moeda de Forja, se já tiver todas), 35% poção, 30% comida (omelete da horta, peixe assado ou sopa de raízes) e 30% Moeda de Forja. Ele nunca entrega armadura pronta.</p>
+    </Secao>
+    <Secao titulo="Mineração">
+      <p>Nos andares <b>6 e 9</b> surgem veios de ferro pelo mapa. Selecione a <b>picareta</b> na barra para trocar o ataque por mineração: a cada 3 golpes o veio solta 1 ferro, que cai no chão e ocupa espaço na mochila. Cada golpe gasta energia da picareta, conforme o nível dela.</p>
+      <p>Cada jogador tem o próprio veio. Golpes já dados ficam guardados se você sair e voltar durante a mesma partida. O ferro serve para fabricar armas com o <Link para="armas">Ivo</Link> e para evoluir as ferramentas da fazenda na bigorna.</p>
     </Secao>
     <Secao titulo="Entre os andares">
       <p>A vitória chama Orion; o menu não abre automaticamente por cima dos drops. Fale com ele quando estiver pronto. Totens usam ouro e duram até o fim da expedição.</p>
@@ -63,7 +68,7 @@ export function Chefes() {
       <div><p className="sobretitulo">Mapas {ANDARES.filter(a => a.guardiao === c.id).map(a => a.andar).join(", ")}</p><h2>{c.nome}</h2><div className="golpes">{c.golpes.map(g => <span key={g}>{g}</span>)}</div></div>
     </article></Secao>)}
     <Secao titulo="Recompensas"><ul className="lista">
-      <li>O guardião tem 20% de chance de soltar uma receita elegível ainda não aprendida ou guardada. Equipamento pronto vem da fabricação, com a exceção do prêmio raro do tesouro.</li>
+      <li>O guardião tem 20% de chance de soltar uma receita elegível ainda não aprendida ou guardada. Equipamento pronto sempre vem da fabricação.</li>
       <li>Garante uma semente da estação, além das chances extras. No inverno não caem sementes.</li>
       <li>Conta para a recompensa de <Brasas n={15} /> por guardião no encerramento, além das <Brasas n={2} /> do andar.</li>
       <li>Pode deixar uma Moeda de Forja (5% de chance). Materiais e moedas de forja são preservados ao encerrar a expedição.</li>

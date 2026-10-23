@@ -13,6 +13,7 @@ import { Jogar } from "./paginas/Jogar.jsx";
 import { Pesca } from "./paginas/Pesca.jsx";
 import { Mapa } from "./paginas/Mapa.jsx";
 import { Patch } from "./paginas/Patch.jsx";
+import { Online, Ranking, Combate, Floresta, Limiar } from "./paginas/Novas.jsx";
 
 // Páginas da wiki: id (vai na URL), título, grupo do menu, ícone, resumo (busca e cartões) e palavras para a busca
 export const PAGINAS = [
@@ -23,14 +24,18 @@ export const PAGINAS = [
   { id: "comecando", titulo: "Primeiros passos", grupo: "Comece aqui", icone: MORADORES.bento, Pagina: Comecando, resumo: "Prólogo, tutorial e primeiro dia", busca: "prólogo tutorial novo jogo personagem criação" },
   { id: "controles", titulo: "Controles", grupo: "Comece aqui", icone: FERRAMENTAS.enxada, Pagina: Controles, resumo: "Teclado, controle e toque", busca: "teclas teclado controle xbox toque celular android botões" },
   { id: "vila", titulo: "Vila das Flores", grupo: "Mundo", icone: CASAS.venda, Pagina: Vila, resumo: "Casas, lojas, mural e festa", busca: "cidade casas lojas mural pedidos missões festa" },
+  { id: "limiar", titulo: "Arco do Limiar e eventos", grupo: "Mundo", icone: CASAS.sede, Pagina: Limiar, novo: true, resumo: "História principal, festa e cartas", busca: "história missão principal limiar selo fonte energia lia bento ivo estela festa sábado taverna pombo correio carta pedido" },
   { id: "mapa", titulo: "Mapa-múndi", grupo: "Mundo", icone: PORTAL, Pagina: Mapa, resumo: "Destinos e caminhos", busca: "mapa mundo destinos praia palafita fazenda localização M R3" },
+  { id: "floresta", titulo: "Floresta", grupo: "Mundo", icone: FERRAMENTAS.machadinha, Pagina: Floresta, novo: true, resumo: "Pedreira, lago e fauna", busca: "floresta caminho pedreira lago pesca lenhadores cervo coelho capivara corvo animais fauna carvalho abeto" },
   { id: "pesca", titulo: "Pesca", grupo: "Mundo", icone: FERRAMENTAS.regador, Pagina: Pesca, resumo: "Vara, peixes e coleção", busca: "pesca peixes vara nilo cais coleção desafios encomendas praia rio mar refinamento" },
   { id: "moradores", titulo: "Moradores", grupo: "Mundo", icone: MORADORES.lia, Pagina: Moradores, resumo: "Rotinas, amizade e diálogos", busca: "npc lia tomás rosa caio estela bento ivo nilo osvaldo helena clara amizade diálogo rotina folga" },
+  { id: "online", titulo: "Online e chat", grupo: "Mundo", icone: MORADORES.bardo, Pagina: Online, novo: true, resumo: "Outros jogadores na praça", busca: "online multiplayer chat conversar mensagem lobby jogadores sala balão enter" },
   { id: "tempo", titulo: "Tempo e calendário", grupo: "Mundo", icone: colhido([11, 5]), Pagina: Tempo, resumo: "Estações, clima e sono", busca: "estação dia noite clima chuva neve dormir sono desmaio" },
   { id: "fazenda", titulo: "Fazenda", grupo: "Fazenda", icone: FERRAMENTAS.regador, Pagina: Fazenda, resumo: "Ferramentas, solo, baú e galinheiro", busca: "ferramentas enxada regador machadinha picareta entulho baú lago plantar galinheiro galinha galo ovos feno energia" },
   { id: "plantas", titulo: "Plantas", grupo: "Fazenda", icone: colhido([2, 6]), Pagina: Plantas, resumo: "Sementes de cada estação", busca: "sementes cenoura batata morango tomate milho melancia abóbora uva berinjela beterraba girassol couve" },
   { id: "pocoes", titulo: "Poções", grupo: "Fazenda", icone: pocao([2, 2]), Pagina: Pocoes, resumo: "Receitas do caldeirão", busca: "caldeirão receitas cura força velocidade pedra vampírica fôlego" },
   { id: "refeicoes", titulo: "Refeições", grupo: "Fazenda", icone: colhido([20, 2]), Pagina: Refeicoes, resumo: "Pratos do Caio e bônus", busca: "caio cozinhar prato bônus vender colheita lia brasas sopa torta banquete" },
+  { id: "combate", titulo: "Combate", grupo: "Arena", icone: ARMAS.espada_gemea, Pagina: Combate, novo: true, resumo: "Esquiva, aparo e especialidades", busca: "combate ataque esquiva dash estamina defesa aparo perfeito bloqueio escudada especialidade arma combo petrificação" },
   { id: "arena", titulo: "Arena", grupo: "Arena", icone: PORTAL, Pagina: Arena, resumo: "Andares, caçadas e eventos", busca: "andares fenda caçada guardião orion portal totens saque eventos mímico ouro morte" },
   { id: "inimigos", titulo: "Inimigos", grupo: "Arena", icone: INIMIGOS.slime, Pagina: Inimigos, resumo: "Monstros comuns e mutantes", busca: "slime morcego vespa cogumelo flor caranguejo gremlin falcão esqueleto mutante" },
   { id: "chefes", titulo: "Chefes", grupo: "Arena", icone: CHEFES.dragao_vermelho, Pagina: Chefes, resumo: "Guardiões e seus golpes", busca: "minotauro medusa goblin maromba cogumelo ancião dragão vermelho" },
@@ -38,6 +43,7 @@ export const PAGINAS = [
   { id: "raridade", titulo: "Raridade", grupo: "Equipamento", icone: ARMAS.machado, Pagina: RaridadePagina, resumo: "Do comum ao lendário", busca: "comum incomum raro épico lendário afixos drop venda" },
   { id: "armaduras", titulo: "Armaduras", grupo: "Equipamento", icone: CONJUNTOS.carrasco, Pagina: Armaduras, resumo: "Conjuntos e peças", busca: "conjunto carrasco cavaleiro rubro mordomo moeda de forja ascensão elmo peitoral luvas botas" },
   { id: "progresso", titulo: "Brasas e progresso", grupo: "Progresso", icone: BRASA, Pagina: Progresso, resumo: "Melhorias permanentes", busca: "brasas melhorias apoios curandeira bardo mística desafios morte" },
+  { id: "ranking", titulo: "Ranking e pódio", grupo: "Progresso", icone: CONJUNTOS.cavalheiro, Pagina: Ranking, novo: true, resumo: "Placar global e pódio", busca: "ranking placar top 15 pódio apelido temporada andar recorde" },
   { id: "coop", titulo: "Cooperativo", grupo: "Progresso", icone: CONJUNTOS.cavaleiro_rubro, Pagina: Cooperativo, resumo: "Dois jogadores, tela dividida", busca: "dois jogadores tela dividida controle" },
   { id: "dicas", titulo: "Dicas e dúvidas", grupo: "Progresso", icone: MORADORES.mistica, Pagina: Dicas, resumo: "Perguntas frequentes", busca: "faq perguntas" },
 ];
