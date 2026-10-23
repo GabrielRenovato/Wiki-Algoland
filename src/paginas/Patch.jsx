@@ -5,6 +5,25 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 7,
+    data: "23 de outubro de 2026",
+    resumo: "Plantio e colheita animados, interface mobile mais livre e correções no dragão e nas cartas.",
+    novo: [
+      <>Novas animações de plantar e colher nas quatro direções, com corpo base, 28 cabelos, roupas, capas e peças dos três conjuntos acompanhando as poses.</>,
+    ],
+    melhorou: [
+      <>A barra de itens sobe automaticamente quando o personagem se aproxima dela. O aviso do pombo acompanha o espaço disponível sem ficar escondido pela barra.</>,
+      <>Relógio separado dos botões de pausa e mochila no celular; balões dos moradores menores e ajustados à tela. O nome do item selecionado desaparece após alguns segundos.</>,
+      <>O especial do dragão marca uma área circular menor, trava a mira durante o aviso e oferece três segundos para sair do alcance.</>,
+      <>Patch cumulativo para Android, Windows e Linux: inclui a Medusa e as atualizações anteriores. Aguarde o download e feche e abra o jogo para ativar.</>,
+    ],
+    corrigido: [
+      <>Proteção contra bloqueios residuais de ataque ao entrar em um andar da fenda no celular.</>,
+      <>Aceitar uma carta de um morador mantém o remetente correto, sem mostrar uma pessoa misteriosa por engano.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 6,
     data: "22 de outubro de 2026",
     resumo: "Interface mais compacta e melhor aproveitamento da tela no celular.",
