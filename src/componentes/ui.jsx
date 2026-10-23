@@ -11,9 +11,14 @@ export function Titulo({ children, sub }) {
   );
 }
 
+/** Âncora estável a partir do título (o sumário "Nesta página" usa os ids das seções). */
+export const ancora = (texto) =>
+  String(texto).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
 export function Secao({ titulo, id, children }) {
+  const automatico = typeof titulo === "string" ? ancora(titulo) : undefined;
   return (
-    <section className="secao" id={id}>
+    <section className="secao" id={id ?? automatico}>
       {titulo && <h2>{titulo}</h2>}
       {children}
     </section>
@@ -23,10 +28,14 @@ export function Secao({ titulo, id, children }) {
 /** Caixa de destaque: "dica", "aviso" ou "nota". */
 export function Caixa({ tipo = "dica", titulo, children }) {
   const rotulo = { dica: "Dica", aviso: "Atenção", nota: "Como funciona" }[tipo];
+  const simbolo = { dica: "💡", aviso: "⚠️", nota: "📘" }[tipo];
   return (
     <aside className={`caixa caixa-${tipo}`}>
-      <strong>{titulo ?? rotulo}</strong>
-      <div>{children}</div>
+      <span className="caixa-simbolo" aria-hidden>{simbolo}</span>
+      <div className="caixa-corpo">
+        <strong>{titulo ?? rotulo}</strong>
+        <div>{children}</div>
+      </div>
     </aside>
   );
 }

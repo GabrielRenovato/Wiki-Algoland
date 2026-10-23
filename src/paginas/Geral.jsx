@@ -1,27 +1,51 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Tecla, Link, Passos, Brasas } from "../componentes/ui.jsx";
 import { HEROI, PORTAL, CASAS, MORADORES as SPR_MORADORES, FERRAMENTAS, CONJUNTOS, CHEFES as SPR_CHEFES, colhido } from "../sprites.js";
-import { ESTACOES, DIAS_SEMANA } from "../dados.js";
+import { ESTACOES, DIAS_SEMANA, ANDARES, PLANTAS, PEIXES, CHEFES as CHEFES_DADOS, MORADORES as MORADORES_DADOS } from "../dados.js";
+import { PATCHES, rotuloVersao } from "./Patch.jsx";
+import { PAGINAS } from "../App.jsx";
 
 export function Inicio() {
+  const [ultimo] = PATCHES;
+  const destaques = [...(ultimo.novo ?? []), ...(ultimo.melhorou ?? [])].slice(0, 3);
+  const grupos = [...new Set(PAGINAS.map((p) => p.grupo))];
   return (
     <>
       <div className="banner">
         <div className="banner-texto">
-          <p className="sobretitulo">Wiki oficial</p>
+          <p className="sobretitulo">Wiki oficial do jogo</p>
           <h1>AlgoLand</h1>
           <p>
-            Um RPG 2D que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das
-            Flores, cuida de uma fazenda, cria aves, pesca e faz amizade com os vizinhos. Pelo portal, explora os andares da Fenda do Limiar. Cada queda vira Brasas, e as Brasas deixam você mais forte para sempre.
+            Um RPG 2D que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das Flores, cuida
+            de uma fazenda, cria aves, pesca e faz amizade com os vizinhos. Pelo portal, explora os andares da Fenda do
+            Limiar. Cada queda vira <b>Brasas</b>, e as Brasas deixam você mais forte para sempre.
           </p>
-          <a className="botao-baixar" href="#/jogar">▶ Jogar no navegador</a>
-          <a className="botao-baixar" href="#/download">⬇ Baixar para Windows, Linux ou Android</a>
+          <a className="botao" href="#/jogar">▶ Jogar no navegador</a>
+          <a className="botao secundario" href="#/download">⬇ Windows, Linux e Android</a>
         </div>
         <div className="banner-palco">
           <Sprite s={HEROI} escala={4} titulo="Herói" />
           <Sprite s={PORTAL} escala={3} titulo="Portal da arena" />
         </div>
       </div>
+
+      <div className="numeros">
+        <div className="numero"><b>{ANDARES.length}</b><span>andares na fenda</span></div>
+        <div className="numero"><b>{CHEFES_DADOS.length}</b><span>chefes guardiões</span></div>
+        <div className="numero"><b>{MORADORES_DADOS.length}</b><span>moradores na vila</span></div>
+        <div className="numero"><b>{PLANTAS.length}</b><span>plantas para cultivar</span></div>
+        <div className="numero"><b>{PEIXES.length}</b><span>peixes para pescar</span></div>
+      </div>
+
+      <Secao titulo="Novidades">
+        <article className="novidade">
+          <span className="selo">● {rotuloVersao(ultimo)}</span>
+          <h3>{ultimo.resumo}</h3>
+          <p>{ultimo.data}</p>
+          {destaques.length > 0 && <ul>{destaques.map((d, i) => <li key={i}>{d}</li>)}</ul>}
+          <a className="botao secundario" href="#/patch">Ver todas as atualizações →</a>
+        </article>
+      </Secao>
 
       <Secao titulo="O ciclo do jogo">
         <div className="ciclo">
@@ -55,21 +79,28 @@ export function Inicio() {
         ]} />
       </Secao>
 
-      <Secao titulo="Por onde começar">
-        <Grade min={220}>
-          <Ficha sprite={SPR_MORADORES.bento} nome="Primeiros passos" etiqueta="Prólogo e tutorial">
-            <p>O Bento resgata você e mostra a vila e a fazenda. <Link para="comecando">Ler o guia</Link></p>
-          </Ficha>
-          <Ficha sprite={FERRAMENTAS.enxada} escala={4} nome="Controles" etiqueta="Teclado, controle e toque">
-            <p>Todas as teclas e botões. <Link para="controles">Ver controles</Link></p>
-          </Ficha>
-          <Ficha sprite={CONJUNTOS.carrasco} nome="Equipamento" etiqueta="Armas, raridade e armaduras">
-            <p>Bigorna, encantamentos e conjuntos. <Link para="armas">Ver armas</Link></p>
-          </Ficha>
-          <Ficha sprite={SPR_CHEFES.dragao_vermelho} escala={0.9} nome="Chefes" etiqueta="Um guardião por andar">
-            <p>Golpes, avisos no chão e recompensas. <Link para="chefes">Ver chefes</Link></p>
-          </Ficha>
-        </Grade>
+      {grupos.filter((g) => g !== "Comece aqui").map((g) => (
+        <Secao key={g} titulo={g}>
+          <div className="atalhos">
+            {PAGINAS.filter((p) => p.grupo === g).map((p) => (
+              <a key={p.id} className="atalho" href={`#/${p.id}`}>
+                <span className="atalho-icone"><Sprite s={p.icone} escala={Math.min(40 / p.icone.tam[0], 40 / p.icone.tam[1])} parado titulo="" /></span>
+                <span><b>{p.titulo}</b><small>{p.resumo}</small></span>
+              </a>
+            ))}
+          </div>
+        </Secao>
+      ))}
+
+      <Secao titulo="Comece aqui">
+        <div className="atalhos">
+          {PAGINAS.filter((p) => p.grupo === "Comece aqui" && p.id !== "inicio").map((p) => (
+            <a key={p.id} className="atalho" href={`#/${p.id}`}>
+              <span className="atalho-icone"><Sprite s={p.icone} escala={Math.min(40 / p.icone.tam[0], 40 / p.icone.tam[1])} parado titulo="" /></span>
+              <span><b>{p.titulo}</b><small>{p.resumo}</small></span>
+            </a>
+          ))}
+        </div>
       </Secao>
     </>
   );
