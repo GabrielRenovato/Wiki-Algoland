@@ -5,6 +5,18 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 1,
+    data: "23 de outubro de 2026",
+    resumo: "Ranking automático ao concluir cada andar e ao morrer, sem cadastro.",
+    corrigido: [
+      <>Concluir um andar ou morrer atualiza o ranking automaticamente, com aparência e uso de armas, usando o apelido atual do personagem.</>,
+      <>Personagem sem nome aparece como “sem apelido”. Apelidos repetidos, com espaços ou acentos são aceitos: cada jogador continua com seu registro separado.</>,
+      <>Removidos os campos de nome e os botões de cadastro da consulta e do fim de partida. O envio continua com menus ou pausa abertos e guarda o próximo resultado se outra requisição estiver em andamento.</>,
+      <>Correção por patch para Android, Windows e Linux na versão2026.10.23.1: aguarde a atualização e feche e abra o jogo. No navegador, recarregue a página. Esta correção preserva os saves e a temporada atual.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     data: "23 de outubro de 2026",
     resumo: "Ranking global, pódio na praça e criação de galinhas mais exigente.",
     novo: [
