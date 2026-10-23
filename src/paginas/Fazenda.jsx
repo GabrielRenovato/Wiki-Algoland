@@ -158,8 +158,8 @@ export function Plantas() {
       ))}
       <Secao titulo="Sementes na arena">
         <p>
-          Cada inimigo comum tem uma chance pequena de soltar semente: 0,25% (comum), 0,1% (incomum), 0,03% (rara) e
-          0,01% (épica) nas fendas. Mutantes têm o triplo de chance, e todo <Link para="chefes">chefe</Link> solta pelo menos
+          Cada inimigo comum tem uma chance pequena de soltar semente: 0,1% (comum), 0,04% (incomum), 0,0125% (rara) e
+          0,004% (épica) nas fendas, e quatro vezes mais na arena de ondas. Mutantes têm o triplo de chance, e todo <Link para="chefes">chefe</Link> solta pelo menos
           <b> 1 semente garantida da estação</b>. No inverno não cai semente, nem do guardião. Sementes raras e épicas brilham no chão.
         </p>
       </Secao>

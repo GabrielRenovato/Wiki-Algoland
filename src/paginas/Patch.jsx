@@ -5,6 +5,23 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 5,
+    data: "23 de outubro de 2026",
+    resumo: "Menos sementes caindo, chat mais ajustado e online mais fluido.",
+    melhorou: [
+      <>O drop de sementes diminuiu: inimigos comuns soltam cerca de 60% menos e o chefe solta 1 semente garantida (antes eram 2), com chance extra menor.</>,
+      <>O online ficou mais fluido: o jogo atualiza os outros jogadores a cada 0,55 s e eles se movem sem o atraso de quase 1 segundo.</>,
+      <>No celular, o ícone do chat fica ao lado do botão MAPA, e os botões de ação ganharam um pequeno espaço entre eles.</>,
+    ],
+    corrigido: [
+      <>O registro do chat no canto do computador tem largura proporcional à tela e não ocupa mais a janela inteira.</>,
+      <>Digitar M (ou outras teclas de atalho) no chat não abre mais o mapa.</>,
+      <>Os outros jogadores parados não ficam mais andando sozinhos.</>,
+      <>Patch para Android, Windows e Linux na versão 2026.10.23.1, sem outro instalador. No navegador, recarregue a página.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 4,
     data: "23 de outubro de 2026",
     resumo: "Registro do chat no canto da tela, com campo para escrever, no computador.",
