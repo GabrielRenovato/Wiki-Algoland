@@ -40,7 +40,7 @@ export const INIMIGOS = {
 // --- Chefes (6 quadros x 4 direções; a linha 0 olha para baixo) -------------------------------------------------
 export const CHEFES = {
   minotauro: grade("chefes/minotauro.png", [1152, 768], [192, 192], 0, intervalo(0, 5), 7),
-  medusa: grade("chefes/medusa.png", [768, 512], [128, 128], 0, intervalo(0, 5), 7),
+  medusa: grade("chefes/medusa.png", [960, 640], [160, 160], 0, intervalo(0, 5), 7),
   // O Goblin Maromba tem 12 quadros por linha (o jogo ajusta hframes em goblin_maromba.gd)
   goblin_maromba: grade("chefes/goblin_maromba.png", [3072, 1024], [256, 256], 0, intervalo(0, 11), 10),
   // O Cogumelo Ancião é o cogumelo comum em escala 2,4
