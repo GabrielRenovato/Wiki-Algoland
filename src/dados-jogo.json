@@ -96,11 +96,12 @@
       "dias": 2,
       "id": "lanca_basica",
       "materiais": {
-        "fragmento": 2,
-        "madeira": 4,
-        "pedra": 2
+        "fibra": 4,
+        "fragmento": 4,
+        "madeira": 12,
+        "pedra": 6
       },
-      "meta": 1,
+      "meta": 2,
       "nome": "Lança Básica"
     },
     {
@@ -114,11 +115,11 @@
       "dias": 2,
       "id": "espada_gemea",
       "materiais": {
-        "ferro": 3,
-        "fragmento": 4,
-        "madeira": 4
+        "ferro": 5,
+        "fragmento": 8,
+        "madeira": 16
       },
-      "meta": 5,
+      "meta": 8,
       "nome": "Espada de Duas Mãos"
     },
     {
@@ -132,9 +133,10 @@
       "dias": 3,
       "id": "machado",
       "materiais": {
-        "ferro": 6,
-        "madeira": 6,
-        "nucleo": 1
+        "ferro": 8,
+        "fragmento": 12,
+        "madeira": 24,
+        "nucleo": 2
       },
       "meta": 10,
       "nome": "Machado"
@@ -150,9 +152,9 @@
       "dias": 1,
       "id": "arco_curto",
       "materiais": {
-        "fibra": 4,
-        "fragmento": 2,
-        "madeira": 4
+        "fibra": 10,
+        "fragmento": 6,
+        "madeira": 16
       },
       "meta": 3,
       "nome": "Arco"
@@ -1045,11 +1047,12 @@
       "id": "lanca_basica",
       "livre": false,
       "materiais": {
-        "fragmento": 2,
-        "madeira": 4,
-        "pedra": 2
+        "fibra": 4,
+        "fragmento": 4,
+        "madeira": 12,
+        "pedra": 6
       },
-      "meta": 1,
+      "meta": 2,
       "nome": "LANCA"
     },
     {
@@ -1057,10 +1060,11 @@
       "id": "aljava_basica",
       "livre": false,
       "materiais": {
-        "fibra": 3,
-        "fragmento": 1
+        "fibra": 10,
+        "fragmento": 3,
+        "madeira": 4
       },
-      "meta": 1,
+      "meta": 3,
       "nome": "ALJAVA"
     },
     {
@@ -1068,10 +1072,11 @@
       "id": "cabeca_basica",
       "livre": false,
       "materiais": {
-        "fibra": 2,
-        "fragmento": 2
+        "fibra": 8,
+        "fragmento": 4,
+        "pedra": 4
       },
-      "meta": 1,
+      "meta": 4,
       "nome": "ELMO"
     },
     {
@@ -1079,10 +1084,11 @@
       "id": "armadura_basica",
       "livre": false,
       "materiais": {
-        "fibra": 4,
-        "fragmento": 3
+        "fibra": 12,
+        "fragmento": 6,
+        "madeira": 8
       },
-      "meta": 1,
+      "meta": 5,
       "nome": "ARMADURA"
     },
     {
@@ -1090,10 +1096,10 @@
       "id": "luvas_basicas",
       "livre": false,
       "materiais": {
-        "fibra": 2,
-        "fragmento": 1
+        "fibra": 6,
+        "fragmento": 2
       },
-      "meta": 1,
+      "meta": 2,
       "nome": "LUVAS"
     },
     {
@@ -1101,10 +1107,11 @@
       "id": "botas_basicas",
       "livre": false,
       "materiais": {
-        "fibra": 2,
-        "fragmento": 2
+        "fibra": 8,
+        "fragmento": 3,
+        "madeira": 4
       },
-      "meta": 1,
+      "meta": 3,
       "nome": "BOTAS"
     },
     {
@@ -1112,12 +1119,12 @@
       "id": "elmo_carrasco",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
-        "nucleo": 1
+        "ferro": 5,
+        "fibra": 8,
+        "fragmento": 12,
+        "nucleo": 2
       },
-      "meta": 10,
+      "meta": 15,
       "nome": "ELMO DO CARRASCO"
     },
     {
@@ -1125,12 +1132,12 @@
       "id": "peitoral_carrasco",
       "livre": false,
       "materiais": {
-        "ferro": 5,
-        "fibra": 3,
-        "fragmento": 5,
-        "nucleo": 1
+        "ferro": 7,
+        "fibra": 12,
+        "fragmento": 16,
+        "nucleo": 2
       },
-      "meta": 10,
+      "meta": 20,
       "nome": "PEITORAL DO CARRASCO"
     },
     {
@@ -1139,8 +1146,8 @@
       "livre": false,
       "materiais": {
         "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
+        "fibra": 6,
+        "fragmento": 8,
         "nucleo": 1
       },
       "meta": 10,
@@ -1151,12 +1158,12 @@
       "id": "botas_carrasco",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
+        "ferro": 4,
+        "fibra": 8,
+        "fragmento": 10,
         "nucleo": 1
       },
-      "meta": 10,
+      "meta": 12,
       "nome": "BOTAS DO CARRASCO"
     },
     {
@@ -1164,12 +1171,12 @@
       "id": "elmo_cavaleiro_rubro",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
-        "nucleo": 1
+        "ferro": 5,
+        "fibra": 8,
+        "fragmento": 12,
+        "nucleo": 2
       },
-      "meta": 10,
+      "meta": 15,
       "nome": "ELMO DO CAVALEIRO RUBRO"
     },
     {
@@ -1177,12 +1184,12 @@
       "id": "peitoral_cavaleiro_rubro",
       "livre": false,
       "materiais": {
-        "ferro": 5,
-        "fibra": 3,
-        "fragmento": 5,
-        "nucleo": 1
+        "ferro": 7,
+        "fibra": 12,
+        "fragmento": 16,
+        "nucleo": 2
       },
-      "meta": 10,
+      "meta": 20,
       "nome": "PEITORAL DO CAVALEIRO RUBRO"
     },
     {
@@ -1191,8 +1198,8 @@
       "livre": false,
       "materiais": {
         "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
+        "fibra": 6,
+        "fragmento": 8,
         "nucleo": 1
       },
       "meta": 10,
@@ -1203,12 +1210,12 @@
       "id": "botas_cavaleiro_rubro",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
+        "ferro": 4,
+        "fibra": 8,
+        "fragmento": 10,
         "nucleo": 1
       },
-      "meta": 10,
+      "meta": 12,
       "nome": "BOTAS DO CAVALEIRO RUBRO"
     },
     {
@@ -1216,12 +1223,12 @@
       "id": "elmo_cavalheiro",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
-        "nucleo": 1
+        "ferro": 5,
+        "fibra": 8,
+        "fragmento": 12,
+        "nucleo": 2
       },
-      "meta": 10,
+      "meta": 15,
       "nome": "ELMO DO MORDOMO"
     },
     {
@@ -1229,12 +1236,12 @@
       "id": "peitoral_cavalheiro",
       "livre": false,
       "materiais": {
-        "ferro": 5,
-        "fibra": 3,
-        "fragmento": 5,
-        "nucleo": 1
+        "ferro": 7,
+        "fibra": 12,
+        "fragmento": 16,
+        "nucleo": 2
       },
-      "meta": 10,
+      "meta": 20,
       "nome": "PEITORAL DO MORDOMO"
     },
     {
@@ -1243,8 +1250,8 @@
       "livre": false,
       "materiais": {
         "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
+        "fibra": 6,
+        "fragmento": 8,
         "nucleo": 1
       },
       "meta": 10,
@@ -1255,12 +1262,12 @@
       "id": "botas_cavalheiro",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fibra": 3,
-        "fragmento": 5,
+        "ferro": 4,
+        "fibra": 8,
+        "fragmento": 10,
         "nucleo": 1
       },
-      "meta": 10,
+      "meta": 12,
       "nome": "BOTAS DO MORDOMO"
     },
     {
@@ -1268,9 +1275,9 @@
       "id": "arco_curto",
       "livre": false,
       "materiais": {
-        "fibra": 4,
-        "fragmento": 2,
-        "madeira": 4
+        "fibra": 10,
+        "fragmento": 6,
+        "madeira": 16
       },
       "meta": 3,
       "nome": "ARCO"
@@ -1280,11 +1287,11 @@
       "id": "espada_gemea",
       "livre": false,
       "materiais": {
-        "ferro": 3,
-        "fragmento": 4,
-        "madeira": 4
+        "ferro": 5,
+        "fragmento": 8,
+        "madeira": 16
       },
-      "meta": 5,
+      "meta": 8,
       "nome": "ESPADA DE DUAS MAOS"
     },
     {
@@ -1292,9 +1299,10 @@
       "id": "machado",
       "livre": false,
       "materiais": {
-        "ferro": 6,
-        "madeira": 6,
-        "nucleo": 1
+        "ferro": 8,
+        "fragmento": 12,
+        "madeira": 24,
+        "nucleo": 2
       },
       "meta": 10,
       "nome": "MACHADO"

@@ -23,7 +23,8 @@ export const PLANTAS = [
 // codigo/dados/loja_sementes.gd (preço em Brasas, com o Tomás)
 export const PRECO_SEMENTE = { comum: 2, incomum: 3, raro: 4, epico: 6 };
 // codigo/logica/semente_drop.gd
-export const CHANCE_SEMENTE = { comum: "0,25%", incomum: "0,1%", raro: "0,03%", epico: "0,01%" };
+// Chance por inimigo comum nas fendas (MULT_CHANCE_ANDAR = 0,25 da tabela base)
+export const CHANCE_SEMENTE = { comum: "0,1%", incomum: "0,04%", raro: "0,0125%", epico: "0,004%" };
 
 // codigo/dados/pocoes.gd
 export const POCOES = [

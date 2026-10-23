@@ -2,7 +2,19 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 
 // Histórico de atualizações do jogo, da mais nova para a mais antiga. Cada versão tem três listas opcionais:
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
-const PATCHES = [
+export const PATCHES = [
+  {
+    versao: "2026.10.23.1",
+    conteudo: 7,
+    data: "23 de outubro de 2026",
+    resumo: "Corrida com capa revisada, pés visíveis e ombreira preservada.",
+    corrigido: [
+      <>A capa acompanha a inclinação do corpo e dobra na impulsão ao correr para cima, sem esconder a passada.</>,
+      <>O calcanhar da perna dobrada mantém a bota e aparece à frente da capa. A ombreira acompanha o ombro sem deformar ou desaparecer.</>,
+      <>Removidos os pontos de tecido que apareciam perto da cabeça durante a corrida.</>,
+      <>Atualização cumulativa para Android, Windows e Linux na versão 2026.10.23.1: aguarde o download e feche e abra o jogo. No navegador, recarregue a página.</>,
+    ],
+  },
   {
     versao: "2026.10.23.1",
     conteudo: 5,
@@ -499,7 +511,7 @@ const Lista = ({ titulo, itens }) =>
     </>
   ) : null;
 
-const rotuloVersao = (p) => `${p.versao}${p.conteudo ? ` · conteúdo ${p.conteudo}` : ""}`;
+export const rotuloVersao = (p) => `${p.versao}${p.conteudo ? ` · conteúdo ${p.conteudo}` : ""}`;
 
 export function Patch() {
   const [recente, ...antigos] = PATCHES;
@@ -508,7 +520,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${rotuloVersao(recente)}`}>
-          {recente.data}. {recente.resumo} A versão Web de 22/10/2026 está em <Link para="jogar">Jogar no navegador</Link>; os instaladores atualizados do Release v2026.10.22.7 ficam em <Link para="download">Baixar o jogo</Link>.
+          {recente.data}. {recente.resumo} A versão Web atualizada está em <Link para="jogar">Jogar no navegador</Link>; os instaladores do Release v2026.10.23.1 ficam em <Link para="download">Baixar o jogo</Link> e recebem as atualizações de conteúdo sozinhos.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (
