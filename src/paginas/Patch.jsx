@@ -5,6 +5,24 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 8,
+    data: "23 de outubro de 2026",
+    resumo: "Corrida modular revisada, capas corrigidas e ajustes no espaço da interface.",
+    novo: [
+      <>Corrida de seis quadros nas quatro direções, com corpo base, cabelos, roupas e peças dos três conjuntos acompanhando o movimento.</>,
+    ],
+    melhorou: [
+      <>No celular, toque leve no joystick caminha devagar com a animação original do Raven; toque forte corre.</>,
+      <>Ao sair da arena, o personagem retorna à vila às 23h.</>,
+      <>Atualização cumulativa para Android, Windows e Linux: aguarde o download e feche e abra o jogo. No navegador, recarregue a página para carregar a atualização.</>,
+    ],
+    corrigido: [
+      <>Capa preservada durante a corrida e as ações de plantar e colher. Roupas e corpo mantêm os contornos, as cores e as sombras dos sprites originais.</>,
+      <>A barra de itens deixa de subir sozinha quando o nome do item desaparece e continua desviando quando o personagem se aproxima.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 7,
     data: "23 de outubro de 2026",
     resumo: "Plantio e colheita animados, interface mobile mais livre e correções no dragão e nas cartas.",

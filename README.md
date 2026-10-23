@@ -75,3 +75,5 @@ A release 2026.10.22.7 inclui o novo atualizador de conteúdo por área para And
 Conteúdo 1 da versão 2026.10.22.7: patch assinado de 9.168 bytes por plataforma para otimizar o desenho da fonte de água da cidade. Os instaladores da release permanecem os mesmos; o atualizador baixa o pacote e o ativa ao reabrir. Os três pacotes contêm apenas `codigo/cidade/agua_fonte.gdc`.
 
 A versão Web foi atualizada em 23/10/2026 com as alterações do conteúdo 7: Medusa, HUD mobile, cartas, especial do dragão e animações modulares de plantio e colheita. O pacote é identificado pelo manifesto publicado em `public/jogar/manifesto.json`; os patches dos aplicativos permanecem separados em `public/jogar/atualizacao/`.
+
+Conteúdo 8 publicado em 23/10/2026 para Android, Windows, Linux e navegador: corrida modular de seis quadros, caminhada lenta no toque leve, correções de capa e roupas na corrida e colheita, ajuste da barra de itens e retorno da arena às 23h. Os pacotes dos aplicativos são cumulativos e assinados; a versão Web tem exportação própria identificada em `public/jogar/manifesto.json`.
