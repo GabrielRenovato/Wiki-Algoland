@@ -17,6 +17,20 @@ export const PATCHES = [
   },
   {
     versao: "2026.10.23.1",
+    conteudo: 6,
+    data: "23 de outubro de 2026",
+    resumo: "Receitas por descobrir na bigorna, balcão da Lia e online com menos atraso.",
+    melhorou: [
+      <>Na bigorna, as receitas que você ainda não tem aparecem como silhuetas pretas, para mostrar o que falta descobrir.</>,
+      <>O balcão de atendimento da Lia ganhou uma vela apoiada no tampo, com a passagem livre.</>,
+      <>O chat aceita mensagens com intervalo menor (0,5 s) e responde mais rápido. Os outros jogadores se movem no ritmo certo mesmo quando a conexão atrasa.</>,
+    ],
+    corrigido: [
+      <>Atualização cumulativa para Android, Windows e Linux na versão 2026.10.23.1, sem outro instalador e sem mexer nos saves. No navegador, recarregue a página.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 5,
     data: "23 de outubro de 2026",
     resumo: "Menos sementes caindo, chat mais ajustado e online mais fluido.",
