@@ -1,40 +1,40 @@
 {
-  "versao": "5ec07c8a9942",
-  "sha256": "5ec07c8a9942987077b695da5b454878d121e50532f84caa898734745e4ae11b",
-  "pacote": 242049100,
-  "transferencia": 281563854,
+  "versao": "046a841c98e4",
+  "sha256": "046a841c98e404ea90ea4da4e5e604300c6bc1d852df719b272ac1536153887c",
+  "pacote": 242051676,
+  "transferencia": 281566430,
   "partes": [
     {
-      "arquivo": "dados-5ec07c8a9942-1.part",
+      "arquivo": "dados-046a841c98e4-1.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-2.part",
+      "arquivo": "dados-046a841c98e4-2.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-3.part",
+      "arquivo": "dados-046a841c98e4-3.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-4.part",
+      "arquivo": "dados-046a841c98e4-4.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-5.part",
+      "arquivo": "dados-046a841c98e4-5.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-6.part",
+      "arquivo": "dados-046a841c98e4-6.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-7.part",
+      "arquivo": "dados-046a841c98e4-7.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-5ec07c8a9942-8.part",
-      "tamanho": 7168076
+      "arquivo": "dados-046a841c98e4-8.part",
+      "tamanho": 7170652
     }
   ]
 }
