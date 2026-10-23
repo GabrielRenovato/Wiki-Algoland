@@ -5,6 +5,19 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 3,
+    data: "23 de outubro de 2026",
+    resumo: "Ícone para abrir o chat e balões dos NPCs presos aos moradores.",
+    melhorou: [
+      <>Ícone de balão no canto inferior esquerdo da cidade, disponível no computador, celular e tela dividida. Clique ou toque para abrir o chat e escolher FICAR ONLINE ou FICAR OFFLINE.</>,
+    ],
+    corrigido: [
+      <>A fala dos NPCs permanece acima do próprio morador e sai da tela junto com ele. A câmera não prende mais o balão nas bordas nem o reposiciona perto do jogador.</>,
+      <>Patch para Android, Windows e Linux na versão 2026.10.23.1, sem outro instalador. No navegador, recarregue a página.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 2,
     data: "23 de outubro de 2026",
     resumo: "Lobby opcional na cidade, chat e balões de fala entre jogadores.",
