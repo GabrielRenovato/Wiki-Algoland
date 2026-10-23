@@ -5,6 +5,18 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 export const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 8,
+    data: "23 de outubro de 2026",
+    resumo: "Ranking junto ao pódio, marcadores dos NPCs e missão principal alinhados.",
+    corrigido: [
+      <>O botão para consultar o ranking aparece junto à lateral direita da base do pódio, no computador e no celular.</>,
+      <>O círculo dos sinais de missão voltou e permanece perto do NPC, inclusive quando há balão de fala.</>,
+      <>O quadro da missão principal foi alinhado com o HUD e teve a largura ajustada, preservando o espaço interno dos textos.</>,
+      <>Atualização de conteúdo para Android, Windows e Linux, sem novo instalador. No navegador, recarregue a página.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 7,
     data: "23 de outubro de 2026",
     resumo: "Corrida com capa revisada, pés visíveis e ombreira preservada.",
