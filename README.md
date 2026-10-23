@@ -89,3 +89,5 @@ Conteúdo1 da versão2026.10.23.1: ranking automático ao concluir cada andar e 
 Conteúdo 2 da versão 2026.10.23.1: lobby social opcional na cidade principal, com até oito participantes, movimento e aparência dos personagens, chat e balões no acabamento dos NPCs. Começa offline; a opção fica na pausa, com preferências separadas para P1/P2. Não compartilha progresso. Patches assinados para Android, Windows e Linux e exportação Web própria, sem novo instalador ou reset de saves.
 
 Conteúdo 3 da versão 2026.10.23.1: ícone de balão para abrir o chat da cidade em todas as plataformas, inclusive celular e tela dividida. A fala dos NPCs permanece presa ao morador no mundo e sai da tela com ele. Patch compatível com os instaladores existentes.
+
+Conteúdo 4 da versão 2026.10.23.1: no computador o chat ganha registro e campo de texto no canto inferior esquerdo da cidade; o ícone de balão fica só no toque. Patch compatível com os instaladores existentes.

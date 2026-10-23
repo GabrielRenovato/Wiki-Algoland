@@ -5,6 +5,20 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 4,
+    data: "23 de outubro de 2026",
+    resumo: "Registro do chat no canto da tela, com campo para escrever, no computador.",
+    melhorou: [
+      <>No computador, o canto inferior esquerdo da cidade mostra o histórico das mensagens, como nos MMORPGs. Aperte Enter para escrever no campo ali mesmo, Enter para enviar e Esc para cancelar. O personagem não anda enquanto você digita.</>,
+      <>Com a cidade offline, o registro mostra o estado e o Enter abre o chat para você ficar online.</>,
+    ],
+    corrigido: [
+      <>No computador o ícone de balão saiu, porque o registro assume o lugar dele. No celular e na tela dividida com toque, o ícone continua.</>,
+      <>Patch para Android, Windows e Linux na versão 2026.10.23.1, sem outro instalador. No navegador, recarregue a página.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 3,
     data: "23 de outubro de 2026",
     resumo: "Ícone para abrir o chat e balões dos NPCs presos aos moradores.",
