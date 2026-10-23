@@ -5,6 +5,21 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.22.7",
+    conteudo: 5,
+    data: "22 de outubro de 2026",
+    resumo: "Medusa redesenhada, com três fases e novos padrões de combate.",
+    melhorou: [
+      <>A Medusa ganhou cinco animações revisadas e uma Ruína com energia dos olhos, runas no chão e impacto animado.</>,
+      <>A luta muda aos 60% e 25% de vida, com combos de até três golpes, finalizador retardado e abertura EXPOSTA para contra-atacar com 25% de dano extra. A mira trava antes do impacto.</>,
+      <>A Ruína causa dano forte, respeita esquiva e bloqueio e não mata instantaneamente. O olhar petrificante participa dos padrões normais.</>,
+      <>Patch para Android, Windows e Linux na versão 2026.10.22.7, sem reinstalar. Aguarde o download e feche e abra o jogo para ativar. As correções dos conteúdos anteriores continuam incluídas.</>,
+    ],
+    corrigido: [
+      <>A petrificação congela e restaura o personagem corretamente. No cooperativo, cada golpe atinge uma vez cada jogador presente na mesma área, sem atingir parceiros em outro mapa.</>,
+    ],
+  },
+  {
+    versao: "2026.10.22.7",
     conteudo: 4,
     data: "22 de outubro de 2026",
     resumo: "Correção do corte dos botões na confirmação de novo jogo no celular.",
