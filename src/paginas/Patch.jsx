@@ -5,6 +5,25 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 2,
+    data: "23 de outubro de 2026",
+    resumo: "Lobby opcional na cidade, chat e balões de fala entre jogadores.",
+    corrigido: [
+      <>Balões dos moradores acompanham a câmera durante a corrida, sem congelar a posição e saltar alguns pixels. A posição é ajustada depois da atualização da câmera.</>,
+    ],
+    novo: [
+      <>A cidade principal agora permite encontrar outros jogadores online, com apelido, aparência e movimento. Cada jogador escolhe FICAR ONLINE ou FICAR OFFLINE; o padrão é offline e a escolha fica salva.</>,
+      <>Abra CIDADE ONLINE / OFFLINE na pausa. No computador também há Enter e botão no HUD. O chat aceita teclado, toque e teclado virtual ABC para controle.</>,
+      <>Mensagens aparecem em balões acima dos personagens, com o acabamento das conversas entre os NPCs, e permanecem no histórico do chat. Textos longos passam em trechos curtos; falas antigas não reaparecem ao conectar.</>,
+    ],
+    melhorou: [
+      <>Lobby social com até oito participantes simultâneos. NPCs, missões, inventário e progresso continuam individuais. P1 e P2 têm sessões e preferências separadas.</>,
+      <>Recuperação de conexão e limite de uso para manter o serviço gratuito. Sem conexão ou ao escolher offline, o jogo local continua disponível.</>,
+      <>Patch para Android, Windows e Linux na versão 2026.10.23.1: aguarde a atualização e feche e abra o jogo. No navegador, recarregue a página. Preserva os saves e a temporada atual.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 1,
     data: "23 de outubro de 2026",
     resumo: "Ranking automático ao concluir cada andar e ao morrer, sem cadastro.",
