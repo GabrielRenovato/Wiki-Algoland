@@ -93,3 +93,5 @@ Conteúdo 3 da versão 2026.10.23.1: ícone de balão para abrir o chat da cidad
 Conteúdo 4 da versão 2026.10.23.1: no computador o chat ganha registro e campo de texto no canto inferior esquerdo da cidade; o ícone de balão fica só no toque. Patch compatível com os instaladores existentes.
 
 Conteúdo 5 da versão 2026.10.23.1: drop de sementes reduzido, chat do canto proporcional à tela, correção da tecla M ao digitar, avatares remotos parados e consulta do online a cada 0,55 s, ícone do chat ao lado do mapa e botões de ação do celular com espaço entre si. Patch compatível com os instaladores existentes.
+
+Conteúdo 6 da versão 2026.10.23.1: receitas bloqueadas aparecem como silhuetas pretas na bigorna; balcão de atendimento da Lia com vela apoiada no tampo e acesso livre. Chat com intervalo mínimo de 0,5 s e sem ciclo adicional após respostas de rede; movimento remoto usa o horário da posição e preserva o ritmo de amostras atrasadas. Migração do servidor aplicada, pacotes assinados para Android/Windows/Linux e Web reexportada; preserva saves e instaladores.
