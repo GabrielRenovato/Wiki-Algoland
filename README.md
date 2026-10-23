@@ -77,3 +77,5 @@ Conteúdo 1 da versão 2026.10.22.7: patch assinado de 9.168 bytes por plataform
 A versão Web foi atualizada em 23/10/2026 com as alterações do conteúdo 7: Medusa, HUD mobile, cartas, especial do dragão e animações modulares de plantio e colheita. O pacote é identificado pelo manifesto publicado em `public/jogar/manifesto.json`; os patches dos aplicativos permanecem separados em `public/jogar/atualizacao/`.
 
 Conteúdo 8 publicado em 23/10/2026 para Android, Windows, Linux e navegador: corrida modular de seis quadros, caminhada lenta no toque leve, correções de capa e roupas na corrida e colheita, ajuste da barra de itens e retorno da arena às 23h. Os pacotes dos aplicativos são cumulativos e assinados; a versão Web tem exportação própria identificada em `public/jogar/manifesto.json`.
+
+Conteúdo 9 publicado em 23/10/2026 para Android, Windows, Linux e navegador: corrida nova em qualquer intensidade do joystick, sem caminhada lenta, e animação de regar reduzida de 1,24s para 1s. Os pacotes assinados preservam o conteúdo anterior.
