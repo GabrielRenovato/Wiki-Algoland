@@ -15,6 +15,7 @@ const PATCHES = [
       <>A barra de itens sobe automaticamente quando o personagem se aproxima dela. O aviso do pombo acompanha o espaço disponível sem ficar escondido pela barra.</>,
       <>Relógio separado dos botões de pausa e mochila no celular; balões dos moradores menores e ajustados à tela. O nome do item selecionado desaparece após alguns segundos.</>,
       <>O especial do dragão marca uma área circular menor, trava a mira durante o aviso e oferece três segundos para sair do alcance.</>,
+      <>A versão de navegador também recebeu estas atualizações. Recarregue a página do jogo para carregar o conteúdo novo.</>,
       <>Patch cumulativo para Android, Windows e Linux: inclui a Medusa e as atualizações anteriores. Aguarde o download e feche e abra o jogo para ativar.</>,
     ],
     corrigido: [
