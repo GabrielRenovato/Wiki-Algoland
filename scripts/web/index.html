@@ -18,7 +18,7 @@
 html,body{margin:0;width:100%;height:100%;height:100dvh;background:#000;color:#f8ecd3;font:16px system-ui;overflow:hidden;overscroll-behavior:none;position:fixed;inset:0;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 /* O jogo ocupa a área segura: nada fica sob o entalhe, a ilha dinâmica ou a barra inferior do iPhone */
 #palco{position:fixed;inset:0;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);background:#000}
-canvas{display:block;width:100%;height:100%;outline:none;touch-action:none}
+canvas{display:block;width:100%;height:100%;outline:none;touch-action:none;image-rendering:pixelated}
 .painel{position:fixed;inset:0;display:grid;place-content:center;gap:16px;padding:max(24px,env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(24px,env(safe-area-inset-left));text-align:center;background:#211b15;z-index:2}
 .painel[hidden]{display:none}
 h1{font-size:24px;margin:0}
