@@ -1,11 +1,17 @@
 /* global Engine */
 // Versão do jogo gravada na exportação (a mesma do sw.js); serve para detectar casca antiga em cache
-const VERSAO_CASCA = 'd4bfa6c138e1';
+const VERSAO_CASCA = '7df52f88533f';
 (async () => {
   // Aparelho de toque de verdade (iPhone, iPad, Android): o dedo é o ponteiro principal
   const celular = matchMedia('(pointer: coarse) and (hover: none)').matches;
   const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   const instalado = navigator.standalone === true || matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: fullscreen)').matches;
+  // Telas de 3x (iPhone) pesam demais para a GPU do navegador: limita a resolução interna (?dpr=1.5 testa outros valores)
+  const parametros = new URLSearchParams(location.search);
+  if (celular) {
+    const limite = Number(parametros.get('dpr')) || 2;
+    if (window.devicePixelRatio > limite) Object.defineProperty(window, 'devicePixelRatio', { value: limite, configurable: true });
+  }
   const estado = document.querySelector('#estado');
   const mensagem = document.querySelector('#mensagem');
   const progresso = document.querySelector('#progresso');
@@ -103,7 +109,8 @@ const VERSAO_CASCA = 'd4bfa6c138e1';
       document.addEventListener('visibilitychange', manter);
       manter();
     }
-    await engine.start({ args: ['--main-pack', 'index.pck'] });
+    // ?desempenho mostra FPS, memória e chamadas de desenho sobre o jogo; ?pular (testes) dispensa o prólogo
+    await engine.start({ args: ['--main-pack', 'index.pck', ...(parametros.has('desempenho') ? ['--desempenho'] : [])] });
     estado.hidden = true;
     document.querySelector('#canvas').focus();
   } catch (erro) {
