@@ -26,8 +26,19 @@ for (let inicio = 0; inicio < pacote.length; inicio += 32 * 1024 * 1024) {
 for (const arquivo of ['index.js', 'index.wasm', 'index.audio.worklet.js', 'index.audio.position.worklet.js']) {
   await copyFile(resolve(origem, arquivo), resolve(destino, arquivo));
 }
-for (const arquivo of ['index.html', 'carregar.js', 'fontes-LICENSE.txt']) {
+for (const arquivo of ['index.html', 'manifest.webmanifest', 'fontes-LICENSE.txt']) {
   await copyFile(resolve(raiz, 'scripts/web', arquivo), resolve(destino, arquivo));
+}
+// carregar.js e sw.js levam a versão do jogo: o worker novo só existe quando o jogo muda
+const versao = hash.slice(0, 12);
+for (const arquivo of ['carregar.js', 'sw.js']) {
+  const texto = await readFile(resolve(raiz, 'scripts/web', arquivo), 'utf8');
+  await writeFile(resolve(destino, arquivo), texto.replaceAll('__VERSAO__', versao));
+}
+// Ícones do jogo instalado (iPhone usa o apple-touch-icon; os demais vêm do manifesto)
+await mkdir(resolve(destino, 'icones'), { recursive: true });
+for (const arquivo of ['apple-touch-icon.png', 'icone-192.png', 'icone-512.png', 'icone-mascara-512.png']) {
+  await copyFile(resolve(raiz, 'public/icones', arquivo), resolve(destino, 'icones', arquivo));
 }
 const wasm = await readFile(resolve(destino, 'index.wasm'));
 await writeFile(resolve(destino, 'manifesto.json'), JSON.stringify({

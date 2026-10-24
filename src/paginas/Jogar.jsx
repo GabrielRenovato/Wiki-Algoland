@@ -26,6 +26,12 @@ export function Jogar() {
       {iniciado ? <iframe title="AlgoLand — versão de testes" src={endereco} allow="autoplay; gamepad" allowFullScreen /> :
         <div className="jogo-convite"><h2>Sua aventura começa aqui</h2><p>O download começa quando você clicar em jogar.</p><button type="button" onClick={() => setIniciado(true)}>▶ Jogar AlgoLand</button></div>}
     </div>
+    <Caixa tipo="nota" titulo="Instalar no iPhone, iPad ou Android">
+      <p>O jogo reconhece o celular sozinho: os controles de toque aparecem na tela e a interface se ajusta. Para jogar em tela cheia e guardar a partida no aparelho, instale pelo navegador:</p>
+      <p><b>iPhone e iPad (Safari):</b> abra <a href={`${import.meta.env.BASE_URL}jogar/`}>o jogo em tela própria</a>, toque em <b>Compartilhar</b> (quadrado com seta) e em <b>Adicionar à Tela de Início</b>. Abra o AlgoLand pelo ícone.</p>
+      <p><b>Android (Chrome):</b> abra o mesmo link, toque nos três pontos e em <b>Instalar app</b> (ou <b>Adicionar à tela inicial</b>).</p>
+      <p>A partida do navegador e a do app instalado ficam separadas: instale antes de começar. Use o iOS 16 ou mais novo, deite o aparelho e toque em <b>TOCAR PARA JOGAR</b> quando o download terminar.</p>
+    </Caixa>
     <Caixa titulo="Sua partida neste navegador">
       <p>O progresso fica salvo neste navegador e neste dispositivo. Limpar os dados do site apaga a partida; a navegação privada pode não guardá-la.</p>
       <p>Defesa: <b>C</b> ou botão direito do mouse. Esquiva: <b>Shift</b>.</p>
