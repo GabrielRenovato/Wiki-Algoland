@@ -1,4 +1,4 @@
-import Sprite from "../componentes/Sprite.jsx";
+import Sprite, { urlSprite } from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Brasas } from "../componentes/ui.jsx";
 import { CASAS, PORTAL, MORADORES as SPR } from "../sprites.js";
 import { MORADORES, PEDIDOS, DIAS_SEMANA } from "../dados.js";
@@ -28,7 +28,7 @@ export function Vila() {
       </Secao>
       <Secao titulo="A vila nas quatro estações">
         <p>As fachadas seguem o acabamento detalhado da taverna, com materiais, vegetação e neve próprios de cada estação.</p>
-        <div className="grade-capturas">{["primavera","verao","outono","inverno"].map((e,i) => <figure key={e}><img className="captura-jogo" src={`${import.meta.env.BASE_URL}sprites/cenarios/vila_${e}.png`} alt={`Vila no jogo: ${["primavera","verão","outono","inverno"][i]}`} loading="lazy" /><figcaption>{["Primavera","Verão","Outono","Inverno"][i]}</figcaption></figure>)}</div>
+        <div className="grade-capturas">{["primavera","verao","outono","inverno"].map((e,i) => <figure key={e}><img className="captura-jogo" src={urlSprite(`cenarios/vila_${e}.png`)} alt={`Vila no jogo: ${["primavera","verão","outono","inverno"][i]}`} loading="lazy" /><figcaption>{["Primavera","Verão","Outono","Inverno"][i]}</figcaption></figure>)}</div>
       </Secao>
       <Secao titulo="Construções">
         <Grade min={260}>

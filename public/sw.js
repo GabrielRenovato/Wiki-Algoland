@@ -1,7 +1,7 @@
 // Service worker da wiki instalada: abre sem rede com o que já foi visto.
 // Páginas buscam a rede primeiro; arquivos (scripts, sprites, fontes) saem do cache e se atualizam por trás.
 // O jogo em /jogar/ fica de fora: é grande e tem cache próprio no navegador.
-const CACHE = "algoland-wiki-v1";
+const CACHE = "algoland-wiki-v2";
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(["./", "./manifest.webmanifest", "./icones/icone.svg"])));
