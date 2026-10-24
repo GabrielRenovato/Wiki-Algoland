@@ -1,6 +1,6 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Tabela, Link, Ouro, Raridade, Passos } from "../componentes/ui.jsx";
-import { ARMAS as SPR_ARMAS, CONJUNTOS as SPR_CONJ, MORADORES as SPR } from "../sprites.js";
+import { ARMAS as SPR_ARMAS, CONJUNTOS as SPR_CONJ } from "../sprites.js";
 import { ARMAS, ESCUDO, BIGORNA, ENCANTAMENTOS, RARIDADES, AFIXOS, CONJUNTOS, ASCENSAO, RECEITAS } from "../dados.js";
 
 export function Armas() {
@@ -137,12 +137,17 @@ export function Armaduras() {
       </Secao>
       <Secao titulo="Moeda de Forja e ascensão">
         <div className="lado-a-lado">
-          <Sprite s={SPR.mercador} escala={3} titulo="Tomás" />
+          <Sprite s={SPR_CONJ.carrasco} escala={3} titulo="Conjunto do Carrasco" />
           <div>
             <p>
-              Peças de conjunto sobem na bigorna pagando o mesmo ouro e o mesmo andar mínimo das armas, <b>mais 1 Moeda
-              de Forja por nível</b>. A moeda cai de qualquer chefe com 5% de chance, é um material físico da mochila e permanece
-              se você cair.
+              A Moeda de Forja serve só para isto: subir <b>peças de conjunto</b> na <b>bigorna do Orion</b>, o guia que aparece
+              na arena depois que você vence um andar. A forja do Ivo, na vila, não usa a moeda. Cada nível custa o mesmo ouro e
+              o mesmo andar mínimo das armas, <b>mais 1 Moeda de Forja</b>. A moeda cai de qualquer chefe com 5% de chance, é um
+              material físico da mochila e permanece se você cair.
+            </p>
+            <p>
+              Para pôr a peça na bigorna, arraste-a do inventário ou <b>toque na bigorna</b>: cada toque alterna entre a arma,
+              o escudo, as peças de conjunto vestidas e o que estiver na mochila. No controle, aperte confirmar na bigorna.
             </p>
             <p>
               No <b>nível 5</b> a peça para de subir de nível e passa a <b>subir de raridade</b>: cada melhoria custa 1
