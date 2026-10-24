@@ -1,4 +1,4 @@
-import Sprite from "../componentes/Sprite.jsx";
+import Sprite, { urlSprite } from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Passos, Brasas } from "../componentes/ui.jsx";
 import { FERRAMENTAS, CASAS, DROPS, MORADORES as SPR, colhido, crescimento, celula, pocao, peixe, OVO, OMELETE } from "../sprites.js";
 import { PLANTAS, POCOES, ESTACOES, PRECO_SEMENTE, CHANCE_SEMENTE, REFEICOES, BRASAS_COLHEITA, PEIXES, ENERGIA_MAXIMA } from "../dados.js";
@@ -58,7 +58,7 @@ export function Fazenda() {
         ]} />
       </Secao>
       <Secao titulo="A fazenda nas quatro estações">
-        <div className="grade-capturas">{["primavera","verao","outono","inverno"].map((e,i) => <figure key={e}><img className="captura-jogo" src={`${import.meta.env.BASE_URL}sprites/cenarios/fazenda_${e}.png`} alt={`Fazenda no jogo: ${["primavera","verão","outono","inverno"][i]}`} loading="lazy" /><figcaption>{["Primavera","Verão","Outono","Inverno"][i]}</figcaption></figure>)}</div>
+        <div className="grade-capturas">{["primavera","verao","outono","inverno"].map((e,i) => <figure key={e}><img className="captura-jogo" src={urlSprite(`cenarios/fazenda_${e}.png`)} alt={`Fazenda no jogo: ${["primavera","verão","outono","inverno"][i]}`} loading="lazy" /><figcaption>{["Primavera","Verão","Outono","Inverno"][i]}</figcaption></figure>)}</div>
       </Secao>
       <Secao titulo="Galinheiro e animais" id="galinheiro">
         <p>Na <Link para="vila">carpintaria do Osvaldo</Link>, depois da ponte a leste da vila,

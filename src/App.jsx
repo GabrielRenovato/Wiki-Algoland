@@ -75,6 +75,24 @@ const IconeSol = () => (
 const IconeLua = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" /></svg>
 );
+const IconeVoltar = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 5l-7 7 7 7" /></svg>
+);
+const IconeCasa = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z" /></svg>
+);
+const IconeGrade = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" aria-hidden><rect x="4" y="4" width="6.5" height="6.5" rx="1.5" /><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5" /><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5" /><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5" /></svg>
+);
+const IconeControle = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M7 7h10a5 5 0 0 1 4.6 7l-1 2.3a2.6 2.6 0 0 1-4.3.7L14.6 15H9.4l-1.7 2a2.6 2.6 0 0 1-4.3-.7l-1-2.3A5 5 0 0 1 7 7z" /><path d="M8 10v3M6.5 11.5h3M15.5 11h.01M17.5 12.5h.01" /></svg>
+);
+const IconeBaixar = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14" /></svg>
+);
+
+// Cor da barra do navegador (e da barra de status no app instalado) segue o tema
+const corDaBarra = () => getComputedStyle(document.documentElement).getPropertyValue("--fundo").trim();
 
 export default function App() {
   const [rota, setRota] = useState(lerRota);
@@ -82,15 +100,34 @@ export default function App() {
   const [paletaAberta, setPaletaAberta] = useState(false);
   const [tema, setTema] = useState(() => lerPreferencia("wiki-tema", "dark"));
   const [fechados, setFechados] = useState(() => new Set(JSON.parse(lerPreferencia("wiki-grupos-fechados", "[]"))));
+  const [rolou, setRolou] = useState(false);
   const conteudoRef = useRef(null);
+  const lateralRef = useRef(null);
+  const navegou = useRef(0);
 
   useEffect(() => {
     document.documentElement.dataset.theme = tema;
     gravarPreferencia("wiki-tema", tema);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", corDaBarra());
   }, [tema]);
+
+  // No celular o título da página aparece na barra de cima depois que o título grande sai da tela
+  useEffect(() => {
+    const aoRolar = () => setRolou(window.scrollY > 70);
+    aoRolar();
+    window.addEventListener("scroll", aoRolar, { passive: true });
+    return () => window.removeEventListener("scroll", aoRolar);
+  }, []);
+
+  // Com a gaveta ou a busca abertas, a página por trás não rola
+  useEffect(() => {
+    document.body.classList.toggle("travado", menuAberto || paletaAberta);
+    if (menuAberto) lateralRef.current?.querySelector(".item.ativo")?.scrollIntoView({ block: "center" });
+  }, [menuAberto, paletaAberta]);
 
   useEffect(() => {
     const aoMudar = () => {
+      navegou.current += 1;
       setRota(lerRota());
       setMenuAberto(false);
       setPaletaAberta(false);
@@ -134,12 +171,17 @@ export default function App() {
   const anterior = PAGINAS[indice - 1];
   const proxima = PAGINAS[indice + 1];
   const { Pagina } = atual;
+  // Voltar do app: volta no histórico da wiki; quem abriu direto numa página vai para o início
+  const voltar = () => (navegou.current > 0 ? window.history.back() : (window.location.hash = "#/inicio"));
+  const abaPaginas = menuAberto || (!paletaAberta && !["inicio", "jogar", "download"].includes(atual.id));
 
   return (
     <>
       <header className="topo">
         <button className="botao-icone botao-menu" onClick={() => setMenuAberto(true)} aria-label="Abrir menu" aria-expanded={menuAberto}><IconeMenu /></button>
-        <a href="#/inicio" className="marca">
+        {atual.id !== "inicio" && <button className="botao-voltar" onClick={voltar} aria-label="Voltar"><IconeVoltar /></button>}
+        {atual.id !== "inicio" && <span className={`topo-titulo ${rolou ? "visivel" : ""}`} aria-hidden>{atual.titulo}</span>}
+        <a href="#/inicio" className={`marca ${atual.id !== "inicio" ? "marca-secundaria" : ""}`}>
           <span className="marca-icone"><Sprite s={HEROI} escala={1} parado titulo="" /></span>
           <span>AlgoLand <em>Wiki</em></span>
         </a>
@@ -156,12 +198,13 @@ export default function App() {
       </header>
 
       <div className="app">
-        <nav className={`lateral ${menuAberto ? "aberta" : ""}`} aria-label="Páginas da wiki">
+        <nav className={`lateral ${menuAberto ? "aberta" : ""}`} aria-label="Páginas da wiki" ref={lateralRef}>
+          <div className="lateral-alca" aria-hidden />
           <div className="lateral-cabeca">
-            <a href="#/inicio" className="marca"><span>AlgoLand <em>Wiki</em></span></a>
+            <b>Páginas</b>
             <button className="botao-icone" onClick={() => setMenuAberto(false)} aria-label="Fechar menu"><IconeFechar /></button>
           </div>
-          <a href="#/download" className="lateral-baixar">⬇ Baixar o jogo</a>
+          <InstalarApp />
           {GRUPOS.map((g) => (
             <div key={g} className={`grupo ${fechados.has(g) && g !== atual.grupo ? "fechado" : ""}`}>
               <button className="grupo-titulo" onClick={() => alternarGrupo(g)} aria-expanded={!fechados.has(g)}>
@@ -187,7 +230,7 @@ export default function App() {
               <a href="#/inicio">Início</a> <span aria-hidden>›</span> <span>{atual.grupo}</span>
             </p>
           )}
-          <Pagina key={atual.id} />
+          <div className="pagina-entrada" key={atual.id}><Pagina /></div>
           <footer className="rodape-pagina">
             {anterior && (
               <a href={`#/${anterior.id}`}>
@@ -208,9 +251,48 @@ export default function App() {
         <Sumario rota={atual.id} conteudoRef={conteudoRef} />
       </div>
 
+      <nav className="abas" aria-label="Navegação principal">
+        <a href="#/inicio" className={atual.id === "inicio" && !menuAberto && !paletaAberta ? "ativa" : ""}><IconeCasa /><span>Início</span></a>
+        <button className={abaPaginas ? "ativa" : ""} onClick={() => { setPaletaAberta(false); setMenuAberto(true); }} aria-expanded={menuAberto}><IconeGrade /><span>Páginas</span></button>
+        <button className={paletaAberta ? "ativa" : ""} onClick={() => { setMenuAberto(false); setPaletaAberta(true); }}><IconeBusca /><span>Buscar</span></button>
+        <a href="#/jogar" className={atual.id === "jogar" && !menuAberto && !paletaAberta ? "ativa" : ""}><IconeControle /><span>Jogar</span></a>
+        <a href="#/download" className={atual.id === "download" && !menuAberto && !paletaAberta ? "ativa" : ""}><IconeBaixar /><span>Baixar</span></a>
+      </nav>
+
       {paletaAberta && <Paleta aoFechar={() => setPaletaAberta(false)} />}
     </>
   );
+}
+
+/** Convite para instalar a wiki como app: botão onde o navegador oferece, instrução no iPhone e iPad. */
+function InstalarApp() {
+  const [pedido, setPedido] = useState(null);
+  const [instalado, setInstalado] = useState(() => window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true);
+
+  useEffect(() => {
+    const oferecido = (e) => { e.preventDefault(); setPedido(e); };
+    const feito = () => { setInstalado(true); setPedido(null); };
+    window.addEventListener("beforeinstallprompt", oferecido);
+    window.addEventListener("appinstalled", feito);
+    return () => {
+      window.removeEventListener("beforeinstallprompt", oferecido);
+      window.removeEventListener("appinstalled", feito);
+    };
+  }, []);
+
+  if (instalado) return null;
+  if (pedido) {
+    const instalar = async () => {
+      pedido.prompt();
+      await pedido.userChoice.catch(() => {});
+      setPedido(null);
+    };
+    return <button className="instalar" onClick={instalar}>📲 Instalar o app da wiki</button>;
+  }
+  if (/iphone|ipad|ipod/i.test(window.navigator.userAgent)) {
+    return <p className="instalar-dica">📲 Use como app: toque em <b>Compartilhar</b> e depois em <b>Adicionar à Tela de Início</b>.</p>;
+  }
+  return null;
 }
 
 /** "Nesta página": lista os títulos das seções e destaca a que está na tela. */
@@ -294,7 +376,10 @@ function Paleta({ aoFechar }) {
   return (
     <div className="paleta-veu" onMouseDown={(e) => e.target === e.currentTarget && aoFechar()}>
       <div className="paleta" role="dialog" aria-modal="true" aria-label="Buscar na wiki">
-        <input autoFocus type="search" placeholder="Buscar páginas (ex.: melancia, medusa, chat)" value={texto} onChange={(e) => setTexto(e.target.value)} onKeyDown={tecla} />
+        <div className="paleta-cabeca">
+          <input autoFocus type="search" enterKeyHint="go" placeholder="Buscar páginas (ex.: melancia, medusa, chat)" value={texto} onChange={(e) => setTexto(e.target.value)} onKeyDown={tecla} />
+          <button type="button" className="paleta-cancelar" onClick={aoFechar}>Cancelar</button>
+        </div>
         <ul ref={lista}>
           {resultados.map((p, i) => (
             <li key={p.id} className={i === selecionado ? "selecionado" : ""} onMouseEnter={() => setSelecionado(i)}>

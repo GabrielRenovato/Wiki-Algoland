@@ -82,6 +82,8 @@ b, strong { font-weight: 800; }
 ::selection { background: var(--destaque); color: var(--destaque-tinta); }
 :focus-visible { outline: 2px solid var(--destaque); outline-offset: 2px; border-radius: 6px; }
 img { max-width: 100%; }
+body.travado { overflow: hidden; }
+a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 
 .sprite {
   display: inline-block;
@@ -165,6 +167,32 @@ img { max-width: 100%; }
 .botao-icone:hover { border-color: var(--destaque); }
 .botao-icone svg { width: 19px; height: 19px; }
 .botao-menu { display: none; }
+.botao-voltar, .topo-titulo, .abas, .paleta-cancelar, .lateral-alca { display: none; }
+.instalar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--destaque);
+  color: var(--destaque-tinta);
+  font: 700 15px "Pixelify Sans", monospace;
+  cursor: pointer;
+}
+.instalar-dica {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+  background: var(--papel);
+  color: var(--tinta-suave);
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+@keyframes entrar { from { opacity: 0; transform: translateY(6px); } }
+.pagina-entrada { animation: entrar 0.22s ease-out; }
 .topo-baixar { padding: 8px 14px; margin: 0; font-size: 14.5px; box-shadow: none; }
 
 /* ---------- Estrutura ---------- */
@@ -735,11 +763,13 @@ blockquote {
   box-shadow: var(--sombra-alta);
   overflow: hidden;
 }
+.paleta-cabeca { display: flex; align-items: center; border-bottom: 1px solid var(--borda); }
 .paleta input {
+  flex: 1;
+  min-width: 0;
   width: 100%;
   padding: 18px 20px;
   border: 0;
-  border-bottom: 1px solid var(--borda);
   background: transparent;
   color: var(--tinta);
   font: inherit;
@@ -768,47 +798,141 @@ blockquote {
   .sumario { display: none; }
 }
 
-/* ---------- Celular e tablet ---------- */
+/* ---------- Celular e tablet: a wiki vira um app ----------
+   Barra de cima com voltar e título, abas fixas embaixo, páginas em gaveta que sobe e busca em tela cheia.
+   As margens env(safe-area-inset-*) respeitam o entalhe e a barra de gestos no app instalado. */
 @media (max-width: 960px) {
+  :root { --abas: calc(62px + env(safe-area-inset-bottom)); }
+  body { overscroll-behavior-y: none; }
   .app { display: block; }
-  .topo { padding: 0 12px; gap: 8px; height: 58px; }
-  html { scroll-padding-top: 72px; }
-  .botao-menu { display: grid; }
-  .marca { font-size: 18px; }
+  .topo {
+    height: calc(54px + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) max(10px, env(safe-area-inset-right)) 0 max(10px, env(safe-area-inset-left));
+    gap: 6px;
+  }
+  html { scroll-padding-top: calc(68px + env(safe-area-inset-top)); }
+  .busca-gatilho, .topo-baixar, .botao-menu, .marca-secundaria { display: none; }
+  .marca { font-size: 19px; }
   .marca-icone { width: 34px; height: 34px; }
-  .busca-gatilho { width: 40px; padding: 0; justify-content: center; }
-  .busca-gatilho span, .busca-gatilho kbd { display: none; }
-  .topo-baixar { display: none; }
+  .topo .botao-icone { border-color: transparent; background: none; }
+  .botao-voltar {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    flex: none;
+    margin-left: -4px;
+    border: 0;
+    border-radius: 10px;
+    background: none;
+    color: var(--destaque);
+    cursor: pointer;
+  }
+  .botao-voltar svg { width: 24px; height: 24px; }
+  .botao-voltar:active { background: var(--papel-2); }
+  .topo-titulo {
+    display: block;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font: 700 17px "Pixelify Sans", monospace;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.18s, transform 0.18s;
+  }
+  .topo-titulo.visivel { opacity: 1; transform: none; }
+  .topo-titulo ~ .topo-espaco { display: none; }
+
+  /* Abas */
+  .abas {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 65;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: var(--abas);
+    padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    background: var(--topo);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    border-top: 1px solid var(--borda);
+  }
+  .abas a, .abas button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border: 0;
+    background: none;
+    color: var(--tinta-fraca);
+    font: 700 11px "Nunito", system-ui, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.12s;
+  }
+  .abas svg { width: 24px; height: 24px; padding: 2px 10px; box-sizing: content-box; border-radius: 999px; transition: background 0.15s; }
+  .abas .ativa { color: var(--destaque); }
+  .abas .ativa svg { background: var(--destaque-suave); }
+  .abas a:active svg, .abas button:active svg { background: var(--papel-3); }
+
+  /* Gaveta de páginas */
   .lateral {
     position: fixed;
-    top: 0;
+    top: auto;
     left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 60;
-    width: min(320px, 88vw);
-    height: 100vh;
-    height: 100dvh;
-    padding-top: 14px;
+    width: 100%;
+    height: auto;
+    max-height: calc(88dvh - env(safe-area-inset-top));
+    padding: 6px max(16px, env(safe-area-inset-right)) calc(24px + var(--abas)) max(16px, env(safe-area-inset-left));
     background: var(--lateral);
-    border-right: 1px solid var(--borda-forte);
-    transform: translateX(-104%);
-    transition: transform 0.22s ease;
+    border: 1px solid var(--borda-forte);
+    border-bottom: 0;
+    border-radius: 22px 22px 0 0;
+    overscroll-behavior: contain;
+    transform: translateY(104%);
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
     box-shadow: var(--sombra-alta);
   }
   .lateral.aberta { transform: none; }
-  .lateral-cabeca { display: flex; align-items: center; justify-content: space-between; margin: 0 0 14px 4px; }
-  .lateral-baixar {
-    display: flex;
-    justify-content: center;
-    margin: 0 0 16px;
-    padding: 10px 12px;
-    border-radius: 10px;
-    background: var(--destaque);
-    color: var(--destaque-tinta) !important;
-    font: 700 15px "Pixelify Sans", monospace;
-    text-decoration: none;
+  .lateral-alca { display: block; width: 40px; height: 5px; margin: 4px auto 8px; border-radius: 999px; background: var(--borda-forte); }
+  .lateral-cabeca { position: sticky; top: -6px; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin: 0 -4px 8px; padding: 6px 4px 8px 8px; background: var(--lateral); }
+  .lateral-cabeca b { font: 700 20px "Pixelify Sans", monospace; }
+  .lateral-cabeca .botao-icone { width: 34px; height: 34px; border-radius: 999px; border: 0; background: var(--papel-3); }
+  .lateral-cabeca .botao-icone svg { width: 16px; height: 16px; }
+  .lateral a.item { padding: 9px 10px; font-size: 15.5px; }
+  .lateral a.item:active { background: var(--papel-3); }
+  .veu { position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, 0.5); animation: aparecer 0.2s ease-out; }
+
+  /* Busca em tela cheia */
+  .paleta-veu { padding: 0; align-items: stretch; background: var(--papel); backdrop-filter: none; }
+  .paleta { width: 100%; max-height: none; border: 0; border-radius: 0; box-shadow: none; padding-top: env(safe-area-inset-top); animation: entrar 0.18s ease-out; }
+  .paleta-cabeca { padding-right: 6px; }
+  .paleta input { padding: 16px 16px 16px 18px; }
+  .paleta-cancelar {
+    display: block;
+    flex: none;
+    padding: 8px 10px;
+    border: 0;
+    background: none;
+    color: var(--destaque);
+    font: 700 15.5px "Nunito", system-ui, sans-serif;
+    cursor: pointer;
   }
-  .veu { position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, 0.5); }
-  .conteudo { padding: 22px 16px 48px; }
+  .paleta ul { flex: 1; padding-bottom: calc(16px + env(safe-area-inset-bottom)); overscroll-behavior: contain; }
+  .paleta li a { padding: 11px 12px; }
+  .paleta-dica { display: none; }
+
+  .migalhas { display: none; }
+  .conteudo { padding: 18px max(16px, env(safe-area-inset-right)) calc(32px + var(--abas)) max(16px, env(safe-area-inset-left)); }
+  .titulo-pagina { margin-bottom: 20px; }
   .banner { grid-template-columns: minmax(0, 1fr); border-radius: 18px; }
   .banner-palco { min-height: 0; padding: 18px; order: -1; }
   .banner-palco .sprite { zoom: 0.75; }
@@ -819,15 +943,15 @@ blockquote {
   .planta-palco .sprite { transform: scale(0.85); }
   .rodape-pagina { grid-template-columns: minmax(0, 1fr); }
   .rodape-pagina a.proxima { grid-column: 1; }
+  .atalho:active, .ciclo-no:active, .rodape-pagina a:active { transform: scale(0.98); }
 }
-@media (min-width: 961px) { .lateral-baixar { display: none; } }
+@keyframes aparecer { from { opacity: 0; } }
 @media (max-width: 420px) {
-  .topo .marca > span:not(.marca-icone) { display: none; }
   .secao { margin: 34px 0; }
   .banner .botao, .banner .botao-baixar { width: 100%; justify-content: center; margin-right: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; scroll-behavior: auto !important; }
+  * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 
 /* ---------- Patch de atualizações ---------- */
