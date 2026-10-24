@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 
+/** Endereço de um arquivo de public/sprites com a marca do conteúdo (ver vite.config.js). */
+export function urlSprite(caminho) {
+  const marca = __MARCAS_SPRITES__[caminho];
+  return `${import.meta.env.BASE_URL}sprites/${caminho}${marca ? `?v=${marca}` : ""}`;
+}
+
 // Mostra um quadro (ou uma animação) de uma folha de sprites sem recortar o arquivo: a folha vira fundo CSS
 // e a posição do fundo escolhe o quadro. `s` vem de src/sprites.js:
 //   { src: "x.png" | ["camada_baixo.png", "camada_cima.png"], folha: [L, A], tam: [l, a], quadros: [[x, y], ...], fps }
@@ -16,7 +22,7 @@ export default function Sprite({ s, escala = 2, parado = false, titulo, classNam
   }, [animar, total, s.fps]);
 
   const [x, y] = s.quadros[animar ? i % total : 0];
-  const camadas = (Array.isArray(s.src) ? s.src : [s.src]).map((c) => `url("${import.meta.env.BASE_URL}sprites/${c}")`);
+  const camadas = (Array.isArray(s.src) ? s.src : [s.src]).map((c) => `url("${urlSprite(c)}")`);
   const [L, A] = s.folha;
   const [l, a] = s.tam;
   const amostra = escala / (s.resolucao ?? 1);
