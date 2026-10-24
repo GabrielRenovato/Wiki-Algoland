@@ -116,3 +116,5 @@ Conteúdo 11 da versão 2026.10.23.1, em 24/10/2026: combate com mais peso. O ac
 `.
 
 Conteúdo 12 da versão 2026.10.23.1, em 24/10/2026: chat global disponível em todos os mapas, com sessão e histórico preservados ao viajar, preferências separadas para P1/P2 e presença visual restrita à cidade. Migração do servidor aplicada; testes entre cidade, fenda e floresta, revisão no celular e montagem real do pacote aprovados. Android, Windows e Linux recebem três pacotes cumulativos assinados de 2289928 bytes por plataforma, preservando os instaladores e saves existentes. Exportação Web `89d5d3d0137c`, baseada em `e42cad03c`.
+
+Conteúdo 13 da versão 2026.10.23.1, em 24/10/2026: armas e escudos no nível 5 sobem de raridade na bigorna (ouro, moeda de forja e um bônus aleatório da categoria), o toque no slot vazio da bigorna passa por arma, escudo e armaduras, e o botão do chat mostra o contador de mensagens não lidas. Android, Windows e Linux recebem três pacotes cumulativos assinados, preservando os instaladores e saves existentes. A exportação Web `9b3b09be2fac` contém o mesmo código de jogo, baseado em `49eeb92c5`.
