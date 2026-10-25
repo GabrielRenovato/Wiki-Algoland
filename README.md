@@ -151,4 +151,6 @@ Conteúdo 25 da versão 2026.10.23.1, em 25/10/2026: no celular, tocar num campo
 Conteúdo 26 da versão 2026.10.23.1 (27 no Android, com o pacote da interface regerado), em 25/10/2026: no celular, o chat, o apelido e o nome do personagem voltam a usar o teclado do sistema, agora com uma barra no alto da tela que mostra o texto digitado; o teclado do jogo fica só para o controle.
 
 Conteúdo 28 da versão 2026.10.23.1, em 25/10/2026: a animação de colher fica 40% mais rápida e o chat rola até o fim ao enviar uma mensagem.
+
+Conteúdo 29 da versão 2026.10.23.1, em 25/10/2026: dez andares novos (12 a 21) com mapas maiores e barra de progresso crescente; chefes com ataques mais rápidos; aparar cancela o golpe em andamento; buffs comprados aparecem acima da barra de itens, com dica no mouse e no toque; cinto de poções no canto direito no PC; animação de encher o regador; portal dos mímicos mais frequente; moeda de forja de todo guardião; bancos da taverna não prendem mais o jogador.
 `.
