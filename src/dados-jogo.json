@@ -1399,6 +1399,70 @@
     },
     {
       "dias": 2,
+      "id": "montante_ferro",
+      "livre": false,
+      "materiais": {
+        "ferro": 5,
+        "fragmento": 8,
+        "madeira": 16
+      },
+      "meta": 8,
+      "nome": "MONTANTE DE FERRO"
+    },
+    {
+      "dias": 2,
+      "id": "montante_sentinela",
+      "livre": false,
+      "materiais": {
+        "ferro": 10,
+        "fragmento": 12,
+        "madeira": 20,
+        "nucleo": 1
+      },
+      "meta": 12,
+      "nome": "MONTANTE DA SENTINELA"
+    },
+    {
+      "dias": 2,
+      "id": "montante_geada",
+      "livre": false,
+      "materiais": {
+        "ferro": 18,
+        "fragmento": 20,
+        "madeira": 24,
+        "nucleo": 2
+      },
+      "meta": 18,
+      "nome": "MONTANTE DA GEADA"
+    },
+    {
+      "dias": 2,
+      "id": "montante_trovao",
+      "livre": false,
+      "materiais": {
+        "ferro": 28,
+        "fragmento": 32,
+        "madeira": 28,
+        "nucleo": 4
+      },
+      "meta": 25,
+      "nome": "MONTANTE DO TROVAO"
+    },
+    {
+      "dias": 2,
+      "id": "montante_astral",
+      "livre": false,
+      "materiais": {
+        "ferro": 40,
+        "fragmento": 48,
+        "madeira": 32,
+        "nucleo": 8
+      },
+      "meta": 35,
+      "nome": "MONTANTE ASTRAL"
+    },
+    {
+      "dias": 2,
       "id": "elmo_sentinela",
       "livre": false,
       "materiais": {
@@ -1924,5 +1988,5 @@
       "texto_bonus": "+20% VIDA, +25% FOLEGO"
     }
   ],
-  "commit": "f9d42411e38eea2f0260661e12f4d81593ac9391"
+  "commit": "1d70df4252f1844076690ddad3f1b4260511bb7a"
 }

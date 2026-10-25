@@ -158,3 +158,5 @@ Conteúdo 30 da versão 2026.10.23.1, em 25/10/2026: a fonte sai da praça da vi
 `.
 
 Conteúdo 31 da versão 2026.10.23.1, em 25/10/2026: pesca até o nível99 e 54 espécies, aviso de captura compacto, sete conjuntos novos (dez no total), receitas, bônus e progressão da fabricação. Corrida dos novos conjuntos revisada, incluindo pernas, base dos elmos, alinhamento e cabeça estável de costas; cabo das espadas à frente do capacete. Pacotes cumulativos assinados para Android/Windows/Linux, 15 áreas e 26,7 MiB por plataforma, e Web reexportada a partir de f9d42411e. Preserva saves, base do aplicativo e alterações anteriores.
+
+Conteúdo 32 da versão 2026.10.23.1, em 25/10/2026: mercado entre jogadores pago em Brasas (aba MERCADO no mural da vila, com compra, venda de itens e partes de pilhas, anúncios de 24 ou 48 horas, correio de entregas e aviso no HUD) e cinco montantes de duas mãos com progressão do comum ao lendário. Pacotes cumulativos assinados para Android/Windows/Linux, 15 áreas e 29,8 MiB por plataforma, e Web reexportada a partir de 1d70df425. Preserva saves, base do aplicativo e alterações anteriores.
