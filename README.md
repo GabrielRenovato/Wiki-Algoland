@@ -144,4 +144,7 @@ Conteúdo 20 da versão 2026.10.23.1, em 24/10/2026: poções por estação. Cad
 Conteúdo 21 da versão 2026.10.23.1, em 24/10/2026: canal reserva mais rápido. Se o servidor próprio de presença e chat estiver fora do ar, o jogo passa ao chat do Supabase depois de duas tentativas (cerca de 10 segundos) e volta ao servidor próprio sozinho quando ele reaparece. Android, Windows e Linux recebem três pacotes cumulativos assinados, preservando os instaladores e saves existentes. A exportação Web `673f8defff47` contém o mesmo código de jogo, baseado em `75aa51c25
 `.
 
-Conteúdo 22 da versão 2026.10.23.1, em 24/10/2026: a tela inicial ganha a logo do AlgoLand e o layout ajustado ao novo desenho, com as ferramentas de revisão do alinhamento das armaduras Raven. Android, Windows e Linux recebem três pacotes cumulativos assinados, preservando os instaladores e saves existentes. A exportação Web `6e96c545faa5` contém o mesmo código de jogo, baseado em `c2bedb3fe`.
+Conteúdo 22 da versão 2026.10.23.1, em 24/10/2026: a tela inicial ganha a logo do AlgoLand e o layout ajustado ao novo desenho, com as ferramentas de revisão do alinhamento das armaduras Raven. Android, Windows e Linux recebem três pacotes cumulativos assinados, preservando os instaladores e saves existentes. A exportação Web `6e96c545faa5` contém o mesmo código de jogo, baseado em `c2bedb3fe
+
+Conteúdo 25 da versão 2026.10.23.1, em 25/10/2026: no celular, tocar num campo de texto (chat, apelido, nome do personagem) abre o teclado do próprio jogo, com a mensagem digitada à vista e pontuação no chat; a letra X do teclado deixa de virar o botão de fechar.
+`.
