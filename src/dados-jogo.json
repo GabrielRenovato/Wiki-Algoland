@@ -1396,6 +1396,370 @@
       },
       "meta": 10,
       "nome": "MACHADO"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_sentinela",
+      "livre": false,
+      "materiais": {
+        "ferro": 10,
+        "fibra": 16,
+        "fragmento": 24,
+        "nucleo": 4
+      },
+      "meta": 15,
+      "nome": "ELMO DO SENTINELA DE BRONZE"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_sentinela",
+      "livre": false,
+      "materiais": {
+        "ferro": 14,
+        "fibra": 24,
+        "fragmento": 32,
+        "nucleo": 4
+      },
+      "meta": 20,
+      "nome": "PEITORAL DO SENTINELA DE BRONZE"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_sentinela",
+      "livre": false,
+      "materiais": {
+        "ferro": 6,
+        "fibra": 12,
+        "fragmento": 16,
+        "nucleo": 2
+      },
+      "meta": 10,
+      "nome": "LUVAS DO SENTINELA DE BRONZE"
+    },
+    {
+      "dias": 2,
+      "id": "botas_sentinela",
+      "livre": false,
+      "materiais": {
+        "ferro": 8,
+        "fibra": 16,
+        "fragmento": 20,
+        "nucleo": 2
+      },
+      "meta": 12,
+      "nome": "BOTAS DO SENTINELA DE BRONZE"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_batedor",
+      "livre": false,
+      "materiais": {
+        "ferro": 10,
+        "fibra": 16,
+        "fragmento": 24,
+        "nucleo": 4
+      },
+      "meta": 15,
+      "nome": "ELMO DO BATEDOR DO BOSQUE"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_batedor",
+      "livre": false,
+      "materiais": {
+        "ferro": 14,
+        "fibra": 24,
+        "fragmento": 32,
+        "nucleo": 4
+      },
+      "meta": 20,
+      "nome": "PEITORAL DO BATEDOR DO BOSQUE"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_batedor",
+      "livre": false,
+      "materiais": {
+        "ferro": 6,
+        "fibra": 12,
+        "fragmento": 16,
+        "nucleo": 2
+      },
+      "meta": 11,
+      "nome": "LUVAS DO BATEDOR DO BOSQUE"
+    },
+    {
+      "dias": 2,
+      "id": "botas_batedor",
+      "livre": false,
+      "materiais": {
+        "ferro": 8,
+        "fibra": 16,
+        "fragmento": 20,
+        "nucleo": 2
+      },
+      "meta": 12,
+      "nome": "BOTAS DO BATEDOR DO BOSQUE"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_guardiao_geada",
+      "livre": false,
+      "materiais": {
+        "ferro": 15,
+        "fibra": 24,
+        "fragmento": 36,
+        "nucleo": 6
+      },
+      "meta": 16,
+      "nome": "ELMO DO GUARDIAO DA GEADA"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_guardiao_geada",
+      "livre": false,
+      "materiais": {
+        "ferro": 21,
+        "fibra": 36,
+        "fragmento": 48,
+        "nucleo": 6
+      },
+      "meta": 20,
+      "nome": "PEITORAL DO GUARDIAO DA GEADA"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_guardiao_geada",
+      "livre": false,
+      "materiais": {
+        "ferro": 9,
+        "fibra": 18,
+        "fragmento": 24,
+        "nucleo": 3
+      },
+      "meta": 16,
+      "nome": "LUVAS DO GUARDIAO DA GEADA"
+    },
+    {
+      "dias": 2,
+      "id": "botas_guardiao_geada",
+      "livre": false,
+      "materiais": {
+        "ferro": 12,
+        "fibra": 24,
+        "fragmento": 30,
+        "nucleo": 3
+      },
+      "meta": 16,
+      "nome": "BOTAS DO GUARDIAO DA GEADA"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_templario_solar",
+      "livre": false,
+      "materiais": {
+        "ferro": 15,
+        "fibra": 24,
+        "fragmento": 36,
+        "nucleo": 6
+      },
+      "meta": 21,
+      "nome": "ELMO DO TEMPLARIO SOLAR"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_templario_solar",
+      "livre": false,
+      "materiais": {
+        "ferro": 21,
+        "fibra": 36,
+        "fragmento": 48,
+        "nucleo": 6
+      },
+      "meta": 21,
+      "nome": "PEITORAL DO TEMPLARIO SOLAR"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_templario_solar",
+      "livre": false,
+      "materiais": {
+        "ferro": 9,
+        "fibra": 18,
+        "fragmento": 24,
+        "nucleo": 3
+      },
+      "meta": 21,
+      "nome": "LUVAS DO TEMPLARIO SOLAR"
+    },
+    {
+      "dias": 2,
+      "id": "botas_templario_solar",
+      "livre": false,
+      "materiais": {
+        "ferro": 12,
+        "fibra": 24,
+        "fragmento": 30,
+        "nucleo": 3
+      },
+      "meta": 21,
+      "nome": "BOTAS DO TEMPLARIO SOLAR"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_arauto_trovao",
+      "livre": false,
+      "materiais": {
+        "ferro": 20,
+        "fibra": 32,
+        "fragmento": 48,
+        "nucleo": 8
+      },
+      "meta": 31,
+      "nome": "ELMO DO ARAUTO DO TROVAO"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_arauto_trovao",
+      "livre": false,
+      "materiais": {
+        "ferro": 28,
+        "fibra": 48,
+        "fragmento": 64,
+        "nucleo": 8
+      },
+      "meta": 31,
+      "nome": "PEITORAL DO ARAUTO DO TROVAO"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_arauto_trovao",
+      "livre": false,
+      "materiais": {
+        "ferro": 12,
+        "fibra": 24,
+        "fragmento": 32,
+        "nucleo": 4
+      },
+      "meta": 31,
+      "nome": "LUVAS DO ARAUTO DO TROVAO"
+    },
+    {
+      "dias": 2,
+      "id": "botas_arauto_trovao",
+      "livre": false,
+      "materiais": {
+        "ferro": 16,
+        "fibra": 32,
+        "fragmento": 40,
+        "nucleo": 4
+      },
+      "meta": 31,
+      "nome": "BOTAS DO ARAUTO DO TROVAO"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_guardiao_esmeralda",
+      "livre": false,
+      "materiais": {
+        "ferro": 20,
+        "fibra": 32,
+        "fragmento": 48,
+        "nucleo": 8
+      },
+      "meta": 41,
+      "nome": "ELMO DO GUARDIAO ESMERALDA"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_guardiao_esmeralda",
+      "livre": false,
+      "materiais": {
+        "ferro": 28,
+        "fibra": 48,
+        "fragmento": 64,
+        "nucleo": 8
+      },
+      "meta": 41,
+      "nome": "PEITORAL DO GUARDIAO ESMERALDA"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_guardiao_esmeralda",
+      "livre": false,
+      "materiais": {
+        "ferro": 12,
+        "fibra": 24,
+        "fragmento": 32,
+        "nucleo": 4
+      },
+      "meta": 41,
+      "nome": "LUVAS DO GUARDIAO ESMERALDA"
+    },
+    {
+      "dias": 2,
+      "id": "botas_guardiao_esmeralda",
+      "livre": false,
+      "materiais": {
+        "ferro": 16,
+        "fibra": 32,
+        "fragmento": 40,
+        "nucleo": 4
+      },
+      "meta": 41,
+      "nome": "BOTAS DO GUARDIAO ESMERALDA"
+    },
+    {
+      "dias": 2,
+      "id": "elmo_soberano_astral",
+      "livre": false,
+      "materiais": {
+        "ferro": 25,
+        "fibra": 40,
+        "fragmento": 60,
+        "nucleo": 10
+      },
+      "meta": 51,
+      "nome": "ELMO DO SOBERANO ASTRAL"
+    },
+    {
+      "dias": 2,
+      "id": "peitoral_soberano_astral",
+      "livre": false,
+      "materiais": {
+        "ferro": 35,
+        "fibra": 60,
+        "fragmento": 80,
+        "nucleo": 10
+      },
+      "meta": 51,
+      "nome": "PEITORAL DO SOBERANO ASTRAL"
+    },
+    {
+      "dias": 2,
+      "id": "luvas_soberano_astral",
+      "livre": false,
+      "materiais": {
+        "ferro": 15,
+        "fibra": 30,
+        "fragmento": 40,
+        "nucleo": 5
+      },
+      "meta": 51,
+      "nome": "LUVAS DO SOBERANO ASTRAL"
+    },
+    {
+      "dias": 2,
+      "id": "botas_soberano_astral",
+      "livre": false,
+      "materiais": {
+        "ferro": 20,
+        "fibra": 40,
+        "fragmento": 50,
+        "nucleo": 5
+      },
+      "meta": 51,
+      "nome": "BOTAS DO SOBERANO ASTRAL"
     }
   ],
   "refeicoes": [
@@ -1560,5 +1924,5 @@
       "texto_bonus": "+20% VIDA, +25% FOLEGO"
     }
   ],
-  "commit": "0eaf7991b6e1617dd3041c70c6a0550dc1a2c17e"
+  "commit": "f9d42411e38eea2f0260661e12f4d81593ac9391"
 }

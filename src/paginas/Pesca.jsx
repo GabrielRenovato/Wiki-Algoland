@@ -5,7 +5,7 @@ import { peixe, MORADORES } from '../sprites.js';
 
 export function Pesca() {
   return <>
-    <Titulo sub="Praia, cais e lago da fazenda: 48 espécies de mar e de água doce.">Pesca</Titulo>
+    <Titulo sub="Praia, cais e lago da fazenda: 54 espécies de mar e de água doce, com progressão até o nível 99.">Pesca</Titulo>
     <Secao titulo="Como pescar"><Passos itens={[
       <>Selecione a <b>vara</b> na barra da mochila e fique perto da água, na praia, na borda do cais ou no lago da fazenda.</>,
       <>Segure <b>atacar/usar</b> para carregar a força oscilante. Solte para lançar a linha; no mar o alcance vai de 28 a 120 unidades, e no lago a boia fica dentro da água.</>,
@@ -16,7 +16,7 @@ export function Pesca() {
       <Tabela cabecalho={["Nível novo","Pedras necessárias"]} linhas={[[2,1],[3,2],[4,4],[5,6]]} compacta />
       <p>O sorteio de pedras tem 0,25% de chance e só fica disponível após as primeiras 30 capturas. Depois de receber uma pedra, é preciso acumular mais 50 capturas para voltar a participar do sorteio. Peixes com nível recomendado acima da sua vara continuam disponíveis, mas ficam mais difíceis de fisgar.</p>
     </Secao>
-    <Secao titulo="Coleção, encomendas e cozinha"><p>O guia de pesca reúne a coleção, desafios de capturas e qualidade, metas por espécie e marcos de 3 a 48 espécies. Há duas encomendas por dia: uma de mar e outra de rio, disponíveis conforme a estação. Elas pagam o triplo do valor-base da quantidade pedida.</p>
+    <Secao titulo="Coleção, encomendas e cozinha"><p>O guia de pesca reúne a coleção, desafios de capturas e qualidade, metas por espécie e marcos de 3 a 54 espécies. Há duas encomendas por dia: uma de mar e outra de rio, disponíveis conforme a estação. Elas pagam o triplo do valor-base da quantidade pedida.</p>
       <p>Tomás compra os peixes na venda. Peixes também entram em três <Link para="refeicoes">pratos do Caio</Link>: Peixe Assado com Raízes, Caldo do Rio e Salmão Grelhado.</p>
     </Secao>
     {['mar','rio'].map(ambiente => <Secao key={ambiente} titulo={ambiente === 'mar' ? 'Espécies do mar' : 'Espécies de água doce'}>

@@ -156,3 +156,5 @@ Conteúdo 29 da versão 2026.10.23.1, em 25/10/2026: dez andares novos (12 a 21)
 
 Conteúdo 30 da versão 2026.10.23.1, em 25/10/2026: a fonte sai da praça da vila e o pódio do ranking passa para o centro dela.
 `.
+
+Conteúdo 31 da versão 2026.10.23.1, em 25/10/2026: pesca até o nível99 e 54 espécies, aviso de captura compacto, sete conjuntos novos (dez no total), receitas, bônus e progressão da fabricação. Corrida dos novos conjuntos revisada, incluindo pernas, base dos elmos, alinhamento e cabeça estável de costas; cabo das espadas à frente do capacete. Pacotes cumulativos assinados para Android/Windows/Linux, 15 áreas e 26,7 MiB por plataforma, e Web reexportada a partir de f9d42411e. Preserva saves, base do aplicativo e alterações anteriores.

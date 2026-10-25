@@ -5,6 +5,24 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 export const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 31,
+    data: "25 de outubro de 2026",
+    resumo: "Pesca até o nível 99, seis peixes novos e sete conjuntos de armadura.",
+    novo: [
+      <>A pesca tem nível próprio de 1 a 99, XP por captura e desbloqueios por nível. A coleção chega a 54 espécies, incluindo peixes dos níveis 50, 80 e 99.</>,
+      <>Sete conjuntos novos completam o catálogo de dez armaduras, com quatro peças independentes, raridades de incomum a lendária, receitas e bônus próprios.</>,
+    ],
+    melhorou: [
+      <>O aviso de captura usa uma moldura compacta e apresenta peixe, qualidade e XP, com tamanho ajustado ao celular.</>,
+      <>A fabricação respeita os marcos de progressão e os custos das receitas. Os conjuntos concedem bônus parciais com duas peças e completos com quatro; os efeitos crescem com o nível.</>,
+    ],
+    corrigido: [
+      <>Corrida dos conjuntos novos revisada: grade de seis quadros, pernas, encaixe dos elmos, limpeza dos contornos e cabo da espada visível de costas. A cabeça permanece no mesmo eixo horizontal na corrida de costas.</>,
+      <>Atualização cumulativa para Android, Windows e Linux: aguarde o download, feche e reabra o jogo. No navegador, recarregue a página. Mantém os instaladores e os saves existentes.</>,
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 8,
     data: "23 de outubro de 2026",
     resumo: "Ranking junto ao pódio, marcadores dos NPCs e missão principal alinhados.",
