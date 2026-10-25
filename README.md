@@ -153,4 +153,6 @@ Conteúdo 26 da versão 2026.10.23.1 (27 no Android, com o pacote da interface r
 Conteúdo 28 da versão 2026.10.23.1, em 25/10/2026: a animação de colher fica 40% mais rápida e o chat rola até o fim ao enviar uma mensagem.
 
 Conteúdo 29 da versão 2026.10.23.1, em 25/10/2026: dez andares novos (12 a 21) com mapas maiores e barra de progresso crescente; chefes com ataques mais rápidos; aparar cancela o golpe em andamento; buffs comprados aparecem acima da barra de itens, com dica no mouse e no toque; cinto de poções no canto direito no PC; animação de encher o regador; portal dos mímicos mais frequente; moeda de forja de todo guardião; bancos da taverna não prendem mais o jogador.
+
+Conteúdo 30 da versão 2026.10.23.1, em 25/10/2026: a fonte sai da praça da vila e o pódio do ranking passa para o centro dela.
 `.

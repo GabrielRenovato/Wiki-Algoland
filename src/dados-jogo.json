@@ -1017,6 +1017,96 @@
       "nivel_vara": 5,
       "nome": "GUARDIAO DO LAGO",
       "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 42,
+      "dificuldade": 82,
+      "estacoes": [
+        1,
+        2
+      ],
+      "icone": "res://assets/pesca/peixes/peixe_leao.png",
+      "id": "peixe_leao",
+      "nivel_pesca": 50,
+      "nivel_vara": 4,
+      "nome": "PEIXE LEAO",
+      "origem": "Arte original gerada para AlgoLand; fonte e contrato em arte/fontes/pesca/progressao_99/",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 42,
+      "dificuldade": 80,
+      "estacoes": [
+        0,
+        1
+      ],
+      "icone": "res://assets/pesca/peixes/acara_disco.png",
+      "id": "acara_disco",
+      "nivel_pesca": 50,
+      "nivel_vara": 4,
+      "nome": "ACARA DISCO",
+      "origem": "Arte original gerada para AlgoLand; fonte e contrato em arte/fontes/pesca/progressao_99/",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 68,
+      "dificuldade": 92,
+      "estacoes": [
+        0,
+        1
+      ],
+      "icone": "res://assets/pesca/peixes/peixe_mandarim.png",
+      "id": "peixe_mandarim",
+      "nivel_pesca": 80,
+      "nivel_vara": 5,
+      "nome": "PEIXE MANDARIM",
+      "origem": "Arte original gerada para AlgoLand; fonte e contrato em arte/fontes/pesca/progressao_99/",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 68,
+      "dificuldade": 93,
+      "estacoes": [
+        2,
+        3
+      ],
+      "icone": "res://assets/pesca/peixes/aruana_prateada.png",
+      "id": "aruana_prateada",
+      "nivel_pesca": 80,
+      "nivel_vara": 5,
+      "nome": "ARUANA PRATEADA",
+      "origem": "Arte original gerada para AlgoLand; fonte e contrato em arte/fontes/pesca/progressao_99/",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "mar",
+      "brasas": 110,
+      "dificuldade": 100,
+      "estacoes": [],
+      "icone": "res://assets/pesca/peixes/imperador_abissal.png",
+      "id": "imperador_abissal",
+      "nivel_pesca": 99,
+      "nivel_vara": 5,
+      "nome": "IMPERADOR ABISSAL",
+      "origem": "Arte original gerada para AlgoLand; fonte e contrato em arte/fontes/pesca/progressao_99/",
+      "raridade": "epico"
+    },
+    {
+      "ambiente": "rio",
+      "brasas": 110,
+      "dificuldade": 100,
+      "estacoes": [],
+      "icone": "res://assets/pesca/peixes/carpa_celestial.png",
+      "id": "carpa_celestial",
+      "nivel_pesca": 99,
+      "nivel_vara": 5,
+      "nome": "CARPA CELESTIAL",
+      "origem": "Arte original gerada para AlgoLand; fonte e contrato em arte/fontes/pesca/progressao_99/",
+      "raridade": "epico"
     }
   ],
   "receitas": [
@@ -1470,5 +1560,5 @@
       "texto_bonus": "+20% VIDA, +25% FOLEGO"
     }
   ],
-  "commit": "ece31793ea436ac806703cd9be80642557c4793e"
+  "commit": "0eaf7991b6e1617dd3041c70c6a0550dc1a2c17e"
 }
