@@ -149,4 +149,6 @@ Conteúdo 22 da versão 2026.10.23.1, em 24/10/2026: a tela inicial ganha a logo
 Conteúdo 25 da versão 2026.10.23.1, em 25/10/2026: no celular, tocar num campo de texto (chat, apelido, nome do personagem) abre o teclado do próprio jogo, com a mensagem digitada à vista e pontuação no chat; a letra X do teclado deixa de virar o botão de fechar.
 
 Conteúdo 26 da versão 2026.10.23.1 (27 no Android, com o pacote da interface regerado), em 25/10/2026: no celular, o chat, o apelido e o nome do personagem voltam a usar o teclado do sistema, agora com uma barra no alto da tela que mostra o texto digitado; o teclado do jogo fica só para o controle.
+
+Conteúdo 28 da versão 2026.10.23.1, em 25/10/2026: a animação de colher fica 40% mais rápida e o chat rola até o fim ao enviar uma mensagem.
 `.
