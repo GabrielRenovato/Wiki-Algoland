@@ -147,4 +147,6 @@ Conteúdo 21 da versão 2026.10.23.1, em 24/10/2026: canal reserva mais rápido.
 Conteúdo 22 da versão 2026.10.23.1, em 24/10/2026: a tela inicial ganha a logo do AlgoLand e o layout ajustado ao novo desenho, com as ferramentas de revisão do alinhamento das armaduras Raven. Android, Windows e Linux recebem três pacotes cumulativos assinados, preservando os instaladores e saves existentes. A exportação Web `6e96c545faa5` contém o mesmo código de jogo, baseado em `c2bedb3fe
 
 Conteúdo 25 da versão 2026.10.23.1, em 25/10/2026: no celular, tocar num campo de texto (chat, apelido, nome do personagem) abre o teclado do próprio jogo, com a mensagem digitada à vista e pontuação no chat; a letra X do teclado deixa de virar o botão de fechar.
+
+Conteúdo 26 da versão 2026.10.23.1, em 25/10/2026: no celular, o chat, o apelido e o nome do personagem voltam a usar o teclado do sistema, agora com uma barra no alto da tela que mostra o texto digitado; o teclado do jogo fica só para o controle.
 `.
