@@ -1,7 +1,7 @@
 // Service worker do jogo instalado: guarda a casca (HTML, motor, ícones) para abrir sem rede.
-// Os dados do jogo (partes de 32 MiB) têm cache próprio no carregar.js. 3f0648ec7715 muda a cada exportação,
+// Os dados do jogo (partes de 32 MiB) têm cache próprio no carregar.js. 4c69901aa69d muda a cada exportação,
 // o que faz o navegador instalar o worker novo e descartar a casca antiga.
-const CACHE = 'algoland-casca-3f0648ec7715';
+const CACHE = 'algoland-casca-4c69901aa69d';
 const CASCA = ['./', 'index.html', 'index.js', 'index.wasm', 'index.audio.worklet.js', 'index.audio.position.worklet.js', 'carregar.js',
   'manifest.webmanifest', 'icones/icone-192.png', 'icones/icone-512.png', 'icones/apple-touch-icon.png'];
 
