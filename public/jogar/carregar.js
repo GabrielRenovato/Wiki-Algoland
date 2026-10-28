@@ -90,8 +90,8 @@ const VERSAO_CASCA = '718bd9ae5b64';
     }));
     // startGame baixaria index.pck novamente; start usa o pacote montado em memória.
     mensagem.textContent = 'Iniciando o jogo…';
-    await engine.preloadFile(pacote.buffer, 'index.pck');
     await engine.init('index');
+    engine.copyToFS('index.pck', pacote.buffer);
     // O motor já copiou o pacote para o seu sistema de arquivos: solta a cópia para poupar memória (importante no iPhone)
     pacote = null;
     progresso.value = 100;
