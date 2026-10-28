@@ -1,6 +1,6 @@
 /* global Engine */
 // Versão do jogo gravada na exportação (a mesma do sw.js); serve para detectar casca antiga em cache
-const VERSAO_CASCA = 'e5084b55c0a6';
+const VERSAO_CASCA = 'd24b5d0ed47d';
 (async () => {
   // Aparelho de toque de verdade (iPhone, iPad, Android): o dedo é o ponteiro principal
   const celular = matchMedia('(pointer: coarse) and (hover: none)').matches;
