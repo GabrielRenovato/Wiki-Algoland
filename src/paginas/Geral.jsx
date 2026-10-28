@@ -14,7 +14,7 @@ export function Inicio() {
       <div className="banner">
         <div className="banner-texto">
           <p className="sobretitulo">Wiki oficial do jogo</p>
-          <p className="etiqueta">Revisada em 28/10/2026 · Conteúdo 52</p>
+          <p className="etiqueta">Revisada em 28/10/2026 · Conteúdo 54</p>
           <h1>AlgoLand</h1>
           <p>
             Um RPG com cenários 2D e personagem 3D em pixel art que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das Flores, cuida

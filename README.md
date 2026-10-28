@@ -13,7 +13,7 @@ npm run build    # gera dist/ (abre em qualquer pasta, base relativa)
 
 ## Estado atual da wiki
 
-Revisada em 28/10/2026 para o conteúdo 52 da base 2026.10.23.1, catálogos conferidos na fonte `b0e0ba6f7` (inclui as correções visuais posteriores).
+Revisada em 28/10/2026 para o conteúdo 54 da base 2026.10.23.1, catálogos conferidos na fonte `b0e0ba6f7` (inclui as correções visuais posteriores).
 As páginas cobrem aparência atual, duelo, chat global/presença por mapa, mercado,
 transferência do mundo solo, checkpoints e as regras atuais de pesca, combate e fabricação.
 O catálogo extraído contém 21 mapas, dez armas, dez conjuntos de quatro peças,

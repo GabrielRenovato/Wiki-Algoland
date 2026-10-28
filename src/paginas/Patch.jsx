@@ -5,6 +5,20 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 export const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 54,
+    data: "28 de outubro de 2026",
+    resumo: "Cabeça dos avatares acompanha a direção do personagem.",
+    corrigido: ["A cabeça deixou de ficar presa na vista frontal nos jogadores online, na tela de carregamento e nas prévias. A direção acompanha a rotação do modelo."],
+  },
+  {
+    versao: "2026.10.23.1",
+    conteudo: 53,
+    data: "28 de outubro de 2026",
+    resumo: "Roupas escolhidas voltam a aparecer ao entrar no jogo.",
+    corrigido: ["Camisa, calça e calçado escolhidos são aplicados na entrada normal. Corrigidos também os padrões de aparência usados no duelo."],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 52,
     data: "28 de outubro de 2026",
     resumo: "Duelo online e o visual atual do personagem em pixel art.",
