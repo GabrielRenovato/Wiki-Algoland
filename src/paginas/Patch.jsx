@@ -5,6 +5,14 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 export const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 60,
+    data: "28 de outubro de 2026",
+    resumo: "Acesso rápido ao PvP e lobby com personagem e equipamentos.",
+    novo: ["Ícone de duas espadas cruzadas na tela de jogo para abrir as salas de duelo no PC e no celular."],
+    melhorou: ["Cada jogador aparece no lobby com sua aparência e os quadradinhos dos equipamentos, como na mochila. Toque ou clique para consultar nome, nível e raridade. Em telas estreitas, os cartões ficam um abaixo do outro; os botões de pronto, começar e sair continuam acessíveis."],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 54,
     data: "28 de outubro de 2026",
     resumo: "Cabeça dos avatares acompanha a direção do personagem.",

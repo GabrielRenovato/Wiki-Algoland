@@ -43,11 +43,12 @@ export function Duelo() {
   return <>
     <Titulo sub="Combate online de um contra um, em salas com senha opcional e partida melhor de três.">Duelo online</Titulo>
     <Secao titulo="Criar ou entrar numa sala"><Passos itens={[
-      <>Abra a pausa e escolha <b>DUELO ONLINE</b>.</>,
+      <>Toque ou clique no <b>ícone de duas espadas cruzadas</b> na tela de jogo. Você também pode abrir a pausa e escolher <b>DUELO ONLINE</b>.</>,
       <>Crie uma sala com nome e senha opcional, ou entre numa sala da lista. Uma sala tem dois lugares.</>,
-      <>Os participantes marcam <b>PRONTO</b>. O dono da sala usa <b>COMEÇAR</b>.</>,
+      <>Quem entrou marca <b>PRONTO</b>. Quando o adversário estiver pronto, o dono da sala usa <b>COMEÇAR</b>.</>,
       <>Dispute os rounds: vence a partida quem fizer duas vitórias.</>,
     ]} /></Secao>
+    <Secao titulo="Personagem e equipamentos no lobby"><p>Os dois cartões mostram a aparência dos jogadores e os slots de arma, escudo, cabeça, corpo, luvas e botas, no estilo da mochila. Toque ou clique em um equipamento para consultar seu nome, nível e raridade; essa inspeção não troca nem remove itens.</p><p>Em telas estreitas, role para ver o outro cartão. Os botões de pronto, começar e sair ficam sempre disponíveis abaixo da área de jogadores.</p></Secao>
     <Secao titulo="Dentro da arena"><p>A arena do duelo não tem ondas de inimigos e limita a movimentação à área de terra. Use ataques, esquiva, defesa e aparo como no <Link para="combate">combate</Link> normal. O dano entre jogadores é ajustado para 60%.</p>
       <p>Ao terminar ou sair, você volta ao local anterior, com a vida que tinha antes. O duelo não leva à enfermaria nem causa as perdas de uma expedição da fenda.</p>
     </Secao>
