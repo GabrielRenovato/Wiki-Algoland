@@ -62,6 +62,7 @@ export function Vila() {
         <Tabela cabecalho={["Pedido", "Quem pede", "O que fazer", "Recompensa"]}
           linhas={PEDIDOS.map((p) => [<b>{p.nome}</b>, p.dono, p.texto, <Brasas n={p.brasas} />])} />
       </Secao>
+      <Secao titulo="Mercado"><p>Na aba MERCADO do mural você compra e vende itens de outros jogadores por Brasas. As entregas ficam no correio do mercado. <Link para="mercado">Veja como anunciar e receber.</Link></p></Secao>
       <Secao titulo="Vida na vila">
         <ul className="lista">
           <li>Os moradores seguem a agenda do relógio: trabalham, encontram-se na praça, conversam entre si e voltam para casa.</li>

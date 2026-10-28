@@ -1,3 +1,4 @@
+import { GaleriaCenario } from './Atual.jsx';
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Tecla, Link, Passos, Brasas } from "../componentes/ui.jsx";
 import { ARMAS, FERRAMENTAS, MORADORES } from "../sprites.js";
@@ -7,56 +8,17 @@ import { ARMAS, FERRAMENTAS, MORADORES } from "../sprites.js";
 // codigo/floresta/animal_selvagem.gd e codigo/cidade/jornada_limiar.gd.
 
 export function Online() {
-  return (
-    <>
-      <Titulo sub="Encontre outros jogadores na praça, converse no chat e veja os balões sobre cada personagem. Tudo opcional.">Online e chat</Titulo>
-
-      <Secao titulo="Como ficar online">
-        <Passos itens={[
-          <>Vá para a <Link para="vila">Vila das Flores</Link>. O online existe só na cidade externa.</>,
-          <>No computador, aperte <Tecla>Enter</Tecla> e escolha <b>FICAR ONLINE</b>. Também dá pela pausa, em <b>CIDADE ONLINE / OFFLINE</b>.</>,
-          <>No celular, toque no ícone de balão ao lado do botão <b>MAPA</b>.</>,
-          <>Quando conectar, o estado mostra quantos jogadores estão na cidade (até 8).</>,
-        ]} />
-        <Caixa tipo="nota">
-          A cidade começa <b>offline</b>. O jogo lembra a sua escolha e, no cooperativo, cada jogador escolhe por conta própria.
-        </Caixa>
-      </Secao>
-
-      <Secao titulo="Conversar">
-        <Tabela cabecalho={["", "Computador", "Celular e tela dividida"]} linhas={[
-          ["Onde fica o chat", "Registro translúcido no canto inferior esquerdo, com as últimas 30 mensagens", "Ícone de balão ao lado do MAPA abre o chat"],
-          ["Escrever", <><Tecla>Enter</Tecla> foca o campo, <Tecla>Enter</Tecla> envia e <Tecla>Esc</Tecla> cancela</>, "Toque no campo; o teclado ABC funciona com controle"],
-          ["Enquanto digita", "O personagem fica parado e as teclas de atalho (M, I…) viram letras", "—"],
-        ]} />
-        <p>
-          Cada mensagem aparece também num <b>balão sobre o personagem</b> de quem escreveu, com a moldura das falas dos
-          moradores. As suas mensagens ficam em dourado no registro; as dos outros, em azul. O texto tem até 160 caracteres.
-        </p>
-      </Secao>
-
-      <Secao titulo="O que é compartilhado">
-        <Grade min={240}>
-          <Ficha nome="Compartilhado" etiqueta="O que os outros veem">
-            <p>Seu personagem (aparência e armadura), o apelido, a posição na praça e as mensagens do chat.</p>
-          </Ficha>
-          <Ficha nome="Continua só seu" etiqueta="Nada disso muda">
-            <p>Moradores, missões, mochila, fazenda, dinheiro e progresso. O online não interfere no seu save.</p>
-          </Ficha>
-        </Grade>
-      </Secao>
-
-      <Secao titulo="Limites">
-        <ul className="lista">
-          <li><b>8 jogadores</b> por vez na cidade. Com a sala cheia, o jogo espera uma vaga e reconecta sozinho.</li>
-          <li>Ao entrar numa casa, na fazenda ou no portal, você sai da sala; voltar à rua reconecta se a escolha for online.</li>
-          <li>Se a conexão cair, os outros jogadores somem e o jogo tenta de novo.</li>
-          <li>O online usa um servidor gratuito com cota diária. Se a cota acabar, o chat pausa até o dia seguinte e o jogo local continua normal.</li>
-          <li>Apelidos ofensivos são trocados por <b>sem apelido</b>.</li>
-        </ul>
-      </Secao>
-    </>
-  );
+  return <>
+    <Titulo sub="Chat global e outros jogadores na cidade, floresta e praia, sem misturar o progresso das partidas.">Online e chat</Titulo>
+    <Secao titulo="Conectar"><Passos itens={[
+      <>No computador, abra o chat com <Tecla>Enter</Tecla> ou use a opção de online na pausa. No celular, toque no balão ao lado de MAPA.</>,
+      <>Escolha ficar online. O jogo lembra a preferência; P1 e P2 podem escolher separadamente.</>,
+      <>Troque seu apelido pela opção <b>APELIDO</b> na pausa. Ele aparece no chat, no mapa e no ranking.</>,
+    ]} /></Secao>
+    <Secao titulo="Chat global"><p>As mensagens acompanham você em todos os mapas, inclusive interiores, fazenda e fenda. A viagem preserva a sessão e o histórico. Enter envia a mensagem e Esc cancela a digitação; enquanto escreve, os atalhos do jogo não são ativados.</p><p>No celular, o teclado do sistema abre com uma barra que mantém o texto à vista. No controle há teclado próprio. O botão do chat mostra as mensagens não lidas.</p></Secao>
+    <Secao titulo="Presença por mapa"><p>Na cidade externa, floresta e praia, você vê os jogadores que estão no mesmo mapa, com aparência, apelido, deslocamento e ações. O limite padrão é de <b>24 avatares por mapa</b>. Em mapas sem presença visual, o chat global continua disponível.</p><p>Os balões acompanham os personagens. Moradores, fazenda, mochila, missões, dinheiro e progresso continuam pertencendo à sua partida.</p></Secao>
+    <Secao titulo="Conexão e modos de jogo"><p>O jogo tenta reconectar após uma queda. Se o servidor principal estiver fora do ar, tenta um canal reserva de chat; a presença visual depende do servidor principal. Você pode continuar jogando offline.</p><p>Para lutar contra outro jogador, abra o <Link para="duelo">duelo online</Link>. Para compartilhar o computador em tela dividida, use o <Link para="coop">cooperativo local</Link>. A compra e venda de itens fica no <Link para="mercado">mercado</Link>.</p></Secao>
+  </>;
 }
 
 export function Ranking() {
@@ -125,7 +87,7 @@ export function Combate() {
 
       <Secao titulo="Esquiva">
         <p>
-          O dash custa <b>35 de estamina</b>, dura 0,15 s e deixa você <b>invulnerável</b> durante o movimento. Depois há 0,6 s de
+          O dash custa <b>35 de estamina</b>, dura 0,15 s e deixa você <b>invulnerável</b> durante o movimento. Depois há 0,35 s de
           recarga. Use para atravessar golpes, não só para fugir.
         </p>
       </Secao>
@@ -148,21 +110,19 @@ export function Combate() {
         <p>Cada arma tem um efeito próprio, que faz parte dela (não soma atributos). Saiba onde fabricar em <Link para="armas">Armas e escudo</Link>.</p>
         <Tabela cabecalho={["Arma", "Especialidade", "Efeito"]} linhas={[
           [<span className="peixe-nome"><Sprite s={ARMAS.espada_basica} escala={1.5} parado />Espada básica</span>, "Contragolpe", "Depois de um aparo perfeito, o próximo golpe causa +50% de dano (por 3 s)."],
-          [<span className="peixe-nome"><Sprite s={ARMAS.espada_gemea} escala={1.5} parado />Espada gêmea</span>, "Ritmo", "O terceiro golpe do combo causa +25% de dano."],
+          [<span className="peixe-nome"><Sprite s={ARMAS.espada_gemea} escala={1.5} parado />Espada de duas mãos e montantes</span>, "Ritmo", "O último golpe do combo causa +25% de dano."],
           [<span className="peixe-nome"><Sprite s={ARMAS.machado} escala={1.5} parado />Machado</span>, "Abertura", "O primeiro golpe do combo causa +25% de dano."],
-          [<span className="peixe-nome"><Sprite s={ARMAS.maca} escala={1.5} parado />Maça</span>, "Impacto", "+50% de empurrão; o terceiro golpe atordoa por 0,35 s."],
           [<span className="peixe-nome"><Sprite s={ARMAS.lanca_basica} escala={0.8} parado />Lança</span>, "Ponta", "+25% de dano ao acertar a mais de 32 px."],
           [<span className="peixe-nome"><Sprite s={ARMAS.arco_curto} escala={1.5} parado />Arco curto</span>, "Reflexo", "+20% de dano até 90 px."],
-          [<span className="peixe-nome"><Sprite s={ARMAS.arco_curvo} escala={1.5} parado />Arco curvo</span>, "Precisão", "+20% de dano entre 90 e 180 px."],
-          [<span className="peixe-nome"><Sprite s={ARMAS.arco_longo} escala={1.5} parado />Arco longo</span>, "Longo alcance", "+15% de dano a partir de 160 px."],
         ]} />
         <Caixa tipo="nota" titulo="Flechas">
           A flecha guarda o dano e o crítico do momento do disparo, mesmo que você troque de arma com ela no ar.
         </Caixa>
       </Secao>
 
+      <Secao titulo="Movimento e ataques"><p>Golpes corpo a corpo param o deslocamento durante o ataque. Um novo comando de movimento cancela o golpe e retoma a corrida. A esquiva pode cortar o golpe a partir da metade; aparar também cancela o ataque.</p></Secao>
       <Secao titulo="Cor da arma por nível">
-        <p>A arma muda de cor conforme o nível que a <Link para="armas">bigorna</Link> deu a ela: nível 1 original, 2 cobre, 3 azul, 4 ouro e 5 ametista. O escudo segue a mesma regra.</p>
+        <p>No personagem atual, o nível da arma altera a aura e a raridade define o material. A <Link para="armas">bigorna</Link> permite melhorar níveis e, no nível 5, ascender a raridade com os custos indicados na tela.</p>
       </Secao>
 
       <Secao titulo="Efeitos perigosos">
@@ -204,6 +164,7 @@ export function Floresta() {
         </Grade>
       </Secao>
 
+      <Secao titulo="A floresta nas quatro estações"><GaleriaCenario lugar="floresta" /></Secao>
       <Secao titulo="Fauna">
         <p>
           Cervos, coelhos, capivaras e corvos vivem na floresta. Eles pastam e vagueiam perto do lugar de origem. Se você se
@@ -227,7 +188,7 @@ export function Limiar() {
     { quem: MORADORES.lia, nome: "Limiar I · A primeira vigília", dono: "Lia", meta: "Derrote o guardião do andar 1.", premio: <><Brasas n={10} /> e o projeto da lança</> },
     { quem: MORADORES.bento, nome: "Limiar II · Raízes que sustentam", dono: "Bento", meta: "Entregue 2 colheitas da estação.", premio: <><Brasas n={15} /> e o projeto da aljava</> },
     { quem: MORADORES.ferreiro, nome: "Limiar III · O eco nas ruínas", dono: "Ivo", meta: "Derrote o guardião do andar 6.", premio: <><Brasas n={20} /> e o projeto da armadura</> },
-    { quem: MORADORES.mistica, nome: "Limiar IV · A luz da vila", dono: "Estela", meta: "Derrote o guardião do andar 10.", premio: <><Brasas n={40} /> e a fonte restaurada</> },
+    { quem: MORADORES.mistica, nome: "Limiar IV · A última vigília", dono: "Estela", meta: "Depois de aceitar, vença 3 andares da fenda e volte para conversar.", premio: <><Brasas n={40} /> e a fonte restaurada</> },
   ];
   return (
     <>

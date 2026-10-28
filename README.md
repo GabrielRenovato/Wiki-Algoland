@@ -11,9 +11,40 @@ npm run build    # gera dist/ (abre em qualquer pasta, base relativa)
 `npm run dev` e `npm run build` copiam antes as folhas de sprite do jogo para `public/sprites`
 (`scripts/copiar-sprites.mjs`). O jogo é procurado em `../AlgoLand`; para outro caminho use `ALGOLAND=/caminho npm run dev`.
 
+## Estado atual da wiki
+
+Revisada em 28/10/2026 para o conteúdo 52 da base 2026.10.23.1, catálogos conferidos na fonte `b0e0ba6f7` (inclui as correções visuais posteriores).
+As páginas cobrem aparência atual, duelo, chat global/presença por mapa, mercado,
+transferência do mundo solo, checkpoints e as regras atuais de pesca, combate e fabricação.
+O catálogo extraído contém 21 mapas, dez armas, dez conjuntos de quatro peças,
+56 receitas, 54 peixes, oito poções (32 receitas sazonais) e dez refeições.
+
+Para atualizar os dados e as imagens de apresentação, sem reexportar o jogo Web:
+
+```bash
+python3 scripts/sincronizar-dados.py ../AlgoLand
+python3 scripts/capturar-visuais.py ../AlgoLand
+npm run build
+```
+
+A captura usa Godot com renderização real e save exclusivo de testes. Exporta o
+personagem com o shader atual, 19 opções de roupa/cabelo, as três armaduras com
+malhas 3D, ícones das 40 peças e cinco montantes, além de vila/fazenda/praia/floresta
+nas quatro estações. Gera também `src/sprites-atuais.js` com as dimensões dos ícones.
+O build não volta a copiar capturas antigas nem as camadas antigas do herói.
+As imagens exportadas ficam versionadas para publicar sem Godot na hospedagem.
+O histórico abaixo registra versões anteriores e não substitui o estado atual.
+
+Validação: `npm run build` confere as dimensões e os quadros de todas as imagens.
+Para conferir navegação, busca, arquivos ausentes e encaixe dos textos em 33 páginas,
+rode `npm run dev -- --port 5176` e, em outro terminal, `npm run verificar:interface`.
+A verificação usa Playwright/Chromium (`npx playwright install chromium` na primeira
+execução), três larguras e relatório/capturas em `/tmp/algoland-wiki-*`.
+
+
 ## Onde mexer
 
-- `src/dados-jogo.json`: catálogo extraído diretamente do código com `scripts/sincronizar-dados.py` (armas, receitas, mapas/guardiões, 48 peixes e dez pratos), com o commit de origem. O extrator usa saves isolados; com `--check`, compara as tabelas sem regravá-las.
+- `src/dados-jogo.json`: catálogo extraído diretamente do código com `scripts/sincronizar-dados.py` (armas, receitas, mapas/guardiões, conjuntos, poções sazonais, melhorias, 54 peixes e dez pratos), com o commit de origem. O extrator usa saves isolados; com `--check`, compara as tabelas sem regravá-las.
 - `src/dados.js`: números do jogo (plantas, poções, armas, chefes...), com o arquivo de origem do código ao lado de cada bloco.
   Se o balanceamento mudar no jogo, atualize aqui.
 - `src/sprites.js`: qual folha, tamanho do quadro e quadros animados de cada sprite.

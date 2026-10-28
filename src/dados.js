@@ -27,14 +27,9 @@ export const PRECO_SEMENTE = { comum: 2, incomum: 3, raro: 4, epico: 6 };
 export const CHANCE_SEMENTE = { comum: "0,1%", incomum: "0,04%", raro: "0,0125%", epico: "0,004%" };
 
 // codigo/dados/pocoes.gd
-export const POCOES = [
-  { id: "cura", nome: "Poção de Cura", efeito: "Cura 40% da vida", duracao: 0, receita: { cenoura: 2, morango: 1 }, icone: [2, 2], texto: "Um gole quente de cenoura com morango que fecha as feridas na hora." },
-  { id: "folego", nome: "Poção de Fôlego", efeito: "Estamina 3x mais rápida", duracao: 30, receita: { batata: 2, couve_flor: 1 }, icone: [1, 3], texto: "Caldo de batata com couve-flor: o fôlego volta antes de acabar." },
-  { id: "forca", nome: "Poção de Força", efeito: "+30% de dano", duracao: 30, receita: { tomate: 2, melancia: 1 }, icone: [3, 4], texto: "Suco de tomate com melancia que deixa cada golpe mais pesado." },
-  { id: "velocidade", nome: "Poção de Velocidade", efeito: "+25% de velocidade", duracao: 30, receita: { girassol: 2, milho: 1 }, icone: [4, 3], texto: "Essência de girassol e milho: as pernas ficam leves como pluma." },
-  { id: "pedra", nome: "Poção de Pedra", efeito: "-25% de dano recebido", duracao: 30, receita: { abobora: 2, beterraba: 1 }, icone: [4, 5], texto: "A casca da abóbora endurece a pele de quem bebe." },
-  { id: "vampiro", nome: "Poção Vampírica", efeito: "12% do dano vira vida", duracao: 30, receita: { uva: 2, berinjela: 1 }, icone: [2, 5], texto: "Uva e berinjela fermentadas: o sangue do inimigo vira o seu." },
-];
+export function titulo(texto) { return texto.toLocaleLowerCase('pt-BR').replace(/(^|\s)\S/g, c => c.toLocaleUpperCase('pt-BR')); }
+export const POCOES = atual.pocoes.map(p => ({ ...p, nome: ({cura:"Poção de Cura",folego:"Poção de Fôlego",forca:"Poção de Força",velocidade:"Poção de Velocidade",pedra:"Poção de Pedra",vampiro:"Poção Vampírica",regeneracao:"Poção de Regeneração",precisao:"Poção de Precisão"})[p.id] ?? titulo(p.nome), efeito: p.descricao, texto: p.texto }));
+export const ROUPAS = atual.roupas;
 
 // codigo/cidade/dados_cidade.gd + falas_moradores.gd
 export const MORADORES = [
@@ -77,6 +72,12 @@ MORADORES.push(
   { id:'helena', nome:'Helena', oficio:'Bordadeira, 55 anos', casa:'carpintaria', casaNome:'Casa da família do Osvaldo', servico:'Gosta de bordar e contar histórias. Usa cadeira de rodas e recebe a ajuda da filha Clara no dia a dia.', especialidade:'Histórias e amizade', horario:[], folga:-1, rotina:[], fala:'Clara me ajuda no dia a dia. Agora me conte de você: como anda sua fazenda?' },
   { id:'clara', nome:'Clara', oficio:'Artesã, 30 anos', casa:'carpintaria', casaNome:'Casa da família do Osvaldo', servico:'Divide o tempo entre suas encomendas e os cuidados com Helena. Suas histórias acompanham a amizade.', especialidade:'Artesanato e amizade', horario:[], folga:-1, rotina:[], fala:'Divido meu tempo entre minhas encomendas e os cuidados da minha mãe, Helena.' },
 );
+
+// Horários e dias de folga vêm da mesma tabela usada pelos moradores do jogo.
+for (const morador of MORADORES) {
+  const dados = atual.moradores[morador.id];
+  if (dados) { morador.horario = dados.horario; morador.folga = dados.folga; }
+}
 
 export const PEDIDOS = [
   { nome: "Conheça seus vizinhos", dono: "Lia", texto: "Converse com Tomás, Dona Rosa, Caio, Estela e Bento.", brasas: 10 },
@@ -121,7 +122,7 @@ export const EVENTOS = [
 // codigo/dados/equipamentos.gd
 const NOMES_ARMAS = { espada_basica: "Espada Básica", lanca_basica: "Lança Básica", espada_gemea: "Espada de Duas Mãos", machado: "Machado", arco_curto: "Arco" };
 const TIPOS_ARMAS = { espada_basica: "Espada de uma mão", lanca_basica: "Lança de duas mãos", espada_gemea: "Espada de duas mãos", machado: "Machado de duas mãos", arco_curto: "Arco · exige aljava" };
-export const ARMAS = atual.armas.map(a => ({ ...a, nome: NOMES_ARMAS[a.id], tipo: TIPOS_ARMAS[a.id], libera: a.id === 'espada_basica' ? 'Kit inicial' : `Receita elegível a partir do andar ${a.meta}; fabricar com Ivo` }));
+export const ARMAS = atual.armas.map(a => ({ ...a, nome: NOMES_ARMAS[a.id] ?? a.nome, tipo: TIPOS_ARMAS[a.id] ?? 'Montante de duas mãos', libera: a.id === 'espada_basica' ? 'Kit inicial' : `Receita elegível a partir do andar ${a.meta}; fabricar com Ivo` }));
 export const RECEITAS = atual.receitas;
 export const ANDARES = atual.andares;
 export const PEIXES = atual.peixes;
@@ -157,26 +158,23 @@ export const AFIXOS = [
 ];
 
 // codigo/dados/conjuntos_armadura.gd
-export const CONJUNTOS = [
-  { id: "carrasco", nome: "Carrasco", completo: "10% de chance de raio ao acertar (dano 200%, recarga 2 s)", parcial: "Metade da chance", nivel: "O nível também aumenta o dano do raio." },
-  { id: "cavaleiro_rubro", nome: "Cavaleiro Rubro", completo: "+10% de defesa e +10% de vitalidade", parcial: "+5% e +5%" },
-  { id: "cavalheiro", nome: "Mordomo", completo: "10% de chance de congelar o alvo por 2 s (recarga 2 s)", parcial: "Metade da chance" },
-];
+const porcento = n => `${Math.round(n * 100)}%`;
+export const CONJUNTOS = atual.conjuntos.map(c => ({ ...c, nome: ({cavaleiro_rubro:"Cavaleiro Rubro",guardiao_geada:"Guardião da Geada",templario_solar:"Templário Solar",arauto_trovao:"Arauto do Trovão",guardiao_esmeralda:"Guardião Esmeralda"})[c.id] ?? titulo(c.nome),
+  completo: c.tipo_bonus === 'status' ? `+${porcento(c.defesa)} de defesa e +${porcento(c.vitalidade)} de vitalidade`
+    : c.tipo_bonus === 'congelamento' ? `${porcento(c.chance)} de chance de congelar por ${c.duracao} s (recarga ${c.recarga} s)`
+    : `${porcento(c.chance)} de chance de raio ao acertar (dano ${porcento(c.mult_dano)}, recarga ${c.recarga} s)`,
+  parcial: 'Metade do efeito completo',
+}));
 
 // codigo/globais/progresso.gd
-export const MELHORIAS = [
-  { nome: "Vigor", efeito: "+8% de vida máxima" },
-  { nome: "Força", efeito: "+6% de dano" },
-  { nome: "Couraça", efeito: "+4% de redução de dano" },
-  { nome: "Fôlego", efeito: "+10% de estamina máxima" },
-  { nome: "Bolsa", efeito: "+40 de ouro inicial" },
-  { nome: "Saque", efeito: "+10% de ouro por abate" },
-];
-export const CUSTOS_MELHORIA = [10, 20, 35, 55, 80];
+export const MELHORIAS = atual.melhorias.map(m => ({ nome: ({vigor:"Vigor",forca:"Força",couraca:"Couraça",folego:"Fôlego",bolsa:"Bolsa",saque:"Saque"})[m.id], efeito: m.descricao }));
+export const CUSTOS_MELHORIA = atual.custos_melhoria;
+export const ANDARES_MELHORIA = atual.andares_melhoria;
+export const INTERVALO_CHECKPOINT = atual.intervalo_checkpoint;
 export const APOIOS = [
   { nome: "Curandeira", efeito: "Revive você 1 vez por partida, com metade da vida e 2 s invulnerável", custo: 40 },
   { nome: "Bardo", efeito: "+25% de Brasas ao fim da partida", custo: 25 },
-  { nome: "Mística", efeito: "Começa a partida em um checkpoint liberado, com compensação de ouro conforme o andar escolhido", custo: 50 },
+  { nome: "Mística", efeito: "Apoio da vila; a seleção de checkpoints no portal está disponível mesmo sem esse contrato", custo: 50 },
 ];
 
 // codigo/dados/dados_dos_items_loja.gd (preço sobe 20% a cada cópia comprada na partida)

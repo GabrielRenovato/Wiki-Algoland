@@ -73,20 +73,17 @@ export const CASAS = {
 };
 export const PORTAL = { ...grade("vila/portal_arena.png", [1728,256], [192,256], 0, intervalo(0,8), 8), tam: [48,64], resolucao: 4, suave: true };
 
-// --- Herói Raven: camadas de 320 x 9600 (30 ações de 320 px); "andar" é a primeira, linha 0 = para baixo ---------
-const RAVEN = [320, 9600];
-export const HEROI = grade(["heroi/corpo.png", "heroi/calca.png", "heroi/botas.png", "heroi/camisa.png", "heroi/cabelo.png"],
-  RAVEN, [80, 80], 0, intervalo(0, 3), 6, [16, 8, 48, 56]);
-
-// Quatro peças reais atuais sobre o corpo Raven; mesmas poses do jogador.
-const conjunto = (id) => grade(['heroi/corpo.png', 'heroi/calca.png',
-  `conjuntos/${id}_botas.png`, `conjuntos/${id}_peitoral.png`, `conjuntos/${id}_luvas.png`, `conjuntos/${id}_elmo.png`],
-  RAVEN, [80,80], 0, intervalo(0,3), 6, [16,8,48,56]);
-export const CONJUNTOS = { carrasco: conjunto('carrasco'), cavaleiro_rubro: conjunto('cavaleiro_rubro'), cavalheiro: conjunto('cavalheiro') };
+// Renderização do personagem atual com os mesmos materiais e shader do jogo.
+export const HEROI = { ...grade('heroi/atual.png', [960,96], [80,96], 0, intervalo(0,11), 12 / 0.73333333333333), tam: [40,48], resolucao: 2 };
+export { ITENS_CONJUNTOS, VISUAIS, MONTANTES } from './sprites-atuais.js';
+// Ícones compactos da navegação; as páginas mostram as quatro peças reais.
+export { ICONES_CONJUNTOS as CONJUNTOS } from './sprites-atuais.js';
 
 // --- Armas: ícones do jogo (um quadro por arquivo) ------------------------------------------------------------------
 const icone = (id, [l, a]) => recorte(`armas/${id}.png`, [l, a], 0, 0, l, a);
+import { MONTANTES } from './sprites-atuais.js';
 export const ARMAS = {
+  ...MONTANTES,
   espada_basica: icone("espada_basica", [10, 19]),
   espada_gemea: icone("espada_gemea", [9, 17]),
   machado: icone("machado", [12, 16]),

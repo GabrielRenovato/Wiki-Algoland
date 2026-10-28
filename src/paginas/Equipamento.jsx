@@ -1,6 +1,6 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Tabela, Link, Ouro, Raridade, Passos } from "../componentes/ui.jsx";
-import { ARMAS as SPR_ARMAS, CONJUNTOS as SPR_CONJ, MORADORES as SPR } from "../sprites.js";
+import { ARMAS as SPR_ARMAS, ITENS_CONJUNTOS, VISUAIS, MORADORES as SPR } from "../sprites.js";
 import { ARMAS, ESCUDO, BIGORNA, ENCANTAMENTOS, RARIDADES, AFIXOS, CONJUNTOS, ASCENSAO, RECEITAS } from "../dados.js";
 
 export function Armas() {
@@ -18,7 +18,7 @@ export function Armas() {
         <Grade min={250}>
           {ARMAS.map((a) => (
             <article key={a.id} className="ficha arma">
-              <div className="ficha-palco"><Sprite s={SPR_ARMAS[a.id]} escala={a.id.startsWith("lanca") ? 3.5 : 6} parado titulo={a.nome} /></div>
+              <div className="ficha-palco"><Sprite s={SPR_ARMAS[a.id]} escala={Math.min(100 / SPR_ARMAS[a.id].tam[0], 100 / SPR_ARMAS[a.id].tam[1])} parado titulo={a.nome} /></div>
               <div className="ficha-texto">
                 <h3>{a.nome}</h3>
                 <p className="etiqueta">{a.tipo}</p>
@@ -62,7 +62,7 @@ export function Armas() {
       </Secao>
 
       <Secao titulo="Encantamentos">
-        <p>Só armas de ataque (o escudo não). Três níveis; cada nível custa 120 × o nível de ouro (120, 240, 360).</p>
+        <p>Só armas de ataque corpo a corpo; arcos e escudos não recebem encantamentos. Três níveis; cada nível custa 120 × o nível de ouro (120, 240, 360).</p>
         <Tabela cabecalho={["Tipo", "Nível 1", "Nível 2", "Nível 3"]}
           linhas={ENCANTAMENTOS.map((e) => [<b style={{ color: e.cor }}>{e.nome}</b>, ...e.niveis])} />
         <Caixa tipo="dica">Chefes não ficam paralisados pelo elétrico; contra eles, o raio e o fogo rendem mais.</Caixa>
@@ -97,7 +97,7 @@ export function RaridadePagina() {
       </Secao>
       <Secao titulo="Receitas e recompensas">
         <p>As chances de pergaminho são 0,2% por inimigo comum, 1% por elite/mutante e 20% por guardião. O sorteio considera apenas receitas elegíveis e ainda pendentes; não é um drop de equipamento pronto.</p>
-        <p>O baú gigante da sala de tesouro tem 5% de chance de entregar uma peça real de conjunto, lendária no nível 5. <Link para="arena">Veja o tesouro da fenda.</Link></p>
+        <p>O baú gigante da sala de tesouro tem 5% de chance de entregar uma receita de conjunto pendente (ou Moeda de Forja, se já tiver todas). <Link para="arena">Veja o tesouro da fenda.</Link></p>
       </Secao>
     </>
   );
@@ -106,20 +106,19 @@ export function RaridadePagina() {
 export function Armaduras() {
   return (
     <>
-      <Titulo sub="Três conjuntos de quatro peças: elmo, peitoral, luvas e botas.">Armaduras</Titulo>
+      <Titulo sub="Dez conjuntos de quatro peças: elmo, peitoral, luvas e botas.">Armaduras</Titulo>
       <Secao>
         <p>
-          Aprenda as receitas elegíveis a partir do andar 10 e fabrique cada peça com Ivo, usando ferro, fibra, fragmentos e um núcleo de guardião. Elas vêm comuns no nível 1. O baú gigante do tesouro também pode conceder uma peça lendária. Cada peça aparece no corpo do personagem em todas as
-          animações, e dá para misturar conjuntos.
+          Aprenda o pergaminho e fabrique cada peça com Ivo. O andar mínimo e os materiais variam por conjunto; veja o catálogo de fabricação. O baú do tesouro pode fornecer receitas. As quatro peças são independentes e podem ser misturadas. Os efeitos dos itens e a aparência cosmética são sistemas separados.
         </p>
       </Secao>
       <Secao titulo="Conjuntos">
         <Grade min={260}>
           {CONJUNTOS.map((c) => (
             <article key={c.id} className="ficha conjunto">
-              <div className="ficha-palco"><Sprite s={SPR_CONJ[c.id]} escala={4} titulo={c.nome} /></div>
+              <div className="ficha-palco">{VISUAIS[`conjunto_${c.id}`] && <div className="conjunto-modelo"><Sprite s={VISUAIS[`conjunto_${c.id}`]} escala={3} titulo={`${c.nome} no personagem atual`} /></div>}<div className="conjunto-itens">{c.pecas.map(tipo => <Sprite key={tipo} s={ITENS_CONJUNTOS[tipo]} escala={36 / Math.max(...ITENS_CONJUNTOS[tipo].tam)} parado titulo={tipo.replaceAll("_", " ")} />)}</div></div>
               <div className="ficha-texto">
-                <h3>{c.nome}</h3>
+                <h3>{c.nome}</h3><p className="etiqueta"><Raridade id={c.raridade} /> · Elmo elegível no andar {c.meta}</p>
                 <p><b>4 peças:</b> {c.completo}</p>
                 <p><b>2 ou 3 peças:</b> {c.parcial}</p>
                 {c.nivel && <p className="etiqueta">{c.nivel}</p>}
@@ -141,7 +140,7 @@ export function Armaduras() {
           <div>
             <p>
               Peças de conjunto sobem na bigorna pagando o mesmo ouro e o mesmo andar mínimo das armas, <b>mais 1 Moeda
-              de Forja por nível</b>. A moeda cai de qualquer chefe com 5% de chance, é um material físico da mochila e permanece
+              de Forja por nível</b>. Cada guardião derrotado deixa uma Moeda de Forja. É um material físico da mochila e permanece
               se você cair.
             </p>
             <p>

@@ -19,13 +19,14 @@ export function Arena() {
       </div>
     </Secao>
     <Secao titulo="Mapas e guardiões">
-      <p>Há 11 mapas. A partir do andar 12, o circuito repete os mapas 2–11 com dificuldade crescente. Cada mapa tem seu próprio guardião.</p>
+      <p>Há 21 mapas. A partir do andar 22, o circuito repete os mapas 2–21 com dificuldade crescente. Cada mapa tem seu próprio guardião.</p>
       <Tabela cabecalho={["Mapa", "Região", "Guardião"]} linhas={ANDARES.map(a => [a.andar,a.nome,nomeChefe(a.guardiao)])} />
       <Caixa tipo="dica" titulo="Materiais e receitas">Cada andar concluído rende um fragmento da arena. Leve a picareta para os veios de ferro, disponíveis nos andares 6, 9, 12… Os guardiões fornecem núcleos. Receitas são pergaminhos: use-os na mochila e leve os materiais ao Ivo.</Caixa>
     </Secao>
+    <Secao titulo="Checkpoints"><p>Os marcos azuis do mapa do portal liberam checkpoints nos andares 5, 10, 15… já alcançados. A escolha não exige a Mística. Começar adiantado concede 40% do ouro de referência da subida desde o andar 1, sem dar todas as recompensas dessa subida.</p></Secao>
     <Secao titulo="Eventos e tesouro">
       <p>A partir do andar 4, há 25% de chance de um evento: Lua de Sangue, Chuva de Ouro, Neblina ou Tempestade. Tempestade não aparece no inverno. Horda e Elite pertencem ao modo antigo de ondas; os grupos de elite da fenda já fazem parte dos mapas.</p>
-      <p>Ao entrar num andar, há 2% de chance de aparecer o <b>portal do tesouro</b> (sorteado uma vez por andar em cada partida). Ele leva ao Bosque do Tesouro, uma clareira de mímicos que rendem 5× mais ouro, e devolve você ao mesmo andar.</p>
+      <p>Ao entrar num andar, há 6% de chance de aparecer o <b>portal do tesouro</b> (sorteado uma vez por andar em cada partida). Ele leva ao Bosque do Tesouro, uma clareira de mímicos que rendem 5× mais ouro, e devolve você ao mesmo andar.</p>
       <p>O baú gigante do bosque entrega um prêmio: 5% de chance de uma receita de conjunto que você ainda não tem (ou uma Moeda de Forja, se já tiver todas), 35% poção, 30% comida (omelete da horta, peixe assado ou sopa de raízes) e 30% Moeda de Forja. Ele nunca entrega armadura pronta.</p>
     </Secao>
     <Secao titulo="Mineração">
@@ -52,7 +53,7 @@ export function Inimigos() {
         <div className="ficha-palco">{e.ids.map(id => <Sprite key={id} s={INIMIGOS[id]} escala={2} titulo={id} />)}</div>
         <div className="ficha-texto"><h3>{e.nomes.join(", ")}</h3><p className="etiqueta">Andares {e.ondas === "9" ? "9–10" : e.ondas}</p></div>
       </article>)}</Grade>
-      <Caixa tipo="nota">Depois do andar 18, a sequência principal repete a partir do morcego. Isso é independente do circuito dos 11 mapas. A dificuldade continua subindo.</Caixa>
+      <Caixa tipo="nota">Depois do andar 18, a sequência principal repete a partir do morcego. Isso é independente do circuito dos 21 mapas. A dificuldade continua subindo.</Caixa>
     </Secao>
     <Secao titulo="Elites"><p>Os grupos marcados como elite incluem um inimigo mutante, com coroa cinza e atributos maiores. Ele vale mais pontos de caçada. Essa distribuição é definida no mapa, sem depender da antiga chance de mutantes por onda.</p></Secao>
     <Secao titulo="Esqueletos"><Tabela cabecalho={["Classe","Como luta"]} linhas={[["Guerreiro","Combate corpo a corpo."],["Arqueiro","Mantém distância e dispara flechas."],["Mago","Lança projéteis mágicos."]]} compacta /></Secao>
@@ -71,8 +72,8 @@ export function Chefes() {
       <li>O guardião tem 20% de chance de soltar uma receita elegível ainda não aprendida ou guardada. Equipamento pronto sempre vem da fabricação.</li>
       <li>Garante uma semente da estação, além das chances extras. No inverno não caem sementes.</li>
       <li>Conta para a recompensa de <Brasas n={15} /> por guardião no encerramento, além das <Brasas n={2} /> do andar.</li>
-      <li>Pode deixar uma Moeda de Forja (5% de chance). Materiais e moedas de forja são preservados ao encerrar a expedição.</li>
-      <li>Os checkpoints selecionáveis continuam em blocos de dez: 1, 11, 21… após alcançar os marcos correspondentes, com o apoio da Mística.</li>
+      <li>Deixa uma Moeda de Forja. Materiais e moedas de forja são preservados ao encerrar a expedição.</li>
+      <li>Os checkpoints do portal são liberados a cada cinco andares já alcançados: 5, 10, 15… A seleção não exige o apoio da Mística.</li>
     </ul><Caixa tipo="aviso" titulo="Medusa">O olhar de pedra petrifica por um instante. Observe o aviso e saia da frente dela.</Caixa></Secao>
   </>;
 }

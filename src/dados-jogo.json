@@ -65,7 +65,74 @@
       "bioma": "caverna",
       "guardiao": "dragao_vermelho",
       "nome": "Abismo das Profundezas"
+    },
+    {
+      "andar": 12,
+      "bioma": "pedreira",
+      "guardiao": "minotauro",
+      "nome": "Canions Rubros"
+    },
+    {
+      "andar": 13,
+      "bioma": "caverna_agua",
+      "guardiao": "medusa",
+      "nome": "Cataratas Silenciosas"
+    },
+    {
+      "andar": 14,
+      "bioma": "ruinas",
+      "guardiao": "goblin_maromba",
+      "nome": "Cidadela Soterrada"
+    },
+    {
+      "andar": 15,
+      "bioma": "caverna_mina",
+      "guardiao": "cogumelo",
+      "nome": "Veios de Ferro"
+    },
+    {
+      "andar": 16,
+      "bioma": "caverna",
+      "guardiao": "dragao_vermelho",
+      "nome": "Catacumbas de Cristal"
+    },
+    {
+      "andar": 17,
+      "bioma": "pedreira",
+      "guardiao": "minotauro",
+      "nome": "Pedreira do Trovao"
+    },
+    {
+      "andar": 18,
+      "bioma": "caverna_agua",
+      "guardiao": "medusa",
+      "nome": "Lagos do Eco"
+    },
+    {
+      "andar": 19,
+      "bioma": "ruinas",
+      "guardiao": "goblin_maromba",
+      "nome": "Fortaleza Partida"
+    },
+    {
+      "andar": 20,
+      "bioma": "caverna_mina",
+      "guardiao": "cogumelo",
+      "nome": "Forja Esquecida"
+    },
+    {
+      "andar": 21,
+      "bioma": "caverna",
+      "guardiao": "dragao_vermelho",
+      "nome": "Coracao do Abismo"
     }
+  ],
+  "andares_melhoria": [
+    0,
+    5,
+    10,
+    20,
+    30
   ],
   "armas": [
     {
@@ -158,9 +225,341 @@
       },
       "meta": 3,
       "nome": "Arco"
+    },
+    {
+      "dano": [
+        9,
+        13,
+        20,
+        30,
+        43
+      ],
+      "dias": 2,
+      "id": "montante_ferro",
+      "materiais": {
+        "ferro": 5,
+        "fragmento": 8,
+        "madeira": 16
+      },
+      "meta": 8,
+      "nome": "Montante de Ferro"
+    },
+    {
+      "dano": [
+        10,
+        14,
+        21,
+        31,
+        44
+      ],
+      "dias": 2,
+      "id": "montante_sentinela",
+      "materiais": {
+        "ferro": 10,
+        "fragmento": 12,
+        "madeira": 20,
+        "nucleo": 1
+      },
+      "meta": 12,
+      "nome": "Montante da Sentinela"
+    },
+    {
+      "dano": [
+        11,
+        16,
+        23,
+        34,
+        48
+      ],
+      "dias": 2,
+      "id": "montante_geada",
+      "materiais": {
+        "ferro": 18,
+        "fragmento": 20,
+        "madeira": 24,
+        "nucleo": 2
+      },
+      "meta": 18,
+      "nome": "Montante da Geada"
+    },
+    {
+      "dano": [
+        12,
+        17,
+        25,
+        37,
+        52
+      ],
+      "dias": 2,
+      "id": "montante_trovao",
+      "materiais": {
+        "ferro": 28,
+        "fragmento": 32,
+        "madeira": 28,
+        "nucleo": 4
+      },
+      "meta": 25,
+      "nome": "Montante do Trovao"
+    },
+    {
+      "dano": [
+        13,
+        19,
+        28,
+        41,
+        58
+      ],
+      "dias": 2,
+      "id": "montante_astral",
+      "materiais": {
+        "ferro": 40,
+        "fragmento": 48,
+        "madeira": 32,
+        "nucleo": 8
+      },
+      "meta": 35,
+      "nome": "Montante Astral"
     }
   ],
+  "conjuntos": [
+    {
+      "chance": 0.1,
+      "defesa": 0.0,
+      "duracao": 0.0,
+      "id": "carrasco",
+      "meta": 15,
+      "mult_dano": 2.0,
+      "nome": "CARRASCO",
+      "pecas": [
+        "elmo_carrasco",
+        "peitoral_carrasco",
+        "luvas_carrasco",
+        "botas_carrasco"
+      ],
+      "raridade": "comum",
+      "recarga": 2.0,
+      "tipo_bonus": "raio",
+      "vitalidade": 0.0
+    },
+    {
+      "chance": 0.0,
+      "defesa": 0.1,
+      "duracao": 0.0,
+      "id": "cavaleiro_rubro",
+      "meta": 15,
+      "mult_dano": 0.0,
+      "nome": "CAVALEIRO RUBRO",
+      "pecas": [
+        "elmo_cavaleiro_rubro",
+        "peitoral_cavaleiro_rubro",
+        "luvas_cavaleiro_rubro",
+        "botas_cavaleiro_rubro"
+      ],
+      "raridade": "comum",
+      "recarga": 0.0,
+      "tipo_bonus": "status",
+      "vitalidade": 0.1
+    },
+    {
+      "chance": 0.1,
+      "defesa": 0.0,
+      "duracao": 2.0,
+      "id": "cavalheiro",
+      "meta": 15,
+      "mult_dano": 0.0,
+      "nome": "MORDOMO",
+      "pecas": [
+        "elmo_cavalheiro",
+        "peitoral_cavalheiro",
+        "luvas_cavalheiro",
+        "botas_cavalheiro"
+      ],
+      "raridade": "comum",
+      "recarga": 2.0,
+      "tipo_bonus": "congelamento",
+      "vitalidade": 0.0
+    },
+    {
+      "chance": 0.0,
+      "defesa": 0.08,
+      "duracao": 0.0,
+      "id": "sentinela",
+      "meta": 15,
+      "mult_dano": 0.0,
+      "nome": "SENTINELA DE BRONZE",
+      "pecas": [
+        "elmo_sentinela",
+        "peitoral_sentinela",
+        "luvas_sentinela",
+        "botas_sentinela"
+      ],
+      "raridade": "incomum",
+      "recarga": 0.0,
+      "tipo_bonus": "status",
+      "vitalidade": 0.02
+    },
+    {
+      "chance": 0.0,
+      "defesa": 0.0,
+      "duracao": 0.0,
+      "id": "batedor",
+      "meta": 15,
+      "mult_dano": 0.0,
+      "nome": "BATEDOR DO BOSQUE",
+      "pecas": [
+        "elmo_batedor",
+        "peitoral_batedor",
+        "luvas_batedor",
+        "botas_batedor"
+      ],
+      "raridade": "incomum",
+      "recarga": 0.0,
+      "tipo_bonus": "status",
+      "vitalidade": 0.1
+    },
+    {
+      "chance": 0.1,
+      "defesa": 0.0,
+      "duracao": 1.5,
+      "id": "guardiao_geada",
+      "meta": 16,
+      "mult_dano": 0.0,
+      "nome": "GUARDIAO DA GEADA",
+      "pecas": [
+        "elmo_guardiao_geada",
+        "peitoral_guardiao_geada",
+        "luvas_guardiao_geada",
+        "botas_guardiao_geada"
+      ],
+      "raridade": "raro",
+      "recarga": 2.5,
+      "tipo_bonus": "congelamento",
+      "vitalidade": 0.0
+    },
+    {
+      "chance": 0.0,
+      "defesa": 0.08,
+      "duracao": 0.0,
+      "id": "templario_solar",
+      "meta": 21,
+      "mult_dano": 0.0,
+      "nome": "TEMPLARIO SOLAR",
+      "pecas": [
+        "elmo_templario_solar",
+        "peitoral_templario_solar",
+        "luvas_templario_solar",
+        "botas_templario_solar"
+      ],
+      "raridade": "raro",
+      "recarga": 0.0,
+      "tipo_bonus": "status",
+      "vitalidade": 0.08
+    },
+    {
+      "chance": 0.1,
+      "defesa": 0.0,
+      "duracao": 0.0,
+      "id": "arauto_trovao",
+      "meta": 31,
+      "mult_dano": 2.2,
+      "nome": "ARAUTO DO TROVAO",
+      "pecas": [
+        "elmo_arauto_trovao",
+        "peitoral_arauto_trovao",
+        "luvas_arauto_trovao",
+        "botas_arauto_trovao"
+      ],
+      "raridade": "epico",
+      "recarga": 3.0,
+      "tipo_bonus": "raio",
+      "vitalidade": 0.0
+    },
+    {
+      "chance": 0.0,
+      "defesa": 0.05,
+      "duracao": 0.0,
+      "id": "guardiao_esmeralda",
+      "meta": 41,
+      "mult_dano": 0.0,
+      "nome": "GUARDIAO ESMERALDA",
+      "pecas": [
+        "elmo_guardiao_esmeralda",
+        "peitoral_guardiao_esmeralda",
+        "luvas_guardiao_esmeralda",
+        "botas_guardiao_esmeralda"
+      ],
+      "raridade": "epico",
+      "recarga": 0.0,
+      "tipo_bonus": "status",
+      "vitalidade": 0.15
+    },
+    {
+      "chance": 0.0,
+      "defesa": 0.16,
+      "duracao": 0.0,
+      "id": "soberano_astral",
+      "meta": 51,
+      "mult_dano": 0.0,
+      "nome": "SOBERANO ASTRAL",
+      "pecas": [
+        "elmo_soberano_astral",
+        "peitoral_soberano_astral",
+        "luvas_soberano_astral",
+        "botas_soberano_astral"
+      ],
+      "raridade": "lendario",
+      "recarga": 0.0,
+      "tipo_bonus": "status",
+      "vitalidade": 0.16
+    }
+  ],
+  "custos_melhoria": [
+    25,
+    60,
+    120,
+    220,
+    360
+  ],
   "energia": 270,
+  "intervalo_checkpoint": 5,
+  "melhorias": [
+    {
+      "descricao": "+3% VIDA MAXIMA",
+      "id": "vigor",
+      "nome": "VIGOR",
+      "por_nivel": 0.03
+    },
+    {
+      "descricao": "+2% DANO",
+      "id": "forca",
+      "nome": "FORCA",
+      "por_nivel": 0.02
+    },
+    {
+      "descricao": "+1% PROTECAO",
+      "id": "couraca",
+      "nome": "COURACA",
+      "por_nivel": 0.01
+    },
+    {
+      "descricao": "+4% ESTAMINA MAXIMA",
+      "id": "folego",
+      "nome": "FOLEGO",
+      "por_nivel": 0.04
+    },
+    {
+      "descricao": "+20 OURO INICIAL",
+      "id": "bolsa",
+      "nome": "BOLSA",
+      "por_nivel": 20.0
+    },
+    {
+      "descricao": "+4% OURO POR ABATE",
+      "id": "saque",
+      "nome": "SAQUE",
+      "por_nivel": 0.04
+    }
+  ],
   "moradores": {
     "bardo": {
       "casa": "pousada",
@@ -1109,6 +1508,298 @@
       "raridade": "epico"
     }
   ],
+  "pocoes": [
+    {
+      "descricao": "CURA 40% DA VIDA",
+      "duracao": 0.0,
+      "efeito": "cura",
+      "estacao": 0,
+      "icone": [
+        2,
+        2
+      ],
+      "id": "cura",
+      "nome": "POCAO DE CURA",
+      "receita": {
+        "cenoura": 2,
+        "morango": 1
+      },
+      "receitas": [
+        {
+          "cenoura": 2,
+          "morango": 1
+        },
+        {
+          "girassol": 1,
+          "milho": 2
+        },
+        {
+          "abobora": 1,
+          "beterraba": 2
+        },
+        {
+          "carpa": 1,
+          "sardinha": 2
+        }
+      ],
+      "texto": "UM GOLE QUENTE DE CENOURA COM MORANGO QUE FECHA AS FERIDAS NA HORA.",
+      "valor": 0.4
+    },
+    {
+      "descricao": "ESTAMINA 3X MAIS RAPIDA",
+      "duracao": 30.0,
+      "efeito": "folego",
+      "estacao": 0,
+      "icone": [
+        1,
+        3
+      ],
+      "id": "folego",
+      "nome": "POCAO DE FOLEGO",
+      "receita": {
+        "batata": 2,
+        "couve_flor": 1
+      },
+      "receitas": [
+        {
+          "batata": 2,
+          "couve_flor": 1
+        },
+        {
+          "girassol": 2,
+          "tomate": 1
+        },
+        {
+          "beterraba": 2,
+          "uva": 1
+        },
+        {
+          "bagre": 1,
+          "carpa": 2
+        }
+      ],
+      "texto": "CALDO DE BATATA COM COUVE-FLOR: O FOLEGO VOLTA ANTES DE ACABAR.",
+      "valor": 2.0
+    },
+    {
+      "descricao": "+30% DE DANO",
+      "duracao": 30.0,
+      "efeito": "forca",
+      "estacao": 1,
+      "icone": [
+        3,
+        4
+      ],
+      "id": "forca",
+      "nome": "POCAO DE FORCA",
+      "receita": {
+        "melancia": 1,
+        "tomate": 2
+      },
+      "receitas": [
+        {
+          "batata": 2,
+          "morango": 1
+        },
+        {
+          "melancia": 1,
+          "tomate": 2
+        },
+        {
+          "abobora": 2,
+          "uva": 1
+        },
+        {
+          "carpa": 1,
+          "truta": 2
+        }
+      ],
+      "texto": "SUCO DE TOMATE COM MELANCIA QUE DEIXA CADA GOLPE MAIS PESADO.",
+      "valor": 0.3
+    },
+    {
+      "descricao": "+25% DE VELOCIDADE",
+      "duracao": 30.0,
+      "efeito": "velocidade",
+      "estacao": 1,
+      "icone": [
+        4,
+        3
+      ],
+      "id": "velocidade",
+      "nome": "POCAO DE VELOCIDADE",
+      "receita": {
+        "girassol": 2,
+        "milho": 1
+      },
+      "receitas": [
+        {
+          "batata": 1,
+          "cenoura": 2
+        },
+        {
+          "girassol": 2,
+          "milho": 1
+        },
+        {
+          "berinjela": 1,
+          "beterraba": 2
+        },
+        {
+          "anchova": 2,
+          "sardinha": 1
+        }
+      ],
+      "texto": "ESSENCIA DE GIRASSOL E MILHO: AS PERNAS FICAM LEVES COMO PLUMA.",
+      "valor": 0.25
+    },
+    {
+      "descricao": "+15% PROTECAO; LIMITE TOTAL 70%",
+      "duracao": 30.0,
+      "efeito": "pedra",
+      "estacao": 2,
+      "icone": [
+        4,
+        5
+      ],
+      "id": "pedra",
+      "nome": "POCAO DE PEDRA",
+      "receita": {
+        "abobora": 2,
+        "beterraba": 1
+      },
+      "receitas": [
+        {
+          "batata": 1,
+          "couve_flor": 2
+        },
+        {
+          "milho": 2,
+          "tomate": 1
+        },
+        {
+          "abobora": 2,
+          "beterraba": 1
+        },
+        {
+          "bagre": 2,
+          "tainha": 1
+        }
+      ],
+      "texto": "A CASCA DA ABOBORA ENDURECE A PELE DE QUEM BEBE.",
+      "valor": 0.15
+    },
+    {
+      "descricao": "6% DO DANO REAL VIRA VIDA; CURA LIMITADA",
+      "duracao": 30.0,
+      "efeito": "vampiro",
+      "estacao": 2,
+      "icone": [
+        2,
+        5
+      ],
+      "id": "vampiro",
+      "nome": "POCAO VAMPIRICA",
+      "receita": {
+        "berinjela": 1,
+        "uva": 2
+      },
+      "receitas": [
+        {
+          "cenoura": 1,
+          "morango": 2
+        },
+        {
+          "girassol": 1,
+          "tomate": 2
+        },
+        {
+          "berinjela": 1,
+          "uva": 2
+        },
+        {
+          "sardinha": 1,
+          "tainha": 2
+        }
+      ],
+      "texto": "UVA E BERINJELA FERMENTADAS: O SANGUE DO INIMIGO VIRA O SEU.",
+      "valor": 0.06
+    },
+    {
+      "descricao": "RECUPERA 2% DA VIDA POR SEGUNDO",
+      "duracao": 15.0,
+      "efeito": "regeneracao",
+      "estacao": 3,
+      "icone": [
+        4,
+        2
+      ],
+      "id": "regeneracao",
+      "nome": "POCAO DE REGENERACAO",
+      "peixes": {
+        "tainha": 1,
+        "truta": 2
+      },
+      "receita": {},
+      "receitas": [
+        {
+          "couve_flor": 2,
+          "morango": 1
+        },
+        {
+          "melancia": 2,
+          "milho": 1
+        },
+        {
+          "abobora": 2,
+          "berinjela": 1
+        },
+        {
+          "tainha": 1,
+          "truta": 2
+        }
+      ],
+      "texto": "CALDO DE TRUTA E TAINHA: O CORPO SE REMENDA SOZINHO NO MEIO DA LUTA.",
+      "valor": 0.02
+    },
+    {
+      "descricao": "+20% DE CHANCE DE CRITICO",
+      "duracao": 30.0,
+      "efeito": "critico",
+      "estacao": 3,
+      "icone": [
+        4,
+        4
+      ],
+      "id": "precisao",
+      "nome": "POCAO DE PRECISAO",
+      "peixes": {
+        "linguado": 2,
+        "sargo": 1
+      },
+      "receita": {},
+      "receitas": [
+        {
+          "couve_flor": 1,
+          "morango": 2
+        },
+        {
+          "girassol": 2,
+          "melancia": 1
+        },
+        {
+          "beterraba": 1,
+          "uva": 2
+        },
+        {
+          "linguado": 2,
+          "sargo": 1
+        }
+      ],
+      "texto": "LINGUADO E SARGO EM GELO: O OLHAR FICA AFIADO E OS GOLPES ACHAM O PONTO FRACO.",
+      "valor": 0.2
+    }
+  ],
   "receitas": [
     {
       "dias": 2,
@@ -1988,5 +2679,144 @@
       "texto_bonus": "+20% VIDA, +25% FOLEGO"
     }
   ],
-  "commit": "4dc54f738dc0ea0bddb9fd9b8957191003df7fdd"
+  "roupas": {
+    "cabelo": [
+      {
+        "forma": 0,
+        "id": "cabelo_curto",
+        "nome": "Bagunçado"
+      },
+      {
+        "forma": 4,
+        "id": "cabelo_raspado",
+        "nome": "Raspado"
+      },
+      {
+        "forma": 3,
+        "id": "cabelo_cacheado",
+        "nome": "Cacheado"
+      },
+      {
+        "forma": 6,
+        "id": "cabelo_liso_longo",
+        "nome": "Longo liso"
+      }
+    ],
+    "calca": [
+      {
+        "cor": "846047",
+        "estilo": 0,
+        "forma": 0,
+        "id": "calca_sarja",
+        "nome": "Calça de sarja"
+      },
+      {
+        "cor": "69705b",
+        "estilo": 1,
+        "forma": 1,
+        "id": "calca_cargo",
+        "nome": "Calça cargo"
+      },
+      {
+        "cor": "526074",
+        "estilo": 2,
+        "forma": 2,
+        "id": "calca_pescador",
+        "nome": "Calça de pescador"
+      },
+      {
+        "cor": "526074",
+        "estilo": 3,
+        "forma": 3,
+        "id": "saia_pregas",
+        "nome": "Saia de pregas com meia-calça"
+      },
+      {
+        "cor": "69705b",
+        "estilo": 4,
+        "forma": 4,
+        "id": "saia_campo",
+        "nome": "Saia do campo com meia-calça"
+      }
+    ],
+    "calcado": [
+      {
+        "altura": 0.3,
+        "cor": "633f3b",
+        "estilo": 0,
+        "forma": 0,
+        "id": "botas_couro",
+        "nome": "Botas de couro"
+      },
+      {
+        "altura": 0.22,
+        "cor": "8c5a3c",
+        "estilo": 1,
+        "forma": 1,
+        "id": "botinas_trabalho",
+        "nome": "Botinas de trabalho"
+      },
+      {
+        "altura": 0.14,
+        "cor": "443642",
+        "estilo": 2,
+        "forma": 2,
+        "id": "sapatos_viagem",
+        "nome": "Sapatos de viagem"
+      },
+      {
+        "altura": 0.12,
+        "cor": "985563",
+        "estilo": 3,
+        "forma": 3,
+        "id": "sapatilhas_vinho",
+        "nome": "Sapatilhas vinho"
+      }
+    ],
+    "camisa": [
+      {
+        "cor": "4a6b88",
+        "estilo": 0,
+        "forma": 0,
+        "id": "camisa_bosque",
+        "nome": "Camisa do bosque"
+      },
+      {
+        "cor": "c9b58e",
+        "estilo": 1,
+        "forma": 1,
+        "id": "camisa_trabalho",
+        "nome": "Camisa de trabalho"
+      },
+      {
+        "cor": "64734e",
+        "estilo": 2,
+        "forma": 2,
+        "id": "tunica_campo",
+        "nome": "Túnica do campo"
+      },
+      {
+        "cor": "985563",
+        "estilo": 3,
+        "forma": 3,
+        "id": "jaqueta_viajante",
+        "nome": "Jaqueta de viagem"
+      },
+      {
+        "cor": "c27b70",
+        "estilo": 4,
+        "forma": 4,
+        "id": "blusa_bufante",
+        "nome": "Blusa de mangas bufantes"
+      },
+      {
+        "cor": "987588",
+        "estilo": 5,
+        "forma": 5,
+        "id": "casaquinho_lavanda",
+        "nome": "Casaquinho rosa antigo"
+      }
+    ]
+  },
+  "commit": "b0e0ba6f7f7764d96f9510a6ab5e4d85ca4d3250"
 }

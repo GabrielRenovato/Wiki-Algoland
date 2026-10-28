@@ -168,46 +168,18 @@ export function Plantas() {
 }
 
 export function Pocoes() {
-  return (
-    <>
-      <Titulo sub="A colheita vira poção com a Dona Rosa; a poção é bebida na arena.">Poções</Titulo>
-      <Secao>
-        <div className="lado-a-lado">
-          <Sprite s={SPR.curandeira} escala={3} titulo="Dona Rosa" />
-          <p>
-            Converse com a <b>Dona Rosa</b> na enfermaria e escolha <b>POÇÕES</b>: abre o caldeirão com as receitas
-            fixas. Cada estação de plantio tem duas receitas, feitas só com plantas da própria estação. As poções vão para
-            o <b>cinto</b> do HUD na arena: <b>Q</b>/<b>E</b> trocam, <b>R</b> bebe (Y no controle).
-          </p>
-        </div>
-      </Secao>
-      <Secao titulo="Receitas">
-        <Grade min={280}>
-          {POCOES.map((p) => (
-            <article key={p.id} className="ficha pocao">
-              <div className="ficha-palco"><Sprite s={pocao(p.icone)} escala={4} parado titulo={p.nome} /></div>
-              <div className="ficha-texto">
-                <h3>{p.nome}</h3>
-                <p className="etiqueta">{p.efeito}{p.duracao ? ` por ${p.duracao} s` : " (na hora)"}</p>
-                <div className="receita">
-                  {Object.entries(p.receita).map(([id, n]) => (
-                    <span key={id} title={planta(id).nome}>
-                      <Sprite s={colhido(planta(id).item)} escala={2} parado titulo={planta(id).nome} />
-                      ×{n}
-                    </span>
-                  ))}
-                </div>
-                <p className="citacao">{p.texto}</p>
-              </div>
-            </article>
-          ))}
-        </Grade>
-      </Secao>
-      <Tabela cabecalho={["Estação", "Poções"]} linhas={[
-        ["Primavera", "Cura e Fôlego"], ["Verão", "Força e Velocidade"], ["Outono", "Pedra e Vampírica"],
-      ]} compacta />
-    </>
-  );
+  const nomeIngrediente = id => planta(id)?.nome ?? PEIXES.find(p => p.id === id)?.nome ?? id;
+  return <>
+    <Titulo sub="Oito poções disponíveis o ano inteiro, com ingredientes que acompanham as quatro estações.">Poções</Titulo>
+    <Secao><div className="lado-a-lado"><Sprite s={SPR.curandeira} escala={3} titulo="Dona Rosa" /><p>Converse com Dona Rosa na enfermaria e escolha <b>POÇÕES</b>. Cada preparo consome duas unidades do primeiro ingrediente e uma do segundo. Na primavera, verão e outono usa colheitas da estação; no inverno, peixes. Confira a receita do calendário atual antes de fabricar.</p></div></Secao>
+    <Caixa tipo="nota">Na arena, Q/E trocam a poção do cinto e R bebe (Y no controle). O efeito e o estoque de cada poção são os mesmos em todas as estações.</Caixa>
+    <Secao titulo="Efeitos e receitas"><Grade min={280}>{POCOES.map(p => <article key={p.id} className="ficha pocao">
+      <div className="ficha-palco"><Sprite s={pocao(p.icone)} escala={4} parado titulo={p.nome} /></div>
+      <div className="ficha-texto"><h3>{p.nome}</h3><p className="etiqueta">{p.efeito}{p.duracao ? ` por ${p.duracao} s` : ' (na hora)'}</p>
+        <dl className="receitas-sazonais">{p.receitas.map((receita,e) => <div key={e}><dt>{ESTACOES[e]}</dt><dd>{Object.entries(receita).map(([id,n]) => `${n} ${nomeIngrediente(id)}`).join(' + ')}</dd></div>)}</dl>
+      </div>
+    </article>)}</Grade></Secao>
+  </>;
 }
 
 export function Refeicoes() {

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Personalizacao, Mercado, Duelo, Transferencia } from './paginas/Atual.jsx';
 import Sprite from "./componentes/Sprite.jsx";
 import { ancora } from "./componentes/ui.jsx";
 import { HEROI, MORADORES, CASAS, FERRAMENTAS, PORTAL, INIMIGOS, CHEFES, ARMAS, CONJUNTOS, BRASA, colhido, pocao } from "./sprites.js";
@@ -21,6 +22,8 @@ export const PAGINAS = [
   { id: "jogar", titulo: "Jogar no navegador", grupo: "Comece aqui", icone: PORTAL, Pagina: Jogar, resumo: "Versão Web, sem instalar", busca: "jogar online navegador web teste demo" },
   { id: "download", titulo: "Baixar o jogo", grupo: "Comece aqui", icone: PORTAL, Pagina: Download, resumo: "Windows, Linux e Android", busca: "download baixar instalar windows linux android apk exe" },
   { id: "patch", titulo: "Patch de atualizações", grupo: "Comece aqui", icone: BRASA, Pagina: Patch, resumo: "O que mudou em cada versão", busca: "patch novidades atualização versão changelog notas o que mudou correções" },
+  { id: "aparencia", titulo: "Personagem e aparência", grupo: "Comece aqui", icone: HEROI, Pagina: Personalizacao, resumo: "Visual atual, roupas, cabelos e cores", busca: "3d pixel art personagem visual criar editar roupa camisa calça saia botas cabelo tintura pele olhos" },
+  { id: "transferencia", titulo: "Transferir save", grupo: "Comece aqui", icone: HEROI, Pagina: Transferencia, resumo: "Levar a partida para outro aparelho", busca: "save salvar transferir enviar receber código pc android navegador backup" },
   { id: "comecando", titulo: "Primeiros passos", grupo: "Comece aqui", icone: MORADORES.bento, Pagina: Comecando, resumo: "Prólogo, tutorial e primeiro dia", busca: "prólogo tutorial novo jogo personagem criação" },
   { id: "controles", titulo: "Controles", grupo: "Comece aqui", icone: FERRAMENTAS.enxada, Pagina: Controles, resumo: "Teclado, controle e toque", busca: "teclas teclado controle xbox toque celular android botões" },
   { id: "vila", titulo: "Vila das Flores", grupo: "Mundo", icone: CASAS.venda, Pagina: Vila, resumo: "Casas, lojas, mural e festa", busca: "cidade casas lojas mural pedidos missões festa" },
@@ -30,12 +33,14 @@ export const PAGINAS = [
   { id: "pesca", titulo: "Pesca", grupo: "Mundo", icone: FERRAMENTAS.regador, Pagina: Pesca, resumo: "Vara, peixes e coleção", busca: "pesca peixes vara nilo cais coleção desafios encomendas praia rio mar refinamento" },
   { id: "moradores", titulo: "Moradores", grupo: "Mundo", icone: MORADORES.lia, Pagina: Moradores, resumo: "Rotinas, amizade e diálogos", busca: "npc lia tomás rosa caio estela bento ivo nilo osvaldo helena clara amizade diálogo rotina folga" },
   { id: "online", titulo: "Online e chat", grupo: "Mundo", icone: MORADORES.bardo, Pagina: Online, novo: true, resumo: "Outros jogadores na praça", busca: "online multiplayer chat conversar mensagem lobby jogadores sala balão enter" },
+  { id: "mercado", titulo: "Mercado entre jogadores", grupo: "Mundo", icone: BRASA, Pagina: Mercado, resumo: "Comprar, vender e receber entregas", busca: "mercado leilão vender comprar anúncio brasas correio quantidade preço taxa mural" },
   { id: "tempo", titulo: "Tempo e calendário", grupo: "Mundo", icone: colhido([11, 5]), Pagina: Tempo, resumo: "Estações, clima e sono", busca: "estação dia noite clima chuva neve dormir sono desmaio" },
   { id: "fazenda", titulo: "Fazenda", grupo: "Fazenda", icone: FERRAMENTAS.regador, Pagina: Fazenda, resumo: "Ferramentas, solo, baú e galinheiro", busca: "ferramentas enxada regador machadinha picareta entulho baú lago plantar galinheiro galinha galo ovos feno energia" },
   { id: "plantas", titulo: "Plantas", grupo: "Fazenda", icone: colhido([2, 6]), Pagina: Plantas, resumo: "Sementes de cada estação", busca: "sementes cenoura batata morango tomate milho melancia abóbora uva berinjela beterraba girassol couve" },
   { id: "pocoes", titulo: "Poções", grupo: "Fazenda", icone: pocao([2, 2]), Pagina: Pocoes, resumo: "Receitas do caldeirão", busca: "caldeirão receitas cura força velocidade pedra vampírica fôlego" },
   { id: "refeicoes", titulo: "Refeições", grupo: "Fazenda", icone: colhido([20, 2]), Pagina: Refeicoes, resumo: "Pratos do Caio e bônus", busca: "caio cozinhar prato bônus vender colheita lia brasas sopa torta banquete" },
   { id: "combate", titulo: "Combate", grupo: "Arena", icone: ARMAS.espada_gemea, Pagina: Combate, novo: true, resumo: "Esquiva, aparo e especialidades", busca: "combate ataque esquiva dash estamina defesa aparo perfeito bloqueio escudada especialidade arma combo petrificação" },
+  { id: "duelo", titulo: "Duelo online", grupo: "Arena", icone: ARMAS.espada_gemea, Pagina: Duelo, resumo: "Salas, senha e melhor de três", busca: "pvp duelo online sala senha pronto começar um contra um melhor três" },
   { id: "arena", titulo: "Arena", grupo: "Arena", icone: PORTAL, Pagina: Arena, resumo: "Andares, caçadas e eventos", busca: "andares fenda caçada guardião orion portal totens saque eventos mímico ouro morte" },
   { id: "inimigos", titulo: "Inimigos", grupo: "Arena", icone: INIMIGOS.slime, Pagina: Inimigos, resumo: "Monstros comuns e mutantes", busca: "slime morcego vespa cogumelo flor caranguejo gremlin falcão esqueleto mutante" },
   { id: "chefes", titulo: "Chefes", grupo: "Arena", icone: CHEFES.dragao_vermelho, Pagina: Chefes, resumo: "Guardiões e seus golpes", busca: "minotauro medusa goblin maromba cogumelo ancião dragão vermelho" },

@@ -14,9 +14,10 @@ export function Inicio() {
       <div className="banner">
         <div className="banner-texto">
           <p className="sobretitulo">Wiki oficial do jogo</p>
+          <p className="etiqueta">Revisada em 28/10/2026 · Conteúdo 52</p>
           <h1>AlgoLand</h1>
           <p>
-            Um RPG 2D que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das Flores, cuida
+            Um RPG com cenários 2D e personagem 3D em pixel art que mistura <b>vida no campo</b> com <b>arena roguelite</b>. Você mora na Vila das Flores, cuida
             de uma fazenda, cria aves, pesca e faz amizade com os vizinhos. Pelo portal, explora os andares da Fenda do
             Limiar. Cada queda vira <b>Brasas</b>, e as Brasas deixam você mais forte para sempre.
           </p>
@@ -158,8 +159,7 @@ export function Comecando() {
         <div className="lado-a-lado">
           <Sprite s={HEROI} escala={4} titulo="Herói" />
           <p>
-            No <b>Novo Jogo</b> você escolhe nome, um dos três tons de pele, cabelo (28 modelos ou sem cabelo), tintura e roupa da base Raven. A aparência acompanha todas as
-            animações, inclusive com armadura vestida: cada peça de armadura aparece no corpo.
+            No <b>Novo Jogo</b> você escolhe nome, um dos três tons de pele, olhos, tintura e as peças de roupa do personagem atual. São quatro penteados, seis camisas/casacos, cinco calças/saias e quatro calçados. Você também pode mudar depois em PAUSA → EDITAR VISUAL. <Link para="aparencia">Veja todas as opções com imagens.</Link>
           </p>
         </div>
       </Secao>
@@ -246,7 +246,7 @@ export function Cooperativo() {
         <div className="lado-a-lado">
           <div className="dupla">
             <Sprite s={HEROI} escala={3} titulo="Jogador 1" />
-            <Sprite s={CONJUNTOS.cavaleiro_rubro} escala={3} titulo="Jogador 2" />
+            <Sprite s={HEROI} escala={3} titulo="Jogador 2" />
           </div>
           <div>
             <Passos itens={[
@@ -285,10 +285,10 @@ export function Dicas() {
             ["O que eu perco quando morro?", "Você acorda na enfermaria. Perde ouro, totens e equipamento temporário. Permanecem Brasas, receitas aprendidas, peças de conjunto, Moedas de Forja, materiais, sementes, colheitas, peixes, produtos, poções, ferramentas, vara, fazenda e amizades."],
             ["Como fico mais forte de forma permanente?", "Invista Brasas com a Lia, aprenda receitas na mochila e fabrique com Ivo. Os marcos dos desafios tornam as receitas elegíveis; vencer o andar sozinho não entrega a arma. Peças de conjunto e suas melhorias são preservadas."],
             ["Como a fazenda ajuda na arena?", "De três jeitos: poções com a Dona Rosa, pratos do Caio (um bônus forte que dura a partida inteira) e Brasas pela colheita vendida à Lia. Quem entra na arena sem prato volta bem mais cedo."],
-            ["Onde faço poções?", "Com a Dona Rosa, no botão POÇÕES da conversa. Ela usa as receitas fixas do caldeirão."],
+            ["Onde faço poções?", "Com a Dona Rosa, no botão POÇÕES da conversa. Todas as oito poções podem ser feitas o ano inteiro. Os ingredientes mudam com a estação; no inverno, usam peixes."],
             ["Para que serve a amizade?", "Conversar uma vez por dia dá amizade. Mais amizade libera histórias novas de cada morador e entregar pedidos dá amizade extra."],
             ["Minha mochila encheu na fenda. E agora?", "Abra espaço: receitas e materiais são itens físicos. Um drop recusado por falta de espaço continua no chão. Use o baú da casa para se preparar antes da expedição."],
-            ["Os inimigos entregam equipamentos prontos?", "Os drops comuns são receitas e materiais. Use o pergaminho na mochila e fabrique com Ivo. O baú gigante do tesouro é uma exceção: pode conceder uma peça lendária de conjunto."],
+            ["Os inimigos entregam equipamentos prontos?", "Os drops comuns são receitas e materiais. Use o pergaminho na mochila e fabrique com Ivo. O baú gigante pode conceder uma receita de conjunto; nunca uma armadura pronta."],
             ["Posso sair da arena no meio?", "Depois da vitória, converse com Orion e escolha CIDADE para encerrar a expedição e receber as Brasas. Conjuntos e itens permanentes ficam; equipamento temporário volta ao kit inicial."],
           ].map(([p, r]) => (
             <details key={p}>
@@ -301,10 +301,10 @@ export function Dicas() {
       <Secao titulo="Dicas rápidas">
         <Grade min={240}>
           <Ficha sprite={colhido([2, 2])} escala={3} nome="Cura sempre no cinto">
-            <p>2 cenouras + 1 morango = Poção de Cura. É a receita mais barata e a que mais salva.</p>
+            <p>Na primavera, 2 cenouras + 1 morango fazem uma Poção de Cura. Nas outras estações, confira os ingredientes no caldeirão.</p>
           </Ficha>
-          <Ficha sprite={SPR_MORADORES.mistica} nome="Contrate a Mística">
-            <p>Com o apoio contratado, escolha os checkpoints liberados a cada dez andares.</p>
+          <Ficha sprite={SPR_MORADORES.mistica} nome="Use os checkpoints">
+            <p>Escolha no mapa do portal os checkpoints já alcançados, de cinco em cinco andares. Essa escolha não exige contratar a Mística.</p>
           </Ficha>
           <Ficha sprite={CASAS.casa_jogador} escala={0.7} nome="Durma antes das 2h">
             <p>Às 2h você desmaia de cansaço e acorda em casa. Melhor ir para a cama por conta própria.</p>

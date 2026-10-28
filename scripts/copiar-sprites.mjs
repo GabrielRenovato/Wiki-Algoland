@@ -46,26 +46,6 @@ const ARQUIVOS = {
   "vila/casa_bento.png": "cenario/cidade/fachadas_detalhadas/casa_bento/primavera.png",
   "vila/casa_jogador.png": "cenario/cidade/fachadas_detalhadas/casa_jogador/primavera.png",
   "vila/portal_arena.png": "cenario/cidade/complementos/portal/primavera.png",
-  // Herói (camadas da página 1: corpo, roupa, cabelo) e conjuntos de armadura
-  // Herói Raven (camadas de 320×9600: 30 ações empilhadas; a ação "andar" ocupa os primeiros 320 px)
-  "heroi/corpo.png": "personagens/raven_fantasy/camadas/corpo_0.png",
-  "heroi/calca.png": "personagens/raven_fantasy/camadas/calca_marrom.png",
-  "heroi/botas.png": "personagens/raven_fantasy/camadas/botas.png",
-  "heroi/camisa.png": "personagens/raven_fantasy/camadas/camisa_azul.png",
-  "heroi/cabelo.png": "personagens/raven_fantasy/camadas/cabelo_1.png",
-  // Quatro peças reais sobre o mesmo corpo Raven usado pelo jogador.
-  "conjuntos/carrasco_elmo.png": "personagens/conjuntos/carrasco/raven_elmo.png",
-  "conjuntos/carrasco_peitoral.png": "personagens/conjuntos/carrasco/raven_peitoral.png",
-  "conjuntos/carrasco_luvas.png": "personagens/conjuntos/carrasco/raven_luvas.png",
-  "conjuntos/carrasco_botas.png": "personagens/conjuntos/carrasco/raven_botas.png",
-  "conjuntos/cavaleiro_rubro_elmo.png": "personagens/conjuntos/cavaleiro_rubro/raven_elmo.png",
-  "conjuntos/cavaleiro_rubro_peitoral.png": "personagens/conjuntos/cavaleiro_rubro/raven_peitoral.png",
-  "conjuntos/cavaleiro_rubro_luvas.png": "personagens/conjuntos/cavaleiro_rubro/raven_luvas.png",
-  "conjuntos/cavaleiro_rubro_botas.png": "personagens/conjuntos/cavaleiro_rubro/raven_botas.png",
-  "conjuntos/cavalheiro_elmo.png": "personagens/conjuntos/cavalheiro/raven_elmo.png",
-  "conjuntos/cavalheiro_peitoral.png": "personagens/conjuntos/cavalheiro/raven_peitoral.png",
-  "conjuntos/cavalheiro_luvas.png": "personagens/conjuntos/cavalheiro/raven_luvas.png",
-  "conjuntos/cavalheiro_botas.png": "personagens/conjuntos/cavalheiro/raven_botas.png",
   // Armas: ícones atuais do jogo
   "armas/espada_basica.png": "personagens/raven_fantasy/icones/espada_basica.png",
   "armas/espada_gemea.png": "personagens/raven_fantasy/icones/espada_gemea.png",
@@ -113,10 +93,6 @@ const praia = JSON.parse(readFileSync(join(assets, 'pesca/catalogo.json'), 'utf8
 for (const [id, peixe] of Object.entries(praia.peixes)) ARQUIVOS[`peixes/${id}.png`] = peixe.icone.replace('res://assets/', '');
 ARQUIVOS['fazenda/ovo.png'] = 'cenario/fazenda/galinheiro/ovo.png';
 ARQUIVOS['fazenda/omelete.png'] = 'cenario/fazenda/galinheiro/omelete.png';
-for (const estacao of ['primavera', 'verao', 'outono', 'inverno']) {
-  ARQUIVOS[`cenarios/vila_${estacao}.png`] = `../arte/previas/nitidez_exteriores/geral-cidade-${estacao}.png`;
-  ARQUIVOS[`cenarios/fazenda_${estacao}.png`] = `../arte/previas/nitidez_exteriores/geral-fazenda-${estacao}.png`;
-}
 let faltando = 0;
 for (const [nome, origem] of Object.entries(ARQUIVOS)) {
   const de = join(assets, origem);

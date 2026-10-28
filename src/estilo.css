@@ -898,10 +898,11 @@ blockquote {
     border-radius: 22px 22px 0 0;
     overscroll-behavior: contain;
     transform: translateY(104%);
-    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+    visibility: hidden;
+    transition: visibility 0s 0.28s, transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
     box-shadow: var(--sombra-alta);
   }
-  .lateral.aberta { transform: none; }
+  .lateral.aberta { transform: none; visibility: visible; transition-delay: 0s; }
   .lateral-alca { display: block; width: 40px; height: 5px; margin: 4px auto 8px; border-radius: 999px; background: var(--borda-forte); }
   .lateral-cabeca { position: sticky; top: -6px; z-index: 1; display: flex; align-items: center; justify-content: space-between; margin: 0 -4px 8px; padding: 6px 4px 8px 8px; background: var(--lateral); }
   .lateral-cabeca b { font: 700 20px "Pixelify Sans", monospace; }
@@ -984,3 +985,15 @@ figcaption { padding: 10px 4px 2px; font-weight: 700; color: var(--tinta-suave);
 .mapa-mundi { max-width: 960px; }
 .peixe-nome { display: flex; align-items: center; gap: 8px; }
 .peixe-nome .sprite { flex-shrink: 0; }
+
+/* Receitas e itens atuais: o conteúdo longo permanece dentro da moldura. */
+.receitas-sazonais { margin: 16px 0 0; }
+.receitas-sazonais > div { padding: 10px 0; border-top: 1px solid var(--borda); }
+.receitas-sazonais dt { font-weight: 650; color: var(--tinta); }
+.receitas-sazonais dd { margin: 4px 0 0; color: var(--tinta-suave); overflow-wrap: anywhere; }
+.conjunto .ficha-palco { gap: 16px; padding: 24px; min-height: 130px; }
+.conjunto .ficha-palco .sprite { flex-shrink: 0; }
+.ficha-texto { min-width: 0; }
+
+.conjunto-modelo { width: 100%; display: flex; justify-content: center; }
+.conjunto-itens { width: 100%; display: flex; justify-content: center; align-items: center; gap: 20px; }

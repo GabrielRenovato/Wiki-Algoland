@@ -1,7 +1,7 @@
 import Sprite from "../componentes/Sprite.jsx";
 import { Titulo, Secao, Caixa, Grade, Ficha, Tabela, Link, Brasas } from "../componentes/ui.jsx";
 import { MORADORES as SPR, BRASA } from "../sprites.js";
-import { MELHORIAS, CUSTOS_MELHORIA, APOIOS, ARMAS } from "../dados.js";
+import { MELHORIAS, CUSTOS_MELHORIA, APOIOS, ARMAS, ANDARES_MELHORIA } from "../dados.js";
 
 export function Progresso() {
   return (
@@ -30,7 +30,7 @@ export function Progresso() {
         <div className="lado-a-lado">
           <Sprite s={SPR.lia} escala={3} titulo="Lia" />
           <p>
-            Cada melhoria tem 5 níveis. Os custos são <b>{CUSTOS_MELHORIA.join(", ")}</b> Brasas, do nível 1 ao 5.
+            Cada melhoria tem 5 níveis. Os custos são <b>{CUSTOS_MELHORIA.join(", ")}</b> Brasas, do nível 1 ao 5. Os andares mínimos são {ANDARES_MELHORIA.join(", ")}, respectivamente.
           </p>
         </div>
         <Tabela cabecalho={["Melhoria", "Por nível", "No nível 5"]} linhas={MELHORIAS.map((m) => {
