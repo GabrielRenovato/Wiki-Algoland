@@ -276,3 +276,5 @@ Conteúdo 12 da base 2026.10.28.1 (29/10/2026): login, amigos e demais telas da 
 Conteúdo 13 da base 2026.10.28.1 (29/10/2026): correcao do login no celular: o conteudo rolavel trava a altura errada dos textos que quebram linha (campos e botoes fora da tela); largura fixa desde o primeiro quadro e titulos sem quebra, tambem nas listas de amigos e salas vazias. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `9396e0d8b`.
 
 Conteúdo 14 da base 2026.10.28.1 (29/10/2026): coop online: as armaduras do aliado passam a aparecer no avatar dele; a Medusa nao aparece mais como a folha inteira (varias Medusas) na tela do convidado, porque as texturas trocadas em tempo de execucao agora sao replicadas; e corrige um erro repetido a cada quadro no avatar remoto. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f248e511d`.
+
+Conteúdo 15 da base 2026.10.28.1 (29/10/2026): coop online: o ouro de fim de andar do convidado passa a incluir o multiplicador de evento, igual ao do anfitriao. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `ec0e5a29f`.
