@@ -272,3 +272,5 @@ Conteúdo 10 da base 2026.10.28.1 (29/10/2026): botao MAPA do celular passa a se
 Conteúdo 11 da base 2026.10.28.1 (29/10/2026): correcao na versao Web: o login nao consulta mais o id do aparelho (indisponivel no navegador), que gerava erro no console. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `6d39553e1`.
 
 Conteúdo 12 da base 2026.10.28.1 (29/10/2026): login, amigos e demais telas da conta passam a rolar quando nao cabem na altura da tela (celular em paisagem e com o teclado aberto), em vez de estourar. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `35cc32fdd`.
+
+Conteúdo 13 da base 2026.10.28.1 (29/10/2026): correcao do login no celular: o conteudo rolavel trava a altura errada dos textos que quebram linha (campos e botoes fora da tela); largura fixa desde o primeiro quadro e titulos sem quebra, tambem nas listas de amigos e salas vazias. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `9396e0d8b`.
