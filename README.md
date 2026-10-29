@@ -264,3 +264,5 @@ Conteúdo 6 da base 2026.10.28.1 (29/10/2026): painel do grupo do coop online no
 Conteúdo 7 da base 2026.10.28.1 (29/10/2026): botoes MAPA, chat e PvP do topo no toque com o mesmo tamanho e espacamento; menu de pausa sem os itens EDITAR VISUAL e COOP ONLINE (o PvP e o coop ficam nos icones e no portal). Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `4c54f17d8`.
 
 Conteúdo 8 da base 2026.10.28.1 (29/10/2026): conta do jogador: login por e-mail e senha ao abrir o jogo (com a opcao de jogar offline), save na nuvem com escolha em caso de conflito, amigos e convites de coop e duelo, painel CONTA e AMIGOS no menu de pausa; os servidores passam a conferir o token da conta. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f6aa64971`.
+
+Conteúdo 9 da base 2026.10.28.1 (29/10/2026): telas do coop, duelo, login, amigos e convites no padrao visual do jogo (moldura de madeira, pergaminho e botoes do menu), com margens internas corrigidas; novo icone de amigos ao lado do PvP. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `ab26e56b2`.
