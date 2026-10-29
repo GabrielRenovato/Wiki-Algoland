@@ -280,3 +280,5 @@ Conteúdo 14 da base 2026.10.28.1 (29/10/2026): coop online: as armaduras do ali
 Conteúdo 15 da base 2026.10.28.1 (29/10/2026): coop online: o ouro de fim de andar do convidado passa a incluir o multiplicador de evento, igual ao do anfitriao. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `ec0e5a29f`.
 
 Conteúdo 16 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ve os inimigos adiantados pela latencia, mais perto da posicao que o anfitriao usa para dar o dano. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `2f2eb4bd6`.
+
+Conteúdo 17 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ignora o dano de contato quando, na tela dele, o inimigo ainda estava longe (atraso de rede). Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f5dfc10e7`.
