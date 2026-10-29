@@ -4,6 +4,20 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 // novo (o que chegou), melhorou (o que mudou) e corrigido (bugs que acabaram).
 export const PATCHES = [
   {
+    versao: "2026.10.28.1",
+    data: "28 de outubro de 2026",
+    resumo: "Cooperativo online dos andares com um jogador como anfitrião.",
+    novo: [
+      "Criar sala online e ver salas criadas no mapa da fenda, com anfitrião, andar, vagas e estado da partida.",
+      "Dois jogadores enfrentam os mesmos inimigos e guardião, avançam juntos e podem levantar o parceiro caído.",
+    ],
+    melhorou: [
+      "A partida usa conexão direta entre os jogadores. O servidor organiza as salas e a conexão inicial.",
+      "Cada jogador mantém sua mochila e seu progresso; a temporada e os saves existentes são preservados.",
+      "Android e PC precisam do novo instalador. No navegador, recarregue a página. Algumas redes podem impedir a conexão direta; a sessão termina ao sair um participante.",
+    ],
+  },
+  {
     versao: "2026.10.23.1",
     conteudo: 63,
     data: "29 de outubro de 2026",
@@ -876,7 +890,7 @@ export function Patch() {
       <Titulo sub="Atualização atual e histórico. As notas antigas descrevem o comportamento das versões anteriores.">Patch de atualizações</Titulo>
       <Secao>
         <Caixa tipo="nota" titulo={`Versão atual: ${rotuloVersao(recente)}`}>
-          {recente.data}. {recente.resumo} A versão Web atualizada está em <Link para="jogar">Jogar no navegador</Link>; os instaladores do Release v2026.10.23.1 ficam em <Link para="download">Baixar o jogo</Link> e recebem as atualizações de conteúdo sozinhos.
+          {recente.data}. {recente.resumo} A versão Web atualizada está em <Link para="jogar">Jogar no navegador</Link>; os instaladores do Release v2026.10.28.1 ficam em <Link para="download">Baixar o jogo</Link> e recebem as atualizações de conteúdo sozinhos.
         </Caixa>
       </Secao>
       {[recente, ...antigos].map((p) => (

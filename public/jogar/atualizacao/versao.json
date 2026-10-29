@@ -1,6 +1,6 @@
 {
-  "apk": "2026.10.23.1",
-  "url_apk": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.23.1/AlgoLand-Android-arm64.apk",
+  "apk": "2026.10.28.1",
+  "url_apk": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.28.1/AlgoLand-Android-arm64.apk",
   "patches": {},
   "pacotes": {
     "android": {
@@ -36,16 +36,16 @@
   },
   "aplicativos": {
     "android": {
-      "versao": "2026.10.23.1",
-      "url": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.23.1/AlgoLand-Android-arm64.apk"
+      "versao": "2026.10.28.1",
+      "url": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.28.1/AlgoLand-Android-arm64.apk"
     },
     "windows": {
-      "versao": "2026.10.23.1",
-      "url": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.23.1/AlgoLand-Windows-x86_64.zip"
+      "versao": "2026.10.28.1",
+      "url": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.28.1/AlgoLand-Windows-x86_64.zip"
     },
     "linux": {
-      "versao": "2026.10.23.1",
-      "url": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.23.1/AlgoLand-Linux-x86_64.tar.gz"
+      "versao": "2026.10.28.1",
+      "url": "https://github.com/GabrielRenovato/Wiki-Algoland/releases/download/v2026.10.28.1/AlgoLand-Linux-x86_64.tar.gz"
     }
   }
 }

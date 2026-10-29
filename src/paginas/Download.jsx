@@ -12,19 +12,19 @@ export const BAIXAR = {
 };
 
 const PLATAFORMAS = [
-  { id: "windows", nome: "Windows", arquivo: "AlgoLand-Windows-x86_64.zip", tamanho: "272 MB",
+  { id: "windows", nome: "Windows", arquivo: "AlgoLand-Windows-x86_64.zip", tamanho: "348 MB",
     passos: ["Baixe e extraia o .zip.", "Abra o AlgoLand.exe.", "Se o Windows avisar \"aplicativo não reconhecido\", clique em Mais informações → Executar assim mesmo."] },
-  { id: "linux", nome: "Linux", arquivo: "AlgoLand-Linux-x86_64.tar.gz", tamanho: "262 MB",
+  { id: "linux", nome: "Linux", arquivo: "AlgoLand-Linux-x86_64.tar.gz", tamanho: "338 MB",
     passos: ["Baixe e extraia o .tar.gz.", "Dê permissão de execução: chmod +x AlgoLand/AlgoLand.x86_64", "Rode ./AlgoLand/AlgoLand.x86_64"] },
-  { id: "android", nome: "Android", arquivo: "AlgoLand-Android-arm64.apk", tamanho: "283 MB",
+  { id: "android", nome: "Android", arquivo: "AlgoLand-Android-arm64.apk", tamanho: "373 MB",
     passos: ["Baixe o APK e abra o arquivo pela pasta Downloads.", "Permita instalar de fontes desconhecidas quando o Android pedir.", "Abra o AlgoLand: os controles de toque aparecem sozinhos."] },
 ];
 
 export function Download() {
   return (
     <>
-      <Titulo sub="Release v2026.10.23.1 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
-      <Caixa tipo="nota" titulo="Versões disponíveis">Base v2026.10.23.1 para Windows, Linux e Android, com conteúdo 60 disponível pelo atualizador: acesso ao PvP por espadas cruzadas, lobby com personagem e equipamentos, mercado e as melhorias acumuladas. Esta versão reinicia a progressão de todos os jogadores uma única vez, preservando as opções. Quem usa a versão anterior precisa instalar o aplicativo novo. Se você já usa essa base, não precisa reinstalar nem recomeçar a partida. Instale esta versão uma vez: as próximas atualizações de conteúdo compatíveis baixarão só os pacotes alterados. Durante uma atualização pendente, aguarde o download; se falhar, tente novamente ou saia. Ao concluir, feche e abra o jogo para ativar. No Android, o botão baixa o APK diretamente: abra pela pasta Downloads para instalar por cima da versão anterior. A versão Web também recebeu esta atualização; recarregue a página.</Caixa>
+      <Titulo sub="Release v2026.10.28.1 · Windows e Linux x86_64; Android arm64.">Baixar o jogo</Titulo>
+      <Caixa tipo="nota" titulo="Versões disponíveis">Versão 2026.10.28.1 para Android, Windows e Linux, com cooperativo online dos andares para dois jogadores. No mapa da fenda, escolha Criar sala online ou Ver salas criadas. Quem cria é o anfitrião e precisa ficar no jogo. Esta versão preserva a partida e a temporada atual; no Android, instale o APK por cima do aplicativo anterior, sem desinstalar. A biblioteca de conexão direta exige este instalador novo. Depois de instalar, as próximas atualizações de conteúdo compatíveis continuam pelo atualizador. Na Web, recarregue a página. A conexão depende da rede dos jogadores; algumas redes podem impedir a conexão direta.</Caixa>
       <p>Quer testar sem instalar? <a href="#/jogar">Jogue no navegador.</a></p>
       <Secao>
         <div className="downloads">
@@ -45,6 +45,7 @@ export function Download() {
         <ul className="lista">
           <li><b>PC:</b> Windows 10 ou mais novo, ou Linux 64 bits, com placa de vídeo que suporte OpenGL 3.3 (o jogo usa o modo de compatibilidade do Godot).</li>
           <li><b>Android:</b> celular 64 bits (arm64), Android 7 ou mais novo.</li>
+          <li><b>Coop online:</b> dois jogadores nos andares, com um jogador como anfitrião. A sala termina se um dos jogadores sair.</li>
           <li><b>Co-op local:</b> dois controles no PC. Segure START por 1 segundo no segundo controle.</li>
         </ul>
         <Caixa tipo="aviso" titulo="Versão de desenvolvimento">

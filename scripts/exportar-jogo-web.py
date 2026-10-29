@@ -20,11 +20,21 @@ for recurso in ['assets/personagens/raven_fantasy/web', 'assets/cenario/cidade/f
 with tempfile.TemporaryDirectory(prefix='algoland-export-web-') as temporario:
     projeto = pathlib.Path(temporario)
     for item in jogo.iterdir():
-        if item.name in {'project.godot', 'export_presets.cfg', '.git', 'builds', 'arquivo', 'arte', 'docs', 'testes', 'ferramentas'}:
+        if item.name in {'project.godot', 'export_presets.cfg', '.godot', '.git', 'builds', 'arquivo', 'arte', 'docs', 'testes', 'ferramentas'}:
             continue
         (projeto / item.name).symlink_to(item, target_is_directory=item.is_dir())
+    cache = projeto / '.godot'
+    cache.mkdir()
+    for item in (jogo / '.godot').iterdir():
+        if item.name == 'extension_list.cfg':
+            continue
+        if item.is_dir():
+            (cache / item.name).symlink_to(item, target_is_directory=True)
+        else:
+            shutil.copy2(item, cache / item.name)
+    (cache / 'extension_list.cfg').write_text('')
     configuracao = (jogo / 'project.godot').read_text().replace('window/size/mode=3', 'window/size/mode=0')
     (projeto / 'project.godot').write_text(configuracao)
     shutil.copy2(wiki / 'scripts/web/export_presets.cfg', projeto / 'export_presets.cfg')
-    subprocess.run(['flatpak', 'run', '--filesystem=/tmp', 'org.godotengine.Godot', '--headless', '--path', str(projeto), '--export-release', 'Web', str(saida / 'index.html')], check=True)
+    subprocess.run(['flatpak', 'run', '--filesystem=/tmp', 'org.godotengine.Godot', '--headless', '--quiet', '--path', str(projeto), '--export-release', 'Web', str(saida / 'index.html')], check=True)
 subprocess.run(['node', str(wiki / 'scripts/preparar-jogo-web.mjs'), str(saida)], check=True)
