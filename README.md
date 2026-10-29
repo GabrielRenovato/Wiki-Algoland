@@ -282,3 +282,5 @@ Conteúdo 15 da base 2026.10.28.1 (29/10/2026): coop online: o ouro de fim de an
 Conteúdo 16 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ve os inimigos adiantados pela latencia, mais perto da posicao que o anfitriao usa para dar o dano. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `2f2eb4bd6`.
 
 Conteúdo 17 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ignora o dano de contato quando, na tela dele, o inimigo ainda estava longe (atraso de rede). Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f5dfc10e7`.
+
+Conteúdo 18 da base 2026.10.28.1 (29/10/2026): web: a nitidez do texto passa a acompanhar a escala real da tela, para o texto nao sair em blocos no navegador do celular. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f0861306a`.
