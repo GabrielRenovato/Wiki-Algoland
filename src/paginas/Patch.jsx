@@ -5,6 +5,17 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 export const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 63,
+    data: "29 de outubro de 2026",
+    resumo: "Fazenda mais fluida na colheita e mais fibra dos brotos de árvore.",
+    melhorou: [
+      "Colher uma planta não trava mais o jogo no Android: o salvamento passa a ser feito logo depois da ação.",
+      "Brotos de árvore aparecem com mais frequência na fazenda, o que dá mais fibra.",
+      "Quando a ferramenta não acerta nenhuma árvore ou pedra, o jogo avisa o motivo em vez de não fazer nada.",
+    ],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 62,
     data: "29 de outubro de 2026",
     resumo: "Ajustes de equilíbrio, regador que cresce com a melhoria e o dia que não volta às 6h.",
