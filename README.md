@@ -270,3 +270,5 @@ Conteúdo 9 da base 2026.10.28.1 (29/10/2026): telas do coop, duelo, login, amig
 Conteúdo 10 da base 2026.10.28.1 (29/10/2026): botao MAPA do celular passa a ser um icone quadrado (mapa dobrado com marcador), do mesmo tamanho dos icones de chat, PvP e amigos. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d74aaccec`.
 
 Conteúdo 11 da base 2026.10.28.1 (29/10/2026): correcao na versao Web: o login nao consulta mais o id do aparelho (indisponivel no navegador), que gerava erro no console. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `6d39553e1`.
+
+Conteúdo 12 da base 2026.10.28.1 (29/10/2026): login, amigos e demais telas da conta passam a rolar quando nao cabem na altura da tela (celular em paisagem e com o teclado aberto), em vez de estourar. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `35cc32fdd`.
