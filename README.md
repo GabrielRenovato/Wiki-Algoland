@@ -284,3 +284,5 @@ Conteúdo 16 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ve os i
 Conteúdo 17 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ignora o dano de contato quando, na tela dele, o inimigo ainda estava longe (atraso de rede). Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f5dfc10e7`.
 
 Conteúdo 18 da base 2026.10.28.1 (29/10/2026): web: a nitidez do texto passa a acompanhar a escala real da tela, para o texto nao sair em blocos no navegador do celular. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f0861306a`.
+
+Conteúdo 19 da base 2026.10.28.1 (29/10/2026): corrige as fontes em blocos no navegador do celular, o teclado de e-mail e o redimensionamento do painel da conta. No coop online, o anfitrião aplica o raio do conjunto do convidado com dano em área e recarga; raio e congelamento são exibidos nas réplicas. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `b82a61adf`.
