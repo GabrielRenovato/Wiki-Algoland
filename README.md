@@ -266,3 +266,5 @@ Conteúdo 7 da base 2026.10.28.1 (29/10/2026): botoes MAPA, chat e PvP do topo n
 Conteúdo 8 da base 2026.10.28.1 (29/10/2026): conta do jogador: login por e-mail e senha ao abrir o jogo (com a opcao de jogar offline), save na nuvem com escolha em caso de conflito, amigos e convites de coop e duelo, painel CONTA e AMIGOS no menu de pausa; os servidores passam a conferir o token da conta. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f6aa64971`.
 
 Conteúdo 9 da base 2026.10.28.1 (29/10/2026): telas do coop, duelo, login, amigos e convites no padrao visual do jogo (moldura de madeira, pergaminho e botoes do menu), com margens internas corrigidas; novo icone de amigos ao lado do PvP. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `ab26e56b2`.
+
+Conteúdo 10 da base 2026.10.28.1 (29/10/2026): botao MAPA do celular passa a ser um icone quadrado (mapa dobrado com marcador), do mesmo tamanho dos icones de chat, PvP e amigos. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d74aaccec`.
