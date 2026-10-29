@@ -268,3 +268,5 @@ Conteúdo 8 da base 2026.10.28.1 (29/10/2026): conta do jogador: login por e-mai
 Conteúdo 9 da base 2026.10.28.1 (29/10/2026): telas do coop, duelo, login, amigos e convites no padrao visual do jogo (moldura de madeira, pergaminho e botoes do menu), com margens internas corrigidas; novo icone de amigos ao lado do PvP. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `ab26e56b2`.
 
 Conteúdo 10 da base 2026.10.28.1 (29/10/2026): botao MAPA do celular passa a ser um icone quadrado (mapa dobrado com marcador), do mesmo tamanho dos icones de chat, PvP e amigos. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d74aaccec`.
+
+Conteúdo 11 da base 2026.10.28.1 (29/10/2026): correcao na versao Web: o login nao consulta mais o id do aparelho (indisponivel no navegador), que gerava erro no console. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `6d39553e1`.
