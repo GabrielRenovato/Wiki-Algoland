@@ -260,3 +260,5 @@ Conteúdo 4 da base 2026.10.28.1 (29/10/2026): coop online com drops individuais
 Conteúdo 5 da base 2026.10.28.1 (29/10/2026): ao encerrar o coop online (inclusive sala iniciada sozinho) quem caiu volta a cidade com a vida cheia, em vez de 1 de vida. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `73bfa698d`.
 
 Conteúdo 6 da base 2026.10.28.1 (29/10/2026): painel do grupo do coop online no canto direito, so com os aliados, sem cobrir a vida e a missao do jogador. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `b076884a1`.
+
+Conteúdo 7 da base 2026.10.28.1 (29/10/2026): botoes MAPA, chat e PvP do topo no toque com o mesmo tamanho e espacamento; menu de pausa sem os itens EDITAR VISUAL e COOP ONLINE (o PvP e o coop ficam nos icones e no portal). Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `4c54f17d8`.
