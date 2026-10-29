@@ -5,6 +5,25 @@ import { Titulo, Secao, Caixa, Link } from "../componentes/ui.jsx";
 export const PATCHES = [
   {
     versao: "2026.10.23.1",
+    conteudo: 62,
+    data: "29 de outubro de 2026",
+    resumo: "Ajustes de equilíbrio, regador que cresce com a melhoria e o dia que não volta às 6h.",
+    novo: ["Regador com capacidade maior a cada melhoria: 20 regas no nível 1, 30 no nível 2 e 40 no nível 3. A água atual é mantida ao melhorar."],
+    melhorou: [
+      "Roubo de vida cura 1 de vida por inimigo abatido, em vez de curar a cada golpe.",
+      "As plantas crescem um dia mais rápido.",
+    ],
+    corrigido: ["Salvar o jogo depois de terminar o dia e voltar não reiniciava mais às 6h do mesmo dia com o progresso já feito: o dia passa como se você tivesse dormido."],
+  },
+  {
+    versao: "2026.10.23.1",
+    conteudo: 61,
+    data: "28 de outubro de 2026",
+    resumo: "Pele com tons RGB e detalhes do rosto preservados.",
+    melhorou: ["Pele com cor RGB ajustável e detalhes do rosto preservados nos ajustes de aparência."],
+  },
+  {
+    versao: "2026.10.23.1",
     conteudo: 60,
     data: "28 de outubro de 2026",
     resumo: "Acesso rápido ao PvP e lobby com personagem e equipamentos.",
