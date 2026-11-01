@@ -286,3 +286,5 @@ Conteúdo 17 da base 2026.10.28.1 (29/10/2026): coop online: o convidado ignora 
 Conteúdo 18 da base 2026.10.28.1 (29/10/2026): web: a nitidez do texto passa a acompanhar a escala real da tela, para o texto nao sair em blocos no navegador do celular. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `f0861306a`.
 
 Conteúdo 19 da base 2026.10.28.1 (29/10/2026): corrige as fontes em blocos no navegador do celular, o teclado de e-mail e o redimensionamento do painel da conta. No coop online, o anfitrião aplica o raio do conjunto do convidado com dano em área e recarga; raio e congelamento são exibidos nas réplicas. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `b82a61adf`.
+
+Conteúdo 20 da base 2026.10.28.1 (01/11/2026): corrige lotes fora de ordem e reenvios no coop online; adiciona grama 3D interativa à cidade, com contato nas bases de cercas, pedras e objetos e cores nas quatro estações. Árvores 2D preservadas. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d043438e2`, ramo `publicacao/coop-grama-conteudo20`.
