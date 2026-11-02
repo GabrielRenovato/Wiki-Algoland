@@ -290,3 +290,5 @@ Conteúdo 19 da base 2026.10.28.1 (29/10/2026): corrige as fontes em blocos no n
 Conteúdo 20 da base 2026.10.28.1 (01/11/2026): corrige lotes fora de ordem e reenvios no coop online; adiciona grama 3D interativa à cidade, com contato nas bases de cercas, pedras e objetos e cores nas quatro estações. Árvores 2D preservadas. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d043438e2`, ramo `publicacao/coop-grama-conteudo20`.
 
 Conteúdo 21 da base 2026.10.28.1 (01/11/2026): reduz o atraso acrescentado pelo jogo aos avatares do coop; remove a espera fixa de 50 ms, separa o envio de movimento a 30 Hz dos estados do mundo e prioriza o movimento mais recente na fila de entrada. Mantém a grama da cidade do conteúdo 20. Pacotes cumulativos assinados Android/Windows/Linux e Web reexportada. Fonte `411e02ec5`. A latência real entre conexões pela internet permanece dependente da rede.
+
+Conteúdo 22 da base 2026.10.28.1 (02/11/2026): Corrige a contagem e a persistência das missões de andares e guardiões do convidado no cooperativo online. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `c89cf830d`.
