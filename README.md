@@ -296,3 +296,5 @@ Conteúdo 22 da base 2026.10.28.1 (02/11/2026): Corrige a contagem e a persistê
 Conteúdo 23 da base 2026.10.28.1 (02/11/2026): Atualiza conteúdo e reduz o custo da grama 3D da cidade Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `6db63a103`.
 
 Conteúdo 24 da base 2026.10.28.1 (02/11/2026): Coop online pelo servidor: salas conectam em qualquer rede, sem depender de conexao direta. Campanha da Bacia e goblin do pomar atualizados. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `8da8057d1`.
+
+Conteúdo 25 da base 2026.10.28.1 (02/11/2026): Coop online: monstros voltam a aparecer para o convidado e a partida usa conexao direta quando a rede permite (ping estavel), com o servidor como reserva. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `9c1b6feff`.
