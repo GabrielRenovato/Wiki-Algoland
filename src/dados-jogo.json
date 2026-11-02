@@ -2700,6 +2700,26 @@
         "forma": 6,
         "id": "cabelo_liso_longo",
         "nome": "Longo liso"
+      },
+      {
+        "forma": 7,
+        "id": "cabelo_coque_alto",
+        "nome": "Coque alto"
+      },
+      {
+        "forma": 8,
+        "id": "cabelo_rabo_baixo",
+        "nome": "Rabo baixo"
+      },
+      {
+        "forma": 9,
+        "id": "cabelo_tranca_unica",
+        "nome": "Trança única"
+      },
+      {
+        "forma": 10,
+        "id": "cabelo_ondulado_medio",
+        "nome": "Ondulado médio"
       }
     ],
     "calca": [
@@ -2737,6 +2757,13 @@
         "forma": 4,
         "id": "saia_campo",
         "nome": "Saia do campo com meia-calça"
+      },
+      {
+        "cor": "713c3d",
+        "estilo": 5,
+        "forma": 5,
+        "id": "saia_vinho_longa",
+        "nome": "Saia longa vinho"
       }
     ],
     "calcado": [
@@ -2815,8 +2842,57 @@
         "forma": 5,
         "id": "casaquinho_lavanda",
         "nome": "Casaquinho rosa antigo"
+      },
+      {
+        "cor": "586c3e",
+        "estilo": 6,
+        "forma": 6,
+        "id": "tunica_aventureiro",
+        "nome": "Túnica de aventureiro"
+      },
+      {
+        "cor": "334b70",
+        "estilo": 7,
+        "forma": 7,
+        "id": "tabardo_guarda",
+        "nome": "Tabardo da guarda"
+      },
+      {
+        "cor": "c9b58e",
+        "estilo": 8,
+        "forma": 8,
+        "id": "avental_ferreiro",
+        "nome": "Avental de ferreiro"
+      },
+      {
+        "cor": "68734c",
+        "estilo": 9,
+        "forma": 9,
+        "id": "colete_agricultor",
+        "nome": "Colete de agricultor"
+      },
+      {
+        "cor": "4c7b7a",
+        "estilo": 10,
+        "forma": 10,
+        "id": "tunica_herbalista",
+        "nome": "Túnica de herbalista"
+      },
+      {
+        "cor": "783947",
+        "estilo": 11,
+        "forma": 11,
+        "id": "colete_mercador",
+        "nome": "Colete de mercador"
+      },
+      {
+        "cor": "222027",
+        "estilo": 12,
+        "forma": 12,
+        "id": "corpete_camponesa",
+        "nome": "Corpete com blusa bufante"
       }
     ]
   },
-  "commit": "c89cf830dcc6350c3bb51a500ca088f319f34dc2"
+  "commit": "6db63a103901a33daff105acba6db312b299990b"
 }

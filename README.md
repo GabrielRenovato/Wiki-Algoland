@@ -292,3 +292,5 @@ Conteúdo 20 da base 2026.10.28.1 (01/11/2026): corrige lotes fora de ordem e re
 Conteúdo 21 da base 2026.10.28.1 (01/11/2026): reduz o atraso acrescentado pelo jogo aos avatares do coop; remove a espera fixa de 50 ms, separa o envio de movimento a 30 Hz dos estados do mundo e prioriza o movimento mais recente na fila de entrada. Mantém a grama da cidade do conteúdo 20. Pacotes cumulativos assinados Android/Windows/Linux e Web reexportada. Fonte `411e02ec5`. A latência real entre conexões pela internet permanece dependente da rede.
 
 Conteúdo 22 da base 2026.10.28.1 (02/11/2026): Corrige a contagem e a persistência das missões de andares e guardiões do convidado no cooperativo online. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `c89cf830d`.
+
+Conteúdo 23 da base 2026.10.28.1 (02/11/2026): Atualiza conteúdo e reduz o custo da grama 3D da cidade Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `6db63a103`.

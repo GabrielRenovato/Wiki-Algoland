@@ -1,48 +1,76 @@
 {
-  "versao": "d8374a02e96b",
-  "sha256": "d8374a02e96b355146999cfef73c466f7663564684717fa9c360469f83945225",
-  "pacote": 330329208,
-  "transferencia": 369843962,
+  "versao": "4e24c61573a3",
+  "sha256": "4e24c61573a3e44ad69802b5516e0776cec3bd91f40c8d8394cc761a80391098",
+  "pacote": 538905852,
+  "transferencia": 578420606,
   "partes": [
     {
-      "arquivo": "dados-d8374a02e96b-1.part",
+      "arquivo": "dados-4e24c61573a3-1.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-2.part",
+      "arquivo": "dados-4e24c61573a3-2.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-3.part",
+      "arquivo": "dados-4e24c61573a3-3.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-4.part",
+      "arquivo": "dados-4e24c61573a3-4.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-5.part",
+      "arquivo": "dados-4e24c61573a3-5.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-6.part",
+      "arquivo": "dados-4e24c61573a3-6.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-7.part",
+      "arquivo": "dados-4e24c61573a3-7.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-8.part",
+      "arquivo": "dados-4e24c61573a3-8.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-9.part",
+      "arquivo": "dados-4e24c61573a3-9.part",
       "tamanho": 33554432
     },
     {
-      "arquivo": "dados-d8374a02e96b-10.part",
-      "tamanho": 28339320
+      "arquivo": "dados-4e24c61573a3-10.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-11.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-12.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-13.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-14.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-15.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-16.part",
+      "tamanho": 33554432
+    },
+    {
+      "arquivo": "dados-4e24c61573a3-17.part",
+      "tamanho": 2034940
     }
   ]
 }
