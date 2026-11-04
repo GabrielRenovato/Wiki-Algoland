@@ -300,3 +300,5 @@ Conteúdo 24 da base 2026.10.28.1 (02/11/2026): Coop online pelo servidor: salas
 Conteúdo 25 da base 2026.10.28.1 (02/11/2026): Coop online: monstros voltam a aparecer para o convidado e a partida usa conexao direta quando a rede permite (ping estavel), com o servidor como reserva. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `9c1b6feff`.
 
 Conteúdo 26 da base 2026.10.28.1 (02/11/2026): Coop online: o mesmo save no PC e no celular nao derruba mais quem entrou primeiro na sala. Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `6cf349ac8`.
+
+Conteúdo 27 da base 2026.10.28.1 (04/11/2026): Campanha beta no menu inicial (até o moinho), conta com progresso na nuvem Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `1f7ece1ac`.

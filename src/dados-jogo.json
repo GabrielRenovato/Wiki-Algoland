@@ -21,7 +21,7 @@
     {
       "andar": 4,
       "bioma": "caverna",
-      "guardiao": "medusa",
+      "guardiao": "lorde_goblin",
       "nome": "Gruta das Raizes"
     },
     {
@@ -2894,5 +2894,5 @@
       }
     ]
   },
-  "commit": "6cf349ac85b820d274a8fdf39440aaeefc68abc0"
+  "commit": "1f7ece1ac7e1588fef9dbb55faaf2c3512118162"
 }

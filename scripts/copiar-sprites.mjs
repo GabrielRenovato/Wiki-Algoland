@@ -56,14 +56,12 @@ const ARQUIVOS = {
   "armas/arco_curto.png": "personagens/raven_fantasy/icones/arco_curto.png",
   "armas/arco_curvo.png": "personagens/raven_fantasy/icones/arco_curvo.png",
   "armas/arco_longo.png": "personagens/raven_fantasy/icones/arco_longo.png",
-  // Fazenda e interface
+  // Fazenda e interface (drops.png e moedas.png saíram do jogo; ficam as cópias versionadas em public/sprites)
   "fazenda/plantas.png": "cenario/Farm RPG/Crops/All Crops.png",
   "fazenda/ferramentas.png": "ui/fazenda/icones_ferramentas.png",
   "fazenda/pocoes.png": "ui/fazenda/pocoes.png",
-  "fazenda/drops.png": "ui/fazenda/drops.png",
   "fazenda/relogio.png": "ui/fazenda/relogio.png",
   "ui/brasa.png": "ui/icone_brasa.png",
-  "ui/moedas.png": "ui/icons-coin/16x16.png",
 };
 for (const id of ['ivo', 'nilo', 'osvaldo', 'helena', 'clara']) ARQUIVOS[`npcs/${id}.png`] = `npcs/cidade/${id}.png`;
 for (const id of ['forja', 'carpintaria']) ARQUIVOS[`vila/${id}.png`] = `cenario/cidade/fachadas_detalhadas/${id}/primavera.png`;
