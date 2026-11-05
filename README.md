@@ -306,3 +306,5 @@ Conteúdo 27 da base 2026.10.28.1 (04/11/2026): Campanha beta no menu inicial (a
 Conteúdo 28 da base 2026.10.28.1 (04/11/2026): Campanha beta: aviso de nível da arma, baú inicial com 5 poções, casas menores e translúcidas, Dara de guarda, sem riscos nos mobs comuns Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `137991863`.
 
 Conteúdo 29 da base 2026.10.28.1 (04/11/2026): Combate: dano no contato da lâmina, golpe não é cancelado pelo direcional, passo à frente no ataque Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `e120f0de7`.
+
+Conteúdo 30 da base 2026.10.28.1 (05/11/2026): Desempenho: grama em tela única e personagens 3D num álbum só; barra de XP padrão, poção na campanha, ícone da barra Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `fd2c27edd`.
