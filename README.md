@@ -310,3 +310,5 @@ Conteúdo 29 da base 2026.10.28.1 (04/11/2026): Combate: dano no contato da lâm
 Conteúdo 30 da base 2026.10.28.1 (05/11/2026): Desempenho: grama em tela única e personagens 3D num álbum só; barra de XP padrão, poção na campanha, ícone da barra Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `fd2c27edd`.
 
 Conteúdo 31 da base 2026.10.28.1 (05/11/2026): Golpe acerta na direção do ataque (primeiro hit no goblin), animação e janela de derrota na campanha Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `fa3f5100f`.
+
+Conteúdo 32 da base 2026.10.28.1 (05/11/2026): Desempenho: cidade com álbum de personagens, Bacia mais leve e chão com um quarto da memória no celular Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d1a5a46d9`.
