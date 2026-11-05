@@ -304,3 +304,5 @@ Conteúdo 26 da base 2026.10.28.1 (02/11/2026): Coop online: o mesmo save no PC 
 Conteúdo 27 da base 2026.10.28.1 (04/11/2026): Campanha beta no menu inicial (até o moinho), conta com progresso na nuvem Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `1f7ece1ac`.
 
 Conteúdo 28 da base 2026.10.28.1 (04/11/2026): Campanha beta: aviso de nível da arma, baú inicial com 5 poções, casas menores e translúcidas, Dara de guarda, sem riscos nos mobs comuns Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `137991863`.
+
+Conteúdo 29 da base 2026.10.28.1 (04/11/2026): Combate: dano no contato da lâmina, golpe não é cancelado pelo direcional, passo à frente no ataque Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `e120f0de7`.
