@@ -312,3 +312,5 @@ Conteúdo 30 da base 2026.10.28.1 (05/11/2026): Desempenho: grama em tela única
 Conteúdo 31 da base 2026.10.28.1 (05/11/2026): Golpe acerta na direção do ataque (primeiro hit no goblin), animação e janela de derrota na campanha Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `fa3f5100f`.
 
 Conteúdo 32 da base 2026.10.28.1 (05/11/2026): Desempenho: cidade com álbum de personagens, Bacia mais leve e chão com um quarto da memória no celular Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d1a5a46d9`.
+
+Conteúdo 33 da base 2026.10.28.1 (05/11/2026): Campanha: marcador de missão, diário (J), baús escondidos, música por região, Bento na vila, frases rápidas no chat, goblins com personalidade Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `71be98289`.
