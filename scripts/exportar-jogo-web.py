@@ -5,6 +5,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from ambiente import godot, ligar
 
 wiki = pathlib.Path(__file__).resolve().parents[1]
 jogo = pathlib.Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else wiki.parent / 'AlgoLand'
@@ -22,19 +23,19 @@ with tempfile.TemporaryDirectory(prefix='algoland-export-web-') as temporario:
     for item in jogo.iterdir():
         if item.name in {'project.godot', 'export_presets.cfg', '.godot', '.git', 'builds', 'arquivo', 'arte', 'docs', 'testes', 'ferramentas'}:
             continue
-        (projeto / item.name).symlink_to(item, target_is_directory=item.is_dir())
+        ligar(projeto / item.name, item)
     cache = projeto / '.godot'
     cache.mkdir()
     for item in (jogo / '.godot').iterdir():
         if item.name == 'extension_list.cfg':
             continue
         if item.is_dir():
-            (cache / item.name).symlink_to(item, target_is_directory=True)
+            ligar(cache / item.name, item)
         else:
             shutil.copy2(item, cache / item.name)
-    (cache / 'extension_list.cfg').write_text('')
-    configuracao = (jogo / 'project.godot').read_text().replace('window/size/mode=3', 'window/size/mode=0')
-    (projeto / 'project.godot').write_text(configuracao)
+    (cache / 'extension_list.cfg').write_text('', encoding='utf-8')
+    configuracao = (jogo / 'project.godot').read_text(encoding='utf-8').replace('window/size/mode=3', 'window/size/mode=0')
+    (projeto / 'project.godot').write_text(configuracao, encoding='utf-8')
     shutil.copy2(wiki / 'scripts/web/export_presets.cfg', projeto / 'export_presets.cfg')
-    subprocess.run(['flatpak', 'run', '--filesystem=/tmp', 'org.godotengine.Godot', '--headless', '--quiet', '--path', str(projeto), '--export-release', 'Web', str(saida / 'index.html')], check=True)
+    subprocess.run(godot() + ['--headless', '--quiet', '--path', str(projeto), '--export-release', 'Web', str(saida / 'index.html')], check=True)
 subprocess.run(['node', str(wiki / 'scripts/preparar-jogo-web.mjs'), str(saida)], check=True)

@@ -314,3 +314,5 @@ Conteúdo 31 da base 2026.10.28.1 (05/11/2026): Golpe acerta na direção do ata
 Conteúdo 32 da base 2026.10.28.1 (05/11/2026): Desempenho: cidade com álbum de personagens, Bacia mais leve e chão com um quarto da memória no celular Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `d1a5a46d9`.
 
 Conteúdo 33 da base 2026.10.28.1 (05/11/2026): Campanha: marcador de missão, diário (J), baús escondidos, música por região, Bento na vila, frases rápidas no chat, goblins com personalidade Pacotes cumulativos assinados para Android/Windows/Linux e Web reexportada. Fonte `71be98289`.
+
+App 2026.11.09.1 (09/11/2026): moradores reagem ao progresso da campanha, a vila lembra das conversas e o fim do beta ganhou epílogo. A chave das atualizações rápidas foi trocada (a anterior se perdeu): instaladores novos para Android, Windows e Linux; no Android é preciso desinstalar o app antigo. Web reexportada. Fonte `535e75413`.
